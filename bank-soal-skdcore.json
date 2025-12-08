@@ -1,0 +1,229 @@
+[
+  {
+    "id": 1,
+    "category": "TWK",
+    "question": "Ideologi Pancasila pertama kali disusun dalam sidang?",
+    "options": {
+      "A": "BPUPKI",
+      "B": "PPKI",
+      "C": "MPRS",
+      "D": "DPR",
+      "E": "KNIP"
+    },
+    "correct": "A"
+  },
+  {
+    "id": 2,
+    "category": "TWK",
+    "question": "Sila ke-3 Pancasila berbunyi?",
+    "options": {
+      "A": "Ketuhanan Yang Maha Esa",
+      "B": "Kemanusiaan yang adil dan beradab",
+      "C": "Persatuan Indonesia",
+      "D": "Kerakyatan yang dipimpin oleh hikmat kebijaksanaan",
+      "E": "Keadilan sosial bagi seluruh rakyat Indonesia"
+    },
+    "correct": "C"
+  },
+  {
+    "id": 3,
+    "category": "TWK",
+    "question": "UUD 1945 disahkan pada tanggal?",
+    "options": {
+      "A": "17 Agustus 1945",
+      "B": "18 Agustus 1945",
+      "C": "1 Juni 1945",
+      "D": "29 Mei 1945",
+      "E": "1 Juli 1945"
+    },
+    "correct": "B"
+  },
+  {
+    "id": 4,
+    "category": "TWK",
+    "question": "Lembaga negara yang mengawasi pengelolaan keuangan negara adalah?",
+    "options": {
+      "A": "DPR",
+      "B": "DPD",
+      "C": "KPK",
+      "D": "BPK",
+      "E": "MA"
+    },
+    "correct": "D"
+  },
+  {
+    "id": 5,
+    "category": "TWK",
+    "question": "Semangat nasionalisme termasuk dalam nilai?",
+    "options": {
+      "A": "Moral",
+      "B": "Etika",
+      "C": "Patriotisme",
+      "D": "Budaya",
+      "E": "Sosial"
+    },
+    "correct": "C"
+  },
+
+  {
+    "id": 6,
+    "category": "TIU",
+    "question": "Jika 3x + 9 = 27, maka nilai x adalah?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "6",
+      "D": "9",
+      "E": "12"
+    },
+    "correct": "B"
+  },
+  {
+    "id": 7,
+    "category": "TIU",
+    "question": "Urutan bilangan: 2, 4, 8, 16, ... angka berikutnya?",
+    "options": {
+      "A": "20",
+      "B": "24",
+      "C": "28",
+      "D": "32",
+      "E": "40"
+    },
+    "correct": "D"
+  },
+  {
+    "id": 8,
+    "category": "TIU",
+    "question": "Anton berlari 300 m dalam 60 detik. Kecepatan Anton adalah?",
+    "options": {
+      "A": "2 m/s",
+      "B": "3 m/s",
+      "C": "4 m/s",
+      "D": "5 m/s",
+      "E": "6 m/s"
+    },
+    "correct": "B"
+  },
+  {
+    "id": 9,
+    "category": "TIU",
+    "question": "Kebalikan dari kata 'Optimis' adalah?",
+    "options": {
+      "A": "Pesimis",
+      "B": "Realistis",
+      "C": "Objektif",
+      "D": "Indiferent",
+      "E": "Negatif"
+    },
+    "correct": "A"
+  },
+  {
+    "id": 10,
+    "category": "TIU",
+    "question": "Jika luas persegi adalah 64 cm², panjang sisinya adalah?",
+    "options": {
+      "A": "6",
+      "B": "7",
+      "C": "8",
+      "D": "9",
+      "E": "10"
+    },
+    "correct": "C"
+  },
+
+  {
+    "id": 11,
+    "category": "TKP",
+    "question": "Atasan memberikan tugas mendadak, sementara kamu punya rencana penting. Apa sikapmu?",
+    "options": {
+      "A": "Menolak tugas karena sudah ada rencana",
+      "B": "Mengerjakan seadanya lalu pulang",
+      "C": "Mengatur ulang rencana dan tetap menyelesaikan tugas",
+      "D": "Meminta bantuan rekan tanpa izin atasan",
+      "E": "Mengabaikan tugas"
+    },
+    "scores": {
+      "A": 2,
+      "B": 3,
+      "C": 5,
+      "D": 4,
+      "E": 1
+    }
+  },
+  {
+    "id": 12,
+    "category": "TKP",
+    "question": "Kamu melihat rekan kerja melakukan pelanggaran kecil. Apa tindakanmu?",
+    "options": {
+      "A": "Diam saja karena bukan urusanmu",
+      "B": "Melaporkan langsung ke pimpinan",
+      "C": "Menegur baik-baik dulu",
+      "D": "Membicarakan dengan rekan lain",
+      "E": "Memarahinya di depan umum"
+    },
+    "scores": {
+      "A": 2,
+      "B": 4,
+      "C": 5,
+      "D": 3,
+      "E": 1
+    }
+  },
+  {
+    "id": 13,
+    "category": "TKP",
+    "question": "Kamu mendapat tugas baru namun belum menguasai materinya.",
+    "options": {
+      "A": "Menolak tugas tersebut",
+      "B": "Mencari bantuan rekan lalu mengerjakan",
+      "C": "Belajar cepat dan menyelesaikan tugas",
+      "D": "Mengerjakan seadanya",
+      "E": "Menunda sampai paham"
+    },
+    "scores": {
+      "A": 1,
+      "B": 4,
+      "C": 5,
+      "D": 2,
+      "E": 3
+    }
+  },
+  {
+    "id": 14,
+    "category": "TKP",
+    "question": "Saat terjadi konflik di tim, apa yang kamu lakukan?",
+    "options": {
+      "A": "Menghindar agar tidak terlibat",
+      "B": "Memihak teman dekat",
+      "C": "Memfasilitasi diskusi agar menemukan solusi",
+      "D": "Minta atasan menyelesaikan",
+      "E": "Menyuruh semua diam"
+    },
+    "scores": {
+      "A": 2,
+      "B": 3,
+      "C": 5,
+      "D": 4,
+      "E": 1
+    }
+  },
+  {
+    "id": 15,
+    "category": "TKP",
+    "question": "Kamu diminta memimpin rapat mendadak. Sikapmu?",
+    "options": {
+      "A": "Menolak karena tidak siap",
+      "B": "Menerima namun tanpa persiapan",
+      "C": "Menerima dan mempersiapkan poin penting dengan cepat",
+      "D": "Menyerahkan ke orang lain",
+      "E": "Mengulur waktu"
+    },
+    "scores": {
+      "A": 1,
+      "B": 3,
+      "C": 5,
+      "D": 2,
+      "E": 4
+    }
+  }
+]
