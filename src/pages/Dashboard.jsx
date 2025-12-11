@@ -1,9 +1,8 @@
 // src/pages/Dashboard.jsx
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ThemeToggle from "../components/ThemeToggle";
-import logo from "../assets/skdcore-logo.png";
-import { getCurrentUser, logout } from "../utils/auth";
+import Navbar from "../components/Navbar";
+import { getCurrentUser } from "../utils/auth";
 
 const HISTORY_KEY = "skdcore_simulasi_history_v1";
 
@@ -11,7 +10,7 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const [history, setHistory] = useState([]);
   const [user, setUser] = useState(null);
-
+  
   // Ambil user & history di awal
   useEffect(() => {
     const u = getCurrentUser();
@@ -89,51 +88,11 @@ export default function Dashboard() {
     }
   }
 
-  function handleLogout() {
-    logout();
-    navigate("/login", { replace: true });
-  }
-
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950">
-      {/* TOP BAR */}
-      <header className="bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-gray-200 dark:border-slate-800 shadow-sm dark:shadow-none">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <img src={logo} alt="SKDCore" className="h-10 w-auto object-contain" />
-
-          </div>
-          <div className="flex items-center gap-3 text-sm">
-            <button
-              onClick={() => navigate("/profile")}
-              className="text-gray-600 dark:text-slate-300 hidden sm:inline hover:underline"
-            >
-              {user.name || "Pejuang CPNS"}{" "}
-              <span className="text-[10px] px-2 py-0.5 rounded-full border border-gray-300 dark:border-slate-700 ml-1">
-                {user.role === "admin" ? "Admin" : "User"}
-              </span>
-            </button>
-            {user.role === "admin" && (
-              <button
-                onClick={() => navigate("/admin")}
-                className="px-3 py-1.5 rounded-full border border-amber-500 text-xs font-medium text-amber-600 hover:bg-amber-50 dark:border-amber-400 dark:text-amber-300 dark:hover:bg-slate-800"
-              >
-                Admin panel
-              </button>
-            )}
-            <ThemeToggle />
-            <button
-              onClick={handleLogout}
-              className="px-3 py-1.5 rounded-full border border-gray-300 text-xs font-medium hover:bg-gray-100 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-slate-800"
-            >
-              Logout
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* CONTENT */}
-      <main className="max-w-6xl mx-auto px-4 py-6 space-y-6">
+      <Navbar />
+      {/* MAIN CONTENT */}
+      <div className="max-w-5xl mx-auto px-4 py-8">
         {/* Greeting */}
         <section>
           <h1 className="text-2xl font-bold mb-1">
@@ -245,40 +204,21 @@ export default function Dashboard() {
           </div>
 
           {/* Aksi cepat */}
-          <div className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-4">
-            <h2 className="text-sm font-semibold mb-2">Aksi cepat</h2>
-            <p className="text-xs text-gray-600 dark:text-slate-300 mb-3">
-              Mulai dari mana latihan kamu hari ini?
-            </p>
-            <div className="space-y-2 text-sm">
-              <button
-                className="w-full px-3 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700"
-                onClick={() => navigate("/simulasi")}
-              >
-                Simulasi penuh SKD
-              </button>
-              <button
-                className="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800"
-                onClick={() => navigate("/simulasi/twk")}
-              >
-                Latihan fokus TWK
-              </button>
-              <button
-                className="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800"
-                onClick={() => navigate("/simulasi/tiu")}
-              >
-                Latihan fokus TIU
-              </button>
-              <button
-                className="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800"
-                onClick={() => navigate("/simulasi/tkp")}
-              >
-                Latihan fokus TKP
-              </button>
-            </div>
-          </div>
+         {/* Daftar Simulasi 1..10 */}
+<div className="space-y-2 text-sm">
+  {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
+    <button
+      key={n}
+      className="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 text-left"
+      onClick={() => navigate(`/simulasi/sim/${n}`)}
+    >
+      Simulasi {n}
+    </button>
+  ))}
+</div>
+
         </section>
-      </main>
+      </div>
     </div>
   );
 }

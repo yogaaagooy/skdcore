@@ -2,7 +2,10 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ThemeToggle from "../components/ThemeToggle";
-import logo from "../assets/skdcore-logo.png";
+import logo from "../assets/logo.png";
+
+import UserDropdown from "../components/UserDropdown";
+
 
 const HISTORY_KEY = "skdcore_simulasi_history_v1";
 

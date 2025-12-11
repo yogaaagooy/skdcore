@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "category": "TWK",
+    "question": "Nilai yang terkandung dalam sila pertama Pancasila adalah...",
+    "options": [
+      { "id": "A", "text": "Kemanusiaan dan keadilan", "score": 0 },
+      { "id": "B", "text": "Ketuhanan Yang Maha Esa", "score": 5 },
+      { "id": "C", "text": "Persatuan Indonesia", "score": 0 },
+      { "id": "D", "text": "Kerakyatan yang dipimpin oleh hikmat", "score": 0 },
+      { "id": "E", "text": "Keadilan sosial bagi seluruh rakyat Indonesia", "score": 0 }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "TWK",
+    "question": "Pembukaan UUD 1945 memiliki alinea...",
+    "options": [
+      { "id": "A", "text": "2 alinea", "score": 0 },
+      { "id": "B", "text": "3 alinea", "score": 0 },
+      { "id": "C", "text": "4 alinea", "score": 5 },
+      { "id": "D", "text": "5 alinea", "score": 0 },
+      { "id": "E", "text": "6 alinea", "score": 0 }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "TWK",
+    "question": "Batik diakui UNESCO sebagai...",
+    "options": [
+      { "id": "A", "text": "Warisan budaya dunia", "score": 0 },
+      { "id": "B", "text": "Masterpiece of Oral and Intangible Heritage of Humanity", "score": 5 },
+      { "id": "C", "text": "Seni kerajinan terbaik", "score": 0 },
+      { "id": "D", "text": "Karya seni terindah", "score": 0 },
+      { "id": "E", "text": "Benda bersejarah", "score": 0 }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "TIU",
+    "question": "3, 6, 12, 24, ... Angka selanjutnya adalah?",
+    "options": [
+      { "id": "A", "text": "36", "score": 0 },
+      { "id": "B", "text": "40", "score": 0 },
+      { "id": "C", "text": "48", "score": 5 },
+      { "id": "D", "text": "52", "score": 0 },
+      { "id": "E", "text": "60", "score": 0 }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "TIU",
+    "question": "Jika A = 2 dan B = 3, maka A² + 2AB + B² = ...",
+    "options": [
+      { "id": "A", "text": "13", "score": 0 },
+      { "id": "B", "text": "15", "score": 0 },
+      { "id": "C", "text": "20", "score": 0 },
+      { "id": "D", "text": "25", "score": 5 },
+      { "id": "E", "text": "30", "score": 0 }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "TIU",
+    "question": "Antonim dari kata 'transparan' adalah...",
+    "options": [
+      { "id": "A", "text": "Jernih", "score": 0 },
+      { "id": "B", "text": "Jelas", "score": 0 },
+      { "id": "C", "text": "Gelap", "score": 0 },
+      { "id": "D", "text": "Tersembunyi", "score": 5 },
+      { "id": "E", "text": "Cerah", "score": 0 }
+    ]
+  },
+  {
+    "id": 7,
+    "category": "TKP",
+    "question": "Atasan memberikan tugas mendadak menjelang jam pulang, padahal kamu sudah janji dengan keluarga. Sikap kamu?",
+    "options": [
+      { "id": "A", "text": "Menolak karena sudah ada rencana penting", "score": 1 },
+      { "id": "B", "text": "Mengerjakan sebisanya lalu pulang tepat waktu", "score": 3 },
+      { "id": "C", "text": "Meminta waktu tambahan tapi tetap mengutamakan tugas", "score": 5 },
+      { "id": "D", "text": "Menyerahkan ke rekan kerja agar tugas tetap jalan", "score": 4 },
+      { "id": "E", "text": "Mengabaikan tugas karena merasa tidak adil", "score": 1 }
+    ]
+  },
+  {
+    "id": 8,
+    "category": "TKP",
+    "question": "Rekan kerja melakukan kesalahan yang mempengaruhi pekerjaan Anda. Bagaimana Anda merespons?",
+    "options": [
+      { "id": "A", "text": "Langsung lapor ke atasan tanpa berbicara terlebih dahulu", "score": 2 },
+      { "id": "B", "text": "Menunjukkan kesalahan secara terbuka di depan tim", "score": 1 },
+      { "id": "C", "text": "Berbicara empat mata untuk membahas dan mencari solusi bersama", "score": 5 },
+      { "id": "D", "text": "Diam saja dan membiarkan atasan menemukan sendiri", "score": 2 },
+      { "id": "E", "text": "Memperbaiki sendiri tanpa memberitahu siapa-siapa", "score": 3 }
+    ]
+  },
+  {
+    "id": 9,
+    "category": "TKP",
+    "question": "Anda memiliki tiga prioritas pekerjaan. Bagaimana cara Anda mengelola waktu?",
+    "options": [
+      { "id": "A", "text": "Mengerjakan sesuai keinginan pribadi", "score": 1 },
+      { "id": "B", "text": "Mengerjakan semua sekaligus tanpa rencana", "score": 2 },
+      { "id": "C", "text": "Membuat rencana dan prioritas berdasarkan deadline dan importance", "score": 5 },
+      { "id": "D", "text": "Menunda semua sampai menit terakhir", "score": 1 },
+      { "id": "E", "text": "Meminta bantuan untuk semua pekerjaan", "score": 3 }
+    ]
+  },
+  {
+    "id": 10,
+    "category": "TKP",
+    "question": "Kebijakan baru dari atasan dirasa kurang efektif. Apa yang Anda lakukan?",
+    "options": [
+      { "id": "A", "text": "Tidak mematuhi kebijakan tersebut", "score": 1 },
+      { "id": "B", "text": "Mengeluh ke rekan kerja", "score": 2 },
+      { "id": "C", "text": "Memberikan saran konstruktif dengan data dan alasan yang jelas", "score": 5 },
+      { "id": "D", "text": "Ikut saja tanpa bertanya", "score": 2 },
+      { "id": "E", "text": "Menyabotase kebijakan tersebut", "score": 1 }
+    ]
+  }
+]
