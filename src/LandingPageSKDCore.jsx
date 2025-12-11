@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ThemeToggle from "./components/ThemeToggle";
-import logo from "./assets/skdcore-logo.png";
+import logo from "./assets/logo.png";
 
 export default function LandingPageSKDCore() {
   return (
@@ -10,7 +10,7 @@ export default function LandingPageSKDCore() {
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <img
-              src={logo}
+              src={logo.png}
               alt="SKDCore"
               className="h-7 w-auto object-contain"
             />

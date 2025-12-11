@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ThemeToggle from "../components/ThemeToggle";
-import logo from "../assets/skdcore-logo.png";
-import { getCurrentUser, getUsers, saveUsers, setCurrentUser, logout } from "../utils/auth";
+import Navbar from "../components/Navbar";
+import { getCurrentUser, getUsers, saveUsers, setCurrentUser } from "../utils/auth";
 
 const HISTORY_KEY = "skdcore_simulasi_history_v1";
 
@@ -65,25 +64,7 @@ export default function Profile() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 dark:text-slate-50">
-      <header className="bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-gray-200 dark:border-slate-800 shadow-sm dark:shadow-none">
-        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <img src={logo} alt="SKDCore" className="h-7 w-auto object-contain" />
-            <span className="font-bold text-lg text-blue-600 dark:text-blue-400">
-              Profil akun
-            </span>
-          </div>
-          <div className="flex items-center gap-2 text-sm">
-            <ThemeToggle />
-            <button
-              onClick={handleLogout}
-              className="px-3 py-1.5 rounded-full border border-gray-300 text-xs font-medium hover:bg-gray-100 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-slate-800"
-            >
-              Logout
-            </button>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       <main className="max-w-4xl mx-auto px-4 py-6 space-y-6">
         <section className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-5">

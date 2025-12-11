@@ -41,7 +41,7 @@ export function logout() {
 }
 
 // Register user biasa
-export function registerUser({ name, email, password, role = "user" }) {
+export function registerUser({ name, email, password, whatsapp, role = "user" }) {
   const users = getUsers();
   const exists = users.find((u) => u.email.toLowerCase() === email.toLowerCase());
   if (exists) {
@@ -52,6 +52,7 @@ export function registerUser({ name, email, password, role = "user" }) {
     name,
     email,
     password,
+    whatsapp,
     role,
     createdAt: new Date().toISOString(),
   };
@@ -114,4 +115,24 @@ export function loginUser({ email, password }) {
   };
   setCurrentUser(current);
   return current;
+}
+
+// Cari user berdasarkan email untuk reset password
+export function findUserByEmail(email) {
+  const users = getUsers();
+  return users.find((u) => u.email.toLowerCase() === email.toLowerCase());
+}
+
+// Update password user
+export function updateUserPassword(email, newPassword) {
+  const users = getUsers();
+  const userIndex = users.findIndex((u) => u.email.toLowerCase() === email.toLowerCase());
+  
+  if (userIndex === -1) {
+    throw new Error("User tidak ditemukan.");
+  }
+  
+  users[userIndex].password = newPassword;
+  saveUsers(users);
+  return users[userIndex];
 }

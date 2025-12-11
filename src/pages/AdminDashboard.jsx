@@ -1,7 +1,7 @@
+
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import ThemeToggle from "../components/ThemeToggle";
-import logo from "../assets/skdcore-logo.png";
+import Navbar from "../components/Navbar";
 import { getCurrentUser, getUsers, logout } from "../utils/auth";
 
 const HISTORY_KEY = "skdcore_simulasi_history_v1";
@@ -23,7 +23,32 @@ export default function AdminDashboard() {
     tkp: 0,
   });
 
+  const [showImportModal, setShowImportModal] = useState(false);
+  const [newQuestions, setNewQuestions] = useState(
+    Array(10).fill(null).map(() => ({
+      id: Date.now() + Math.random(),
+      category: "TWK",
+      question: "",
+      options: [
+        { id: "A", text: "", score: 0 },
+        { id: "B", text: "", score: 0 },
+        { id: "C", text: "", score: 0 },
+        { id: "D", text: "", score: 0 },
+        { id: "E", text: "", score: 0 }
+      ]
+    }))
+  );
+
+  const [showImportJsonModal, setShowImportJsonModal] = useState(false);
+  const [importJsonMode, setImportJsonMode] = useState("all"); // all, twk, tiu, tkp
+  const [importJsonFile, setImportJsonFile] = useState(null);
+
+  const [showChangeRoleModal, setShowChangeRoleModal] = useState(false);
+  const [selectedUserForRole, setSelectedUserForRole] = useState(null);
+  const [newRole, setNewRole] = useState("user");
+
   const fileInputRef = useRef(null);
+  const jsonFileInputRef = useRef(null);
 
   useEffect(() => {
     const u = getCurrentUser();
@@ -69,6 +94,32 @@ export default function AdminDashboard() {
   function handleLogout() {
     logout();
     navigate("/login");
+  }
+
+  function handleOpenChangeRoleModal(user) {
+    setSelectedUserForRole(user);
+    setNewRole(user.role);
+    setShowChangeRoleModal(true);
+  }
+
+  function handleSaveChangeRole() {
+    if (!selectedUserForRole || !newRole) return;
+    
+    try {
+      // Update user di localStorage
+      const updatedUsers = users.map((u) =>
+        u.id === selectedUserForRole.id ? { ...u, role: newRole } : u
+      );
+      window.localStorage.setItem("skdcore_users", JSON.stringify(updatedUsers));
+      
+      // Update state
+      setUsers(updatedUsers);
+      setShowChangeRoleModal(false);
+      alert(`✔ Role ${selectedUserForRole.name} berhasil diubah menjadi ${newRole}`);
+    } catch (err) {
+      console.error("Gagal ubah role:", err);
+      alert("❌ Gagal mengubah role");
+    }
   }
 
   // ----- USER STATS -----
@@ -363,32 +414,236 @@ export default function AdminDashboard() {
     setQuestionStats({ total: 0, twk: 0, tiu: 0, tkp: 0 });
   }
 
+  // ===== IMPORT 10 SOAL MANUAL =====
+  function handleUpdateQuestion(index, field, value) {
+    const updated = [...newQuestions];
+    if (field === "category") {
+      updated[index].category = value;
+    } else if (field === "question") {
+      updated[index].question = value;
+    } else if (field.startsWith("option_")) {
+      const parts = field.split("_");
+      const optionIdx = parseInt(parts[1]);
+      const optionField = parts[2]; // "text" or "score"
+      if (updated[index].options[optionIdx]) {
+        updated[index].options[optionIdx][optionField] = optionField === "score" ? Number(value) : value;
+      }
+    }
+    setNewQuestions(updated);
+  }
+
+  function handleSaveManualQuestions() {
+    // Validasi minimal
+    const valid = newQuestions.filter(q => {
+      if (!q.question.trim()) return false;
+      const hasText = q.options.some(o => o.text.trim());
+      const hasScore = q.options.some(o => o.score > 0);
+      return hasText && hasScore;
+    });
+
+    if (valid.length === 0) {
+      alert("Minimal 1 soal harus diisi dengan benar (ada pertanyaan, pilihan, dan skor).");
+      return;
+    }
+
+    // Ambil soal yang sudah ada
+    const existing = JSON.parse(window.localStorage.getItem(QUESTION_BANK_KEY) || "[]");
+    const combined = [...existing, ...valid];
+    
+    window.localStorage.setItem(QUESTION_BANK_KEY, JSON.stringify(combined));
+    updateQuestionStats(combined);
+    
+    alert(`Berhasil tambah ${valid.length} soal baru. Total soal sekarang: ${combined.length}`);
+    setShowImportModal(false);
+    
+    // Reset form
+    setNewQuestions(
+      Array(10).fill(null).map(() => ({
+        id: Date.now() + Math.random(),
+        category: "TWK",
+        question: "",
+        options: [
+          { id: "A", text: "", score: 0 },
+          { id: "B", text: "", score: 0 },
+          { id: "C", text: "", score: 0 },
+          { id: "D", text: "", score: 0 },
+          { id: "E", text: "", score: 0 }
+        ]
+      }))
+    );
+  }
+
+  // ===== IMPORT JSON PER MODE =====
+  function handleOpenImportJsonModal() {
+    setImportJsonMode("all");
+    setImportJsonFile(null);
+    setShowImportJsonModal(true);
+  }
+
+  function handleClickJsonFileInput() {
+    if (jsonFileInputRef.current) {
+      jsonFileInputRef.current.value = "";
+      jsonFileInputRef.current.click();
+    }
+  }
+
+  function handleJsonFileChange(e) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try {
+        const text = ev.target?.result;
+        const data = JSON.parse(text);
+
+        if (!Array.isArray(data) || data.length === 0) {
+          alert("Format file JSON tidak valid atau kosong.");
+          return;
+        }
+
+        // Filter by mode
+        let filtered = data;
+        
+        // Hanya filter kategori jika bukan simulasi spesifik
+        if (importJsonMode !== "all" && !importJsonMode.startsWith("simulasi-")) {
+          const modeCategory = importJsonMode.toUpperCase();
+          filtered = data.filter(q => q.category === modeCategory);
+          
+          if (filtered.length === 0) {
+            alert(`Tidak ada soal dengan kategori ${importJsonMode.toUpperCase()} di file ini.`);
+            return;
+          }
+        }
+
+        // Validasi format
+        const cleaned = [];
+        for (const q of filtered) {
+          if (!q.id || typeof q.question !== "string") continue;
+          if (!["TWK", "TIU", "TKP"].includes(q.category)) continue;
+
+          // ====== FORMAT 1: options ARRAY (sudah siap pakai) ======
+          if (Array.isArray(q.options)) {
+            const optionsArray = q.options
+              .filter(o => o && typeof o.id === "string" && typeof o.text === "string")
+              .map(o => ({
+                id: o.id,
+                text: o.text,
+                score: Number(o.score ?? 0)
+              }));
+
+            if (optionsArray.length === 0) continue;
+
+            cleaned.push({
+              id: q.id,
+              category: q.category,
+              question: q.question,
+              options: optionsArray,
+              explanation: q.explanation || ""
+            });
+            continue;
+          }
+
+          // ====== FORMAT 2: options OBJECT (A-E) ======
+          if (q.options && typeof q.options === "object" && !Array.isArray(q.options)) {
+            const optionKeys = ["A", "B", "C", "D", "E"].filter(
+              (k) => typeof q.options[k] === "string"
+            );
+            if (optionKeys.length === 0) continue;
+
+            // --- TWK / TIU: gunakan q.correct ---
+            if (q.category === "TWK" || q.category === "TIU") {
+              const correct = (q.correct || "").toString().toUpperCase();
+              if (!optionKeys.includes(correct)) {
+                console.warn("Soal TWK/TIU tanpa 'correct' yang valid, di-skip:", q.id);
+                continue;
+              }
+
+              const optionsArray = optionKeys.map((key) => ({
+                id: key,
+                text: q.options[key],
+                score: key === correct ? 5 : 0
+              }));
+
+              cleaned.push({
+                id: q.id,
+                category: q.category,
+                question: q.question,
+                options: optionsArray,
+                explanation: q.explanation || ""
+              });
+              continue;
+            }
+
+            // --- TKP: gunakan q.scores ---
+            if (q.category === "TKP") {
+              const scoresObj = q.scores && typeof q.scores === "object" ? q.scores : {};
+              const optionsArray = optionKeys.map((key) => {
+                let rawScore = Number(scoresObj[key] ?? 1);
+                if (Number.isNaN(rawScore)) rawScore = 1;
+                if (rawScore < 1) rawScore = 1;
+                if (rawScore > 5) rawScore = 5;
+
+                return {
+                  id: key,
+                  text: q.options[key],
+                  score: rawScore
+                };
+              });
+
+              cleaned.push({
+                id: q.id,
+                category: q.category,
+                question: q.question,
+                options: optionsArray,
+                explanation: q.explanation || ""
+              });
+              continue;
+            }
+          }
+        }
+
+        if (cleaned.length === 0) {
+          alert("Tidak ada soal yang valid di file ini.");
+          return;
+        }
+
+        // Tentukan localStorage key berdasarkan mode
+        let storageKey = QUESTION_BANK_KEY;
+        if (importJsonMode.startsWith("simulasi-")) {
+          const simulasiNum = importJsonMode.replace("simulasi-", "");
+          storageKey = `skdcore_simulasi_${simulasiNum}_questions_v1`;
+        }
+
+        // Ambil soal yang sudah ada
+        const existing = JSON.parse(window.localStorage.getItem(storageKey) || "[]");
+        const combined = [...existing, ...cleaned];
+
+        window.localStorage.setItem(storageKey, JSON.stringify(combined));
+        
+        // Update question stats jika import ke bank soal utama
+        if (importJsonMode === "all" || importJsonMode === "twk" || importJsonMode === "tiu" || importJsonMode === "tkp") {
+          const allQuestions = JSON.parse(window.localStorage.getItem(QUESTION_BANK_KEY) || "[]");
+          updateQuestionStats(allQuestions);
+        }
+
+        const simulasiLabel = importJsonMode.startsWith("simulasi-") 
+          ? importJsonMode.replace("simulasi-", "Simulasi ") 
+          : "Bank soal utama";
+        alert(`Berhasil import ${cleaned.length} soal ke ${simulasiLabel}. Total: ${combined.length}`);
+        setShowImportJsonModal(false);
+      } catch (err) {
+        console.error("Gagal import JSON:", err);
+        alert("Gagal membaca file JSON. Pastikan format sudah benar.");
+      }
+    };
+    reader.readAsText(file);
+  }
+
   // ===== UI =====
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 dark:text-slate-50">
-      {/* HEADER */}
-      <header className="bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-gray-200 dark:border-slate-800 shadow-sm dark:shadow-none">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <img src={logo} alt="SKDCore" className="h-7 w-auto object-contain" />
-            <span className="font-bold text-lg text-blue-600 dark:text-blue-400">
-              Admin panel
-            </span>
-          </div>
-          <div className="flex items-center gap-2 text-sm">
-            <span className="hidden sm:inline text-xs text-gray-500 dark:text-slate-400">
-              {admin.email}
-            </span>
-            <ThemeToggle />
-            <button
-              onClick={handleLogout}
-              className="px-3 py-1.5 rounded-full border border-gray-300 text-xs font-medium hover:bg-gray-100 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-slate-800"
-            >
-              Logout
-            </button>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       {/* BODY */}
       <main className="max-w-6xl mx-auto px-4 py-6 space-y-6">
@@ -483,10 +738,17 @@ export default function AdminDashboard() {
           <div className="flex flex-wrap items-center gap-2 text-xs">
             <button
               type="button"
-              onClick={handleClickImportQuestions}
-              className="px-3 py-1.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700"
+              onClick={handleOpenImportJsonModal}
+              className="px-3 py-1.5 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-700"
             >
-              Import JSON soal
+              📁 Import JSON per mode
+            </button>
+            <button
+              type="button"
+              onClick={() => setShowImportModal(true)}
+              className="px-3 py-1.5 rounded-lg bg-green-600 text-white font-semibold hover:bg-green-700"
+            >
+              + Input 10 soal manual
             </button>
             <button
               type="button"
@@ -512,6 +774,29 @@ export default function AdminDashboard() {
           />
         </section>
 
+        {/* Import soal per simulasi */}
+        <section className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-5">
+          <h2 className="text-sm font-semibold mb-3">Import soal per simulasi</h2>
+          <p className="text-xs text-gray-600 dark:text-slate-300 mb-4">
+            Upload file JSON untuk masing-masing simulasi. Setiap simulasi dapat memiliki soal yang berbeda.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+              <button
+                key={num}
+                type="button"
+                onClick={() => {
+                  setImportJsonMode(`simulasi-${num}`);
+                  setShowImportJsonModal(true);
+                }}
+                className="px-3 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition"
+              >
+                Simulasi {num}
+              </button>
+            ))}
+          </div>
+        </section>
+
         {/* Tabel user */}
         <section className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-5">
           <h2 className="text-sm font-semibold mb-3">Daftar user & aktivitas simulasi</h2>
@@ -526,10 +811,12 @@ export default function AdminDashboard() {
                   <tr className="text-[11px] text-gray-500 dark:text-slate-400 border-b border-gray-100 dark:border-slate-800">
                     <th className="text-left py-2 pr-3">Nama</th>
                     <th className="text-left py-2 pr-3">Email</th>
+                    <th className="text-left py-2 pr-3">WhatsApp</th>
                     <th className="text-left py-2 pr-3">Role</th>
                     <th className="text-right py-2 pr-3">Total simulasi</th>
                     <th className="text-right py-2 pr-3">Nilai terakhir (TWK/TIU/TKP)</th>
-                    <th className="text-right py-2">Aktivitas terakhir</th>
+                    <th className="text-right py-2 pr-3">Aktivitas terakhir</th>
+                    <th className="text-center py-2">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -543,6 +830,16 @@ export default function AdminDashboard() {
                       </td>
                       <td className="py-2 pr-3 text-gray-600 dark:text-slate-300">
                         {u.email}
+                      </td>
+                      <td className="py-2 pr-3 text-gray-600 dark:text-slate-300">
+                        <a
+                          href={`https://wa.me/${u.whatsapp?.replace(/\D/g, "")}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 dark:text-blue-400 hover:underline text-[11px]"
+                        >
+                          {u.whatsapp || "-"}
+                        </a>
                       </td>
                       <td className="py-2 pr-3">
                         <span className="px-2 py-0.5 rounded-full border border-gray-300 dark:border-slate-700 text-[11px]">
@@ -565,6 +862,14 @@ export default function AdminDashboard() {
                       <td className="py-2 text-right text-gray-500 dark:text-slate-400">
                         {u.lastActivity ? formatDate(u.lastActivity) : "-"}
                       </td>
+                      <td className="py-2 text-center">
+                        <button
+                          onClick={() => handleOpenChangeRoleModal(u)}
+                          className="px-2 py-1 rounded text-[11px] font-semibold bg-blue-600 text-white hover:bg-blue-700"
+                        >
+                          Ubah Role
+                        </button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -579,6 +884,284 @@ export default function AdminDashboard() {
         >
           Kembali ke Dashboard
         </button>
+
+        {/* MODAL INPUT 10 SOAL */}
+        {showImportModal && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+            <div className="bg-white dark:bg-slate-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+              <div className="sticky top-0 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-800 p-4 flex items-center justify-between">
+                <h2 className="text-lg font-bold">Input 10 Soal Manual</h2>
+                <button
+                  onClick={() => setShowImportModal(false)}
+                  className="text-2xl text-gray-500 hover:text-gray-700 dark:text-slate-400 dark:hover:text-slate-200"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="p-4 space-y-4">
+                {newQuestions.map((q, qIdx) => (
+                  <div key={qIdx} className="border border-gray-300 dark:border-slate-700 rounded-lg p-3 bg-gray-50 dark:bg-slate-800">
+                    <div className="text-xs font-semibold text-gray-600 dark:text-slate-300 mb-2">
+                      Soal {qIdx + 1}
+                    </div>
+
+                    {/* Category & Question */}
+                    <div className="grid grid-cols-3 gap-2 mb-2">
+                      <div className="col-span-2">
+                        <label className="block text-xs font-medium mb-1 text-gray-700 dark:text-slate-300">
+                          Pertanyaan
+                        </label>
+                        <input
+                          type="text"
+                          value={q.question}
+                          onChange={(e) => handleUpdateQuestion(qIdx, "question", e.target.value)}
+                          placeholder="Ketik pertanyaan di sini..."
+                          className="w-full px-2 py-1.5 text-xs border border-gray-300 dark:border-slate-700 rounded bg-white dark:bg-slate-700"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-medium mb-1 text-gray-700 dark:text-slate-300">
+                          Kategori
+                        </label>
+                        <select
+                          value={q.category}
+                          onChange={(e) => handleUpdateQuestion(qIdx, "category", e.target.value)}
+                          className="w-full px-2 py-1.5 text-xs border border-gray-300 dark:border-slate-700 rounded bg-white dark:bg-slate-700"
+                        >
+                          <option value="TWK">TWK</option>
+                          <option value="TIU">TIU</option>
+                          <option value="TKP">TKP</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Options A-E */}
+                    <div className="grid grid-cols-5 gap-1">
+                      {q.options.map((opt, oIdx) => (
+                        <div key={oIdx}>
+                          <label className="block text-[10px] font-medium mb-0.5 text-gray-600 dark:text-slate-400">
+                            {opt.id}
+                          </label>
+                          <input
+                            type="text"
+                            value={opt.text}
+                            onChange={(e) => handleUpdateQuestion(qIdx, `option_${oIdx}_text`, e.target.value)}
+                            placeholder="Opsi"
+                            className="w-full px-1.5 py-1 text-[11px] border border-gray-300 dark:border-slate-700 rounded bg-white dark:bg-slate-700 mb-1"
+                          />
+                          <input
+                            type="number"
+                            value={opt.score}
+                            onChange={(e) => handleUpdateQuestion(qIdx, `option_${oIdx}_score`, e.target.value)}
+                            placeholder="Skor"
+                            min="0"
+                            max="5"
+                            className="w-full px-1.5 py-1 text-[11px] border border-gray-300 dark:border-slate-700 rounded bg-white dark:bg-slate-700"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="sticky bottom-0 bg-gray-50 dark:bg-slate-800 border-t border-gray-200 dark:border-slate-700 p-4 flex items-center justify-between">
+                <p className="text-xs text-gray-600 dark:text-slate-400">
+                  Isi minimal 1 soal dengan pertanyaan, pilihan, dan skor valid
+                </p>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => setShowImportModal(false)}
+                    className="px-3 py-1.5 rounded-lg border border-gray-300 dark:border-slate-700 text-xs font-medium hover:bg-gray-100 dark:hover:bg-slate-700"
+                  >
+                    Batal
+                  </button>
+                  <button
+                    onClick={handleSaveManualQuestions}
+                    className="px-3 py-1.5 rounded-lg bg-green-600 text-white text-xs font-semibold hover:bg-green-700"
+                  >
+                    Simpan soal
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* MODAL IMPORT JSON PER MODE */}
+        {showImportJsonModal && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+            <div className="bg-white dark:bg-slate-900 rounded-lg max-w-2xl w-full">
+              <div className="border-b border-gray-200 dark:border-slate-800 p-4 flex items-center justify-between">
+                <h2 className="text-lg font-bold">Import JSON per Mode Simulasi</h2>
+                <button
+                  onClick={() => setShowImportJsonModal(false)}
+                  className="text-2xl text-gray-500 hover:text-gray-700 dark:text-slate-400 dark:hover:text-slate-200"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="p-6 space-y-4">
+                <p className="text-sm text-gray-600 dark:text-slate-300">
+                  Pilih mode simulasi dan upload file JSON berisi soal sesuai kategori yang dipilih.
+                </p>
+
+                {/* Mode Selection */}
+                <div>
+                  <label className="block text-sm font-medium mb-2 text-gray-700 dark:text-slate-300">
+                    Pilih Mode Simulasi:
+                  </label>
+                  <div className="max-h-48 overflow-y-auto">
+                    <div className="grid grid-cols-2 gap-2 mb-3">
+                      {[
+                        { value: "all", label: "Semua (TWK, TIU, TKP)" },
+                        { value: "twk", label: "TWK" },
+                        { value: "tiu", label: "TIU" },
+                        { value: "tkp", label: "TKP" }
+                      ].map(mode => (
+                        <button
+                          key={mode.value}
+                          onClick={() => setImportJsonMode(mode.value)}
+                          className={`px-4 py-2 rounded-lg border font-medium text-sm transition ${
+                            importJsonMode === mode.value
+                              ? "bg-blue-600 text-white border-blue-600"
+                              : "border-gray-300 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800"
+                          }`}
+                        >
+                          {mode.label}
+                        </button>
+                      ))}
+                    </div>
+                    
+                    <div className="border-t border-gray-200 dark:border-slate-700 pt-3">
+                      <p className="text-xs font-semibold text-gray-600 dark:text-slate-400 mb-2">Simulasi Individual:</p>
+                      <div className="grid grid-cols-5 gap-2">
+                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
+                          <button
+                            key={`simulasi-${num}`}
+                            onClick={() => setImportJsonMode(`simulasi-${num}`)}
+                            className={`px-3 py-2 rounded-lg border font-medium text-xs transition ${
+                              importJsonMode === `simulasi-${num}`
+                                ? "bg-indigo-600 text-white border-indigo-600"
+                                : "border-gray-300 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800"
+                            }`}
+                          >
+                            S{num}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Info */}
+                <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg p-3">
+                  <p className="text-xs text-blue-900 dark:text-blue-200">
+                    💡 Pilih mode untuk menentukan di mana soal akan disimpan:
+                    <br/>
+                    • Semua/TWK/TIU/TKP: Disimpan ke Bank Soal Utama (dipakai semua simulasi)
+                    <br/>
+                    • Simulasi 1-10: Disimpan ke penyimpanan khusus simulasi tersebut
+                  </p>
+                </div>
+
+                {/* File Upload */}
+                <div className="border-2 border-dashed border-gray-300 dark:border-slate-700 rounded-lg p-6 text-center">
+                  <input
+                    ref={jsonFileInputRef}
+                    type="file"
+                    accept="application/json"
+                    className="hidden"
+                    onChange={handleJsonFileChange}
+                  />
+                  <button
+                    onClick={handleClickJsonFileInput}
+                    className="px-6 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 text-sm"
+                  >
+                    📁 Pilih File JSON
+                  </button>
+                  <p className="text-xs text-gray-500 dark:text-slate-400 mt-2">
+                    atau drag & drop file JSON di sini
+                  </p>
+                </div>
+
+                {/* Format Info */}
+                <div className="bg-gray-50 dark:bg-slate-800 rounded-lg p-3">
+                  <p className="text-xs font-medium text-gray-700 dark:text-slate-300 mb-2">Format JSON yang diharapkan:</p>
+                  <pre className="text-[10px] bg-white dark:bg-slate-900 p-2 rounded overflow-auto max-h-40">
+{`[
+  {
+    "id": 1,
+    "category": "TWK",
+    "question": "Pertanyaan di sini?",
+    "options": [
+      {"id": "A", "text": "Opsi A", "score": 5},
+      {"id": "B", "text": "Opsi B", "score": 0},
+      ...
+    ]
+  },
+  ...
+]`}
+                  </pre>
+                </div>
+              </div>
+
+              <div className="border-t border-gray-200 dark:border-slate-800 p-4 flex items-center justify-end gap-2">
+                <button
+                  onClick={() => setShowImportJsonModal(false)}
+                  className="px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-700 text-sm font-medium hover:bg-gray-50 dark:hover:bg-slate-800"
+                >
+                  Batal
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* MODAL UBAH ROLE */}
+        {showChangeRoleModal && selectedUserForRole && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+            <div className="bg-white dark:bg-slate-900 rounded-lg p-6 max-w-md w-full">
+              <h2 className="text-lg font-bold mb-4">Ubah Role User</h2>
+              
+              <div className="mb-4">
+                <p className="text-sm text-gray-600 dark:text-slate-300 mb-2">
+                  <strong>User:</strong> {selectedUserForRole.name} ({selectedUserForRole.email})
+                </p>
+                <p className="text-sm text-gray-600 dark:text-slate-300 mb-4">
+                  <strong>Role saat ini:</strong> {selectedUserForRole.role}
+                </p>
+
+                <label className="block text-sm font-semibold mb-2">Role baru:</label>
+                <select
+                  value={newRole}
+                  onChange={(e) => setNewRole(e.target.value)}
+                  className="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm"
+                >
+                  <option value="user">User (Peserta)</option>
+                  <option value="admin">Admin (Pengelola)</option>
+                </select>
+              </div>
+
+              <div className="flex gap-3 justify-end">
+                <button
+                  onClick={() => setShowChangeRoleModal(false)}
+                  className="px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-700 text-sm hover:bg-gray-50 dark:hover:bg-slate-800"
+                >
+                  Batal
+                </button>
+                <button
+                  onClick={handleSaveChangeRole}
+                  className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700"
+                >
+                  Simpan
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );

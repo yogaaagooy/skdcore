@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import ThemeToggle from "../components/ThemeToggle";
-import logo from "../assets/skdcore-logo.png";
+import logo from "../assets/logo.png";
+import UserDropdown from "../components/UserDropdown";
 
 const HISTORY_KEY = "skdcore_simulasi_history_v1";
 const QUESTION_BANK_KEY = "skdcore_question_bank_v1";
@@ -48,6 +48,27 @@ const DEFAULT_QUESTIONS = [
   }
 ];
 
+// Fungsi cek jumlah attempt user untuk mode dan simulasi spesifik
+function getAttemptCountForMode(userEmail, mode, simulasiNum = null) {
+  if (typeof window === "undefined" || !userEmail) return 0;
+  try {
+    const raw = window.localStorage.getItem(HISTORY_KEY);
+    const history = raw ? JSON.parse(raw) : [];
+    if (!Array.isArray(history)) return 0;
+    
+    // Hitung attempt untuk email ini di mode ini
+    // Jika simulasiNum spesifik, filter juga berdasarkan simulasi_num
+    const attempts = history.filter(
+      (h) => h.userEmail === userEmail && 
+             h.mode === mode &&
+             (simulasiNum === null ? !h.simulasi_num : h.simulasi_num === simulasiNum)
+    );
+    return attempts.length;
+  } catch {
+    return 0;
+  }
+}
+
 // Timer BKN
 function getTotalTimeSeconds(mode) {
   const m = (mode || "all").toLowerCase();
@@ -58,8 +79,28 @@ function getTotalTimeSeconds(mode) {
 }
 
 // Load bank soal dari localStorage
-function loadQuestionBank() {
+function loadQuestionBank(simulasiNum = null) {
   if (typeof window === "undefined") return DEFAULT_QUESTIONS;
+  
+  // Jika ada simulasi number spesifik, HANYA gunakan soal khusus simulasi itu
+  if (simulasiNum !== null) {
+    try {
+      const key = `skdcore_simulasi_${simulasiNum}_questions_v1`;
+      const raw = window.localStorage.getItem(key);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parsed;
+        }
+      }
+      // Jika tidak ada soal khusus simulasi ini, return array kosong (bukan default)
+      return [];
+    } catch {
+      return [];
+    }
+  }
+  
+  // Gunakan bank soal utama hanya jika bukan simulasi spesifik
   try {
     const raw = window.localStorage.getItem(QUESTION_BANK_KEY);
     if (!raw) return DEFAULT_QUESTIONS;
@@ -81,24 +122,49 @@ function buildQuestionBank(allQuestions) {
   };
 }
 
+const PAGE_SIZE = 10; // jumlah nomor yang tampil per blok
+
 export default function Simulasi() {
-  const { mode } = useParams();
+  const { mode, num } = useParams();
   const currentMode = (mode || "all").toLowerCase();
+  const simulasiNum = num ? parseInt(num, 10) : null;
   const navigate = useNavigate();
 
-  // Ambil soal (import dulu, kalau nggak ada pakai default)
-  const allQuestions = loadQuestionBank();
+  // Ambil soal (dari simulasi spesifik jika ada, atau dari bank utama)
+  const allQuestions = loadQuestionBank(simulasiNum);
   const QUESTION_BANK = buildQuestionBank(allQuestions);
   const QUESTION_SET = QUESTION_BANK[currentMode] || QUESTION_BANK.all;
 
-  const storageKey = `skdcore_simulasi_state_v1_${currentMode}`;
+  // Gunakan key yang berbeda jika dari simulasi spesifik
+  const storageKey = simulasiNum 
+    ? `skdcore_simulasi_sim${simulasiNum}_state_v1_${currentMode}`
+    : `skdcore_simulasi_state_v1_${currentMode}`;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
-  const [timeLeft, setTimeLeft] = useState(() => getTotalTimeSeconds(currentMode));
+  const [timeLeft, setTimeLeft] = useState(() =>
+    getTotalTimeSeconds(currentMode)
+  );
 
   const currentQuestion = QUESTION_SET[currentIndex];
   const answeredCount = Object.keys(answers).length;
+
+  const totalQuestions = QUESTION_SET.length;
+  const currentBlock = Math.floor(currentIndex / PAGE_SIZE);
+  const maxBlock = Math.floor((totalQuestions - 1) / PAGE_SIZE);
+  const start = currentBlock * PAGE_SIZE;
+  const end = Math.min(start + PAGE_SIZE, totalQuestions);
+
+  // user untuk dropdown
+  let currentUser = null;
+  if (typeof window !== "undefined") {
+    try {
+      const rawUser = window.localStorage.getItem("skdcore_current_user");
+      if (rawUser) currentUser = JSON.parse(rawUser);
+    } catch {
+      currentUser = null;
+    }
+  }
 
   // Load state dari localStorage
   useEffect(() => {
@@ -177,7 +243,9 @@ export default function Simulasi() {
   }
 
   function handleNext() {
-    setCurrentIndex((prev) => Math.min(prev + 1, QUESTION_SET.length - 1));
+    setCurrentIndex((prev) =>
+      Math.min(prev + 1, QUESTION_SET.length - 1)
+    );
   }
 
   function handleJumpTo(index) {
@@ -190,7 +258,9 @@ export default function Simulasi() {
     QUESTION_SET.forEach((q) => {
       const selectedId = answers[q.id];
       if (!selectedId) return;
-      const selectedOption = q.options.find((opt) => opt.id === selectedId);
+      const selectedOption = q.options.find(
+        (opt) => opt.id === selectedId
+      );
       if (!selectedOption) return;
       result[q.category] += selectedOption.score;
     });
@@ -210,8 +280,8 @@ export default function Simulasi() {
   function handleFinish(auto = false) {
     const result = calculateResult();
     const answered = Object.keys(answers).length;
-    const totalQuestions = QUESTION_SET.length;
-    const unanswered = totalQuestions - answered;
+    const totalQuestionsLocal = QUESTION_SET.length;
+    const unanswered = totalQuestionsLocal - answered;
 
     if (!auto && timeLeft > 0 && unanswered > 0) {
       const ok = window.confirm(
@@ -224,7 +294,9 @@ export default function Simulasi() {
       if (typeof window !== "undefined") {
         let userEmail = null;
         try {
-          const rawUser = window.localStorage.getItem("skdcore_current_user");
+          const rawUser = window.localStorage.getItem(
+            "skdcore_current_user"
+          );
           if (rawUser) {
             const u = JSON.parse(rawUser);
             userEmail = u?.email || null;
@@ -240,13 +312,20 @@ export default function Simulasi() {
           date: new Date().toISOString(),
           result,
           answeredCount: answered,
-          totalQuestions,
+          totalQuestions: totalQuestionsLocal,
           mode: currentMode,
+          simulasi_num: simulasiNum,
           autoFinished: auto,
           userEmail
         };
-        const newHistory = [attempt, ...(Array.isArray(prev) ? prev : [])].slice(0, 50);
-        window.localStorage.setItem(HISTORY_KEY, JSON.stringify(newHistory));
+        const newHistory = [attempt, ...(Array.isArray(prev) ? prev : [])].slice(
+          0,
+          50
+        );
+        window.localStorage.setItem(
+          HISTORY_KEY,
+          JSON.stringify(newHistory)
+        );
         window.localStorage.removeItem(storageKey);
 
         // simpan detail terakhir
@@ -257,7 +336,10 @@ export default function Simulasi() {
           questions: QUESTION_SET,
           answers
         };
-        window.localStorage.setItem(LAST_DETAIL_KEY, JSON.stringify(detailPayload));
+        window.localStorage.setItem(
+          LAST_DETAIL_KEY,
+          JSON.stringify(detailPayload)
+        );
       }
     } catch (err) {
       console.error("Gagal simpan riwayat simulasi:", err);
@@ -274,14 +356,49 @@ export default function Simulasi() {
     });
   }
 
-  // Kalau benar-benar nggak ada soal untuk mode ini
-  if (!currentQuestion) {
+  // Cek apakah user sudah mencapai batas 3 kali simulasi (admin tidak ada batas)
+  const attemptCount = currentUser 
+    ? getAttemptCountForMode(currentUser.email, currentMode, simulasiNum)
+    : 0;
+
+  if (currentUser && currentUser.role !== "admin" && attemptCount >= 3) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-950 px-4">
         <div className="bg-white dark:bg-slate-900 dark:border-slate-800 border border-gray-200 rounded-2xl p-6 max-w-md w-full text-center">
-          <h1 className="text-lg font-bold mb-2">Belum ada soal untuk mode ini</h1>
+          <div className="text-4xl mb-4">🚫</div>
+          <h1 className="text-lg font-bold mb-2">Batas Simulasi Tercapai</h1>
           <p className="text-sm text-gray-600 dark:text-slate-300 mb-4">
-            Mode: <span className="font-semibold uppercase">{currentMode}</span>
+            Anda sudah menyelesaikan simulasi <span className="font-bold">{currentMode.toUpperCase()}</span> sebanyak <span className="font-bold">3 kali</span>.
+          </p>
+          <p className="text-xs text-gray-500 dark:text-slate-400 mb-6">
+            Setiap user hanya diizinkan mengulang simulasi maksimal 3 kali per mode.
+          </p>
+          <button
+            onClick={() => navigate("/dashboard")}
+            className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700"
+          >
+            Kembali ke Dashboard
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // Kalau benar-benar nggak ada soal untuk mode ini
+  if (!currentQuestion) {
+    const simulasiLabel = simulasiNum ? `Simulasi ${simulasiNum}` : `mode ${currentMode.toUpperCase()}`;
+    const message = simulasiNum 
+      ? `Belum ada soal yang di-import untuk Simulasi ${simulasiNum}. Hubungi admin untuk mengupload soal.`
+      : `Belum ada soal untuk mode ${currentMode.toUpperCase()}.`;
+    
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-950 px-4">
+        <div className="bg-white dark:bg-slate-900 dark:border-slate-800 border border-gray-200 rounded-2xl p-6 max-w-md w-full text-center">
+          <h1 className="text-lg font-bold mb-2">
+            Soal belum tersedia
+          </h1>
+          <p className="text-sm text-gray-600 dark:text-slate-300 mb-4">
+            {message}
           </p>
           <button
             onClick={() => navigate("/dashboard")}
@@ -310,31 +427,48 @@ export default function Simulasi() {
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           <div className="flex flex-col gap-0.5">
             <div className="flex items-center gap-2">
-              <img src={logo} alt="SKDCore" className="h-10 w-auto object-contain" />
-              
+              <img
+                src={logo}
+                alt="SKDCore"
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <span className="text-[11px] text-gray-500 dark:text-slate-400">
               {modeLabel}
             </span>
           </div>
-          <div className="flex items-center gap-4 text-xs">
+          <div className="flex items-center gap-6 text-xs">
             <div className="flex flex-col items-end">
-              <span className="text-gray-500 dark:text-slate-400">Timer</span>
+              <span className="text-gray-500 dark:text-slate-400">
+                Timer
+              </span>
               <span
                 className={`font-semibold ${
-                  timeLeft <= 60 ? "text-red-500" : "text-gray-800 dark:text-slate-100"
+                  timeLeft <= 60
+                    ? "text-red-500"
+                    : "text-gray-800 dark:text-slate-100"
                 }`}
               >
                 {formatTime(timeLeft)}
               </span>
             </div>
             <div className="flex flex-col items-end">
-              <span className="text-gray-500 dark:text-slate-400">Terjawab</span>
+              <span className="text-gray-500 dark:text-slate-400">
+                Terjawab
+              </span>
               <span className="font-semibold text-gray-800 dark:text-slate-100">
                 {answeredCount} / {QUESTION_SET.length}
               </span>
             </div>
-            <ThemeToggle />
+            <UserDropdown
+              user={currentUser}
+              onLogout={() => {
+                if (typeof window !== "undefined") {
+                  window.localStorage.removeItem("skdcore_current_user");
+                }
+                navigate("/login");
+              }}
+            />
           </div>
         </div>
       </header>
@@ -345,7 +479,8 @@ export default function Simulasi() {
         <div className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-4">
           <div className="flex justify-between items-center mb-3 text-xs text-gray-600 dark:text-slate-300">
             <span>
-              Soal {currentIndex + 1} dari {QUESTION_SET.length} • {currentQuestion.category}
+              Soal {currentIndex + 1} dari {QUESTION_SET.length} •{" "}
+              {currentQuestion.category}
             </span>
             {timeLeft <= 0 && (
               <span className="text-red-500 font-semibold">
@@ -354,29 +489,64 @@ export default function Simulasi() {
             )}
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            {QUESTION_SET.map((q, index) => {
-              const isCurrent = index === currentIndex;
-              const isAnswered = !!answers[q.id];
+          <div className="flex items-center gap-2">
+            {/* Panah kiri: blok sebelumnya */}
+            <button
+              type="button"
+              onClick={() => {
+                if (currentBlock > 0) {
+                  const firstIndex = (currentBlock - 1) * PAGE_SIZE;
+                  setCurrentIndex(firstIndex);
+                }
+              }}
+              disabled={currentBlock === 0}
+              className="w-8 h-8 rounded-full border text-sm flex items-center justify-center disabled:opacity-40"
+            >
+              ‹
+            </button>
 
-              return (
-                <button
-                  key={q.id}
-                  type="button"
-                  onClick={() => handleJumpTo(index)}
-                  className={`w-8 h-8 text-xs rounded-full border flex items-center justify-center
-                    ${
-                      isCurrent
-                        ? "border-blue-600 bg-blue-50 text-blue-700 font-semibold dark:border-blue-400 dark:bg-slate-800 dark:text-blue-200"
-                        : isAnswered
-                        ? "border-emerald-500 bg-emerald-50 text-emerald-700 dark:border-emerald-400 dark:bg-slate-800 dark:text-emerald-200"
-                        : "border-gray-300 bg-white text-gray-600 hover:bg-gray-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
-                    }`}
-                >
-                  {index + 1}
-                </button>
-              );
-            })}
+            {/* Nomor soal dalam blok aktif (maks 10) */}
+            <div className="flex flex-wrap gap-2">
+              {QUESTION_SET.map((q, index) => {
+                if (index < start || index >= end) return null;
+
+                const isCurrent = index === currentIndex;
+                const isAnswered = !!answers[q.id];
+
+                return (
+                  <button
+                    key={q.id}
+                    type="button"
+                    onClick={() => handleJumpTo(index)}
+                    className={`w-8 h-8 text-xs rounded-full border flex items-center justify-center
+                      ${
+                        isCurrent
+                          ? "border-blue-600 bg-blue-50 text-blue-700 font-semibold dark:border-blue-400 dark:bg-slate-800 dark:text-blue-200"
+                          : isAnswered
+                          ? "border-emerald-500 bg-emerald-50 text-emerald-700 dark:border-emerald-400 dark:bg-slate-800 dark:text-emerald-200"
+                          : "border-gray-300 bg-white text-gray-600 hover:bg-gray-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+                      }`}
+                  >
+                    {index + 1}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Panah kanan: blok berikutnya */}
+            <button
+              type="button"
+              onClick={() => {
+                if (currentBlock < maxBlock) {
+                  const firstIndex = (currentBlock + 1) * PAGE_SIZE;
+                  setCurrentIndex(firstIndex);
+                }
+              }}
+              disabled={currentBlock === maxBlock}
+              className="w-8 h-8 rounded-full border text-sm flex items-center justify-center disabled:opacity-40"
+            >
+              ›
+            </button>
           </div>
 
           <p className="mt-2 text-[11px] text-gray-500 dark:text-slate-400">
@@ -447,10 +617,12 @@ export default function Simulasi() {
               onClick={() => handleFinish(false)}
               className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700"
             >
-              Lihat Hasil
+              Selesaikan Simulasi
             </button>
           </div>
 
+          {/* Reset simulasi disembunyikan */}
+          {/*
           <div className="pt-2">
             <button
               type="button"
@@ -460,6 +632,7 @@ export default function Simulasi() {
               Reset simulasi
             </button>
           </div>
+          */}
         </div>
       </main>
     </div>

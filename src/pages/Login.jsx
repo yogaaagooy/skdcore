@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import logo from "../assets/skdcore-logo.png";
+import logo from "../assets/logo.png";
 import { loginUser, getCurrentUser } from "../utils/auth";
 
 export default function Login() {
@@ -86,6 +86,13 @@ export default function Login() {
           Belum punya akun?{" "}
           <Link to="/register" className="text-blue-600 dark:text-blue-400 hover:underline">
             Daftar dulu
+          </Link>
+        </p>
+
+        <p className="mt-2 text-xs text-gray-600 dark:text-slate-300 text-center">
+          Lupa password?{" "}
+          <Link to="/forgot-password" className="text-blue-600 dark:text-blue-400 hover:underline">
+            Reset di sini
           </Link>
         </p>
 

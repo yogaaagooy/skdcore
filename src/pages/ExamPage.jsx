@@ -4,6 +4,8 @@ import { useParams, Link } from "react-router-dom";
 import { getExamById, saveExamResult } from "../services/exam";
 import { auth } from "../services/firebase";
 
+import { useNavigate } from "react-router-dom";
+
 const PASSING_TIU = 80;
 const PASSING_TWK = 65;
 const PASSING_TKP = 166;
