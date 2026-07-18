@@ -377,7 +377,7 @@ export default function Simulasi() {
             onClick={() => navigate("/dashboard")}
             className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700"
           >
-            Kembali ke Dashboard
+            Beranda
           </button>
         </div>
       </div>
@@ -404,7 +404,7 @@ export default function Simulasi() {
             onClick={() => navigate("/dashboard")}
             className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700"
           >
-            Kembali ke Dashboard
+            Beranda
           </button>
         </div>
       </div>
@@ -610,7 +610,7 @@ export default function Simulasi() {
               onClick={() => navigate("/dashboard")}
               className="px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-700 text-sm hover:bg-gray-50 dark:hover:bg-slate-800"
             >
-              Kembali ke Dashboard
+              Beranda
             </button>
             <button
               type="button"
