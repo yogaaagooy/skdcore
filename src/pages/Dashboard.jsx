@@ -69,7 +69,7 @@ export default function Dashboard() {
             <h2 className="mt-4 text-2xl font-bold">Simulasi SKD Lengkap</h2>
             <p className="mt-2 max-w-xl text-sm leading-6 text-blue-100">110 soal TWK, TIU, dan TKP dengan waktu 100 menit.</p>
           </div>
-          <button onClick={() => navigate("/simulasi/all")} className="mt-5 w-full rounded-xl bg-white px-5 py-3 text-sm font-bold text-blue-700 shadow-sm transition hover:bg-blue-50 sm:mt-0 sm:w-auto">
+          <button onClick={() => navigate("/simulasi")} className="mt-5 w-full rounded-xl bg-white px-5 py-3 text-sm font-bold text-blue-700 shadow-sm transition hover:bg-blue-50 sm:mt-0 sm:w-auto">
             Mulai sekarang →
           </button>
         </section>
@@ -90,7 +90,7 @@ export default function Dashboard() {
           <div className="mb-3"><h2 className="text-lg font-bold">Latihan per bidang</h2><p className="text-xs text-slate-500">Fokus pada materi tertentu.</p></div>
           <div className="grid gap-3 sm:grid-cols-3">
             {modes.map((mode) => (
-              <button key={mode.id} onClick={() => navigate(`/simulasi/${mode.id}`)} className="rounded-2xl border border-slate-200 bg-white p-5 text-left transition hover:-translate-y-0.5 hover:border-blue-400 hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+              <button key={mode.id} onClick={() => navigate("/simulasi")} className="rounded-2xl border border-slate-200 bg-white p-5 text-left transition hover:-translate-y-0.5 hover:border-blue-400 hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
                 <div className="flex items-start justify-between"><span className="text-lg font-extrabold text-blue-600">{mode.label}</span><span className="text-slate-400">→</span></div>
                 <p className="mt-3 text-sm font-semibold">{mode.description}</p><p className="mt-1 text-xs text-slate-500">{mode.detail}</p>
                 <p className="mt-4 border-t border-slate-100 pt-3 text-xs text-slate-500 dark:border-slate-800">Rata-rata: <strong className="text-slate-900 dark:text-white">{summary[mode.label]}</strong></p>
