@@ -9,6 +9,8 @@ import HasilSimulasi from "./pages/HasilSimulasi";
 import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
 import AdminDashboard from "./pages/AdminDashboard";
+import SimpleAdminDashboard from "./pages/SimpleAdminDashboard";
+import SimulationMenu from "./pages/SimulationMenu";
 import { getCurrentUser } from "./utils/auth";
 
 function RequireAuth({ children, roles }) {
@@ -52,7 +54,7 @@ function App() {
         path="/admin"
         element={
           <RequireAuth roles={["admin"]}>
-            <AdminDashboard />
+            <SimpleAdminDashboard />
           </RequireAuth>
         }
       />
@@ -61,7 +63,7 @@ function App() {
         path="/simulasi"
         element={
           <RequireAuth roles={["user", "admin"]}>
-            <Simulasi />
+            <SimulationMenu />
           </RequireAuth>
         }
       />
