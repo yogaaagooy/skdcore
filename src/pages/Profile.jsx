@@ -12,7 +12,7 @@ export default function Profile() {
   const [historyCount, setHistoryCount] = useState(0);
   const [lastResult, setLastResult] = useState(null);
   const [nameInput, setNameInput] = useState("");
-  const [asalInput, setAsalInput] = useState("");
+  const [instansiInput, setInstansiInput] = useState("");
 
   useEffect(() => {
     const u = getCurrentUser();
@@ -22,7 +22,7 @@ export default function Profile() {
     }
     setUser(u);
     setNameInput(u.name || "");
-    setAsalInput(u.asal || "");
+    setInstansiInput(u.instansi || "");
 
     if (typeof window === "undefined") return;
     try {
@@ -52,10 +52,10 @@ export default function Profile() {
     const users = getUsers();
     const idx = users.findIndex((u) => u.id === user.id);
     if (idx !== -1) {
-      users[idx] = { ...users[idx], name: newName, asal: asalInput.trim() };
+      users[idx] = { ...users[idx], name: newName, instansi: instansiInput.trim() };
       saveUsers(users);
     }
-    const updatedUser = { ...user, name: newName, asal: asalInput.trim() };
+    const updatedUser = { ...user, name: newName, instansi: instansiInput.trim() };
     setCurrentUser(updatedUser);
     setUser(updatedUser);
   }
@@ -84,8 +84,8 @@ export default function Profile() {
           <h2 className="text-xl font-bold mb-3">Data akun</h2>
           <form onSubmit={handleSaveName} className="space-y-4 max-w-md">
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-slate-200 mb-1">Asal daerah/instansi</label>
-              <input value={asalInput} onChange={(e) => setAsalInput(e.target.value)} className="w-full border border-gray-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Contoh: Bandar Lampung" />
+              <label className="block text-sm font-medium text-gray-700 dark:text-slate-200 mb-1">Instansi</label>
+              <input value={instansiInput} onChange={(e) => setInstansiInput(e.target.value)} className="w-full border border-gray-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Nama instansi" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-slate-200 mb-1">
