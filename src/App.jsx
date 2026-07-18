@@ -8,7 +8,6 @@ import Simulasi from "./pages/Simulasi";
 import HasilSimulasi from "./pages/HasilSimulasi";
 import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
-import AdminDashboard from "./pages/AdminDashboard";
 import SimpleAdminDashboard from "./pages/SimpleAdminDashboard";
 import SimulationMenu from "./pages/SimulationMenu";
 import { getCurrentUser } from "./utils/auth";
