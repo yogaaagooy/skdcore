@@ -3,9 +3,9 @@ import Navbar from "../components/Navbar";
 
 const modes = [
   { id: "all", label: "SKD Lengkap", detail: "110 soal · 100 menit", description: "TWK, TIU, dan TKP dalam satu sesi.", color: "blue" },
-  { id: "twk", label: "TWK", detail: "28 soal · 28 menit", description: "Tes Wawasan Kebangsaan.", color: "emerald" },
-  { id: "tiu", label: "TIU", detail: "32 soal · 32 menit", description: "Tes Intelegensia Umum.", color: "violet" },
-  { id: "tkp", label: "TKP", detail: "41 soal · 41 menit", description: "Tes Karakteristik Pribadi.", color: "amber" },
+  { id: "twk", label: "TWK", detail: "30 soal · latihan 27 menit", description: "Tes Wawasan Kebangsaan.", color: "emerald" },
+  { id: "tiu", label: "TIU", detail: "35 soal · latihan 32 menit", description: "Tes Intelegensia Umum.", color: "violet" },
+  { id: "tkp", label: "TKP", detail: "45 soal · latihan 41 menit", description: "Tes Karakteristik Pribadi.", color: "amber" },
 ];
 
 export default function SimulationMenu() {
@@ -13,7 +13,7 @@ export default function SimulationMenu() {
   return <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
     <Navbar />
     <main className="mx-auto max-w-5xl px-4 py-7 sm:py-10">
-      <div className="mb-6"><p className="text-xs font-bold uppercase tracking-wider text-blue-600">Pilih simulasi</p><h1 className="mt-1 text-2xl font-bold">Mau latihan apa hari ini?</h1><p className="mt-1 text-sm text-slate-500">Simulasi baru dimulai setelah kamu memilih mode dan menekan tombol mulai.</p></div>
+      <div className="mb-6"><p className="text-xs font-bold uppercase tracking-wider text-blue-600">Pilih simulasi</p><h1 className="mt-1 text-2xl font-bold">Mau latihan apa hari ini?</h1><p className="mt-1 text-sm text-slate-500">Format BKN: 30 TWK, 35 TIU, dan 45 TKP dalam 100 menit. Waktu mode per bidang merupakan pembagian waktu latihan.</p></div>
       <div className="grid gap-4 sm:grid-cols-2">
         {modes.map((mode) => <article key={mode.id} className={`rounded-2xl border bg-white p-5 dark:bg-slate-900 ${mode.id === "all" ? "border-blue-400 shadow-md shadow-blue-100 dark:shadow-none" : "border-slate-200 dark:border-slate-800"}`}>
           <div className="flex items-start justify-between"><div><span className={`inline-block rounded-full px-2.5 py-1 text-[10px] font-bold uppercase ${mode.id === "all" ? "bg-blue-100 text-blue-700" : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300"}`}>{mode.id === "all" ? "Direkomendasikan" : "Latihan bidang"}</span><h2 className="mt-3 text-xl font-bold">{mode.label}</h2><p className="mt-1 text-sm text-slate-500">{mode.description}</p></div><span className="text-2xl text-blue-600">▣</span></div>
