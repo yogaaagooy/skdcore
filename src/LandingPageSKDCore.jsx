@@ -8,16 +8,13 @@ export default function LandingPageSKDCore() {
       {/* Navbar */}
       <header className="border-b border-gray-200 bg-white/80 backdrop-blur dark:bg-slate-900/80 dark:border-slate-800">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center" aria-label="SKDCore Beranda">
             <img
-              src={logo.png}
+              src={logo}
               alt="SKDCore"
-              className="h-7 w-auto object-contain"
+              className="h-10 w-auto max-w-[145px] object-contain"
             />
-            <span className="font-bold text-xl text-blue-600 dark:text-blue-400">
-              SKDCore
-            </span>
-          </div>
+          </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             <a href="#features" className="hover:text-blue-600 dark:hover:text-blue-400">
               Fitur
