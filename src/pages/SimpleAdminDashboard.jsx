@@ -50,6 +50,6 @@ export default function SimpleAdminDashboard() {
       {message&&<div className={`mt-4 rounded-xl p-3 text-sm ${message.startsWith("✓")?"bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-300":"bg-red-50 text-red-700 dark:bg-red-950/30 dark:text-red-300"}`}>{message}</div>}
       <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center"><button disabled={!preview.length} onClick={importQuestions} className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white disabled:cursor-not-allowed disabled:opacity-40">Simpan {preview.length||""} soal</button><span className="text-xs text-slate-500">Saat ini: <strong>{existing.length} soal</strong></span>{existing.length>0&&<button onClick={exportQuestions} className="text-xs font-semibold text-blue-600 sm:ml-auto">Download cadangan</button>}</div>
     </section>
-    <button onClick={()=>navigate("/dashboard")} className="mt-5 text-sm font-semibold text-slate-500 hover:text-blue-600">← Kembali ke beranda</button>
+    <button onClick={()=>navigate("/dashboard")} className="mt-5 text-sm font-semibold text-slate-500 hover:text-blue-600">← Beranda</button>
   </main></div>;
 }
