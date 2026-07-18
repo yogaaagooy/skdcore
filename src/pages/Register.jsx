@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { registerUser, getCurrentUser } from "../utils/auth";
 
 export default function Register() {
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -11,11 +13,10 @@ export default function Register() {
     const name = formData.get("name")?.toString().trim();
     const email = formData.get("email")?.toString().trim();
     const password = formData.get("password")?.toString().trim();
-    const whatsapp = formData.get("whatsapp")?.toString().trim();
-    const asal = formData.get("asal")?.toString().trim();
+    const instansi = formData.get("instansi")?.toString().trim();
 
     try {
-      registerUser({ name, email, password, whatsapp, asal, role: "user" });
+      registerUser({ name, email, password, instansi, role: "user" });
       navigate("/dashboard");
     } catch (err) {
       alert(err.message || "Gagal daftar.");
@@ -68,35 +69,19 @@ export default function Register() {
             <label className="block text-sm font-medium text-gray-700 dark:text-slate-200 mb-1">
               Password
             </label>
-            <input
+            <div className="relative"><input
               name="password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               required
               minLength="4"
-              className="w-full border border-gray-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full border border-gray-300 dark:border-slate-700 rounded-lg px-3 py-2 pr-12 text-sm bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Password minimal 4 karakter"
-            />
+            /><button type="button" onClick={() => setShowPassword((value) => !value)} className="absolute inset-y-0 right-0 px-3 text-lg text-gray-500 hover:text-blue-600" aria-label={showPassword ? "Sembunyikan password" : "Tampilkan password"}>{showPassword ? "◉" : "◎"}</button></div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-slate-200 mb-1">Asal daerah/instansi</label>
-            <input name="asal" type="text" required className="w-full border border-gray-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Contoh: Bandar Lampung" />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-slate-200 mb-1">
-              Nomor WhatsApp
-            </label>
-            <input
-              name="whatsapp"
-              type="tel"
-              required
-              className="w-full border border-gray-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Contoh: 081234567890"
-            />
-            <p className="text-xs text-gray-500 dark:text-slate-400 mt-1">
-              Untuk verifikasi jika lupa password
-            </p>
+            <label className="block text-sm font-medium text-gray-700 dark:text-slate-200 mb-1">Instansi</label>
+            <input name="instansi" type="text" required className="w-full border border-gray-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Contoh: Kementerian Imigrasi dan Pemasyarakatan" />
           </div>
 
           <button
