@@ -72,9 +72,9 @@ function getAttemptCountForMode(userEmail, mode, simulasiNum = null) {
 // Timer BKN
 function getTotalTimeSeconds(mode) {
   const m = (mode || "all").toLowerCase();
-  if (m === "twk") return 27 * 60;
-  if (m === "tiu") return 32 * 60;
-  if (m === "tkp") return 41 * 60;
+  if (m === "twk") return 25 * 60;
+  if (m === "tiu") return 30 * 60;
+  if (m === "tkp") return 35 * 60;
   return 100 * 60; // full SKD
 }
 
