@@ -57,11 +57,7 @@ export default function Navbar() {
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur dark:border-slate-800 dark:bg-slate-900/95">
         <div className="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6">
           <Link to="/dashboard" className="flex shrink-0 items-center gap-2.5" aria-label="SKDCore Beranda">
-            <img src={logo} alt="" className="h-9 w-9 rounded-xl object-contain" />
-            <div className="leading-tight">
-              <strong className="block text-base text-slate-900 dark:text-white">SKD<span className="text-blue-600">Core</span></strong>
-              <small className="hidden text-[10px] text-slate-500 sm:block">Simulasi SKD CPNS</small>
-            </div>
+            <img src={logo} alt="SKDCore" className="h-9 w-auto max-w-[132px] object-contain" />
           </Link>
 
           <nav className="mx-auto hidden h-full items-center gap-1 md:flex" aria-label="Menu utama">
