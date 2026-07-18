@@ -6,9 +6,9 @@ import { getCurrentUser } from "../utils/auth";
 const HISTORY_KEY = "skdcore_simulasi_history_v1";
 
 const modes = [
-  { id: "twk", label: "TWK", description: "Wawasan Kebangsaan", detail: "28 soal · 28 menit", color: "blue" },
-  { id: "tiu", label: "TIU", description: "Intelegensia Umum", detail: "32 soal · 32 menit", color: "violet" },
-  { id: "tkp", label: "TKP", description: "Karakteristik Pribadi", detail: "41 soal · 41 menit", color: "amber" },
+  { id: "twk", label: "TWK", description: "Wawasan Kebangsaan", detail: "30 soal · 27 menit", color: "blue" },
+  { id: "tiu", label: "TIU", description: "Intelegensia Umum", detail: "35 soal · 32 menit", color: "violet" },
+  { id: "tkp", label: "TKP", description: "Karakteristik Pribadi", detail: "45 soal · 41 menit", color: "amber" },
 ];
 
 export default function Dashboard() {
