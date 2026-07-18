@@ -1,10 +1,7 @@
 // src/pages/HasilSimulasi.jsx
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import ThemeToggle from "../components/ThemeToggle";
-import logo from "../assets/logo.png";
-
-import UserDropdown from "../components/UserDropdown";
+import Navbar from "../components/Navbar";
 
 
 const HISTORY_KEY = "skdcore_simulasi_history_v1";
@@ -92,25 +89,30 @@ export default function HasilSimulasi() {
   const answersMap = detail?.answers || {};
   const hasReview = questions.length > 0;
 
+  if (!result) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-slate-950 dark:text-slate-50">
+        <Navbar />
+        <main className="mx-auto max-w-3xl px-4 py-12">
+          <section className="rounded-3xl border border-gray-200 bg-white px-6 py-12 text-center dark:border-slate-800 dark:bg-slate-900">
+            <div className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-blue-50 text-3xl text-blue-600 dark:bg-blue-950/40">◷</div>
+            <h1 className="mt-5 text-2xl font-bold">Belum ada hasil simulasi</h1>
+            <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-gray-500 dark:text-slate-400">
+              Selesaikan satu simulasi terlebih dahulu. Nilai dan pembahasan akan muncul di halaman ini.
+            </p>
+            <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+              <button onClick={() => navigate("/dashboard")} className="rounded-xl border border-gray-300 px-5 py-2.5 text-sm font-semibold hover:bg-gray-50 dark:border-slate-700 dark:hover:bg-slate-800">Beranda</button>
+              <button onClick={() => navigate("/simulasi")} className="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white hover:bg-blue-700">Pilih simulasi</button>
+            </div>
+          </section>
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 dark:text-slate-50">
-      {/* Header */}
-      <header className="bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-gray-200 dark:border-slate-800 shadow-sm dark:shadow-none">
-        <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <img src={logo} alt="SKDCore" className="h-7 w-auto object-contain" />
-            <div className="flex flex-col leading-tight">
-              <span className="font-bold text-lg text-blue-600 dark:text-blue-400">
-                SKDCore – Hasil Simulasi
-              </span>
-              <span className="text-[11px] text-gray-500 dark:text-slate-400">
-                Ringkasan nilai TWK, TIU, dan TKP kamu.
-              </span>
-            </div>
-          </div>
-          <ThemeToggle />
-        </div>
-      </header>
+      <Navbar />
 
       {/* Body */}
       <main className="max-w-5xl mx-auto px-4 py-6 space-y-6">
@@ -236,7 +238,7 @@ export default function HasilSimulasi() {
             </button>
             <button
               type="button"
-              onClick={() => navigate("/simulasi")}
+              onClick={() => navigate("/simulasi/all")}
               className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700"
             >
               Ulangi Simulasi Penuh
