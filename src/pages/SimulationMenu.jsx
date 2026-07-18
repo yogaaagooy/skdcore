@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
@@ -10,6 +11,13 @@ const modes = [
 
 export default function SimulationMenu() {
   const navigate = useNavigate();
+  const [selected, setSelected] = useState(null);
+
+  function confirmStart() {
+    if (!selected) return;
+    navigate(selected.path);
+  }
+
   return <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
     <Navbar />
     <main className="mx-auto max-w-5xl px-4 py-7 sm:py-10">
@@ -17,10 +25,19 @@ export default function SimulationMenu() {
       <div className="grid gap-4 sm:grid-cols-2">
         {modes.map((mode) => <article key={mode.id} className={`rounded-2xl border bg-white p-5 dark:bg-slate-900 ${mode.id === "all" ? "border-blue-400 shadow-md shadow-blue-100 dark:shadow-none" : "border-slate-200 dark:border-slate-800"}`}>
           <div className="flex items-start justify-between"><div><span className={`inline-block rounded-full px-2.5 py-1 text-[10px] font-bold uppercase ${mode.id === "all" ? "bg-blue-100 text-blue-700" : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300"}`}>{mode.id === "all" ? "Direkomendasikan" : "Latihan bidang"}</span><h2 className="mt-3 text-xl font-bold">{mode.label}</h2><p className="mt-1 text-sm text-slate-500">{mode.description}</p></div><span className="text-2xl text-blue-600">▣</span></div>
-          <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"><span className="text-xs font-semibold text-slate-500">{mode.detail}</span><button onClick={() => navigate(`/simulasi/${mode.id}`)} className="rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-bold text-white hover:bg-blue-700">Pilih & mulai →</button></div>
+          <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"><span className="text-xs font-semibold text-slate-500">{mode.detail}</span><button onClick={() => setSelected({ label: mode.label, detail: mode.detail, path: `/simulasi/${mode.id}` })} className="rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-bold text-white hover:bg-blue-700">Pilih simulasi →</button></div>
         </article>)}
       </div>
-      <section className="mt-7 rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"><h2 className="text-sm font-bold">Paket soal 1–10</h2><p className="mt-1 text-xs text-slate-500">Gunakan jika admin sudah mengisi paket soal khusus.</p><div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-5">{Array.from({length:10},(_,i)=>i+1).map(number=><button key={number} onClick={()=>navigate(`/simulasi/sim/${number}`)} className="rounded-xl border border-slate-200 px-3 py-2.5 text-sm font-semibold hover:border-blue-500 hover:text-blue-600 dark:border-slate-700">Paket {number}</button>)}</div></section>
+      <section className="mt-7 rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"><h2 className="text-sm font-bold">Paket soal 1–10</h2><p className="mt-1 text-xs text-slate-500">Gunakan jika admin sudah mengisi paket soal khusus.</p><div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-5">{Array.from({length:10},(_,i)=>i+1).map(number=><button key={number} onClick={()=>setSelected({ label: `Paket Simulasi ${number}`, detail: "110 soal · 100 menit", path: `/simulasi/sim/${number}` })} className="rounded-xl border border-slate-200 px-3 py-2.5 text-sm font-semibold hover:border-blue-500 hover:text-blue-600 dark:border-slate-700">Paket {number}</button>)}</div></section>
     </main>
+    {selected && <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/65 p-4 backdrop-blur-sm" onClick={() => setSelected(null)}>
+      <section role="dialog" aria-modal="true" aria-labelledby="confirm-title" onClick={(event) => event.stopPropagation()} className="w-full max-w-md rounded-3xl bg-white p-6 text-center shadow-2xl dark:bg-slate-900 sm:p-8">
+        <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-blue-50 text-2xl text-blue-600 dark:bg-blue-950/40">▶</div>
+        <h2 id="confirm-title" className="mt-4 text-xl font-bold">Mulai {selected.label}?</h2>
+        <p className="mt-2 text-sm leading-6 text-slate-500">Timer akan langsung berjalan setelah halaman soal dibuka. Pastikan kamu sudah siap dan memiliki waktu yang cukup.</p>
+        <div className="mt-4 rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200">{selected.detail}</div>
+        <div className="mt-6 grid gap-2 sm:grid-cols-2"><button onClick={() => setSelected(null)} className="rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800">Batal</button><button onClick={confirmStart} className="rounded-xl bg-blue-600 px-4 py-3 text-sm font-bold text-white hover:bg-blue-700">Mulai simulasi</button></div>
+      </section>
+    </div>}
   </div>;
 }
