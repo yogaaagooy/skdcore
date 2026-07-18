@@ -12,9 +12,10 @@ export default function Register() {
     const email = formData.get("email")?.toString().trim();
     const password = formData.get("password")?.toString().trim();
     const whatsapp = formData.get("whatsapp")?.toString().trim();
+    const asal = formData.get("asal")?.toString().trim();
 
     try {
-      registerUser({ name, email, password, whatsapp, role: "user" });
+      registerUser({ name, email, password, whatsapp, asal, role: "user" });
       navigate("/dashboard");
     } catch (err) {
       alert(err.message || "Gagal daftar.");
@@ -75,6 +76,11 @@ export default function Register() {
               className="w-full border border-gray-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Password minimal 4 karakter"
             />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-slate-200 mb-1">Asal daerah/instansi</label>
+            <input name="asal" type="text" required className="w-full border border-gray-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Contoh: Bandar Lampung" />
           </div>
 
           <div>
