@@ -72,7 +72,7 @@ function getAttemptCountForMode(userEmail, mode, simulasiNum = null) {
 // Timer BKN
 function getTotalTimeSeconds(mode) {
   const m = (mode || "all").toLowerCase();
-  if (m === "twk") return 28 * 60;
+  if (m === "twk") return 27 * 60;
   if (m === "tiu") return 32 * 60;
   if (m === "tkp") return 41 * 60;
   return 100 * 60; // full SKD
@@ -114,11 +114,14 @@ function loadQuestionBank(simulasiNum = null) {
 
 // Bagi per mode
 function buildQuestionBank(allQuestions) {
+  const twk = allQuestions.filter((q) => q.category === "TWK").slice(0, 30);
+  const tiu = allQuestions.filter((q) => q.category === "TIU").slice(0, 35);
+  const tkp = allQuestions.filter((q) => q.category === "TKP").slice(0, 45);
   return {
-    all: allQuestions,
-    twk: allQuestions.filter((q) => q.category === "TWK"),
-    tiu: allQuestions.filter((q) => q.category === "TIU"),
-    tkp: allQuestions.filter((q) => q.category === "TKP")
+    all: [...twk, ...tiu, ...tkp],
+    twk,
+    tiu,
+    tkp
   };
 }
 
