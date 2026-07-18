@@ -56,7 +56,7 @@ export default function Dashboard() {
       <Navbar />
       <main className="mx-auto max-w-5xl px-4 py-6 sm:py-9">
         <section className="mb-6">
-          <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">Dashboard</p>
+          <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">Beranda</p>
           <h1 className="mt-1 text-2xl font-bold text-slate-900 dark:text-white">
             Halo, {user.name?.split(" ")[0] || "Pejuang CPNS"}!
           </h1>
