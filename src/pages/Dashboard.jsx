@@ -69,7 +69,7 @@ export default function Dashboard() {
             <h2 className="mt-4 text-2xl font-bold">Simulasi SKD Lengkap</h2>
             <p className="mt-2 max-w-xl text-sm leading-6 text-blue-100">110 soal TWK, TIU, dan TKP dengan waktu 100 menit.</p>
           </div>
-          <button onClick={() => navigate("/simulasi")} className="mt-5 w-full rounded-xl bg-white px-5 py-3 text-sm font-bold text-blue-700 shadow-sm transition hover:bg-blue-50 sm:mt-0 sm:w-auto">
+          <button onClick={() => navigate("/simulasi/all")} className="mt-5 w-full rounded-xl bg-white px-5 py-3 text-sm font-bold text-blue-700 shadow-sm transition hover:bg-blue-50 sm:mt-0 sm:w-auto">
             Mulai sekarang →
           </button>
         </section>
