@@ -3,9 +3,9 @@ import Navbar from "../components/Navbar";
 
 const modes = [
   { id: "all", label: "SKD Lengkap", detail: "110 soal · 100 menit", description: "TWK, TIU, dan TKP dalam satu sesi.", color: "blue" },
-  { id: "twk", label: "TWK", detail: "30 soal · latihan 27 menit", description: "Tes Wawasan Kebangsaan.", color: "emerald" },
-  { id: "tiu", label: "TIU", detail: "35 soal · latihan 32 menit", description: "Tes Intelegensia Umum.", color: "violet" },
-  { id: "tkp", label: "TKP", detail: "45 soal · latihan 41 menit", description: "Tes Karakteristik Pribadi.", color: "amber" },
+  { id: "twk", label: "TWK", detail: "30 soal · latihan 25 menit", description: "Tes Wawasan Kebangsaan.", color: "emerald" },
+  { id: "tiu", label: "TIU", detail: "35 soal · latihan 30 menit", description: "Tes Intelegensia Umum.", color: "violet" },
+  { id: "tkp", label: "TKP", detail: "45 soal · latihan 35 menit", description: "Tes Karakteristik Pribadi.", color: "amber" },
 ];
 
 export default function SimulationMenu() {
