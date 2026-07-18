@@ -232,7 +232,7 @@ export default function HasilSimulasi() {
               onClick={() => navigate("/dashboard")}
               className="px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-700 text-sm hover:bg-gray-50 dark:hover:bg-slate-800"
             >
-              Kembali ke Dashboard
+              Beranda
             </button>
             <button
               type="button"
