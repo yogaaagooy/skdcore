@@ -31,3 +31,9 @@ export async function saveQuestionBank(target, questions) {
   }, { merge: true });
   return questions.length;
 }
+
+export async function getAllQuestionBanks() {
+  const targets = ["main", ...Array.from({ length: 10 }, (_, index) => index + 1)];
+  const banks = await Promise.all(targets.map(async (target) => [getExamDocumentId(target), await getQuestionBank(target)]));
+  return Object.fromEntries(banks);
+}
