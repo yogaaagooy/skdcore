@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import logo from "../assets/logo.png";
 import UserDropdown from "../components/UserDropdown";
+import { getCurrentUser } from "../utils/auth";
+import { getQuestionBank } from "../services/questions";
+import { logout } from "../services/auth";
 
 const HISTORY_KEY = "skdcore_simulasi_history_v1";
-const QUESTION_BANK_KEY = "skdcore_question_bank_v1";
 const LAST_DETAIL_KEY = "skdcore_last_simulation_detail_v1";
 
 // Soal default (dipakai kalau belum ada bank soal import)
@@ -78,40 +80,6 @@ function getTotalTimeSeconds(mode) {
   return 100 * 60; // full SKD
 }
 
-// Load bank soal dari localStorage
-function loadQuestionBank(simulasiNum = null) {
-  if (typeof window === "undefined") return DEFAULT_QUESTIONS;
-  
-  // Jika ada simulasi number spesifik, HANYA gunakan soal khusus simulasi itu
-  if (simulasiNum !== null) {
-    try {
-      const key = `skdcore_simulasi_${simulasiNum}_questions_v1`;
-      const raw = window.localStorage.getItem(key);
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed;
-        }
-      }
-      // Jika tidak ada soal khusus simulasi ini, return array kosong (bukan default)
-      return [];
-    } catch {
-      return [];
-    }
-  }
-  
-  // Gunakan bank soal utama hanya jika bukan simulasi spesifik
-  try {
-    const raw = window.localStorage.getItem(QUESTION_BANK_KEY);
-    if (!raw) return DEFAULT_QUESTIONS;
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed) || parsed.length === 0) return DEFAULT_QUESTIONS;
-    return parsed;
-  } catch {
-    return DEFAULT_QUESTIONS;
-  }
-}
-
 // Bagi per mode
 function buildQuestionBank(allQuestions) {
   const twk = allQuestions.filter((q) => q.category === "TWK").slice(0, 30);
@@ -133,8 +101,9 @@ export default function Simulasi() {
   const simulasiNum = num ? parseInt(num, 10) : null;
   const navigate = useNavigate();
 
-  // Ambil soal (dari simulasi spesifik jika ada, atau dari bank utama)
-  const allQuestions = loadQuestionBank(simulasiNum);
+  const [allQuestions, setAllQuestions] = useState([]);
+  const [questionsLoading, setQuestionsLoading] = useState(true);
+  const [questionsError, setQuestionsError] = useState("");
   const QUESTION_BANK = buildQuestionBank(allQuestions);
   const QUESTION_SET = QUESTION_BANK[currentMode] || QUESTION_BANK.all;
 
@@ -158,16 +127,21 @@ export default function Simulasi() {
   const start = currentBlock * PAGE_SIZE;
   const end = Math.min(start + PAGE_SIZE, totalQuestions);
 
-  // user untuk dropdown
-  let currentUser = null;
-  if (typeof window !== "undefined") {
-    try {
-      const rawUser = window.localStorage.getItem("skdcore_current_user");
-      if (rawUser) currentUser = JSON.parse(rawUser);
-    } catch {
-      currentUser = null;
-    }
-  }
+  const currentUser = getCurrentUser();
+
+  useEffect(() => {
+    let active = true;
+    setQuestionsLoading(true);
+    setQuestionsError("");
+    getQuestionBank(simulasiNum === null ? "main" : simulasiNum)
+      .then((questions) => {
+        if (!active) return;
+        setAllQuestions(questions.length ? questions : (simulasiNum === null ? DEFAULT_QUESTIONS : []));
+      })
+      .catch(() => { if (active) setQuestionsError("Soal gagal dimuat dari Firebase. Periksa koneksi lalu coba lagi."); })
+      .finally(() => { if (active) setQuestionsLoading(false); });
+    return () => { active = false; };
+  }, [simulasiNum]);
 
   // Load state dari localStorage
   useEffect(() => {
@@ -198,12 +172,12 @@ export default function Simulasi() {
 
   // Timer mundur
   useEffect(() => {
-    if (timeLeft <= 0) return;
+    if (questionsLoading || !QUESTION_SET.length || timeLeft <= 0) return;
     const timer = setInterval(() => {
       setTimeLeft((prev) => prev - 1);
     }, 1000);
     return () => clearInterval(timer);
-  }, [timeLeft]);
+  }, [timeLeft, questionsLoading, QUESTION_SET.length]);
 
   // Auto-submit kalau waktu habis
   useEffect(() => {
@@ -295,18 +269,7 @@ export default function Simulasi() {
 
     try {
       if (typeof window !== "undefined") {
-        let userEmail = null;
-        try {
-          const rawUser = window.localStorage.getItem(
-            "skdcore_current_user"
-          );
-          if (rawUser) {
-            const u = JSON.parse(rawUser);
-            userEmail = u?.email || null;
-          }
-        } catch {
-          userEmail = null;
-        }
+        const userEmail = currentUser?.email || null;
 
         const raw = window.localStorage.getItem(HISTORY_KEY);
         const prev = raw ? JSON.parse(raw) : [];
@@ -363,6 +326,14 @@ export default function Simulasi() {
   const attemptCount = currentUser 
     ? getAttemptCountForMode(currentUser.email, currentMode, simulasiNum)
     : 0;
+
+  if (questionsLoading) {
+    return <div className="grid min-h-screen place-items-center bg-gray-50 px-4 dark:bg-slate-950"><div className="text-center"><div className="mx-auto mb-3 h-8 w-8 animate-spin rounded-full border-4 border-blue-100 border-t-blue-600" /><p className="text-sm text-slate-500">Mengambil soal dari Firebase...</p></div></div>;
+  }
+
+  if (questionsError) {
+    return <div className="grid min-h-screen place-items-center bg-gray-50 px-4 dark:bg-slate-950"><div className="max-w-md rounded-2xl border border-red-200 bg-white p-6 text-center dark:border-red-900 dark:bg-slate-900"><h1 className="font-bold">Soal gagal dimuat</h1><p className="mt-2 text-sm text-slate-500">{questionsError}</p><button onClick={() => navigate("/simulasi")} className="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white">Kembali</button></div></div>;
+  }
 
   if (currentUser && currentUser.role !== "admin" && attemptCount >= 3) {
     return (
@@ -465,10 +436,8 @@ export default function Simulasi() {
             </div>
             <UserDropdown
               user={currentUser}
-              onLogout={() => {
-                if (typeof window !== "undefined") {
-                  window.localStorage.removeItem("skdcore_current_user");
-                }
+              onLogout={async () => {
+                await logout();
                 navigate("/login");
               }}
             />
