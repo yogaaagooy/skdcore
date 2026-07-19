@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { getCurrentUser, getUsers, saveUsers } from "../utils/auth";
-import { getQuestionBank, saveQuestionBank } from "../services/questions";
+import { getCurrentUser } from "../utils/auth";
+import { getAllQuestionBanks, getQuestionBank, saveQuestionBank } from "../services/questions";
+import { listUsers, setUserRole, setUserStatus } from "../services/users";
 
-const HISTORY_KEY = "skdcore_simulasi_history_v1";
 
 function normalizeQuestion(question, index) {
   const category = String(question.category || question.tipe || "").toUpperCase();
@@ -20,11 +20,6 @@ function normalizeQuestion(question, index) {
   return { ...question, id: question.id || Date.now() + index, category, question: question.question.trim(), options };
 }
 
-function readHistory() {
-  try { const value = JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]"); return Array.isArray(value) ? value : []; }
-  catch { return []; }
-}
-
 export default function SimpleAdminDashboard() {
   const navigate = useNavigate();
   const inputRef = useRef(null);
@@ -35,8 +30,7 @@ export default function SimpleAdminDashboard() {
   const [preview, setPreview] = useState([]);
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [users, setUsers] = useState(() => getUsers());
-  const [history, setHistory] = useState(() => readHistory());
+  const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
   const [roleFilter, setRoleFilter] = useState("all");
 
@@ -52,11 +46,16 @@ export default function SimpleAdminDashboard() {
     return () => { active = false; };
   }, [target]);
 
-  const userRows = useMemo(() => users.map((user) => {
-    const userHistory = history.filter((item) => item.userEmail === user.email);
-    const latest = [...userHistory].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
-    return { ...user, attempts: userHistory.length, lastActivity: latest?.date || null };
-  }).filter((user) => {
+  useEffect(() => {
+    if (tab !== "users") return;
+    setLoading(true);
+    listUsers()
+      .then(setUsers)
+      .catch(() => setMessage("✕ Data pengguna gagal dibaca dari Firebase."))
+      .finally(() => setLoading(false));
+  }, [tab]);
+
+  const userRows = useMemo(() => users.filter((user) => {
     if (roleFilter !== "all" && user.role !== roleFilter) return false;
     const query = search.trim().toLowerCase();
     return !query || `${user.name} ${user.email}`.toLowerCase().includes(query);
@@ -96,25 +95,35 @@ export default function SimpleAdminDashboard() {
     link.download = target === "main" ? "bank-soal-utama.json" : `paket-${target}.json`; link.click(); URL.revokeObjectURL(url);
   }
 
-  function changeRole(user, role) {
-    if (user.id === currentAdmin?.id) return;
-    const updated = users.map((item) => item.id === user.id ? { ...item, role } : item);
-    saveUsers(updated); setUsers(updated);
+  async function exportFullBackup() {
+    setLoading(true);
+    try {
+      const exams = await getAllQuestionBanks();
+      const payload = { version: 1, exportedAt: new Date().toISOString(), exams };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob); const link = document.createElement("a"); link.href = url;
+      link.download = `skdcore-backup-${new Date().toISOString().slice(0, 10)}.json`; link.click(); URL.revokeObjectURL(url);
+      setMessage("✓ Backup seluruh bank soal berhasil diunduh.");
+    } catch { setMessage("✕ Backup gagal dibuat."); }
+    finally { setLoading(false); }
   }
 
-  function resetHistory(user) {
-    if (!window.confirm(`Reset seluruh riwayat simulasi ${user.name}?`)) return;
-    const updated = history.filter((item) => item.userEmail !== user.email);
-    localStorage.setItem(HISTORY_KEY, JSON.stringify(updated)); setHistory(updated);
+  async function changeRole(user, role) {
+    if (user.id === currentAdmin?.id) return;
+    try {
+      await setUserRole(user.id, role);
+      setUsers((items) => items.map((item) => item.id === user.id ? { ...item, role } : item));
+    } catch { window.alert("Role gagal diperbarui."); }
   }
 
-  function deleteUser(user) {
+  async function toggleUserStatus(user) {
     if (user.id === currentAdmin?.id) return;
-    if (!window.confirm(`Hapus akun ${user.name}? Tindakan ini tidak dapat dibatalkan.`)) return;
-    const updatedUsers = users.filter((item) => item.id !== user.id);
-    const updatedHistory = history.filter((item) => item.userEmail !== user.email);
-    saveUsers(updatedUsers); localStorage.setItem(HISTORY_KEY, JSON.stringify(updatedHistory));
-    setUsers(updatedUsers); setHistory(updatedHistory);
+    const next = user.status === "disabled" ? "active" : "disabled";
+    if (!window.confirm(`${next === "disabled" ? "Nonaktifkan" : "Aktifkan kembali"} akun ${user.name}?`)) return;
+    try {
+      await setUserStatus(user.id, next);
+      setUsers((items) => items.map((item) => item.id === user.id ? { ...item, status: next } : item));
+    } catch { window.alert("Status akun gagal diperbarui."); }
   }
 
   return <div className="min-h-screen bg-slate-50 dark:bg-slate-950"><Navbar />
@@ -131,17 +140,17 @@ export default function SimpleAdminDashboard() {
         <label className="block text-sm font-semibold">Tujuan soal</label><select value={target} onChange={(event) => { setTarget(event.target.value); setPreview([]); setFile(null); setMessage(""); }} className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="main">Bank soal utama</option>{Array.from({ length: 10 }, (_, i) => i + 1).map((number) => <option key={number} value={number}>Paket Simulasi {number}</option>)}</select>
         <div className="mt-5 rounded-2xl border-2 border-dashed border-slate-300 p-7 text-center dark:border-slate-700"><span className="text-3xl">⇧</span><p className="mt-2 text-sm font-semibold">{file?.name || "Pilih file soal JSON"}</p><p className="mt-1 text-xs text-slate-500">Format array soal atau objek dengan field questions.</p><input ref={inputRef} type="file" accept=".json,application/json" onChange={chooseFile} className="hidden" /><button onClick={() => inputRef.current?.click()} className="mt-4 rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-semibold hover:border-blue-500 hover:text-blue-600 dark:border-slate-700">{loading ? "Memeriksa..." : "Pilih file"}</button></div>
         {message && <div className={`mt-4 rounded-xl p-3 text-sm ${message.startsWith("✓") ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-300" : "bg-red-50 text-red-700 dark:bg-red-950/30 dark:text-red-300"}`}>{message}</div>}
-        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center"><button disabled={!preview.length || loading} onClick={importQuestions} className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white disabled:cursor-not-allowed disabled:opacity-40">{loading ? "Menyimpan..." : `Simpan ${preview.length || ""} soal`}</button><span className="text-xs text-slate-500">Di Firebase: <strong>{existing.length} soal</strong></span>{existing.length > 0 && <button onClick={exportQuestions} className="text-xs font-semibold text-blue-600 sm:ml-auto">Download cadangan</button>}</div>
+        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center"><button disabled={!preview.length || loading} onClick={importQuestions} className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white disabled:cursor-not-allowed disabled:opacity-40">{loading ? "Memproses..." : `Simpan ${preview.length || ""} soal`}</button><span className="text-xs text-slate-500">Di Firebase: <strong>{existing.length} soal</strong></span>{existing.length > 0 && <button onClick={exportQuestions} className="text-xs font-semibold text-blue-600 sm:ml-auto">Download paket ini</button>}<button disabled={loading} onClick={exportFullBackup} className="text-xs font-semibold text-blue-600">Backup semua paket</button></div>
       </section>}
 
       {tab === "users" && <section>
-        <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-3"><div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900"><p className="text-xs text-slate-500">Total pengguna</p><strong className="mt-1 block text-2xl">{users.length}</strong></div><div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900"><p className="text-xs text-slate-500">Total aktivitas</p><strong className="mt-1 block text-2xl">{history.length}</strong></div><div className="col-span-2 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:col-span-1"><p className="text-xs text-slate-500">Administrator</p><strong className="mt-1 block text-2xl">{users.filter((user) => user.role === "admin").length}</strong></div></div>
+        <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-3"><div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900"><p className="text-xs text-slate-500">Total pengguna</p><strong className="mt-1 block text-2xl">{users.length}</strong></div><div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900"><p className="text-xs text-slate-500">Akun aktif</p><strong className="mt-1 block text-2xl">{users.filter((user) => user.status !== "disabled").length}</strong></div><div className="col-span-2 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:col-span-1"><p className="text-xs text-slate-500">Administrator</p><strong className="mt-1 block text-2xl">{users.filter((user) => user.role === "admin").length}</strong></div></div>
         <div className="mb-4 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:flex-row"><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Cari nama atau email" className="flex-1 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-800" /><select value={roleFilter} onChange={(event) => setRoleFilter(event.target.value)} className="rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="all">Semua peran</option><option value="user">Pengguna</option><option value="admin">Admin</option></select></div>
         <div className="space-y-3">{userRows.length ? userRows.map((user) => {
           const isSelf = user.id === currentAdmin?.id;
-          return <article key={user.id} className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:p-5"><div className="flex items-start gap-3"><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-blue-100 text-sm font-bold text-blue-700 dark:bg-blue-950 dark:text-blue-300">{(user.name || user.email).slice(0, 2).toUpperCase()}</span><div className="min-w-0 flex-1"><div className="flex flex-wrap items-center gap-2"><h2 className="truncate text-sm font-bold">{user.name || "Tanpa nama"}</h2>{isSelf && <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-600 dark:bg-blue-950/40">Akun Anda</span>}</div><p className="truncate text-xs text-slate-500">{user.email}</p><p className="mt-2 text-[11px] text-slate-500">{user.attempts} simulasi · Aktivitas terakhir: {user.lastActivity ? new Date(user.lastActivity).toLocaleDateString("id-ID") : "Belum ada"}</p></div></div><div className="mt-4 flex flex-col gap-2 border-t border-slate-100 pt-4 dark:border-slate-800 sm:flex-row sm:items-center"><label className="text-xs text-slate-500">Peran</label><select disabled={isSelf} value={user.role} onChange={(event) => changeRole(user, event.target.value)} className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs disabled:opacity-50 dark:border-slate-700 dark:bg-slate-800"><option value="user">Pengguna</option><option value="admin">Admin</option></select><div className="flex gap-2 sm:ml-auto"><button disabled={!user.attempts} onClick={() => resetHistory(user)} className="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-xs font-semibold disabled:opacity-40 dark:border-slate-700">Reset riwayat</button><button disabled={isSelf} onClick={() => deleteUser(user)} className="flex-1 rounded-lg border border-red-200 px-3 py-2 text-xs font-semibold text-red-600 disabled:opacity-30 dark:border-red-900">Hapus</button></div></div></article>;
+          return <article key={user.id} className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:p-5"><div className="flex items-start gap-3"><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-blue-100 text-sm font-bold text-blue-700 dark:bg-blue-950 dark:text-blue-300">{(user.name || user.email).slice(0, 2).toUpperCase()}</span><div className="min-w-0 flex-1"><div className="flex flex-wrap items-center gap-2"><h2 className="truncate text-sm font-bold">{user.name || "Tanpa nama"}</h2>{isSelf && <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-600 dark:bg-blue-950/40">Akun Anda</span>}{user.status === "disabled" && <span className="rounded-full bg-red-50 px-2 py-0.5 text-[10px] font-bold text-red-600">Nonaktif</span>}</div><p className="truncate text-xs text-slate-500">{user.email}</p><p className="mt-2 text-[11px] text-slate-500">{user.instansi || "Instansi belum diisi"}</p></div></div><div className="mt-4 flex flex-col gap-2 border-t border-slate-100 pt-4 dark:border-slate-800 sm:flex-row sm:items-center"><label className="text-xs text-slate-500">Peran</label><select disabled={isSelf || user.status === "disabled"} value={user.role} onChange={(event) => changeRole(user, event.target.value)} className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs disabled:opacity-50 dark:border-slate-700 dark:bg-slate-800"><option value="user">Pengguna</option><option value="admin">Admin</option></select><button disabled={isSelf} onClick={() => toggleUserStatus(user)} className={`rounded-lg border px-3 py-2 text-xs font-semibold disabled:opacity-30 sm:ml-auto ${user.status === "disabled" ? "border-emerald-200 text-emerald-600" : "border-red-200 text-red-600"}`}>{user.status === "disabled" ? "Aktifkan" : "Nonaktifkan"}</button></div></article>;
         }) : <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center text-sm text-slate-500 dark:border-slate-800 dark:bg-slate-900">Pengguna tidak ditemukan.</div>}</div>
-        <p className="mt-4 text-xs leading-5 text-slate-500">Data pengguna dan aktivitas saat ini tersimpan pada browser perangkat yang digunakan.</p>
+        <p className="mt-4 text-xs leading-5 text-slate-500">Data ini dibaca langsung dari Firestore. Menonaktifkan profil memblokir akses aplikasi, tetapi penghapusan permanen akun Firebase Auth memerlukan backend admin.</p>
       </section>}
       <button onClick={() => navigate("/dashboard")} className="mt-5 text-sm font-semibold text-slate-500 hover:text-blue-600">← Beranda</button>
     </main>
