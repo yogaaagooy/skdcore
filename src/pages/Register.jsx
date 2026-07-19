@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { registerUser, getCurrentUser } from "../utils/auth";
+import { getCurrentUser, setCurrentUser } from "../utils/auth";
+import { createUser } from "../services/auth";
 
 export default function Register() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const name = formData.get("name")?.toString().trim();
@@ -16,10 +18,15 @@ export default function Register() {
     const instansi = formData.get("instansi")?.toString().trim();
 
     try {
-      registerUser({ name, email, password, instansi, role: "user" });
+      setLoading(true);
+      const user = await createUser({ name, email, password, instansi });
+      setCurrentUser(user);
       navigate("/dashboard");
     } catch (err) {
-      alert(err.message || "Gagal daftar.");
+      const messages = { "auth/email-already-in-use": "Email sudah terdaftar.", "auth/weak-password": "Password minimal 6 karakter." };
+      alert(messages[err.code] || err.message || "Gagal daftar.");
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -73,9 +80,9 @@ export default function Register() {
               name="password"
               type={showPassword ? "text" : "password"}
               required
-              minLength="4"
+              minLength="6"
               className="w-full border border-gray-300 dark:border-slate-700 rounded-lg px-3 py-2 pr-12 text-sm bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Password minimal 4 karakter"
+              placeholder="Password minimal 6 karakter"
             /><button type="button" onClick={() => setShowPassword((value) => !value)} className="absolute inset-y-0 right-0 px-3 text-lg text-gray-500 hover:text-blue-600" aria-label={showPassword ? "Sembunyikan password" : "Tampilkan password"}>{showPassword ? "◉" : "◎"}</button></div>
           </div>
 
@@ -86,9 +93,10 @@ export default function Register() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white text-sm font-semibold py-2.5 rounded-lg hover:bg-blue-700"
+            disabled={loading}
+            className="w-full bg-blue-600 text-white text-sm font-semibold py-2.5 rounded-lg hover:bg-blue-700 disabled:opacity-60"
           >
-            Daftar
+            {loading ? "Membuat akun..." : "Daftar"}
           </button>
         </form>
 
