@@ -7,6 +7,12 @@ import logo from "../assets/logo.png";
 
 const HISTORY_KEY = "skdcore_simulasi_history_v1";
 
+function premiumExpiry(user) {
+  if (typeof user?.premiumUntil === "string") return new Date(user.premiumUntil);
+  if (user?.premiumUntil?.seconds) return new Date(user.premiumUntil.seconds * 1000);
+  return null;
+}
+
 export default function Profile() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
@@ -44,6 +50,9 @@ export default function Profile() {
 
   if (!user) return null;
 
+  const premiumUntil = premiumExpiry(user);
+  const premiumActive = user.role === "admin" || (user.premiumActive && premiumUntil?.getTime() > Date.now());
+
   async function handleSaveName(e) {
     e.preventDefault();
     const newName = nameInput.trim();
@@ -78,6 +87,9 @@ export default function Profile() {
             <h1 className="mt-1 text-xl font-bold">{user.name || "Peserta NalarASN"}</h1>
             <p className="mt-1 text-sm text-gray-500 dark:text-slate-400">{user.email}</p>
           </div>
+        </section>
+        <section className={`rounded-2xl border p-5 ${premiumActive ? "border-emerald-200 bg-emerald-50 dark:border-emerald-900 dark:bg-emerald-950/20" : "border-gray-200 bg-white dark:border-slate-800 dark:bg-slate-900"}`}>
+          <div className="flex flex-wrap items-center justify-between gap-3"><div><p className={`text-xs font-bold uppercase tracking-wider ${premiumActive ? "text-emerald-700 dark:text-emerald-300" : "text-gray-500"}`}>Status berlangganan</p><h2 className="mt-1 text-xl font-bold">{user.role === "admin" ? "Akses Administrator" : premiumActive ? "NalarASN Premium" : "Paket Gratis"}</h2><p className="mt-1 text-sm text-gray-500 dark:text-slate-400">{user.role === "admin" ? "Semua paket terbuka untuk pengelolaan aplikasi." : premiumActive ? `Aktif sampai ${premiumUntil.toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}` : premiumUntil ? "Masa premium telah berakhir." : "Paket 1 dapat digunakan tanpa berlangganan."}</p></div><span className={`rounded-full px-3 py-1 text-xs font-bold ${premiumActive ? "bg-emerald-600 text-white" : "bg-gray-100 text-gray-600 dark:bg-slate-800 dark:text-slate-300"}`}>{premiumActive ? "Aktif" : "Gratis"}</span></div>
         </section>
         <section className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-5">
           <h2 className="text-xl font-bold mb-3">Data akun</h2>

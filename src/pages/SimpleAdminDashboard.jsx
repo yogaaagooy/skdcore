@@ -5,6 +5,7 @@ import { getCurrentUser } from "../utils/auth";
 import { getAllQuestionBanks, getQuestionBank, saveQuestionBank } from "../services/questions";
 import { listUsers, setUserRole, setUserStatus } from "../services/users";
 import { validateQuestionPackage } from "../utils/questionValidation";
+import { listPayments } from "../services/payments";
 
 
 function normalizeQuestion(question, index) {
@@ -34,6 +35,9 @@ export default function SimpleAdminDashboard() {
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
   const [roleFilter, setRoleFilter] = useState("all");
+  const [payments, setPayments] = useState([]);
+  const [paymentSearch, setPaymentSearch] = useState("");
+  const [paymentFilter, setPaymentFilter] = useState("all");
   const [validation, setValidation] = useState(null);
 
   const [existing, setExisting] = useState([]);
@@ -57,11 +61,44 @@ export default function SimpleAdminDashboard() {
       .finally(() => setLoading(false));
   }, [tab]);
 
+  useEffect(() => {
+    if (tab !== "payments") return;
+    setLoading(true);
+    setMessage("");
+    listPayments()
+      .then(setPayments)
+      .catch((error) => setMessage(`✕ ${error.message}`))
+      .finally(() => setLoading(false));
+  }, [tab]);
+
   const userRows = useMemo(() => users.filter((user) => {
     if (roleFilter !== "all" && user.role !== roleFilter) return false;
     const query = search.trim().toLowerCase();
     return !query || `${user.name} ${user.email}`.toLowerCase().includes(query);
-  }), [users, history, search, roleFilter]);
+  }), [users, search, roleFilter]);
+
+  const paymentRows = useMemo(() => payments.filter((payment) => {
+    if (paymentFilter !== "all" && payment.status !== paymentFilter) return false;
+    const query = paymentSearch.trim().toLowerCase();
+    return !query || `${payment.name} ${payment.email} ${payment.orderId}`.toLowerCase().includes(query);
+  }), [payments, paymentFilter, paymentSearch]);
+
+  const paidPayments = payments.filter((payment) => payment.status === "paid");
+
+  function premiumUntil(user) {
+    if (typeof user?.premiumUntil === "string") return new Date(user.premiumUntil);
+    if (user?.premiumUntil?.seconds) return new Date(user.premiumUntil.seconds * 1000);
+    return null;
+  }
+
+  function formatDate(value) {
+    if (!value) return "-";
+    return new Date(value).toLocaleString("id-ID", { dateStyle: "medium", timeStyle: "short" });
+  }
+
+  function formatRupiah(value) {
+    return new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(value || 0);
+  }
 
   async function chooseFile(event) {
     const selected = event.target.files?.[0];
@@ -138,6 +175,7 @@ export default function SimpleAdminDashboard() {
       <div className="mb-6 flex gap-1 rounded-2xl border border-slate-200 bg-white p-1.5 dark:border-slate-800 dark:bg-slate-900">
         <button onClick={() => setTab("questions")} className={`flex-1 rounded-xl px-4 py-3 text-sm font-bold ${tab === "questions" ? "bg-blue-600 text-white shadow" : "text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800"}`}>▤ Bank Soal</button>
         <button onClick={() => setTab("users")} className={`flex-1 rounded-xl px-4 py-3 text-sm font-bold ${tab === "users" ? "bg-blue-600 text-white shadow" : "text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800"}`}>♙ Data Pengguna <span className="ml-1 rounded-full bg-black/10 px-2 py-0.5 text-[10px]">{users.length}</span></button>
+        <button onClick={() => setTab("payments")} className={`flex-1 rounded-xl px-4 py-3 text-sm font-bold ${tab === "payments" ? "bg-blue-600 text-white shadow" : "text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800"}`}>◈ Transaksi <span className="ml-1 rounded-full bg-black/10 px-2 py-0.5 text-[10px]">{payments.length}</span></button>
       </div>
 
       {tab === "questions" && <section className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900 sm:p-7">
@@ -154,9 +192,18 @@ export default function SimpleAdminDashboard() {
         <div className="mb-4 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:flex-row"><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Cari nama atau email" className="flex-1 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-800" /><select value={roleFilter} onChange={(event) => setRoleFilter(event.target.value)} className="rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="all">Semua peran</option><option value="user">Pengguna</option><option value="admin">Admin</option></select></div>
         <div className="space-y-3">{userRows.length ? userRows.map((user) => {
           const isSelf = user.id === currentAdmin?.id;
-          return <article key={user.id} className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:p-5"><div className="flex items-start gap-3"><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-blue-100 text-sm font-bold text-blue-700 dark:bg-blue-950 dark:text-blue-300">{(user.name || user.email).slice(0, 2).toUpperCase()}</span><div className="min-w-0 flex-1"><div className="flex flex-wrap items-center gap-2"><h2 className="truncate text-sm font-bold">{user.name || "Tanpa nama"}</h2>{isSelf && <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-600 dark:bg-blue-950/40">Akun Anda</span>}{user.status === "disabled" && <span className="rounded-full bg-red-50 px-2 py-0.5 text-[10px] font-bold text-red-600">Nonaktif</span>}</div><p className="truncate text-xs text-slate-500">{user.email}</p><p className="mt-2 text-[11px] text-slate-500">{user.instansi || "Instansi belum diisi"}</p></div></div><div className="mt-4 flex flex-col gap-2 border-t border-slate-100 pt-4 dark:border-slate-800 sm:flex-row sm:items-center"><label className="text-xs text-slate-500">Peran</label><select disabled={isSelf || user.status === "disabled"} value={user.role} onChange={(event) => changeRole(user, event.target.value)} className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs disabled:opacity-50 dark:border-slate-700 dark:bg-slate-800"><option value="user">Pengguna</option><option value="admin">Admin</option></select><button disabled={isSelf} onClick={() => toggleUserStatus(user)} className={`rounded-lg border px-3 py-2 text-xs font-semibold disabled:opacity-30 sm:ml-auto ${user.status === "disabled" ? "border-emerald-200 text-emerald-600" : "border-red-200 text-red-600"}`}>{user.status === "disabled" ? "Aktifkan" : "Nonaktifkan"}</button></div></article>;
+          const expiry = premiumUntil(user);
+          const premium = user.role === "admin" || (user.premiumActive && expiry?.getTime() > Date.now());
+          return <article key={user.id} className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:p-5"><div className="flex items-start gap-3"><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-blue-100 text-sm font-bold text-blue-700 dark:bg-blue-950 dark:text-blue-300">{(user.name || user.email).slice(0, 2).toUpperCase()}</span><div className="min-w-0 flex-1"><div className="flex flex-wrap items-center gap-2"><h2 className="truncate text-sm font-bold">{user.name || "Tanpa nama"}</h2>{isSelf && <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-600 dark:bg-blue-950/40">Akun Anda</span>}{user.status === "disabled" && <span className="rounded-full bg-red-50 px-2 py-0.5 text-[10px] font-bold text-red-600">Nonaktif</span>}<span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${premium ? "bg-emerald-100 text-emerald-700" : "bg-slate-100 text-slate-500 dark:bg-slate-800"}`}>{user.role === "admin" ? "Admin" : premium ? "Premium" : "Gratis"}</span></div><p className="truncate text-xs text-slate-500">{user.email}</p><p className="mt-2 text-[11px] text-slate-500">{user.instansi || "Instansi belum diisi"}{expiry && user.role !== "admin" ? ` · Premium sampai ${expiry.toLocaleDateString("id-ID")}` : ""}</p></div></div><div className="mt-4 flex flex-col gap-2 border-t border-slate-100 pt-4 dark:border-slate-800 sm:flex-row sm:items-center"><label className="text-xs text-slate-500">Peran</label><select disabled={isSelf || user.status === "disabled"} value={user.role} onChange={(event) => changeRole(user, event.target.value)} className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs disabled:opacity-50 dark:border-slate-700 dark:bg-slate-800"><option value="user">Pengguna</option><option value="admin">Admin</option></select><button disabled={isSelf} onClick={() => toggleUserStatus(user)} className={`rounded-lg border px-3 py-2 text-xs font-semibold disabled:opacity-30 sm:ml-auto ${user.status === "disabled" ? "border-emerald-200 text-emerald-600" : "border-red-200 text-red-600"}`}>{user.status === "disabled" ? "Aktifkan" : "Nonaktifkan"}</button></div></article>;
         }) : <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center text-sm text-slate-500 dark:border-slate-800 dark:bg-slate-900">Pengguna tidak ditemukan.</div>}</div>
         <p className="mt-4 text-xs leading-5 text-slate-500">Data ini dibaca langsung dari Firestore. Menonaktifkan profil memblokir akses aplikasi, tetapi penghapusan permanen akun Firebase Auth memerlukan backend admin.</p>
+      </section>}
+      {tab === "payments" && <section>
+        <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-3"><div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900"><p className="text-xs text-slate-500">Transaksi berhasil</p><strong className="mt-1 block text-2xl">{paidPayments.length}</strong></div><div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900"><p className="text-xs text-slate-500">Menunggu</p><strong className="mt-1 block text-2xl">{payments.filter((payment) => payment.status === "pending").length}</strong></div><div className="col-span-2 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:col-span-1"><p className="text-xs text-slate-500">Pendapatan Sandbox</p><strong className="mt-1 block text-xl">{formatRupiah(paidPayments.reduce((total, payment) => total + payment.amount, 0))}</strong></div></div>
+        <div className="mb-4 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:flex-row"><input value={paymentSearch} onChange={(event) => setPaymentSearch(event.target.value)} placeholder="Cari nama, email, atau order ID" className="flex-1 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-800"/><select value={paymentFilter} onChange={(event) => setPaymentFilter(event.target.value)} className="rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="all">Semua status</option><option value="paid">Berhasil</option><option value="pending">Menunggu</option></select></div>
+        {message && <div className="mb-4 rounded-xl bg-red-50 p-3 text-sm text-red-700 dark:bg-red-950/30 dark:text-red-300">{message}</div>}
+        <div className="space-y-3">{loading ? <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center text-sm text-slate-500 dark:border-slate-800 dark:bg-slate-900">Memuat transaksi...</div> : paymentRows.length ? paymentRows.map((payment) => <article key={payment.id} className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:p-5"><div className="flex flex-wrap items-start justify-between gap-3"><div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><h2 className="font-bold">{payment.name}</h2><span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${payment.status === "paid" ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-700"}`}>{payment.status === "paid" ? "Berhasil" : "Menunggu"}</span><span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-500 dark:bg-slate-800">{payment.environment}</span></div><p className="mt-1 text-xs text-slate-500">{payment.email}</p><p className="mt-2 break-all font-mono text-[10px] text-slate-400">{payment.orderId}</p></div><strong className="text-lg">{formatRupiah(payment.amount)}</strong></div><div className="mt-4 grid gap-2 border-t border-slate-100 pt-4 text-xs text-slate-500 dark:border-slate-800 sm:grid-cols-3"><p>Paket: <strong className="text-slate-700 dark:text-slate-200">{payment.packageNumber || "-"}</strong></p><p>Metode: <strong className="text-slate-700 dark:text-slate-200">{payment.paymentType || "-"}</strong></p><p>Dibuat: <strong className="text-slate-700 dark:text-slate-200">{formatDate(payment.createdAt)}</strong></p>{payment.premiumUntil && <p className="sm:col-span-3">Premium sampai: <strong className="text-emerald-600">{formatDate(payment.premiumUntil)}</strong></p>}</div></article>) : <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center text-sm text-slate-500 dark:border-slate-800 dark:bg-slate-900">Transaksi tidak ditemukan.</div>}</div>
+        <p className="mt-4 text-xs text-slate-500">Nominal Sandbox hanya untuk pengujian dan bukan pendapatan nyata.</p>
       </section>}
       <button onClick={() => navigate("/dashboard")} className="mt-5 text-sm font-semibold text-slate-500 hover:text-blue-600">← Beranda</button>
     </main>
