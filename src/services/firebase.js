@@ -12,7 +12,12 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
-console.log("DEBUG FIREBASE CONFIG:", firebaseConfig); // ← tambahin ini
+const requiredConfig = ["apiKey", "authDomain", "projectId", "appId"];
+const missingConfig = requiredConfig.filter((key) => !firebaseConfig[key]);
+
+if (missingConfig.length) {
+  throw new Error(`Konfigurasi Firebase belum lengkap: ${missingConfig.join(", ")}`);
+}
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
