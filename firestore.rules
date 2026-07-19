@@ -1,0 +1,11 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Tahap 1: seluruh akses ditutup sampai autentikasi dan skema koleksi
+    // dimigrasikan pada Tahap 2–4. Jangan membuka akses global dengan allow true.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
