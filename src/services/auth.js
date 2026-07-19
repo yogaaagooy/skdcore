@@ -20,6 +20,7 @@ export async function createUser({ name, email, password, instansi }) {
     email: email.trim().toLowerCase(),
     instansi: instansi.trim(),
     role: "user",
+    status: "active",
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
   };
@@ -50,7 +51,13 @@ export function observeAuth(callback) {
   return onAuthStateChanged(auth, async (firebaseUser) => {
     if (!firebaseUser) return callback(null);
     try {
-      callback(await getUserProfile(firebaseUser.uid));
+      const profile = await getUserProfile(firebaseUser.uid);
+      if (profile?.status === "disabled") {
+        await signOut(auth);
+        callback(null);
+        return;
+      }
+      callback(profile);
     } catch {
       callback(null);
     }
