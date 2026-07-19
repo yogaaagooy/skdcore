@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { getCurrentUser, getUsers, saveUsers, setCurrentUser } from "../utils/auth";
+import { getCurrentUser, setCurrentUser } from "../utils/auth";
+import { logout, updateProfile } from "../services/auth";
 import logo from "../assets/logo.png";
 
 const HISTORY_KEY = "skdcore_simulasi_history_v1";
@@ -43,25 +44,23 @@ export default function Profile() {
 
   if (!user) return null;
 
-  function handleSaveName(e) {
+  async function handleSaveName(e) {
     e.preventDefault();
     const newName = nameInput.trim();
     if (!newName) return;
 
-    // update di users list
-    const users = getUsers();
-    const idx = users.findIndex((u) => u.id === user.id);
-    if (idx !== -1) {
-      users[idx] = { ...users[idx], name: newName, instansi: instansiInput.trim() };
-      saveUsers(users);
+    try {
+      const updatedUser = await updateProfile(user.id, { name: newName, instansi: instansiInput });
+      setCurrentUser(updatedUser);
+      setUser(updatedUser);
+    } catch {
+      window.alert("Profil gagal disimpan. Coba lagi.");
     }
-    const updatedUser = { ...user, name: newName, instansi: instansiInput.trim() };
-    setCurrentUser(updatedUser);
-    setUser(updatedUser);
   }
 
-  function handleLogout() {
-    logout();
+  async function handleLogout() {
+    await logout();
+    setCurrentUser(null);
     navigate("/login");
   }
 
