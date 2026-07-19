@@ -109,8 +109,23 @@ export default function Simulasi() {
   const end = Math.min(start + PAGE_SIZE, totalQuestions);
 
   const currentUser = getCurrentUser();
+  const premiumUntilMillis = typeof currentUser?.premiumUntil === "string"
+    ? Date.parse(currentUser.premiumUntil)
+    : Number(currentUser?.premiumUntil?.seconds || 0) * 1000;
+  const canAccessPackage = simulasiNum === null
+    || simulasiNum === 1
+    || currentUser?.role === "admin"
+    || (currentUser?.premiumActive && premiumUntilMillis > Date.now());
 
   useEffect(() => {
+    if (!canAccessPackage) navigate("/simulasi", { replace: true });
+  }, [canAccessPackage, navigate]);
+
+  useEffect(() => {
+    if (!canAccessPackage) {
+      setQuestionsLoading(false);
+      return undefined;
+    }
     let active = true;
     setQuestionsLoading(true);
     setQuestionsError("");
@@ -122,7 +137,7 @@ export default function Simulasi() {
       .catch(() => { if (active) setQuestionsError("Soal gagal dimuat dari Firebase. Periksa koneksi lalu coba lagi."); })
       .finally(() => { if (active) setQuestionsLoading(false); });
     return () => { active = false; };
-  }, [simulasiNum]);
+  }, [canAccessPackage, simulasiNum]);
 
   useEffect(() => {
     let active = true;
