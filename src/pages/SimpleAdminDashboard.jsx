@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import { getCurrentUser } from "../utils/auth";
 import { getAllQuestionBanks, getQuestionBank, saveQuestionBank } from "../services/questions";
 import { listUsers, setUserRole, setUserStatus } from "../services/users";
+import { validateQuestionPackage } from "../utils/questionValidation";
 
 
 function normalizeQuestion(question, index) {
@@ -33,6 +34,7 @@ export default function SimpleAdminDashboard() {
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
   const [roleFilter, setRoleFilter] = useState("all");
+  const [validation, setValidation] = useState(null);
 
   const [existing, setExisting] = useState([]);
 
@@ -70,9 +72,12 @@ export default function SimpleAdminDashboard() {
       const list = Array.isArray(raw) ? raw : (raw.questions || raw.soal || raw.data);
       if (!Array.isArray(list) || !list.length) throw new Error("File tidak berisi daftar soal.");
       const cleaned = list.map(normalizeQuestion);
-      setPreview(cleaned); setMessage(`✓ ${cleaned.length} soal siap diimpor.`);
+      const report = validateQuestionPackage(cleaned, target);
+      setValidation(report);
+      if (!report.valid) throw new Error(`File belum lolos validasi (${report.errors.length} masalah).`);
+      setPreview(cleaned); setMessage(`✓ ${cleaned.length} soal lolos validasi dan siap diimpor.`);
     } catch (error) {
-      setFile(null); setPreview([]); setMessage(`✕ ${error.message}`);
+      setPreview([]); setMessage(`✕ ${error.message}`);
     } finally { setLoading(false); }
   }
 
@@ -137,9 +142,10 @@ export default function SimpleAdminDashboard() {
 
       {tab === "questions" && <section className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900 sm:p-7">
         <div className="mb-6 grid gap-4 sm:grid-cols-3"><div className="rounded-xl bg-blue-50 p-4 dark:bg-blue-950/30"><strong className="text-sm text-blue-700 dark:text-blue-300">1. Pilih tujuan</strong><p className="mt-1 text-xs text-slate-500">Bank utama atau paket.</p></div><div className="rounded-xl bg-slate-50 p-4 dark:bg-slate-800"><strong className="text-sm">2. Pilih JSON</strong><p className="mt-1 text-xs text-slate-500">File diperiksa otomatis.</p></div><div className="rounded-xl bg-slate-50 p-4 dark:bg-slate-800"><strong className="text-sm">3. Simpan</strong><p className="mt-1 text-xs text-slate-500">Soal lama akan diganti.</p></div></div>
-        <label className="block text-sm font-semibold">Tujuan soal</label><select value={target} onChange={(event) => { setTarget(event.target.value); setPreview([]); setFile(null); setMessage(""); }} className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="main">Bank soal utama</option>{Array.from({ length: 10 }, (_, i) => i + 1).map((number) => <option key={number} value={number}>Paket Simulasi {number}</option>)}</select>
+        <label className="block text-sm font-semibold">Tujuan soal</label><select value={target} onChange={(event) => { setTarget(event.target.value); setPreview([]); setFile(null); setMessage(""); setValidation(null); }} className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="main">Bank soal utama</option>{Array.from({ length: 10 }, (_, i) => i + 1).map((number) => <option key={number} value={number}>Paket Simulasi {number}</option>)}</select>
         <div className="mt-5 rounded-2xl border-2 border-dashed border-slate-300 p-7 text-center dark:border-slate-700"><span className="text-3xl">⇧</span><p className="mt-2 text-sm font-semibold">{file?.name || "Pilih file soal JSON"}</p><p className="mt-1 text-xs text-slate-500">Format array soal atau objek dengan field questions.</p><input ref={inputRef} type="file" accept=".json,application/json" onChange={chooseFile} className="hidden" /><button onClick={() => inputRef.current?.click()} className="mt-4 rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-semibold hover:border-blue-500 hover:text-blue-600 dark:border-slate-700">{loading ? "Memeriksa..." : "Pilih file"}</button></div>
         {message && <div className={`mt-4 rounded-xl p-3 text-sm ${message.startsWith("✓") ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-300" : "bg-red-50 text-red-700 dark:bg-red-950/30 dark:text-red-300"}`}>{message}</div>}
+        {validation && !validation.valid && <div className="mt-3 max-h-48 overflow-y-auto rounded-xl border border-red-200 bg-red-50 p-3 text-xs text-red-700"><strong>Perbaiki sebelum impor:</strong><ul className="mt-2 list-disc space-y-1 pl-5">{validation.errors.slice(0, 25).map((error) => <li key={error}>{error}</li>)}</ul>{validation.errors.length > 25 && <p className="mt-2 font-semibold">+ {validation.errors.length - 25} masalah lainnya.</p>}</div>}
         <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center"><button disabled={!preview.length || loading} onClick={importQuestions} className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white disabled:cursor-not-allowed disabled:opacity-40">{loading ? "Memproses..." : `Simpan ${preview.length || ""} soal`}</button><span className="text-xs text-slate-500">Di Firebase: <strong>{existing.length} soal</strong></span>{existing.length > 0 && <button onClick={exportQuestions} className="text-xs font-semibold text-blue-600 sm:ml-auto">Download paket ini</button>}<button disabled={loading} onClick={exportFullBackup} className="text-xs font-semibold text-blue-600">Backup semua paket</button></div>
       </section>}
 
