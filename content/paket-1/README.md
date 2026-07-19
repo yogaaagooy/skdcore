@@ -3,7 +3,7 @@
 Status penyusunan:
 
 - TWK: 30/30 draf selesai.
-- TIU: 0/35.
+- TIU: 35/35 draf selesai.
 - TKP: 0/45.
 - Impor Firebase: belum dilakukan sampai 110 soal lengkap dan lolos validator.
 
