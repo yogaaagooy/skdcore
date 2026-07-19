@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import LandingPageSKDCore from "./LandingPageSKDCore";
 import Login from "./pages/Login";
@@ -10,10 +11,11 @@ import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
 import SimpleAdminDashboard from "./pages/SimpleAdminDashboard";
 import SimulationMenu from "./pages/SimulationMenu";
-import { getCurrentUser } from "./utils/auth";
+import { clearLegacyAuth, setCurrentUser } from "./utils/auth";
+import { observeAuth } from "./services/auth";
 
-function RequireAuth({ children, roles }) {
-  const user = getCurrentUser();
+function RequireAuth({ children, roles, user, loading }) {
+  if (loading) return <div className="grid min-h-screen place-items-center bg-slate-50 text-sm text-slate-500">Memuat akun...</div>;
   if (!user) {
     return <Navigate to="/login" replace />;
   }
@@ -24,6 +26,20 @@ function RequireAuth({ children, roles }) {
 }
 
 function App() {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    clearLegacyAuth();
+    return observeAuth((profile) => {
+      setUser(profile);
+      setCurrentUser(profile);
+      setLoading(false);
+    });
+  }, []);
+
+  const guard = (children, roles) => <RequireAuth roles={roles} user={user} loading={loading}>{children}</RequireAuth>;
+
   return (
     <Routes>
       <Route path="/" element={<LandingPageSKDCore />} />
@@ -34,70 +50,54 @@ function App() {
       <Route
         path="/dashboard"
         element={
-          <RequireAuth roles={["user", "admin"]}>
-            <Dashboard />
-          </RequireAuth>
+          guard(<Dashboard />, ["user", "admin"])
         }
       />
 
       <Route
         path="/profile"
         element={
-          <RequireAuth roles={["user", "admin"]}>
-            <Profile />
-          </RequireAuth>
+          guard(<Profile />, ["user", "admin"])
         }
       />
 
       <Route
         path="/admin"
         element={
-          <RequireAuth roles={["admin"]}>
-            <SimpleAdminDashboard />
-          </RequireAuth>
+          guard(<SimpleAdminDashboard />, ["admin"])
         }
       />
 
       <Route
         path="/simulasi"
         element={
-          <RequireAuth roles={["user", "admin"]}>
-            <SimulationMenu />
-          </RequireAuth>
+          guard(<SimulationMenu />, ["user", "admin"])
         }
       />
       <Route
         path="/simulasi/:mode"
         element={
-          <RequireAuth roles={["user", "admin"]}>
-            <Simulasi />
-          </RequireAuth>
+          guard(<Simulasi />, ["user", "admin"])
         }
       />
       <Route
         path="/simulasi/sim/:num"
         element={
-          <RequireAuth roles={["user", "admin"]}>
-            <Simulasi />
-          </RequireAuth>
+          guard(<Simulasi />, ["user", "admin"])
         }
       />
 
       <Route
         path="/hasil-simulasi"
         element={
-          <RequireAuth roles={["user", "admin"]}>
-            <HasilSimulasi />
-          </RequireAuth>
+          guard(<HasilSimulasi />, ["user", "admin"])
         }
       />
 
       <Route
         path="/leaderboard"
         element={
-          <RequireAuth roles={["user", "admin"]}>
-            <Leaderboard />
-          </RequireAuth>
+          guard(<Leaderboard />, ["user", "admin"])
         }
       />
     </Routes>
