@@ -41,35 +41,35 @@
     {
       "id": "P1-TWK-002",
       "category": "TWK",
-      "question": "Makna Indonesia sebagai negara hukum dalam UUD 1945 adalah...",
+      "question": "Pimpinan meminta tim menjalankan kebijakan baru hanya berdasarkan instruksi lisan, padahal kebijakan itu membatasi hak warga. Sikap paling tepat adalah...",
       "options": [
         {
           "id": "A",
-          "text": "Kekuasaan pemerintah tidak dapat diuji",
+          "text": "Menjalankan karena pimpinan selalu benar",
           "score": 0
         },
         {
           "id": "B",
-          "text": "Hukum hanya mengikat masyarakat",
-          "score": 0
-        },
-        {
-          "id": "C",
-          "text": "Penyelenggaraan negara dan warga sama-sama tunduk pada hukum",
+          "text": "Meminta dasar hukum dan menunda penerapan sampai prosedurnya sah",
           "score": 5
         },
         {
+          "id": "C",
+          "text": "Menjalankan hanya kepada warga yang tidak protes",
+          "score": 0
+        },
+        {
           "id": "D",
-          "text": "Kebijakan pejabat selalu lebih tinggi dari undang-undang",
+          "text": "Menyembunyikan kebijakan dari publik",
           "score": 0
         },
         {
           "id": "E",
-          "text": "Pengadilan berada di bawah kehendak politik",
+          "text": "Meminta warga menerima demi ketertiban",
           "score": 0
         }
       ],
-      "explanation": "Pasal 1 ayat (3) menegaskan Indonesia adalah negara hukum. Kekuasaan harus dijalankan berdasarkan hukum dan dapat dipertanggungjawabkan.",
+      "explanation": "Negara hukum menuntut tindakan pemerintah memiliki dasar dan prosedur yang sah, terutama ketika membatasi hak warga.",
       "source": "UUD 1945 Pasal 1 ayat (3)"
     },
     {
@@ -109,35 +109,35 @@
     {
       "id": "P1-TWK-004",
       "category": "TWK",
-      "question": "Prinsip kedaulatan rakyat menurut UUD 1945 dilaksanakan...",
+      "question": "Mayoritas peserta forum menyetujui keputusan yang melanggar hak kelompok kecil. Ketua forum seharusnya...",
       "options": [
         {
           "id": "A",
-          "text": "Sepenuhnya oleh presiden",
+          "text": "Mengesahkan karena suara mayoritas mutlak",
           "score": 0
         },
         {
           "id": "B",
-          "text": "Menurut Undang-Undang Dasar",
+          "text": "Menghentikan proses dan memastikan keputusan tetap sesuai konstitusi",
           "score": 5
         },
         {
           "id": "C",
-          "text": "Hanya melalui keputusan MPR",
+          "text": "Membiarkan kelompok kecil keluar",
           "score": 0
         },
         {
           "id": "D",
-          "text": "Tanpa pembatasan hukum",
+          "text": "Merahasiakan hasil forum",
           "score": 0
         },
         {
           "id": "E",
-          "text": "Oleh partai pemenang pemilu",
+          "text": "Menunda tanpa menjelaskan masalahnya",
           "score": 0
         }
       ],
-      "explanation": "UUD 1945 menyatakan kedaulatan berada di tangan rakyat dan dilaksanakan menurut Undang-Undang Dasar, sehingga pelaksanaannya dibatasi konstitusi.",
+      "explanation": "Kedaulatan rakyat dilaksanakan menurut UUD, sehingga keputusan mayoritas tetap dibatasi konstitusi dan perlindungan hak.",
       "source": "UUD 1945 Pasal 1 ayat (2)"
     },
     {
@@ -177,35 +177,35 @@
     {
       "id": "P1-TWK-006",
       "category": "TWK",
-      "question": "Perubahan UUD 1945 tidak dapat dilakukan terhadap...",
+      "question": "Sebuah kelompok mengusulkan agar beberapa wilayah menjadi negara berdaulat yang hanya terikat longgar dengan Indonesia. Sikap konstitusional adalah...",
       "options": [
         {
           "id": "A",
-          "text": "Ketentuan masa jabatan presiden",
+          "text": "Menerima jika wilayahnya kaya",
           "score": 0
         },
         {
           "id": "B",
-          "text": "Aturan pembentukan kementerian",
-          "score": 0
-        },
-        {
-          "id": "C",
-          "text": "Bentuk Negara Kesatuan Republik Indonesia",
+          "text": "Menolak karena bertentangan dengan bentuk NKRI yang tidak dapat diubah",
           "score": 5
         },
         {
+          "id": "C",
+          "text": "Menerima jika diputuskan pemerintah daerah",
+          "score": 0
+        },
+        {
           "id": "D",
-          "text": "Susunan lembaga perwakilan",
+          "text": "Menunda sampai ada tekanan internasional",
           "score": 0
         },
         {
           "id": "E",
-          "text": "Prosedur pengajuan rancangan undang-undang",
+          "text": "Membiarkan setiap wilayah memilih sendiri tanpa prosedur",
           "score": 0
         }
       ],
-      "explanation": "Pasal 37 ayat (5) secara tegas menyatakan bentuk Negara Kesatuan Republik Indonesia tidak dapat diubah.",
+      "explanation": "Konstitusi menegaskan bentuk Negara Kesatuan Republik Indonesia tidak dapat diubah; aspirasi daerah harus diselesaikan dalam kerangka NKRI.",
       "source": "UUD 1945 Pasal 37 ayat (5)"
     },
     {
@@ -245,35 +245,35 @@
     {
       "id": "P1-TWK-008",
       "category": "TWK",
-      "question": "Hak warga negara untuk memperoleh kesempatan yang sama dalam pemerintahan dijamin dalam...",
+      "question": "Panitia rekrutmen instansi ingin memberi nilai tambahan kepada pelamar yang memiliki hubungan keluarga dengan pegawai. Tindakan yang tepat adalah...",
       "options": [
         {
           "id": "A",
-          "text": "Pasal 27 ayat (3)",
+          "text": "Menyetujui demi loyalitas internal",
           "score": 0
         },
         {
           "id": "B",
-          "text": "Pasal 28D ayat (3)",
+          "text": "Menolak dan menerapkan kriteria kompetensi yang setara",
           "score": 5
         },
         {
           "id": "C",
-          "text": "Pasal 29 ayat (2)",
+          "text": "Menyetujui jika tidak diumumkan",
           "score": 0
         },
         {
           "id": "D",
-          "text": "Pasal 31 ayat (1)",
+          "text": "Memberi tambahan hanya kepada keluarga pimpinan",
           "score": 0
         },
         {
           "id": "E",
-          "text": "Pasal 33 ayat (3)",
+          "text": "Mengganti nilai tambahan dengan wawancara informal",
           "score": 0
         }
       ],
-      "explanation": "Pasal 28D ayat (3) menjamin setiap warga negara memperoleh kesempatan yang sama dalam pemerintahan.",
+      "explanation": "Kesempatan yang sama dalam pemerintahan menuntut seleksi berdasarkan kriteria objektif, bukan hubungan keluarga.",
       "source": "UUD 1945 Pasal 28D ayat (3)"
     },
     {
@@ -347,69 +347,69 @@
     {
       "id": "P1-TWK-011",
       "category": "TWK",
-      "question": "Fungsi utama bahasa Indonesia sebagai bahasa negara dalam pelayanan publik adalah...",
+      "question": "Petunjuk layanan pusat memakai banyak istilah daerah sehingga sulit dipahami warga dari wilayah lain. Perbaikan paling tepat adalah...",
       "options": [
         {
           "id": "A",
-          "text": "Menghapus penggunaan bahasa daerah",
+          "text": "Menghapus semua bahasa daerah dari ruang publik",
           "score": 0
         },
         {
           "id": "B",
-          "text": "Menjadi bahasa resmi yang memudahkan komunikasi nasional",
+          "text": "Menggunakan bahasa Indonesia yang jelas sambil menyediakan bantuan bahasa lokal bila diperlukan",
           "score": 5
         },
         {
           "id": "C",
-          "text": "Membatasi akses warga asing",
+          "text": "Mewajibkan warga mempelajari istilah tersebut",
           "score": 0
         },
         {
           "id": "D",
-          "text": "Menggantikan seluruh istilah lokal",
+          "text": "Membuat petunjuk berbeda tanpa versi nasional",
           "score": 0
         },
         {
           "id": "E",
-          "text": "Menentukan status sosial warga",
+          "text": "Membiarkan karena petugas sudah memahami",
           "score": 0
         }
       ],
-      "explanation": "Bahasa Indonesia menjadi bahasa resmi negara dan sarana komunikasi nasional. Penggunaannya tidak meniadakan penghormatan terhadap bahasa daerah.",
+      "explanation": "Bahasa Indonesia menjamin komunikasi resmi lintas daerah, sedangkan bantuan bahasa lokal tetap dapat menjaga akses dan penghormatan budaya.",
       "source": "UUD 1945 Pasal 36 dan Pasal 32 ayat (2)"
     },
     {
       "id": "P1-TWK-012",
       "category": "TWK",
-      "question": "Jika peraturan di bawah undang-undang diduga bertentangan dengan undang-undang, lembaga yang berwenang mengujinya adalah...",
+      "question": "Sebuah peraturan kepala lembaga diduga bertentangan dengan undang-undang dan merugikan warga. Langkah kelembagaan yang tepat adalah...",
       "options": [
         {
           "id": "A",
-          "text": "Mahkamah Konstitusi",
+          "text": "Meminta Mahkamah Konstitusi menguji peraturan tersebut",
           "score": 0
         },
         {
           "id": "B",
-          "text": "Mahkamah Agung",
+          "text": "Mengajukan pengujian kepada Mahkamah Agung",
           "score": 5
         },
         {
           "id": "C",
-          "text": "Komisi Yudisial",
+          "text": "Meminta Komisi Yudisial membatalkannya",
           "score": 0
         },
         {
           "id": "D",
-          "text": "Dewan Perwakilan Daerah",
+          "text": "Meminta BPK mengubah isinya",
           "score": 0
         },
         {
           "id": "E",
-          "text": "Badan Pemeriksa Keuangan",
+          "text": "Mengabaikannya karena dibuat pejabat",
           "score": 0
         }
       ],
-      "explanation": "Mahkamah Agung menguji peraturan perundang-undangan di bawah undang-undang terhadap undang-undang. Mahkamah Konstitusi menguji undang-undang terhadap UUD.",
+      "explanation": "Mahkamah Agung berwenang menguji peraturan di bawah undang-undang terhadap undang-undang; MK menguji undang-undang terhadap UUD.",
       "source": "UUD 1945 Pasal 24A ayat (1) dan Pasal 24C ayat (1)"
     },
     {
@@ -449,35 +449,35 @@
     {
       "id": "P1-TWK-014",
       "category": "TWK",
-      "question": "Tujuan negara 'mencerdaskan kehidupan bangsa' tercantum dalam...",
+      "question": "Anggaran pendidikan terbatas. Program mana yang paling selaras dengan tujuan mencerdaskan kehidupan bangsa?",
       "options": [
         {
           "id": "A",
-          "text": "Batang tubuh Pasal 1",
+          "text": "Acara seremonial untuk pejabat",
           "score": 0
         },
         {
           "id": "B",
-          "text": "Pembukaan UUD 1945 alinea keempat",
+          "text": "Perluasan akses belajar bermutu bagi wilayah yang paling tertinggal",
           "score": 5
         },
         {
           "id": "C",
-          "text": "Penjelasan umum UUD 1945",
+          "text": "Pembangunan ruang khusus tamu",
           "score": 0
         },
         {
           "id": "D",
-          "text": "Ketetapan MPR",
+          "text": "Iklan pencitraan tanpa materi belajar",
           "score": 0
         },
         {
           "id": "E",
-          "text": "Sumpah Pemuda",
+          "text": "Perjalanan dinas yang tidak terkait pembelajaran",
           "score": 0
         }
       ],
-      "explanation": "Alinea keempat Pembukaan UUD 1945 memuat tujuan negara, termasuk mencerdaskan kehidupan bangsa.",
+      "explanation": "Tujuan mencerdaskan kehidupan bangsa diarahkan pada akses dan mutu pendidikan, terutama ketika sumber daya harus diprioritaskan.",
       "source": "Pembukaan UUD 1945 alinea keempat"
     },
     {
@@ -517,35 +517,35 @@
     {
       "id": "P1-TWK-016",
       "category": "TWK",
-      "question": "Hubungan pemerintah pusat dan daerah dalam NKRI pada dasarnya adalah...",
+      "question": "Pemerintah daerah ingin membuat kebijakan sesuai kebutuhan lokal, tetapi materinya termasuk urusan yang ditetapkan sebagai kewenangan pusat. Sikap yang tepat adalah...",
       "options": [
         {
           "id": "A",
-          "text": "Daerah berdaulat penuh",
+          "text": "Tetap menjalankan karena daerah sepenuhnya berdaulat",
           "score": 0
         },
         {
           "id": "B",
-          "text": "Daerah menjalankan otonomi dalam kerangka negara kesatuan",
+          "text": "Berkoordinasi dan menyesuaikan kebijakan dalam pembagian kewenangan NKRI",
           "score": 5
         },
         {
           "id": "C",
-          "text": "Pusat tidak boleh mengawasi daerah",
+          "text": "Mengabaikan seluruh kebutuhan lokal",
           "score": 0
         },
         {
           "id": "D",
-          "text": "Setiap daerah memiliki konstitusi sendiri",
+          "text": "Membuat konstitusi daerah sendiri",
           "score": 0
         },
         {
           "id": "E",
-          "text": "Kepala daerah menggantikan kedudukan presiden",
+          "text": "Memutus hubungan administratif dengan pusat",
           "score": 0
         }
       ],
-      "explanation": "Otonomi daerah memberi kewenangan mengatur urusan daerah, tetapi tetap berada dalam kerangka Negara Kesatuan Republik Indonesia.",
+      "explanation": "Otonomi memberi ruang mengatur kebutuhan daerah, tetapi pelaksanaannya tetap mengikuti pembagian kewenangan dalam negara kesatuan.",
       "source": "UUD 1945 Pasal 18 ayat (1), (2), dan (5)"
     },
     {
@@ -585,35 +585,35 @@
     {
       "id": "P1-TWK-018",
       "category": "TWK",
-      "question": "Kebebasan memeluk agama dan beribadat menurut agamanya dijamin oleh...",
+      "question": "Pengelola gedung publik hanya menyediakan kesempatan beribadah bagi kelompok mayoritas. Kebijakan yang tepat adalah...",
       "options": [
         {
           "id": "A",
-          "text": "Pasal 28A",
+          "text": "Mempertahankan karena mayoritas pengguna gedung",
           "score": 0
         },
         {
           "id": "B",
-          "text": "Pasal 29 ayat (2)",
+          "text": "Menjamin kesempatan yang wajar dan setara bagi setiap pemeluk agama sesuai aturan",
           "score": 5
         },
         {
           "id": "C",
-          "text": "Pasal 30 ayat (1)",
+          "text": "Melarang semua kegiatan ibadah",
           "score": 0
         },
         {
           "id": "D",
-          "text": "Pasal 33 ayat (1)",
+          "text": "Meminta kelompok minoritas beribadah di luar jam layanan",
           "score": 0
         },
         {
           "id": "E",
-          "text": "Pasal 34 ayat (1)",
+          "text": "Menyerahkan keputusan kepada kelompok mayoritas",
           "score": 0
         }
       ],
-      "explanation": "Pasal 29 ayat (2) menjamin kemerdekaan tiap penduduk untuk memeluk agama dan beribadat menurut agama dan kepercayaannya.",
+      "explanation": "Negara menjamin kemerdekaan beragama dan beribadah; pengelolaan fasilitas publik tidak boleh diskriminatif.",
       "source": "UUD 1945 Pasal 29 ayat (2)"
     },
     {
@@ -687,35 +687,35 @@
     {
       "id": "P1-TWK-021",
       "category": "TWK",
-      "question": "Lembaga yang memiliki kewenangan mengubah dan menetapkan UUD adalah...",
+      "question": "Sebuah kementerian ingin mengubah ketentuan UUD melalui peraturan menteri agar programnya segera berjalan. Penilaian yang tepat adalah...",
       "options": [
         {
           "id": "A",
-          "text": "DPR",
+          "text": "Dapat dilakukan dalam keadaan mendesak",
           "score": 0
         },
         {
           "id": "B",
-          "text": "Presiden",
-          "score": 0
-        },
-        {
-          "id": "C",
-          "text": "MPR",
+          "text": "Tidak tepat karena perubahan UUD merupakan kewenangan MPR melalui prosedur konstitusional",
           "score": 5
         },
         {
+          "id": "C",
+          "text": "Dapat dilakukan dengan persetujuan presiden saja",
+          "score": 0
+        },
+        {
           "id": "D",
-          "text": "Mahkamah Konstitusi",
+          "text": "Sah jika diumumkan kepada publik",
           "score": 0
         },
         {
           "id": "E",
-          "text": "DPD",
+          "text": "Sah selama tidak diprotes DPR",
           "score": 0
         }
       ],
-      "explanation": "MPR berwenang mengubah dan menetapkan Undang-Undang Dasar sesuai prosedur konstitusional.",
+      "explanation": "Hierarki dan kewenangan konstitusional tidak dapat dilewati demi kecepatan program; perubahan UUD dilakukan oleh MPR menurut prosedur Pasal 37.",
       "source": "UUD 1945 Pasal 3 ayat (1) dan Pasal 37"
     },
     {
@@ -755,35 +755,35 @@
     {
       "id": "P1-TWK-023",
       "category": "TWK",
-      "question": "Pemilu menurut UUD 1945 dilaksanakan berdasarkan asas...",
+      "question": "Petugas pemilu melihat seorang tokoh menekan warga untuk menunjukkan pilihan mereka. Tindakan paling tepat adalah...",
       "options": [
         {
           "id": "A",
-          "text": "Langsung, umum, bebas, rahasia, jujur, dan adil",
-          "score": 5
-        },
-        {
-          "id": "B",
-          "text": "Terbuka, bertingkat, dan mengikat",
+          "text": "Membiarkan karena tokoh tersebut berpengaruh",
           "score": 0
         },
         {
+          "id": "B",
+          "text": "Menghentikan tekanan dan menjaga kebebasan serta kerahasiaan pilihan warga",
+          "score": 5
+        },
+        {
           "id": "C",
-          "text": "Musyawarah, mufakat, dan perwakilan",
+          "text": "Meminta warga mengikuti agar tidak konflik",
           "score": 0
         },
         {
           "id": "D",
-          "text": "Cepat, hemat, dan sederhana",
+          "text": "Mencatat tanpa mengambil tindakan",
           "score": 0
         },
         {
           "id": "E",
-          "text": "Mayoritas, terpusat, dan final",
+          "text": "Mengumumkan pilihan warga kepada panitia",
           "score": 0
         }
       ],
-      "explanation": "Konstitusi menentukan pemilu dilaksanakan secara langsung, umum, bebas, rahasia, jujur, dan adil setiap lima tahun.",
+      "explanation": "Asas bebas dan rahasia menuntut pilihan warga terbebas dari tekanan serta tidak wajib diperlihatkan kepada pihak lain.",
       "source": "UUD 1945 Pasal 22E ayat (1)"
     },
     {
@@ -857,35 +857,35 @@
     {
       "id": "P1-TWK-026",
       "category": "TWK",
-      "question": "Kewajiban menghormati hak asasi manusia orang lain ditegaskan dalam...",
+      "question": "Dalam menyampaikan protes, sekelompok orang berencana menutup akses ambulans agar tuntutannya diperhatikan. Sikap yang sesuai HAM adalah...",
       "options": [
         {
           "id": "A",
-          "text": "Pasal 28J ayat (1)",
-          "score": 5
-        },
-        {
-          "id": "B",
-          "text": "Pasal 31 ayat (2)",
+          "text": "Mendukung karena kebebasan berpendapat tanpa batas",
           "score": 0
         },
         {
+          "id": "B",
+          "text": "Mengubah cara protes agar hak menyampaikan pendapat tidak merampas keselamatan orang lain",
+          "score": 5
+        },
+        {
           "id": "C",
-          "text": "Pasal 32 ayat (1)",
+          "text": "Membiarkan selama dilakukan kelompok besar",
           "score": 0
         },
         {
           "id": "D",
-          "text": "Pasal 33 ayat (4)",
+          "text": "Menutup akses lebih lama agar efektif",
           "score": 0
         },
         {
           "id": "E",
-          "text": "Pasal 34 ayat (3)",
+          "text": "Melarang seluruh bentuk protes",
           "score": 0
         }
       ],
-      "explanation": "Pasal 28J ayat (1) menyatakan setiap orang wajib menghormati hak asasi manusia orang lain dalam tertib kehidupan bermasyarakat, berbangsa, dan bernegara.",
+      "explanation": "Pelaksanaan hak wajib menghormati hak orang lain; kebebasan berpendapat tidak membenarkan tindakan yang membahayakan akses keselamatan.",
       "source": "UUD 1945 Pasal 28J ayat (1)"
     },
     {
@@ -959,35 +959,35 @@
     {
       "id": "P1-TWK-029",
       "category": "TWK",
-      "question": "Pengakuan dan penghormatan terhadap kesatuan masyarakat hukum adat dalam UUD 1945 berlaku sepanjang...",
+      "question": "Pembangunan fasilitas publik akan memakai wilayah yang masih dikelola masyarakat hukum adat. Langkah paling tepat adalah...",
       "options": [
         {
           "id": "A",
-          "text": "Memiliki wilayah yang luas",
+          "text": "Mengabaikan masyarakat karena proyek pemerintah",
           "score": 0
         },
         {
           "id": "B",
-          "text": "Disetujui seluruh negara lain",
-          "score": 0
-        },
-        {
-          "id": "C",
-          "text": "Masih hidup, sesuai perkembangan masyarakat, dan prinsip NKRI",
+          "text": "Memverifikasi keberadaan hak adat, melibatkan masyarakat, dan mengikuti hukum dalam kerangka NKRI",
           "score": 5
         },
         {
+          "id": "C",
+          "text": "Menyerahkan seluruh keputusan tanpa aturan negara",
+          "score": 0
+        },
+        {
           "id": "D",
-          "text": "Tidak berhubungan dengan pemerintah daerah",
+          "text": "Memindahkan masyarakat secara langsung",
           "score": 0
         },
         {
           "id": "E",
-          "text": "Mempunyai angkatan bersenjata sendiri",
+          "text": "Hanya meminta persetujuan investor",
           "score": 0
         }
       ],
-      "explanation": "Konstitusi mengakui masyarakat hukum adat beserta hak tradisionalnya dengan syarat masih hidup, sesuai perkembangan masyarakat, dan prinsip NKRI serta diatur dalam undang-undang.",
+      "explanation": "Pengakuan hak masyarakat adat harus diwujudkan melalui verifikasi, pelibatan bermakna, dan proses hukum yang tetap sesuai prinsip NKRI.",
       "source": "UUD 1945 Pasal 18B ayat (2)"
     },
     {
