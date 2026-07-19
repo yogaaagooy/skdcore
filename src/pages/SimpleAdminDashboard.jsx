@@ -133,7 +133,7 @@ export default function SimpleAdminDashboard() {
 
   return <div className="min-h-screen bg-slate-50 dark:bg-slate-950"><Navbar />
     <main className="mx-auto max-w-5xl px-4 py-7 sm:py-10">
-      <div className="mb-6"><p className="text-xs font-bold uppercase tracking-wider text-blue-600">Panel admin</p><h1 className="mt-1 text-2xl font-bold">Pengelolaan SKDCore</h1><p className="mt-1 text-sm text-slate-500">Kelola bank soal dan pengguna dari satu tempat.</p></div>
+      <div className="mb-6"><p className="text-xs font-bold uppercase tracking-wider text-blue-600">Panel admin</p><h1 className="mt-1 text-2xl font-bold">Pengelolaan NalarASN</h1><p className="mt-1 text-sm text-slate-500">Kelola bank soal dan pengguna dari satu tempat.</p></div>
 
       <div className="mb-6 flex gap-1 rounded-2xl border border-slate-200 bg-white p-1.5 dark:border-slate-800 dark:bg-slate-900">
         <button onClick={() => setTab("questions")} className={`flex-1 rounded-xl px-4 py-3 text-sm font-bold ${tab === "questions" ? "bg-blue-600 text-white shadow" : "text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800"}`}>▤ Bank Soal</button>

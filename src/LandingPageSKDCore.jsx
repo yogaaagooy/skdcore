@@ -8,10 +8,10 @@ export default function LandingPageSKDCore() {
       {/* Navbar */}
       <header className="border-b border-gray-200 bg-white/80 backdrop-blur dark:bg-slate-900/80 dark:border-slate-800">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <Link to="/" className="flex items-center" aria-label="SKDCore Beranda">
+          <Link to="/" className="flex items-center" aria-label="NalarASN Beranda">
             <img
               src={logo}
-              alt="SKDCore"
+              alt="NalarASN"
               className="h-10 w-auto max-w-[145px] object-contain"
             />
           </Link>
@@ -63,7 +63,7 @@ export default function LandingPageSKDCore() {
                 href="#features"
                 className="px-6 py-3 rounded-full border border-gray-300 text-sm font-semibold text-gray-800 hover:bg-gray-100 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-slate-800"
               >
-                Lihat Fitur SKDCore
+                Lihat Fitur NalarASN
               </a>
             </div>
             <p className="mt-3 text-xs text-gray-500 dark:text-slate-400">
@@ -121,10 +121,10 @@ export default function LandingPageSKDCore() {
           </div>
         </section>
 
-        {/* Kenapa SKDCore */}
+        {/* Kenapa NalarASN */}
         <section id="features" className="py-10">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Kenapa pakai SKDCore?
+            Kenapa pakai NalarASN?
           </h2>
           <p className="text-gray-600 dark:text-slate-300 mb-6 max-w-2xl">
             Dirancang untuk pejuang CPNS yang mau latihan serius, bukan cuma lewat-lewat.
@@ -188,7 +188,7 @@ export default function LandingPageSKDCore() {
       {/* Footer */}
       <footer className="border-t border-gray-200 dark:border-slate-800 mt-10">
         <div className="max-w-6xl mx-auto px-4 py-6 text-xs text-gray-500 dark:text-slate-400 flex flex-col md:flex-row items-center justify-between gap-2">
-          <span>© {new Date().getFullYear()} SKDCore. Latihan mandiri untuk persiapan SKD.</span>
+          <span>© {new Date().getFullYear()} NalarASN. Latihan cerdas, langkah nyata menuju ASN.</span>
           <span>Not affiliated with any government institution.</span>
         </div>
       </footer>

@@ -367,7 +367,7 @@ export default function Simulasi() {
             <div className="flex items-center gap-2">
               <img
                 src={logo}
-                alt="SKDCore"
+                alt="NalarASN"
                 className="h-10 w-auto object-contain"
               />
             </div>
