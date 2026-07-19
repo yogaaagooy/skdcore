@@ -1,9 +1,9 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { getCurrentUser, getUsers, saveUsers } from "../utils/auth";
+import { getQuestionBank, saveQuestionBank } from "../services/questions";
 
-const MAIN_KEY = "skdcore_question_bank_v1";
 const HISTORY_KEY = "skdcore_simulasi_history_v1";
 
 function normalizeQuestion(question, index) {
@@ -40,11 +40,17 @@ export default function SimpleAdminDashboard() {
   const [search, setSearch] = useState("");
   const [roleFilter, setRoleFilter] = useState("all");
 
-  const storageKey = target === "main" ? MAIN_KEY : `skdcore_simulasi_${target}_questions_v1`;
-  const existing = useMemo(() => {
-    try { const value = JSON.parse(localStorage.getItem(storageKey) || "[]"); return Array.isArray(value) ? value : []; }
-    catch { return []; }
-  }, [storageKey, message]);
+  const [existing, setExisting] = useState([]);
+
+  useEffect(() => {
+    let active = true;
+    setLoading(true);
+    getQuestionBank(target)
+      .then((questions) => { if (active) setExisting(questions); })
+      .catch(() => { if (active) setMessage("✕ Bank soal gagal dibaca dari Firebase."); })
+      .finally(() => { if (active) setLoading(false); });
+    return () => { active = false; };
+  }, [target]);
 
   const userRows = useMemo(() => users.map((user) => {
     const userHistory = history.filter((item) => item.userEmail === user.email);
@@ -71,11 +77,17 @@ export default function SimpleAdminDashboard() {
     } finally { setLoading(false); }
   }
 
-  function importQuestions() {
+  async function importQuestions() {
     if (!preview.length) return;
-    localStorage.setItem(storageKey, JSON.stringify(preview));
-    setMessage(`✓ Berhasil. ${preview.length} soal menggantikan isi ${target === "main" ? "bank utama" : `Paket ${target}`}.`);
-    setPreview([]); setFile(null); if (inputRef.current) inputRef.current.value = "";
+    setLoading(true);
+    try {
+      await saveQuestionBank(target, preview);
+      setExisting(preview);
+      setMessage(`✓ Berhasil. ${preview.length} soal tersimpan di Firebase untuk ${target === "main" ? "bank utama" : `Paket ${target}`}.`);
+      setPreview([]); setFile(null); if (inputRef.current) inputRef.current.value = "";
+    } catch (error) {
+      setMessage(`✕ ${error.message || "Soal gagal disimpan."}`);
+    } finally { setLoading(false); }
   }
 
   function exportQuestions() {
@@ -119,7 +131,7 @@ export default function SimpleAdminDashboard() {
         <label className="block text-sm font-semibold">Tujuan soal</label><select value={target} onChange={(event) => { setTarget(event.target.value); setPreview([]); setFile(null); setMessage(""); }} className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="main">Bank soal utama</option>{Array.from({ length: 10 }, (_, i) => i + 1).map((number) => <option key={number} value={number}>Paket Simulasi {number}</option>)}</select>
         <div className="mt-5 rounded-2xl border-2 border-dashed border-slate-300 p-7 text-center dark:border-slate-700"><span className="text-3xl">⇧</span><p className="mt-2 text-sm font-semibold">{file?.name || "Pilih file soal JSON"}</p><p className="mt-1 text-xs text-slate-500">Format array soal atau objek dengan field questions.</p><input ref={inputRef} type="file" accept=".json,application/json" onChange={chooseFile} className="hidden" /><button onClick={() => inputRef.current?.click()} className="mt-4 rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-semibold hover:border-blue-500 hover:text-blue-600 dark:border-slate-700">{loading ? "Memeriksa..." : "Pilih file"}</button></div>
         {message && <div className={`mt-4 rounded-xl p-3 text-sm ${message.startsWith("✓") ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-300" : "bg-red-50 text-red-700 dark:bg-red-950/30 dark:text-red-300"}`}>{message}</div>}
-        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center"><button disabled={!preview.length} onClick={importQuestions} className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white disabled:cursor-not-allowed disabled:opacity-40">Simpan {preview.length || ""} soal</button><span className="text-xs text-slate-500">Saat ini: <strong>{existing.length} soal</strong></span>{existing.length > 0 && <button onClick={exportQuestions} className="text-xs font-semibold text-blue-600 sm:ml-auto">Download cadangan</button>}</div>
+        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center"><button disabled={!preview.length || loading} onClick={importQuestions} className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white disabled:cursor-not-allowed disabled:opacity-40">{loading ? "Menyimpan..." : `Simpan ${preview.length || ""} soal`}</button><span className="text-xs text-slate-500">Di Firebase: <strong>{existing.length} soal</strong></span>{existing.length > 0 && <button onClick={exportQuestions} className="text-xs font-semibold text-blue-600 sm:ml-auto">Download cadangan</button>}</div>
       </section>}
 
       {tab === "users" && <section>
