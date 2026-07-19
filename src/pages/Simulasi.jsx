@@ -5,8 +5,8 @@ import UserDropdown from "../components/UserDropdown";
 import { getCurrentUser } from "../utils/auth";
 import { getQuestionBank } from "../services/questions";
 import { logout } from "../services/auth";
+import { getAttemptCount, saveAttempt } from "../services/results";
 
-const HISTORY_KEY = "skdcore_simulasi_history_v1";
 const LAST_DETAIL_KEY = "skdcore_last_simulation_detail_v1";
 
 // Soal default (dipakai kalau belum ada bank soal import)
@@ -50,27 +50,6 @@ const DEFAULT_QUESTIONS = [
   }
 ];
 
-// Fungsi cek jumlah attempt user untuk mode dan simulasi spesifik
-function getAttemptCountForMode(userEmail, mode, simulasiNum = null) {
-  if (typeof window === "undefined" || !userEmail) return 0;
-  try {
-    const raw = window.localStorage.getItem(HISTORY_KEY);
-    const history = raw ? JSON.parse(raw) : [];
-    if (!Array.isArray(history)) return 0;
-    
-    // Hitung attempt untuk email ini di mode ini
-    // Jika simulasiNum spesifik, filter juga berdasarkan simulasi_num
-    const attempts = history.filter(
-      (h) => h.userEmail === userEmail && 
-             h.mode === mode &&
-             (simulasiNum === null ? !h.simulasi_num : h.simulasi_num === simulasiNum)
-    );
-    return attempts.length;
-  } catch {
-    return 0;
-  }
-}
-
 // Timer BKN
 function getTotalTimeSeconds(mode) {
   const m = (mode || "all").toLowerCase();
@@ -104,6 +83,8 @@ export default function Simulasi() {
   const [allQuestions, setAllQuestions] = useState([]);
   const [questionsLoading, setQuestionsLoading] = useState(true);
   const [questionsError, setQuestionsError] = useState("");
+  const [attemptCount, setAttemptCount] = useState(0);
+  const [finishing, setFinishing] = useState(false);
   const QUESTION_BANK = buildQuestionBank(allQuestions);
   const QUESTION_SET = QUESTION_BANK[currentMode] || QUESTION_BANK.all;
 
@@ -142,6 +123,14 @@ export default function Simulasi() {
       .finally(() => { if (active) setQuestionsLoading(false); });
     return () => { active = false; };
   }, [simulasiNum]);
+
+  useEffect(() => {
+    let active = true;
+    getAttemptCount(currentMode, simulasiNum)
+      .then((count) => { if (active) setAttemptCount(count); })
+      .catch(() => { if (active) setAttemptCount(0); });
+    return () => { active = false; };
+  }, [currentMode, simulasiNum]);
 
   // Load state dari localStorage
   useEffect(() => {
@@ -254,7 +243,8 @@ export default function Simulasi() {
     }
   }
 
-  function handleFinish(auto = false) {
+  async function handleFinish(auto = false) {
+    if (finishing) return;
     const result = calculateResult();
     const answered = Object.keys(answers).length;
     const totalQuestionsLocal = QUESTION_SET.length;
@@ -267,34 +257,11 @@ export default function Simulasi() {
       if (!ok) return;
     }
 
+    setFinishing(true);
     try {
+      await saveAttempt({ mode: currentMode, packageNumber: simulasiNum, scores: result, answers, answeredCount: answered, questionCount: totalQuestionsLocal, autoFinished: auto });
       if (typeof window !== "undefined") {
-        const userEmail = currentUser?.email || null;
-
-        const raw = window.localStorage.getItem(HISTORY_KEY);
-        const prev = raw ? JSON.parse(raw) : [];
-        const attempt = {
-          id: Date.now(),
-          date: new Date().toISOString(),
-          result,
-          answeredCount: answered,
-          totalQuestions: totalQuestionsLocal,
-          mode: currentMode,
-          simulasi_num: simulasiNum,
-          autoFinished: auto,
-          userEmail
-        };
-        const newHistory = [attempt, ...(Array.isArray(prev) ? prev : [])].slice(
-          0,
-          50
-        );
-        window.localStorage.setItem(
-          HISTORY_KEY,
-          JSON.stringify(newHistory)
-        );
         window.localStorage.removeItem(storageKey);
-
-        // simpan detail terakhir
         const detailPayload = {
           result,
           mode: currentMode,
@@ -308,7 +275,9 @@ export default function Simulasi() {
         );
       }
     } catch (err) {
-      console.error("Gagal simpan riwayat simulasi:", err);
+      window.alert(err.message || "Hasil gagal disimpan. Periksa koneksi lalu coba lagi.");
+      setFinishing(false);
+      return;
     }
 
     navigate("/hasil-simulasi", {
@@ -321,11 +290,6 @@ export default function Simulasi() {
       }
     });
   }
-
-  // Cek apakah user sudah mencapai batas 3 kali simulasi (admin tidak ada batas)
-  const attemptCount = currentUser 
-    ? getAttemptCountForMode(currentUser.email, currentMode, simulasiNum)
-    : 0;
 
   if (questionsLoading) {
     return <div className="grid min-h-screen place-items-center bg-gray-50 px-4 dark:bg-slate-950"><div className="text-center"><div className="mx-auto mb-3 h-8 w-8 animate-spin rounded-full border-4 border-blue-100 border-t-blue-600" /><p className="text-sm text-slate-500">Mengambil soal dari Firebase...</p></div></div>;
