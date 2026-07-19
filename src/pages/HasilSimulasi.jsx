@@ -2,9 +2,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-
-
-const HISTORY_KEY = "skdcore_simulasi_history_v1";
+import { getLatestAttempt } from "../services/results";
 
 const PASSING_GRADE = {
   TWK: 65,
@@ -61,22 +59,12 @@ export default function HasilSimulasi() {
   const [result, setResult] = useState(location.state?.result || null);
   const [detail, setDetail] = useState(location.state?.detail || null);
 
-  // Kalau user reload / akses langsung tanpa state → ambil hasil terakhir dari history
   useEffect(() => {
     if (result) return;
-    if (typeof window === "undefined") return;
-    try {
-      const raw = window.localStorage.getItem(HISTORY_KEY);
-      if (!raw) return;
-      const parsed = JSON.parse(raw);
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        setResult(parsed[0].result || null);
-        // detail tidak tersedia kalau dari history → review soal nonaktif
-        setDetail(null);
-      }
-    } catch (err) {
-      console.error("Gagal load hasil dari history:", err);
-    }
+    getLatestAttempt().then((attempt) => {
+      setResult(attempt?.scores || null);
+      setDetail(null);
+    }).catch(() => setResult(null));
   }, [result]);
 
   const twk = result?.TWK ?? 0;
