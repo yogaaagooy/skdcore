@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { getCurrentUser, logout } from "../utils/auth";
+import { getCurrentUser, setCurrentUser } from "../utils/auth";
+import { logout } from "../services/auth";
 
 const mainMenus = [
   { label: "Beranda", shortLabel: "Beranda", icon: "⌂", path: "/dashboard" },
@@ -47,8 +48,9 @@ export default function Navbar() {
     return location.pathname.startsWith(path);
   }
 
-  function handleLogout() {
-    logout();
+  async function handleLogout() {
+    await logout();
+    setCurrentUser(null);
     navigate("/login", { replace: true });
   }
 
