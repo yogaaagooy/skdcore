@@ -1,4 +1,5 @@
 const PRICE = 29000;
+const CHECKOUT_VERSION = "sandbox-v1";
 
 function send(response, status, body) {
   response.status(status).json(body);
@@ -68,7 +69,7 @@ module.exports = async function handler(request, response) {
       return send(response, 502, { message: data.error_messages?.[0] || "Midtrans gagal membuat transaksi." });
     }
 
-    return send(response, 200, { token: data.token, redirectUrl: data.redirect_url, orderId });
+    return send(response, 200, { token: data.token, redirectUrl: data.redirect_url, orderId, checkoutVersion: CHECKOUT_VERSION });
   } catch (error) {
     console.error("Create Midtrans transaction failed", error);
     return send(response, 500, { message: "Terjadi kesalahan saat menyiapkan pembayaran." });
