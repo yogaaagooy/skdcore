@@ -93,6 +93,8 @@ export default function Simulasi() {
   const [questionsError, setQuestionsError] = useState("");
   const [attemptCount, setAttemptCount] = useState(0);
   const [finishing, setFinishing] = useState(false);
+  const [exitDialogOpen, setExitDialogOpen] = useState(false);
+  const [finishDialogOpen, setFinishDialogOpen] = useState(false);
   const QUESTION_BANK = buildQuestionBank(allQuestions);
   const QUESTION_SET = QUESTION_BANK[currentMode] || QUESTION_BANK.all;
 
@@ -173,7 +175,10 @@ export default function Simulasi() {
           );
         }
         if (typeof parsed.timeLeft === "number" && parsed.timeLeft > 0) {
-          setTimeLeft(parsed.timeLeft);
+          const elapsedWhileAway = !isLearningMode && parsed.savedAt
+            ? Math.max(0, Math.floor((Date.now() - Number(parsed.savedAt)) / 1000))
+            : 0;
+          setTimeLeft(Math.max(0, parsed.timeLeft - elapsedWhileAway));
         } else {
           setTimeLeft(getTotalTimeSeconds(currentMode));
         }
@@ -204,12 +209,22 @@ export default function Simulasi() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     try {
-      const data = { answers, currentIndex, timeLeft };
+      const data = { answers, currentIndex, timeLeft, savedAt: Date.now() };
       window.localStorage.setItem(storageKey, JSON.stringify(data));
     } catch (err) {
       console.error("Gagal simpan state simulasi:", err);
     }
   }, [answers, currentIndex, timeLeft, storageKey]);
+
+  useEffect(() => {
+    if (isLearningMode || finishing || questionsLoading || !QUESTION_SET.length || timeLeft <= 0) return undefined;
+    const warnBeforeLeaving = (event) => {
+      event.preventDefault();
+      event.returnValue = "";
+    };
+    window.addEventListener("beforeunload", warnBeforeLeaving);
+    return () => window.removeEventListener("beforeunload", warnBeforeLeaving);
+  }, [isLearningMode, finishing, questionsLoading, QUESTION_SET.length, timeLeft]);
 
   function formatTime(seconds) {
     const m = Math.floor(seconds / 60)
@@ -267,14 +282,14 @@ export default function Simulasi() {
     }
   }
 
-  async function handleFinish(auto = false) {
+  async function handleFinish(auto = false, confirmed = false) {
     if (finishing) return;
     const result = calculateResult();
     const answered = Object.keys(answers).length;
     const totalQuestionsLocal = QUESTION_SET.length;
     const unanswered = totalQuestionsLocal - answered;
 
-    if (!auto && !isLearningMode && timeLeft > 0 && unanswered > 0) {
+    if (!auto && !confirmed && !isLearningMode && timeLeft > 0 && unanswered > 0) {
       const ok = window.confirm(
         `Masih ada ${unanswered} soal yang belum dijawab.\n\nTetap akhiri simulasi dan lihat hasil?`
       );
@@ -563,13 +578,14 @@ export default function Simulasi() {
         </div>
 
         {/* Navigasi bawah */}
-        <div className="flex flex-col gap-4">
-          <div className="flex gap-2">
+        <div className="sticky bottom-3 z-20 rounded-2xl border border-slate-200 bg-white/95 p-3 shadow-xl shadow-slate-900/10 backdrop-blur dark:border-slate-700 dark:bg-slate-900/95">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="grid grid-cols-2 gap-2 sm:flex">
             <button
               type="button"
               onClick={handlePrev}
               disabled={currentIndex === 0}
-              className="px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-700 text-sm hover:bg-gray-50 dark:hover:bg-slate-800 disabled:opacity-40"
+              className="rounded-xl border border-gray-300 px-4 py-2.5 text-sm font-semibold hover:bg-gray-50 disabled:opacity-40 dark:border-slate-700 dark:hover:bg-slate-800"
             >
               Sebelumnya
             </button>
@@ -577,43 +593,79 @@ export default function Simulasi() {
               type="button"
               onClick={handleNext}
               disabled={currentIndex === QUESTION_SET.length - 1}
-              className="px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-700 text-sm hover:bg-gray-50 dark:hover:bg-slate-800 disabled:opacity-40"
+              className="rounded-xl border border-gray-300 px-4 py-2.5 text-sm font-semibold hover:bg-gray-50 disabled:opacity-40 dark:border-slate-700 dark:hover:bg-slate-800"
             >
               Berikutnya
             </button>
           </div>
 
-          <div className="flex gap-2 justify-end">
+          <div className="grid grid-cols-[minmax(90px,0.8fr)_minmax(150px,1.2fr)] gap-2 sm:flex sm:justify-end">
             <button
               type="button"
-              onClick={() => navigate("/dashboard")}
-              className="px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-700 text-sm hover:bg-gray-50 dark:hover:bg-slate-800"
+              onClick={() => setExitDialogOpen(true)}
+              className="rounded-xl border border-red-200 px-4 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50 dark:border-red-900 dark:text-red-300 dark:hover:bg-red-950/30"
             >
               Beranda
             </button>
             <button
               type="button"
-              onClick={() => handleFinish(false)}
-              className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700"
+              onClick={() => setFinishDialogOpen(true)}
+              className="rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-bold text-white hover:bg-blue-700"
             >
               {simulasiNum ? "Selesaikan Tryout" : "Selesaikan Latihan"}
             </button>
           </div>
-
-          {/* Reset simulasi disembunyikan */}
-          {/*
-          <div className="pt-2">
-            <button
-              type="button"
-              onClick={clearState}
-              className="px-4 py-2 rounded-lg border border-red-300 dark:border-red-500 text-sm text-red-700 dark:text-red-300 hover:bg-red-50 dark:hover:bg-red-950/40"
-            >
-              Reset simulasi
-            </button>
           </div>
-          */}
         </div>
       </main>
+
+      {exitDialogOpen && (
+        <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/60 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="exit-session-title">
+          <div className="w-full max-w-md rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl dark:border-slate-700 dark:bg-slate-900">
+            <div className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-amber-100 text-2xl dark:bg-amber-950/50">!</div>
+            <h2 id="exit-session-title" className="mt-4 text-center text-xl font-bold">Keluar dari sesi?</h2>
+            <p className="mt-2 text-center text-sm leading-6 text-slate-500 dark:text-slate-300">
+              Jawaban terakhir sudah tersimpan. {isLearningMode
+                ? "Kamu dapat melanjutkan latihan ini nanti."
+                : "Timer tetap berjalan meskipun kamu meninggalkan halaman."}
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              <button type="button" onClick={() => setExitDialogOpen(false)} className="rounded-xl border border-slate-300 px-4 py-3 text-sm font-bold hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800">
+                Lanjut mengerjakan
+              </button>
+              <button type="button" onClick={() => navigate("/dashboard")} className="rounded-xl bg-red-600 px-4 py-3 text-sm font-bold text-white hover:bg-red-700">
+                Keluar ke Beranda
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {finishDialogOpen && (
+        <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/60 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="finish-session-title">
+          <div className="w-full max-w-md rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl dark:border-slate-700 dark:bg-slate-900">
+            <div className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-blue-100 text-xl text-blue-700 dark:bg-blue-950/50 dark:text-blue-200">✓</div>
+            <h2 id="finish-session-title" className="mt-4 text-center text-xl font-bold">
+              {simulasiNum ? "Selesaikan Tryout?" : "Selesaikan Latihan?"}
+            </h2>
+            <div className="mt-4 grid grid-cols-2 gap-3 rounded-2xl bg-slate-50 p-4 text-center dark:bg-slate-950">
+              <div><p className="text-2xl font-extrabold text-emerald-600">{answeredCount}</p><p className="text-xs text-slate-500">Sudah dijawab</p></div>
+              <div><p className={`text-2xl font-extrabold ${QUESTION_SET.length - answeredCount ? "text-amber-600" : "text-slate-700 dark:text-slate-200"}`}>{QUESTION_SET.length - answeredCount}</p><p className="text-xs text-slate-500">Belum dijawab</p></div>
+            </div>
+            <p className="mt-4 text-center text-sm leading-6 text-slate-500 dark:text-slate-300">
+              Setelah diselesaikan, jawaban tidak dapat diubah dan hasil akan langsung dihitung.
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              <button type="button" onClick={() => setFinishDialogOpen(false)} className="rounded-xl border border-slate-300 px-4 py-3 text-sm font-bold hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800">
+                Periksa kembali
+              </button>
+              <button type="button" disabled={finishing} onClick={() => { setFinishDialogOpen(false); handleFinish(false, true); }} className="rounded-xl bg-blue-600 px-4 py-3 text-sm font-bold text-white hover:bg-blue-700 disabled:opacity-50">
+                {finishing ? "Menyimpan..." : "Ya, selesaikan"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
