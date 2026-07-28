@@ -63,13 +63,14 @@ export default function Navbar() {
   const accountMenu = <div ref={menuRef} className="relative">
     <button onClick={() => setProfileOpen((value) => !value)} className={`flex w-full items-center gap-3 rounded-2xl p-2 text-left transition hover:bg-slate-100 dark:hover:bg-slate-800 ${collapsed ? "justify-center" : ""}`} aria-expanded={profileOpen}>
       <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-blue-100 text-xs font-bold text-blue-700 dark:bg-blue-950 dark:text-blue-300">{initials}</span>
-      {!collapsed && <span className="min-w-0 flex-1"><strong className="block truncate text-xs">{userName}</strong><small className="block text-[10px] text-slate-500">{isAdmin ? "Administrator" : "Peserta"}</small></span>}
+      {!collapsed && <span className="min-w-0 flex-1"><strong className="block truncate text-xs">{userName}</strong>{isAdmin && <small className="block text-[10px] text-slate-500">Administrator</small>}</span>}
     </button>
     {profileOpen && <div className={`absolute bottom-full z-50 mb-2 w-64 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl dark:border-slate-700 dark:bg-slate-900 ${collapsed ? "left-0" : "inset-x-0"}`}>
       <div className="border-b border-slate-100 px-4 py-3 dark:border-slate-800"><strong className="block truncate text-sm">{userName}</strong><small className="block truncate text-xs text-slate-500">{user.email}</small></div>
       <div className="p-1.5">
         <button onClick={() => navigate("/profile")} className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-800"><span>♙</span>Profil saya</button>
         <button onClick={() => navigate("/buku-kesalahan")} className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-800"><span>◎</span>Buku kesalahan</button>
+        <button onClick={() => navigate("/kritik-saran")} className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-800"><span>✎</span>Kritik & Saran</button>
         <button onClick={() => setDark((value) => !value)} className="flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-800"><span>{dark ? "☀ Mode terang" : "☾ Mode gelap"}</span></button>
       </div>
       <div className="border-t border-slate-100 p-1.5 dark:border-slate-800"><button onClick={handleLogout} className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30"><span>↪</span>Keluar</button></div>

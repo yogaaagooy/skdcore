@@ -1,5 +1,8 @@
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase";
+import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
+import { auth, db } from "./firebase";
+
+const weeklySettingsRef = doc(db, "settings", "weeklyTryout");
 
 async function waitForCurrentUser() {
   if (auth.currentUser) return auth.currentUser;
@@ -42,11 +45,48 @@ async function request(path, options = {}) {
 }
 
 export function getWeeklyTryout() {
-  return request("/api/weekly-tryout-settings");
+  return request("/api/weekly-tryout-settings")
+    .then(async (data) => {
+      try {
+        const privateSnapshot = await getDoc(weeklySettingsRef);
+        return privateSnapshot.exists() ? { ...data, ...privateSnapshot.data() } : data;
+      } catch {
+        return data;
+      }
+    })
+    .catch(async (error) => {
+      if (!error.message.toLowerCase().includes("sesi")) throw error;
+      const response = await fetch("/api/weekly-tryout-settings");
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.message || "Pengaturan Tryout Nasional belum dapat dibaca.");
+      try {
+        const privateSnapshot = await getDoc(weeklySettingsRef);
+        return privateSnapshot.exists() ? { ...data, ...privateSnapshot.data() } : data;
+      } catch {
+        return data;
+      }
+    });
 }
 
 export function saveWeeklyTryout(settings) {
-  return request("/api/weekly-tryout-settings", { method: "POST", body: JSON.stringify(settings) });
+  return request("/api/weekly-tryout-settings", { method: "POST", body: JSON.stringify(settings) })
+    .catch(async (error) => {
+      if (!error.message.toLowerCase().includes("sesi") && !error.message.toLowerCase().includes("verifikasi")) throw error;
+      const payload = {
+        enabled: settings.enabled === true,
+        title: String(settings.title || "Tryout Nasional Mingguan").slice(0, 80),
+        packageNumber: Number(settings.packageNumber || 1),
+        startAt: String(settings.startAt || ""),
+        endAt: String(settings.endAt || ""),
+        socialUrl: String(settings.socialUrl || "").slice(0, 500),
+        accessCode: String(settings.accessCode || "").trim().toUpperCase().slice(0, 30),
+        eventId: `weekly-${String(settings.startAt || Date.now()).replace(/[^0-9]/g, "").slice(0, 14)}`,
+        updatedAt: serverTimestamp(),
+        updatedBy: auth.currentUser?.uid || "",
+      };
+      await setDoc(weeklySettingsRef, payload, { merge: true });
+      return payload;
+    });
 }
 
 export function verifyWeeklyTryoutCode(code) {

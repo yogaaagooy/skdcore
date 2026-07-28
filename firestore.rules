@@ -45,6 +45,29 @@ service cloud.firestore {
       allow delete: if admin();
     }
 
+    match /feedback/{feedbackId} {
+      allow create: if signedIn()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.status == "new"
+        && request.resource.data.reply == ""
+        && request.resource.data.type in ["suggestion", "criticism", "bug", "other"]
+        && request.resource.data.title is string
+        && request.resource.data.title.size() >= 4
+        && request.resource.data.title.size() <= 80
+        && request.resource.data.message is string
+        && request.resource.data.message.size() >= 10
+        && request.resource.data.message.size() <= 1500;
+      allow read: if signedIn() && (resource.data.userId == request.auth.uid || admin());
+      allow update: if admin()
+        && request.resource.data.userId == resource.data.userId
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if admin();
+    }
+
+    match /settings/weeklyTryout {
+      allow read, write: if admin();
+    }
+
     match /{document=**} {
       allow read, write: if false;
     }

@@ -14,6 +14,7 @@ import SimulationMenu from "./pages/SimulationMenu";
 import TrainingMenu from "./pages/TrainingMenu";
 import WrongAnswers from "./pages/WrongAnswers";
 import PublicInfo from "./pages/PublicInfo";
+import Feedback from "./pages/Feedback";
 import { clearLegacyAuth, setCurrentUser } from "./utils/auth";
 import { observeAuth } from "./services/auth";
 
@@ -64,6 +65,13 @@ function App() {
         path="/profile"
         element={
           guard(<Profile />, ["user", "admin"])
+        }
+      />
+
+      <Route
+        path="/kritik-saran"
+        element={
+          guard(<Feedback />, ["user", "admin"])
         }
       />
 

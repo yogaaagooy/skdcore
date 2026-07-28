@@ -9,6 +9,7 @@ import { listPayments } from "../services/payments";
 import { getPremiumSettings, setPremiumEnabled } from "../services/settings";
 import { getWeeklyTryout, saveWeeklyTryout } from "../services/weeklyTryout";
 import { listQuestionReports } from "../services/questionReports";
+import { listAllFeedback, updateFeedback } from "../services/feedback";
 
 
 function normalizeQuestion(question, index) {
@@ -45,6 +46,9 @@ export default function SimpleAdminDashboard() {
   const [settingsSaved, setSettingsSaved] = useState("");
   const [weeklySettings, setWeeklySettings] = useState({ enabled: false, title: "Tryout Nasional Mingguan", packageNumber: 1, startAt: "", endAt: "", socialUrl: "", accessCode: "" });
   const [reports, setReports] = useState([]);
+  const [feedback, setFeedback] = useState([]);
+  const [feedbackFilter, setFeedbackFilter] = useState("all");
+  const [feedbackDrafts, setFeedbackDrafts] = useState({});
   const [validation, setValidation] = useState(null);
 
   const [existing, setExisting] = useState([]);
@@ -72,6 +76,16 @@ export default function SimpleAdminDashboard() {
     if (tab !== "reports") return;
     setLoading(true);
     listQuestionReports().then(setReports).catch((error) => setMessage(`✕ ${error.message}`)).finally(() => setLoading(false));
+  }, [tab]);
+
+  useEffect(() => {
+    if (tab !== "feedback") return;
+    setLoading(true);
+    setMessage("");
+    listAllFeedback()
+      .then(setFeedback)
+      .catch((error) => setMessage(`✕ ${error.message || "Kritik dan saran gagal dibaca."}`))
+      .finally(() => setLoading(false));
   }, [tab]);
 
   useEffect(() => {
@@ -239,6 +253,19 @@ export default function SimpleAdminDashboard() {
     }
   }
 
+  async function saveFeedback(item, status, reply) {
+    setLoading(true);
+    try {
+      await updateFeedback(item.id, { status, reply });
+      setFeedback((rows) => rows.map((row) => row.id === item.id ? { ...row, status, reply } : row));
+      setMessage("✓ Masukan berhasil diperbarui.");
+    } catch (error) {
+      setMessage(`✕ ${error.message || "Masukan gagal diperbarui."}`);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return <div className="app-page min-h-screen bg-slate-50 dark:bg-slate-950"><Navbar />
     <main className="mx-auto max-w-5xl px-4 py-7 sm:py-10">
       <div className="mb-6"><p className="text-xs font-bold uppercase tracking-wider text-blue-600">Panel admin</p><h1 className="mt-1 text-2xl font-bold">Pengelolaan NalarASN</h1><p className="mt-1 text-sm text-slate-500">Kelola bank soal dan pengguna dari satu tempat.</p></div>
@@ -247,6 +274,7 @@ export default function SimpleAdminDashboard() {
         <button onClick={() => setTab("questions")} className={`min-w-36 flex-1 rounded-xl px-4 py-3 text-sm font-bold ${tab === "questions" ? "bg-blue-600 text-white shadow" : "text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800"}`}>▤ Bank Soal</button>
         <button onClick={() => setTab("users")} className={`min-w-40 flex-1 rounded-xl px-4 py-3 text-sm font-bold ${tab === "users" ? "bg-blue-600 text-white shadow" : "text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800"}`}>♙ Data Pengguna <span className="ml-1 rounded-full bg-black/10 px-2 py-0.5 text-[10px]">{users.length}</span></button>
         <button onClick={() => setTab("reports")} className={`min-w-36 flex-1 rounded-xl px-4 py-3 text-sm font-bold ${tab === "reports" ? "bg-blue-600 text-white shadow" : "text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800"}`}>⚑ Laporan Soal</button>
+        <button onClick={() => setTab("feedback")} className={`min-w-36 flex-1 rounded-xl px-4 py-3 text-sm font-bold ${tab === "feedback" ? "bg-blue-600 text-white shadow" : "text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800"}`}>✎ Kritik & Saran <span className="ml-1 rounded-full bg-black/10 px-2 py-0.5 text-[10px]">{feedback.filter((item) => item.status === "new").length}</span></button>
         <button onClick={() => setTab("payments")} className={`min-w-36 flex-1 rounded-xl px-4 py-3 text-sm font-bold ${tab === "payments" ? "bg-blue-600 text-white shadow" : "text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800"}`}>◈ Transaksi <span className="ml-1 rounded-full bg-black/10 px-2 py-0.5 text-[10px]">{payments.length}</span></button>
         <button onClick={() => setTab("settings")} className={`min-w-36 flex-1 rounded-xl px-4 py-3 text-sm font-bold ${tab === "settings" ? "bg-blue-600 text-white shadow" : "text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800"}`}>⚙ Pengaturan</button>
       </div>
@@ -272,6 +300,17 @@ export default function SimpleAdminDashboard() {
         <p className="mt-4 text-xs leading-5 text-slate-500">Data ini dibaca langsung dari Firestore. Menonaktifkan profil memblokir akses aplikasi, tetapi penghapusan permanen akun Firebase Auth memerlukan backend admin.</p>
       </section>}
       {tab === "reports" && <section><div className="mb-4"><h2 className="text-lg font-bold">Laporan kualitas soal</h2><p className="mt-1 text-sm text-slate-500">Masukan pengguna untuk membantu proses peninjauan bank soal.</p></div><div className="space-y-3">{loading ? <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center dark:border-slate-800 dark:bg-slate-900">Memuat laporan...</div> : reports.length ? reports.map((report) => <article key={report.id} className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"><div className="flex flex-wrap items-center gap-2"><span className="rounded-full bg-blue-50 px-2 py-1 text-[10px] font-bold text-blue-700 dark:bg-blue-950/40 dark:text-blue-300">{report.category || "SOAL"}</span><span className="text-xs text-slate-400">{report.createdAt ? new Date(report.createdAt).toLocaleString("id-ID") : "-"}</span></div><p className="mt-3 text-sm font-semibold leading-6">{report.question}</p><p className="mt-3 rounded-xl bg-red-50 p-3 text-sm text-red-700 dark:bg-red-950/20 dark:text-red-300">{report.reason}</p><p className="mt-2 text-xs text-slate-400">Pelapor: {report.email || "Pengguna"}</p></article>) : <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center text-sm text-slate-500 dark:border-slate-800 dark:bg-slate-900">Belum ada laporan soal.</div>}</div></section>}
+      {tab === "feedback" && <section>
+        <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"><div><h2 className="text-lg font-bold">Kritik & Saran pengguna</h2><p className="mt-1 text-sm text-slate-500">Baca, balas, dan tandai tindak lanjut masukan.</p></div><label className="text-xs font-semibold text-slate-500">Status<select value={feedbackFilter} onChange={(event) => setFeedbackFilter(event.target.value)} className="mt-1 block border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="all">Semua</option><option value="new">Baru</option><option value="read">Dibaca</option><option value="process">Diproses</option><option value="done">Selesai</option></select></label></div>
+        {message && <p className={`mb-4 p-3 text-sm ${message.startsWith("✓") ? "bg-emerald-50 text-emerald-700" : "bg-red-50 text-red-700"}`}>{message}</p>}
+        <div className="space-y-3">{loading && !feedback.length ? <div className="border border-slate-200 bg-white p-10 text-center text-sm text-slate-500 dark:border-slate-800 dark:bg-slate-900">Memuat masukan...</div> : feedback.filter((item) => feedbackFilter === "all" || item.status === feedbackFilter).map((item) => <article key={item.id} className="border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+          <div className="flex flex-wrap items-start justify-between gap-3"><div><span className="text-[10px] font-bold uppercase tracking-wider text-blue-600">{item.type || "Masukan"}</span><h3 className="font-bold">{item.title}</h3><p className="mt-1 text-xs text-slate-400">{item.anonymous ? "Anonim" : `${item.name || "Pengguna"} · ${item.email || "-"}`} · {item.createdAt ? new Date(item.createdAt).toLocaleString("id-ID") : "-"}</p></div><select value={item.status} onChange={(event) => saveFeedback(item, event.target.value, feedbackDrafts[item.id] ?? item.reply)} className="border border-slate-300 bg-white px-3 py-2 text-xs font-semibold dark:border-slate-700 dark:bg-slate-800"><option value="new">Baru</option><option value="read">Dibaca</option><option value="process">Diproses</option><option value="done">Selesai</option></select></div>
+          <p className="mt-4 whitespace-pre-wrap text-sm leading-6 text-slate-600 dark:text-slate-300">{item.message}</p>
+          <textarea rows={3} value={feedbackDrafts[item.id] ?? item.reply ?? ""} onChange={(event) => setFeedbackDrafts({ ...feedbackDrafts, [item.id]: event.target.value })} placeholder="Tulis balasan untuk pengguna..." className="mt-4 w-full border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800" />
+          <button disabled={loading} onClick={() => saveFeedback(item, item.status === "new" ? "read" : item.status, feedbackDrafts[item.id] ?? item.reply)} className="mt-2 bg-blue-600 px-4 py-2 text-xs font-bold text-white disabled:opacity-50">Simpan balasan</button>
+        </article>)}
+        {!loading && !feedback.filter((item) => feedbackFilter === "all" || item.status === feedbackFilter).length && <div className="border border-slate-200 bg-white p-10 text-center text-sm text-slate-500 dark:border-slate-800 dark:bg-slate-900">Belum ada masukan pada status ini.</div>}</div>
+      </section>}
       {tab === "payments" && <section>
         <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-3"><div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900"><p className="text-xs text-slate-500">Transaksi berhasil</p><strong className="mt-1 block text-2xl">{paidPayments.length}</strong></div><div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900"><p className="text-xs text-slate-500">Menunggu</p><strong className="mt-1 block text-2xl">{payments.filter((payment) => payment.status === "pending").length}</strong></div><div className="col-span-2 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:col-span-1"><p className="text-xs text-slate-500">Pendapatan Sandbox</p><strong className="mt-1 block text-xl">{formatRupiah(paidPayments.reduce((total, payment) => total + payment.amount, 0))}</strong></div></div>
         <div className="mb-4 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:flex-row"><input value={paymentSearch} onChange={(event) => setPaymentSearch(event.target.value)} placeholder="Cari nama, email, atau order ID" className="flex-1 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-800"/><select value={paymentFilter} onChange={(event) => setPaymentFilter(event.target.value)} className="rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="all">Semua status</option><option value="paid">Berhasil</option><option value="pending">Menunggu</option></select></div>

@@ -25,19 +25,22 @@ module.exports = async function handler(request, response) {
   }
 
   try {
-    const firebaseUser = await verifyUser(request);
-    if (!firebaseUser) return send(response, 401, { message: "Sesi login tidak valid." });
     const settingsRef = adminDb().collection("settings").doc("weeklyTryout");
 
     if (request.method === "GET") {
       const snapshot = await settingsRef.get();
       const data = snapshot.exists ? snapshot.data() : {};
-      const profile = await adminDb().collection("users").doc(firebaseUser.uid).get();
       const result = publicSettings(data);
-      if (profile.exists && profile.data()?.role === "admin") result.accessCode = data.accessCode || "";
+      const firebaseUser = await verifyUser(request);
+      if (firebaseUser) {
+        const profile = await adminDb().collection("users").doc(firebaseUser.uid).get();
+        if (profile.exists && profile.data()?.role === "admin") result.accessCode = data.accessCode || "";
+      }
       return send(response, 200, result);
     }
 
+    const firebaseUser = await verifyUser(request);
+    if (!firebaseUser) return send(response, 401, { message: "Sesi admin tidak dapat diverifikasi. Muat ulang halaman lalu coba kembali." });
     const profile = await adminDb().collection("users").doc(firebaseUser.uid).get();
     if (!profile.exists || profile.data()?.role !== "admin") {
       return send(response, 403, { message: "Hanya administrator yang dapat mengubah jadwal tryout." });

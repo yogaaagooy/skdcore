@@ -56,7 +56,7 @@ function getTotalTimeSeconds(mode) {
   const m = (mode || "all").toLowerCase();
   if (m === "twk") return 25 * 60;
   if (m === "tiu") return 30 * 60;
-  if (m === "tkp") return 35 * 60;
+  if (m === "tkp") return 40 * 60;
   return 100 * 60; // full SKD
 }
 
@@ -429,17 +429,14 @@ export default function Simulasi() {
       {/* Header */}
       <header className="bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-gray-200 dark:border-slate-800 shadow-sm dark:shadow-none">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <div className="flex flex-col gap-0.5">
-            <div className="flex items-center gap-2">
+          <div>
+            <div className="flex items-center gap-2 rounded-lg bg-white p-1">
               <img
                 src={logo}
                 alt="NalarASN"
                 className="h-10 w-auto object-contain"
               />
             </div>
-            <span className="text-[11px] text-gray-500 dark:text-slate-400">
-              {modeLabel}
-            </span>
           </div>
           <div className="flex items-center gap-6 text-xs">
             <div className="flex flex-col items-end">
@@ -477,25 +474,25 @@ export default function Simulasi() {
 
       {/* Body */}
       <main className="max-w-5xl mx-auto px-4 py-6 space-y-4">
-        <section className="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 dark:border-slate-800 dark:bg-slate-800 sm:grid-cols-[1.5fr_repeat(3,1fr)]">
-          <div className="bg-white p-4 dark:bg-slate-900">
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Peserta</p>
+        <section className="grid gap-px overflow-hidden border border-[#17366f]/15 bg-[#17366f]/15 dark:border-slate-700 dark:bg-slate-700 sm:grid-cols-[1.5fr_repeat(3,1fr)]">
+          <div className="border-t-4 border-t-[#17366f] bg-white p-4 dark:bg-[#0b1935]">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-[#2468d8]">Peserta</p>
             <p className="mt-1 truncate text-sm font-bold">{currentUser?.name || "Peserta NalarASN"}</p>
             <p className="mt-0.5 truncate text-xs text-slate-500">{modeLabel}</p>
           </div>
-          <div className="bg-white p-4 dark:bg-slate-900">
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Waktu</p>
+          <div className="border-t-4 border-t-[#2468d8] bg-white p-4 dark:bg-[#0b1935]">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-[#2468d8]">Waktu</p>
             <p className={`mt-1 text-lg font-bold ${!isLearningMode && timeLeft <= 60 ? "text-red-500" : ""}`}>
               {isLearningMode ? "Tanpa batas" : formatTime(timeLeft)}
             </p>
           </div>
-          <div className="bg-white p-4 dark:bg-slate-900">
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Terjawab</p>
+          <div className="border-t-4 border-t-[#e8a51a] bg-white p-4 dark:bg-[#0b1935]">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-[#b77908] dark:text-[#f2bd4c]">Terjawab</p>
             <p className="mt-1 text-lg font-bold">{answeredCount}</p>
             <p className="text-xs text-slate-500">dari {QUESTION_SET.length} soal</p>
           </div>
-          <div className="bg-white p-4 dark:bg-slate-900">
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Belum dijawab</p>
+          <div className="border-t-4 border-t-[#e8a51a] bg-white p-4 dark:bg-[#0b1935]">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-[#b77908] dark:text-[#f2bd4c]">Belum dijawab</p>
             <p className={`mt-1 text-lg font-bold ${QUESTION_SET.length - answeredCount ? "text-amber-600" : "text-emerald-600"}`}>
               {QUESTION_SET.length - answeredCount}
             </p>

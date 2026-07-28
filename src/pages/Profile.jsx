@@ -161,6 +161,12 @@ export default function Profile() {
         </section>
 
         <button
+          onClick={() => navigate("/kritik-saran")}
+          className="mr-2 px-4 py-2 rounded-lg border border-blue-200 text-sm font-semibold text-blue-600 hover:bg-blue-50 dark:border-blue-900 dark:hover:bg-blue-950/30"
+        >
+          Kritik & Saran
+        </button>
+        <button
           onClick={() => navigate("/dashboard")}
           className="px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-700 text-sm hover:bg-gray-50 dark:hover:bg-slate-800"
         >
