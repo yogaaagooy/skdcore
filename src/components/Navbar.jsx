@@ -16,6 +16,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
   const menuRef = useRef(null);
+  const mobileMenuRef = useRef(null);
   const user = getCurrentUser();
   const [profileOpen, setProfileOpen] = useState(false);
   const [collapsed, setCollapsed] = useState(() => window.localStorage.getItem("nalarasn_sidebar") === "collapsed");
@@ -35,7 +36,9 @@ export default function Navbar() {
 
   useEffect(() => {
     function closeMenu(event) {
-      if (menuRef.current && !menuRef.current.contains(event.target)) setProfileOpen(false);
+      const outsideDesktop = !menuRef.current || !menuRef.current.contains(event.target);
+      const outsideMobile = !mobileMenuRef.current || !mobileMenuRef.current.contains(event.target);
+      if (outsideDesktop && outsideMobile) setProfileOpen(false);
     }
     document.addEventListener("mousedown", closeMenu);
     return () => document.removeEventListener("mousedown", closeMenu);
@@ -96,8 +99,46 @@ export default function Navbar() {
       </div>
     </aside>
 
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 px-4 py-2 backdrop-blur dark:border-slate-800 dark:bg-slate-900/95 md:hidden">
-      <div className="flex h-12 items-center justify-between"><Link to="/dashboard" className="rounded-lg bg-white p-1"><img src={logo} alt="NalarASN" className="h-9 w-auto max-w-[145px] object-contain" /></Link><button onClick={() => navigate("/profile")} className="grid h-10 w-10 place-items-center rounded-xl bg-blue-100 text-xs font-bold text-blue-700 dark:bg-blue-950 dark:text-blue-300">{initials}</button></div>
+    <header ref={mobileMenuRef} className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 px-4 py-2 backdrop-blur dark:border-slate-800 dark:bg-slate-900/95 md:hidden">
+      <div className="flex h-12 items-center justify-between">
+        <Link to="/dashboard" className="rounded-lg bg-white p-1"><img src={logo} alt="NalarASN" className="h-9 w-auto max-w-[145px] object-contain" /></Link>
+        <div className="flex items-center gap-2">
+          {isAdmin && (
+            <button
+              type="button"
+              onClick={() => navigate("/admin")}
+              aria-label="Buka panel admin"
+              className={`flex h-10 items-center gap-2 rounded-xl border px-3 text-xs font-bold ${
+                location.pathname.startsWith("/admin")
+                  ? "border-blue-600 bg-blue-600 text-white"
+                  : "border-slate-200 bg-white text-[#0b2a5b] dark:border-slate-700 dark:bg-slate-800 dark:text-blue-200"
+              }`}
+            >
+              <span aria-hidden="true">⚙</span>
+              Admin
+            </button>
+          )}
+          <button onClick={() => setProfileOpen((value) => !value)} aria-label="Buka menu profil" aria-expanded={profileOpen} className="grid h-10 w-10 place-items-center rounded-xl bg-blue-100 text-xs font-bold text-blue-700 dark:bg-blue-950 dark:text-blue-300">{initials}</button>
+        </div>
+      </div>
+      {profileOpen && (
+        <div className="absolute right-4 top-[3.75rem] w-64 overflow-hidden rounded-2xl border border-slate-200 bg-white text-sm shadow-xl dark:border-slate-700 dark:bg-slate-900">
+          <div className="border-b border-slate-100 px-4 py-3 dark:border-slate-800">
+            <strong className="block truncate">{userName}</strong>
+            <small className="block truncate text-xs text-slate-500">{user.email}</small>
+            {isAdmin && <small className="mt-1 block text-[10px] font-bold uppercase tracking-wider text-blue-600">Administrator</small>}
+          </div>
+          <div className="p-1.5">
+            <button onClick={() => navigate("/profile")} className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800"><span>♙</span>Profil saya</button>
+            <button onClick={() => navigate("/buku-kesalahan")} className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800"><span>◎</span>Buku kesalahan</button>
+            <button onClick={() => navigate("/kritik-saran")} className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800"><span>✎</span>Kritik & Saran</button>
+            <button onClick={() => setDark((value) => !value)} className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800"><span>{dark ? "☀" : "☾"}</span>{dark ? "Mode terang" : "Mode gelap"}</button>
+          </div>
+          <div className="border-t border-slate-100 p-1.5 dark:border-slate-800">
+            <button onClick={handleLogout} className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 font-semibold text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30"><span>↪</span>Keluar</button>
+          </div>
+        </div>
+      )}
     </header>
 
     <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-slate-200 bg-white/95 px-1 pb-[max(5px,env(safe-area-inset-bottom))] pt-1 shadow-[0_-8px_25px_rgba(15,23,42,0.08)] backdrop-blur dark:border-slate-800 dark:bg-slate-900/95 md:hidden" aria-label="Menu utama seluler">
