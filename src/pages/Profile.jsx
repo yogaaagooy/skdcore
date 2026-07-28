@@ -118,12 +118,14 @@ export default function Profile() {
                 className="w-full border border-gray-200 dark:border-slate-800 rounded-lg px-3 py-2 text-sm bg-gray-50 dark:bg-slate-800/80 text-gray-500 dark:text-slate-400"
               />
             </div>
-            <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-slate-400">
-              <span>Role: </span>
-              <span className="px-2 py-0.5 rounded-full border border-gray-300 dark:border-slate-700">
-                {user.role}
-              </span>
-            </div>
+            {user.role === "admin" && (
+              <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-slate-400">
+                <span>Role:</span>
+                <span className="rounded-full border border-gray-300 px-2 py-0.5 dark:border-slate-700">
+                  Admin
+                </span>
+              </div>
+            )}
             <button
               type="submit"
               className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700"

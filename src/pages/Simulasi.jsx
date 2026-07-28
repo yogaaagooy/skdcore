@@ -477,6 +477,32 @@ export default function Simulasi() {
 
       {/* Body */}
       <main className="max-w-5xl mx-auto px-4 py-6 space-y-4">
+        <section className="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 dark:border-slate-800 dark:bg-slate-800 sm:grid-cols-[1.5fr_repeat(3,1fr)]">
+          <div className="bg-white p-4 dark:bg-slate-900">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Peserta</p>
+            <p className="mt-1 truncate text-sm font-bold">{currentUser?.name || "Peserta NalarASN"}</p>
+            <p className="mt-0.5 truncate text-xs text-slate-500">{modeLabel}</p>
+          </div>
+          <div className="bg-white p-4 dark:bg-slate-900">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Waktu</p>
+            <p className={`mt-1 text-lg font-bold ${!isLearningMode && timeLeft <= 60 ? "text-red-500" : ""}`}>
+              {isLearningMode ? "Tanpa batas" : formatTime(timeLeft)}
+            </p>
+          </div>
+          <div className="bg-white p-4 dark:bg-slate-900">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Terjawab</p>
+            <p className="mt-1 text-lg font-bold">{answeredCount}</p>
+            <p className="text-xs text-slate-500">dari {QUESTION_SET.length} soal</p>
+          </div>
+          <div className="bg-white p-4 dark:bg-slate-900">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Belum dijawab</p>
+            <p className={`mt-1 text-lg font-bold ${QUESTION_SET.length - answeredCount ? "text-amber-600" : "text-emerald-600"}`}>
+              {QUESTION_SET.length - answeredCount}
+            </p>
+            <p className="text-xs text-slate-500">soal tersisa</p>
+          </div>
+        </section>
+
         {/* Kartu soal */}
         <div className="border border-gray-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
           <div className="mb-5 flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3 text-xs dark:border-slate-800">

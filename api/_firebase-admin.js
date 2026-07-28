@@ -18,8 +18,16 @@ function getServiceAccount() {
 }
 
 function getAdminApp() {
-  if (getApps().length) return getApps()[0];
-  return initializeApp({ credential: cert(getServiceAccount()) });
+  const existingApp = getApps().find((app) => app.name === ADMIN_APP_NAME);
+  if (existingApp) return existingApp;
+  const serviceAccount = getServiceAccount();
+  return initializeApp(
+    {
+      credential: cert(serviceAccount),
+      projectId: serviceAccount.project_id,
+    },
+    ADMIN_APP_NAME
+  );
 }
 
 async function verifyUser(request) {
@@ -29,7 +37,11 @@ async function verifyUser(request) {
 
   try {
     return await getAuth(getAdminApp()).verifyIdToken(idToken);
-  } catch {
+  } catch (error) {
+    console.error("Firebase ID token verification failed", {
+      code: error?.code || "unknown",
+      message: error?.message || "Unknown verification error",
+    });
     return null;
   }
 }
@@ -39,3 +51,4 @@ function adminDb() {
 }
 
 module.exports = { adminDb, verifyUser };
+const ADMIN_APP_NAME = "nalarasn-admin";
