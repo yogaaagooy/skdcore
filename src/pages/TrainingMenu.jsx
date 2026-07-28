@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 const modes = [
   { id: "twk", label: "Latihan TWK", description: "Pahami penerapan wawasan kebangsaan melalui soal berbasis konteks.", detail: "30 soal · 25 menit", icon: "🇮🇩" },
   { id: "tiu", label: "Latihan TIU", description: "Asah kemampuan verbal, numerik, dan penalaran secara bertahap.", detail: "35 soal · 30 menit", icon: "∑" },
-  { id: "tkp", label: "Latihan TKP", description: "Latih cara menilai respons paling efektif dalam situasi kerja.", detail: "45 soal · 35 menit", icon: "◎" },
+  { id: "tkp", label: "Latihan TKP", description: "Latih cara menilai respons paling efektif dalam situasi kerja.", detail: "45 soal · 40 menit", icon: "◎" },
   { id: "all", label: "Latihan Campuran", description: "Gabungkan TWK, TIU, dan TKP dalam satu sesi latihan.", detail: "110 soal · 100 menit", icon: "▤" },
 ];
 

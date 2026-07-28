@@ -8,7 +8,7 @@ const HISTORY_KEY = "skdcore_simulasi_history_v1";
 const modes = [
   { id: "twk", label: "TWK", description: "Wawasan Kebangsaan", detail: "30 soal · 25 menit", color: "blue" },
   { id: "tiu", label: "TIU", description: "Intelegensia Umum", detail: "35 soal · 30 menit", color: "violet" },
-  { id: "tkp", label: "TKP", description: "Karakteristik Pribadi", detail: "45 soal · 35 menit", color: "amber" },
+  { id: "tkp", label: "TKP", description: "Karakteristik Pribadi", detail: "45 soal · 40 menit", color: "amber" },
 ];
 
 export default function Dashboard() {

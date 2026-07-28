@@ -438,29 +438,7 @@ export default function Simulasi() {
               />
             </div>
           </div>
-          <div className="flex items-center gap-6 text-xs">
-            <div className="flex flex-col items-end">
-              <span className="text-gray-500 dark:text-slate-400">
-                {isLearningMode ? "Mode" : "Timer"}
-              </span>
-              <span
-                className={`font-semibold ${
-                  timeLeft <= 60
-                    ? "text-red-500"
-                    : "text-gray-800 dark:text-slate-100"
-                }`}
-              >
-                {isLearningMode ? "Belajar" : formatTime(timeLeft)}
-              </span>
-            </div>
-            <div className="flex flex-col items-end">
-              <span className="text-gray-500 dark:text-slate-400">
-                Terjawab
-              </span>
-              <span className="font-semibold text-gray-800 dark:text-slate-100">
-                {answeredCount} / {QUESTION_SET.length}
-              </span>
-            </div>
+          <div className="flex items-center text-xs">
             <UserDropdown
               user={currentUser}
               onLogout={async () => {
