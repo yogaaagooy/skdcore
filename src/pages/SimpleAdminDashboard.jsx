@@ -88,12 +88,23 @@ export default function SimpleAdminDashboard() {
     if (tab !== "settings") return;
     setLoading(true);
     setSettingsSaved("");
-    Promise.all([getPremiumSettings(), getWeeklyTryout()])
-      .then(([premium, weekly]) => {
-        setPremiumState(premium.enabled);
-        setWeeklySettings((current) => ({ ...current, ...weekly, startAt: weekly.startAt?.slice(0, 16) || "", endAt: weekly.endAt?.slice(0, 16) || "" }));
+    setMessage("");
+    Promise.allSettled([getPremiumSettings(), getWeeklyTryout()])
+      .then(([premiumResult, weeklyResult]) => {
+        const errors = [];
+        if (premiumResult.status === "fulfilled") {
+          setPremiumState(premiumResult.value.enabled);
+        } else {
+          errors.push("Status premium belum dapat dibaca.");
+        }
+        if (weeklyResult.status === "fulfilled") {
+          const weekly = weeklyResult.value;
+          setWeeklySettings((current) => ({ ...current, ...weekly, startAt: weekly.startAt?.slice(0, 16) || "", endAt: weekly.endAt?.slice(0, 16) || "" }));
+        } else {
+          errors.push(weeklyResult.reason?.message || "Pengaturan Tryout Nasional belum dapat dibaca.");
+        }
+        if (errors.length) setMessage(`✕ ${errors.join(" ")}`);
       })
-      .catch(() => setMessage("✕ Pengaturan premium gagal dibaca dari Firebase."))
       .finally(() => setLoading(false));
   }, [tab]);
 
