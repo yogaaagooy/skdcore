@@ -527,6 +527,11 @@ export default function Simulasi() {
           <p className="text-sm font-medium text-gray-900 dark:text-slate-50 mb-4">
             {currentQuestion.question}
           </p>
+          {currentQuestion.figure && (
+            <pre className="mb-5 overflow-x-auto rounded-xl border border-slate-200 bg-slate-50 p-4 text-center font-mono text-sm leading-6 text-slate-800 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100">
+              {currentQuestion.figure}
+            </pre>
+          )}
 
           <div className="space-y-2">
             {currentQuestion.options.map((opt) => {

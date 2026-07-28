@@ -10,8 +10,9 @@ if (!report.valid) throw new Error(report.errors.join("\n"));
 
 await writeFile(new URL("../content/paket-1/paket-simulasi-1.json", import.meta.url), JSON.stringify({
   id: "simulasi_1",
-  title: "Paket Simulasi 1",
-  description: "Paket latihan SKDCore: 30 TWK, 35 TIU, dan 45 TKP.",
+  title: "Tryout 1",
+  description: "Tryout NalarASN V2: 30 TWK, 35 TIU, dan 45 TKP.",
+  version: 2,
   durationMinutes: 100,
   questions,
 }, null, 2));

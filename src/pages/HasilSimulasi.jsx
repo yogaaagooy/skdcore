@@ -306,6 +306,11 @@ export default function HasilSimulasi() {
                     <p className="text-[13px] font-medium text-gray-900 dark:text-slate-50">
                       {q.question}
                     </p>
+                    {q.figure && (
+                      <pre className="overflow-x-auto rounded-lg border border-slate-200 bg-slate-50 p-3 text-center font-mono text-xs leading-5 text-slate-800 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100">
+                        {q.figure}
+                      </pre>
+                    )}
 
                     <div className="space-y-1">
                       {options.map((opt) => {
