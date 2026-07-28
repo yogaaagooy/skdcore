@@ -20,7 +20,7 @@ export async function saveQuestionBank(target, questions) {
   const id = getExamDocumentId(target);
   await setDoc(doc(db, "exams", id), {
     id,
-    title: target === "main" ? "Bank Soal Utama" : `Paket Simulasi ${Number(target)}`,
+    title: target === "main" ? "Bank Latihan Utama" : `Tryout ${Number(target)}`,
     type: target === "main" ? "practice" : "simulation",
     packageNumber: target === "main" ? null : Number(target),
     durationMinutes: 100,

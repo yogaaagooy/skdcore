@@ -39,7 +39,7 @@ export default function Register() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-950 px-4">
       <div className="w-full max-w-md bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-gray-200 dark:border-slate-800 p-6">
         <div className="flex flex-col items-center mb-6">
-          <Link to="/" aria-label="Kembali ke halaman utama"><img src={logo} alt="NalarASN" className="h-12 w-auto max-w-[210px] mb-3 object-contain" /></Link>
+          <Link to="/" aria-label="Kembali ke halaman utama" className="mb-3 rounded-xl bg-white p-2"><img src={logo} alt="NalarASN" className="h-12 w-auto max-w-[210px] object-contain" /></Link>
           <p className="text-sm text-gray-600 dark:text-slate-300 text-center">
             Buat akun baru untuk mulai latihan SKD.
           </p>

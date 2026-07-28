@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import logo from "../assets/logo.png";
 import UserDropdown from "../components/UserDropdown";
 import { getCurrentUser } from "../utils/auth";
 import { getQuestionBank } from "../services/questions";
 import { logout } from "../services/auth";
-import { getAttemptCount, saveAttempt } from "../services/results";
+import { getAttemptCount, getWeeklyAttemptCount, saveAttempt } from "../services/results";
+import { saveWrongAnswers } from "../services/wrongAnswers";
 
 const LAST_DETAIL_KEY = "skdcore_last_simulation_detail_v1";
 
@@ -76,8 +77,15 @@ const PAGE_SIZE = 10; // jumlah nomor yang tampil per blok
 
 export default function Simulasi() {
   const { mode, num } = useParams();
+  const location = useLocation();
   const currentMode = (mode || "all").toLowerCase();
   const simulasiNum = num ? parseInt(num, 10) : null;
+  const eventId = new URLSearchParams(location.search).get("weekly") || null;
+  const hasWeeklyAccess = Boolean(eventId) && window.sessionStorage.getItem("nalarasn_weekly_tryout_access") === eventId;
+  const weeklyEndAt = eventId ? window.sessionStorage.getItem("nalarasn_weekly_tryout_end") : null;
+  const reviewLockedUntil = weeklyEndAt && Date.now() < Date.parse(weeklyEndAt) ? weeklyEndAt : null;
+  const studyType = simulasiNum ? "exam" : (new URLSearchParams(location.search).get("type") === "learn" ? "learn" : "exam");
+  const isLearningMode = studyType === "learn";
   const navigate = useNavigate();
 
   const [allQuestions, setAllQuestions] = useState([]);
@@ -109,8 +117,24 @@ export default function Simulasi() {
   const end = Math.min(start + PAGE_SIZE, totalQuestions);
 
   const currentUser = getCurrentUser();
+  const premiumUntilMillis = typeof currentUser?.premiumUntil === "string"
+    ? Date.parse(currentUser.premiumUntil)
+    : Number(currentUser?.premiumUntil?.seconds || 0) * 1000;
+  const canAccessPackage = simulasiNum === null
+    || simulasiNum === 1
+    || hasWeeklyAccess
+    || currentUser?.role === "admin"
+    || (currentUser?.premiumActive && premiumUntilMillis > Date.now());
 
   useEffect(() => {
+    if (!canAccessPackage) navigate("/tryout", { replace: true });
+  }, [canAccessPackage, navigate]);
+
+  useEffect(() => {
+    if (!canAccessPackage) {
+      setQuestionsLoading(false);
+      return undefined;
+    }
     let active = true;
     setQuestionsLoading(true);
     setQuestionsError("");
@@ -122,15 +146,15 @@ export default function Simulasi() {
       .catch(() => { if (active) setQuestionsError("Soal gagal dimuat dari Firebase. Periksa koneksi lalu coba lagi."); })
       .finally(() => { if (active) setQuestionsLoading(false); });
     return () => { active = false; };
-  }, [simulasiNum]);
+  }, [canAccessPackage, simulasiNum]);
 
   useEffect(() => {
     let active = true;
-    getAttemptCount(currentMode, simulasiNum)
+    (eventId ? getWeeklyAttemptCount(eventId) : getAttemptCount(currentMode, simulasiNum))
       .then((count) => { if (active) setAttemptCount(count); })
       .catch(() => { if (active) setAttemptCount(0); });
     return () => { active = false; };
-  }, [currentMode, simulasiNum]);
+  }, [currentMode, simulasiNum, eventId]);
 
   // Load state dari localStorage
   useEffect(() => {
@@ -161,20 +185,20 @@ export default function Simulasi() {
 
   // Timer mundur
   useEffect(() => {
-    if (questionsLoading || !QUESTION_SET.length || timeLeft <= 0) return;
+    if (isLearningMode || questionsLoading || !QUESTION_SET.length || timeLeft <= 0) return;
     const timer = setInterval(() => {
       setTimeLeft((prev) => prev - 1);
     }, 1000);
     return () => clearInterval(timer);
-  }, [timeLeft, questionsLoading, QUESTION_SET.length]);
+  }, [isLearningMode, timeLeft, questionsLoading, QUESTION_SET.length]);
 
   // Auto-submit kalau waktu habis
   useEffect(() => {
-    if (timeLeft === 0) {
+    if (!isLearningMode && timeLeft === 0) {
       handleFinish(true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [timeLeft]);
+  }, [isLearningMode, timeLeft]);
 
   // Auto-save ke localStorage
   useEffect(() => {
@@ -196,7 +220,7 @@ export default function Simulasi() {
   }
 
   function handleSelect(optionId) {
-    if (timeLeft <= 0) return;
+    if (!isLearningMode && timeLeft <= 0) return;
     if (!currentQuestion) return;
     setAnswers((prev) => ({
       ...prev,
@@ -250,7 +274,7 @@ export default function Simulasi() {
     const totalQuestionsLocal = QUESTION_SET.length;
     const unanswered = totalQuestionsLocal - answered;
 
-    if (!auto && timeLeft > 0 && unanswered > 0) {
+    if (!auto && !isLearningMode && timeLeft > 0 && unanswered > 0) {
       const ok = window.confirm(
         `Masih ada ${unanswered} soal yang belum dijawab.\n\nTetap akhiri simulasi dan lihat hasil?`
       );
@@ -259,7 +283,8 @@ export default function Simulasi() {
 
     setFinishing(true);
     try {
-      await saveAttempt({ mode: currentMode, packageNumber: simulasiNum, scores: result, answers, answeredCount: answered, questionCount: totalQuestionsLocal, autoFinished: auto });
+      await saveAttempt({ mode: currentMode, packageNumber: simulasiNum, scores: result, answers, answeredCount: answered, questionCount: totalQuestionsLocal, autoFinished: auto, studyType, eventId });
+      saveWrongAnswers(QUESTION_SET, answers);
       if (typeof window !== "undefined") {
         window.localStorage.removeItem(storageKey);
         const detailPayload = {
@@ -267,7 +292,9 @@ export default function Simulasi() {
           mode: currentMode,
           date: new Date().toISOString(),
           questions: QUESTION_SET,
-          answers
+          answers,
+          studyType,
+          reviewLockedUntil
         };
         window.localStorage.setItem(
           LAST_DETAIL_KEY,
@@ -284,8 +311,9 @@ export default function Simulasi() {
       state: {
         result,
         detail: {
-          questions: QUESTION_SET,
-          answers
+          questions: reviewLockedUntil ? [] : QUESTION_SET,
+          answers: reviewLockedUntil ? {} : answers,
+          reviewLockedUntil
         }
       }
     });
@@ -296,20 +324,20 @@ export default function Simulasi() {
   }
 
   if (questionsError) {
-    return <div className="grid min-h-screen place-items-center bg-gray-50 px-4 dark:bg-slate-950"><div className="max-w-md rounded-2xl border border-red-200 bg-white p-6 text-center dark:border-red-900 dark:bg-slate-900"><h1 className="font-bold">Soal gagal dimuat</h1><p className="mt-2 text-sm text-slate-500">{questionsError}</p><button onClick={() => navigate("/simulasi")} className="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white">Kembali</button></div></div>;
+    return <div className="grid min-h-screen place-items-center bg-gray-50 px-4 dark:bg-slate-950"><div className="max-w-md rounded-2xl border border-red-200 bg-white p-6 text-center dark:border-red-900 dark:bg-slate-900"><h1 className="font-bold">Soal gagal dimuat</h1><p className="mt-2 text-sm text-slate-500">{questionsError}</p><button onClick={() => navigate(simulasiNum ? "/tryout" : "/latihan")} className="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white">Kembali</button></div></div>;
   }
 
-  if (currentUser && currentUser.role !== "admin" && attemptCount >= 3) {
+  if (currentUser && currentUser.role !== "admin" && ((!eventId && attemptCount >= 3) || (eventId && attemptCount >= 1))) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-950 px-4">
         <div className="bg-white dark:bg-slate-900 dark:border-slate-800 border border-gray-200 rounded-2xl p-6 max-w-md w-full text-center">
           <div className="text-4xl mb-4">🚫</div>
-          <h1 className="text-lg font-bold mb-2">Batas Simulasi Tercapai</h1>
+          <h1 className="text-lg font-bold mb-2">Batas Pengerjaan Tercapai</h1>
           <p className="text-sm text-gray-600 dark:text-slate-300 mb-4">
-            Anda sudah menyelesaikan simulasi <span className="font-bold">{currentMode.toUpperCase()}</span> sebanyak <span className="font-bold">3 kali</span>.
+            {eventId ? "Kesempatan Tryout Nasional minggu ini sudah digunakan." : <>Anda sudah menyelesaikan sesi <span className="font-bold">{currentMode.toUpperCase()}</span> sebanyak <span className="font-bold">3 kali</span>.</>}
           </p>
           <p className="text-xs text-gray-500 dark:text-slate-400 mb-6">
-            Setiap user hanya diizinkan mengulang simulasi maksimal 3 kali per mode.
+            {eventId ? "Setiap pengguna mendapat satu kesempatan agar peringkat tetap adil." : "Setiap pengguna hanya diizinkan mengulang maksimal 3 kali per mode."}
           </p>
           <button
             onClick={() => navigate("/dashboard")}
@@ -324,9 +352,9 @@ export default function Simulasi() {
 
   // Kalau benar-benar nggak ada soal untuk mode ini
   if (!currentQuestion) {
-    const simulasiLabel = simulasiNum ? `Simulasi ${simulasiNum}` : `mode ${currentMode.toUpperCase()}`;
+    const simulasiLabel = simulasiNum ? `Tryout ${simulasiNum}` : `mode ${currentMode.toUpperCase()}`;
     const message = simulasiNum 
-      ? `Belum ada soal yang di-import untuk Simulasi ${simulasiNum}. Hubungi admin untuk mengupload soal.`
+      ? `Belum ada soal yang diimpor untuk Tryout ${simulasiNum}. Hubungi admin untuk mengunggah soal.`
       : `Belum ada soal untuk mode ${currentMode.toUpperCase()}.`;
     
     return (
@@ -356,7 +384,11 @@ export default function Simulasi() {
       ? "Latihan fokus TIU"
       : currentMode === "tkp"
       ? "Latihan fokus TKP"
-      : "Simulasi penuh SKD";
+      : simulasiNum
+      ? `Tryout ${simulasiNum}`
+      : isLearningMode
+      ? "Latihan campuran · Mode Belajar"
+      : "Latihan campuran · Mode Ujian";
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 dark:text-slate-50">
@@ -378,7 +410,7 @@ export default function Simulasi() {
           <div className="flex items-center gap-6 text-xs">
             <div className="flex flex-col items-end">
               <span className="text-gray-500 dark:text-slate-400">
-                Timer
+                {isLearningMode ? "Mode" : "Timer"}
               </span>
               <span
                 className={`font-semibold ${
@@ -387,7 +419,7 @@ export default function Simulasi() {
                     : "text-gray-800 dark:text-slate-100"
                 }`}
               >
-                {formatTime(timeLeft)}
+                {isLearningMode ? "Belajar" : formatTime(timeLeft)}
               </span>
             </div>
             <div className="flex flex-col items-end">
@@ -418,9 +450,9 @@ export default function Simulasi() {
               Soal {currentIndex + 1} dari {QUESTION_SET.length} •{" "}
               {currentQuestion.category}
             </span>
-            {timeLeft <= 0 && (
+            {!isLearningMode && timeLeft <= 0 && (
               <span className="text-red-500 font-semibold">
-                Waktu habis, simulasi akan diakhiri.
+                Waktu habis, sesi akan diakhiri.
               </span>
             )}
           </div>
@@ -499,17 +531,22 @@ export default function Simulasi() {
           <div className="space-y-2">
             {currentQuestion.options.map((opt) => {
               const isSelected = answers[currentQuestion.id] === opt.id;
+              const answeredCurrent = Boolean(answers[currentQuestion.id]);
+              const bestScore = Math.max(0, ...currentQuestion.options.map((item) => Number(item.score || 0)));
+              const isBest = answeredCurrent && isLearningMode && Number(opt.score || 0) === bestScore;
               return (
                 <button
                   key={opt.id}
                   type="button"
                   onClick={() => handleSelect(opt.id)}
                   className={`w-full text-left text-sm px-3 py-2 rounded-lg border transition-colors ${
-                    isSelected
+                    isBest
+                      ? "border-emerald-500 bg-emerald-50 text-emerald-900 dark:border-emerald-400 dark:bg-emerald-950/30 dark:text-emerald-100"
+                      : isSelected
                       ? "border-blue-600 bg-blue-50 text-blue-900 dark:border-blue-400 dark:bg-slate-800 dark:text-blue-100"
                       : "border-gray-200 bg-white hover:bg-gray-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
                   }`}
-                  disabled={timeLeft <= 0}
+                  disabled={!isLearningMode && timeLeft <= 0}
                 >
                   <span className="font-semibold mr-2">{opt.id}.</span>
                   {opt.text}
@@ -517,6 +554,7 @@ export default function Simulasi() {
               );
             })}
           </div>
+          {isLearningMode && answers[currentQuestion.id] && <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm leading-6 text-emerald-900 dark:border-emerald-900 dark:bg-emerald-950/20 dark:text-emerald-100"><strong>Jawaban terbaik ditandai hijau.</strong><p className="mt-1">{currentQuestion.explanation || "Pembahasan terperinci untuk soal ini sedang disiapkan. Bandingkan skor setiap pilihan untuk memahami respons yang paling tepat."}</p></div>}
         </div>
 
         {/* Navigasi bawah */}
@@ -553,7 +591,7 @@ export default function Simulasi() {
               onClick={() => handleFinish(false)}
               className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700"
             >
-              Selesaikan Simulasi
+              {simulasiNum ? "Selesaikan Tryout" : "Selesaikan Latihan"}
             </button>
           </div>
 

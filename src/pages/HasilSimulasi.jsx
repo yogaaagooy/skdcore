@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import { getLatestAttempt } from "../services/results";
+import { reportQuestion } from "../services/questionReports";
 
 const PASSING_GRADE = {
   TWK: 65,
@@ -58,6 +59,18 @@ export default function HasilSimulasi() {
 
   const [result, setResult] = useState(location.state?.result || null);
   const [detail, setDetail] = useState(location.state?.detail || null);
+  const [reported, setReported] = useState({});
+
+  async function sendQuestionReport(question) {
+    const reason = window.prompt("Jelaskan masalah pada soal ini (misalnya jawaban keliru, pertanyaan ambigu, atau salah tulis):");
+    if (!reason?.trim()) return;
+    try {
+      await reportQuestion(question, reason.trim());
+      setReported((current) => ({ ...current, [question.id]: true }));
+    } catch (error) {
+      window.alert(error.message);
+    }
+  }
 
   useEffect(() => {
     if (result) return;
@@ -76,21 +89,22 @@ export default function HasilSimulasi() {
   const questions = detail?.questions || [];
   const answersMap = detail?.answers || {};
   const hasReview = questions.length > 0;
+  const reviewLockedUntil = detail?.reviewLockedUntil || null;
 
   if (!result) {
     return (
-      <div className="min-h-screen bg-gray-50 dark:bg-slate-950 dark:text-slate-50">
+      <div className="app-page min-h-screen bg-gray-50 dark:bg-slate-950 dark:text-slate-50">
         <Navbar />
         <main className="mx-auto max-w-3xl px-4 py-12">
           <section className="rounded-3xl border border-gray-200 bg-white px-6 py-12 text-center dark:border-slate-800 dark:bg-slate-900">
             <div className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-blue-50 text-3xl text-blue-600 dark:bg-blue-950/40">◷</div>
-            <h1 className="mt-5 text-2xl font-bold">Belum ada hasil simulasi</h1>
+            <h1 className="mt-5 text-2xl font-bold">Belum ada hasil latihan</h1>
             <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-gray-500 dark:text-slate-400">
-              Selesaikan satu simulasi terlebih dahulu. Nilai dan pembahasan akan muncul di halaman ini.
+              Selesaikan satu latihan atau tryout terlebih dahulu. Nilai dan pembahasan akan muncul di halaman ini.
             </p>
             <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
               <button onClick={() => navigate("/dashboard")} className="rounded-xl border border-gray-300 px-5 py-2.5 text-sm font-semibold hover:bg-gray-50 dark:border-slate-700 dark:hover:bg-slate-800">Beranda</button>
-              <button onClick={() => navigate("/simulasi")} className="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white hover:bg-blue-700">Pilih simulasi</button>
+              <button onClick={() => navigate("/latihan")} className="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white hover:bg-blue-700">Pilih latihan</button>
             </div>
           </section>
         </main>
@@ -99,7 +113,7 @@ export default function HasilSimulasi() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-slate-950 dark:text-slate-50">
+    <div className="app-page min-h-screen bg-gray-50 dark:bg-slate-950 dark:text-slate-50">
       <Navbar />
 
       {/* Body */}
@@ -207,11 +221,11 @@ export default function HasilSimulasi() {
           <div className="text-xs text-gray-500 dark:text-slate-400 max-w-md">
             <p>
               Angka passing grade di atas mengikuti aturan SKD umum terbaru. Nilai di aplikasi
-              ini hanya simulasi untuk latihan, bukan hasil resmi.
+              ini hanya hasil latihan, bukan hasil resmi.
             </p>
             {location.state?.detail && (
               <p className="mt-1">
-                Review soal di bawah hanya berlaku untuk simulasi yang baru saja kamu
+                Review soal di bawah hanya berlaku untuk sesi yang baru saja kamu
                 kerjakan. Jika halaman ini di-reload, review soal tidak ditampilkan.
               </p>
             )}
@@ -226,15 +240,23 @@ export default function HasilSimulasi() {
             </button>
             <button
               type="button"
-              onClick={() => navigate("/simulasi/all")}
+              onClick={() => navigate("/latihan")}
               className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700"
             >
-              Ulangi Simulasi Penuh
+              Pilih latihan
             </button>
           </div>
         </section>
 
         {/* REVIEW SOAL */}
+        {reviewLockedUntil && !hasReview && (
+          <section className="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/30 dark:text-amber-100">
+            <h2 className="font-bold">Pembahasan masih dikunci</h2>
+            <p className="mt-1">
+              Agar Tryout Nasional tetap adil, pembahasan baru dapat dilihat setelah periode berakhir pada {formatDate(reviewLockedUntil)}.
+            </p>
+          </section>
+        )}
         {hasReview && (
           <section className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-5 space-y-4">
             <div className="flex items-center justify-between gap-2 mb-2">
@@ -334,6 +356,7 @@ export default function HasilSimulasi() {
                         <span>{q.explanation}</span>
                       </div>
                     )}
+                    <button disabled={reported[q.id]} onClick={() => sendQuestionReport(q)} className="mt-2 text-[11px] font-semibold text-slate-500 hover:text-red-600 disabled:text-emerald-600">{reported[q.id] ? "✓ Laporan terkirim" : "Laporkan masalah pada soal"}</button>
                   </div>
                 );
               })}

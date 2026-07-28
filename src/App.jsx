@@ -11,6 +11,9 @@ import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
 import SimpleAdminDashboard from "./pages/SimpleAdminDashboard";
 import SimulationMenu from "./pages/SimulationMenu";
+import TrainingMenu from "./pages/TrainingMenu";
+import WrongAnswers from "./pages/WrongAnswers";
+import PublicInfo from "./pages/PublicInfo";
 import { clearLegacyAuth, setCurrentUser } from "./utils/auth";
 import { observeAuth } from "./services/auth";
 
@@ -46,6 +49,9 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/panduan" element={<PublicInfo page="panduan" />} />
+      <Route path="/privasi" element={<PublicInfo page="privasi" />} />
+      <Route path="/ketentuan" element={<PublicInfo page="ketentuan" />} />
 
       <Route
         path="/dashboard"
@@ -69,9 +75,22 @@ function App() {
       />
 
       <Route
-        path="/simulasi"
+        path="/latihan"
+        element={
+          guard(<TrainingMenu />, ["user", "admin"])
+        }
+      />
+      <Route
+        path="/tryout"
         element={
           guard(<SimulationMenu />, ["user", "admin"])
+        }
+      />
+      <Route path="/simulasi" element={<Navigate to="/tryout" replace />} />
+      <Route
+        path="/buku-kesalahan"
+        element={
+          guard(<WrongAnswers />, ["user", "admin"])
         }
       />
       <Route
