@@ -212,7 +212,7 @@ export default function SimpleAdminDashboard() {
       const payload = { version: 1, exportedAt: new Date().toISOString(), exams };
       const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
       const url = URL.createObjectURL(blob); const link = document.createElement("a"); link.href = url;
-      link.download = `skdcore-backup-${new Date().toISOString().slice(0, 10)}.json`; link.click(); URL.revokeObjectURL(url);
+      link.download = `nalarasn-backup-${new Date().toISOString().slice(0, 10)}.json`; link.click(); URL.revokeObjectURL(url);
       setMessage("✓ Backup seluruh bank soal berhasil diunduh.");
     } catch { setMessage("✕ Backup gagal dibuat."); }
     finally { setLoading(false); }

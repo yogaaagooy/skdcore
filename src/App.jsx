@@ -127,6 +127,7 @@ function App() {
           guard(<Leaderboard />, ["user", "admin"])
         }
       />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
