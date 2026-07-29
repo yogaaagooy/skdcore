@@ -5,6 +5,18 @@ export function getExamDocumentId(target = "main") {
   return target === "main" ? "bank_utama" : `simulasi_${Number(target)}`;
 }
 
+function removeUndefined(value) {
+  if (Array.isArray(value)) return value.map(removeUndefined);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value)
+        .filter(([, item]) => item !== undefined)
+        .map(([key, item]) => [key, removeUndefined(item)])
+    );
+  }
+  return value;
+}
+
 export async function getQuestionBank(target = "main") {
   const snapshot = await getDoc(doc(db, "exams", getExamDocumentId(target)));
   if (!snapshot.exists()) return [];
@@ -14,7 +26,8 @@ export async function getQuestionBank(target = "main") {
 
 export async function saveQuestionBank(target, questions) {
   if (!auth.currentUser) throw new Error("Sesi admin sudah berakhir. Silakan login kembali.");
-  const jsonSize = new Blob([JSON.stringify(questions)]).size;
+  const firestoreQuestions = removeUndefined(questions);
+  const jsonSize = new Blob([JSON.stringify(firestoreQuestions)]).size;
   if (jsonSize > 900_000) throw new Error("Ukuran paket terlalu besar. Maksimal sekitar 900 KB per paket.");
 
   const id = getExamDocumentId(target);
@@ -24,12 +37,12 @@ export async function saveQuestionBank(target, questions) {
     type: target === "main" ? "practice" : "simulation",
     packageNumber: target === "main" ? null : Number(target),
     durationMinutes: 100,
-    questionCount: questions.length,
-    questions,
+    questionCount: firestoreQuestions.length,
+    questions: firestoreQuestions,
     updatedAt: serverTimestamp(),
     updatedBy: auth.currentUser.uid,
   }, { merge: true });
-  return questions.length;
+  return firestoreQuestions.length;
 }
 
 export async function getAllQuestionBanks() {

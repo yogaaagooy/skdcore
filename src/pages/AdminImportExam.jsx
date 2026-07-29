@@ -230,12 +230,13 @@ export default function AdminImportExam() {
     setLoading(true);
 
     try {
-      await setDoc(doc(db, "exams", id), {
+      const payload = JSON.parse(JSON.stringify({
         title,
         description: description || "",
         durationMinutes: durationMinutes || 100,
         questions
-      });
+      }));
+      await setDoc(doc(db, "exams", id), payload);
 
       newLog.push(`✔ Berhasil import ujian '${id}'`);
       newLog.push(`✔ Total soal yang diimpor: ${questions.length}`);
