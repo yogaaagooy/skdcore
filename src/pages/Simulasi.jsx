@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import logo from "../assets/logo.png";
 import UserDropdown from "../components/UserDropdown";
@@ -61,6 +61,72 @@ function getTotalTimeSeconds(mode) {
   return 100 * 60; // full SKD
 }
 
+function hashSeed(value) {
+  return String(value || "nalarasn").split("").reduce((hash, character) => {
+    return Math.imul(hash ^ character.charCodeAt(0), 16777619);
+  }, 2166136261) >>> 0;
+}
+
+function seededRandom(seed) {
+  let state = hashSeed(seed);
+  return () => {
+    state += 0x6D2B79F5;
+    let value = state;
+    value = Math.imul(value ^ (value >>> 15), value | 1);
+    value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
+    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function shuffle(items, seed) {
+  const output = [...items];
+  const random = seededRandom(seed);
+  for (let index = output.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(random() * (index + 1));
+    [output[index], output[swapIndex]] = [output[swapIndex], output[index]];
+  }
+  return output;
+}
+
+function getRequestedCount(value) {
+  const parsed = Number(value);
+  return [10, 20].includes(parsed) ? parsed : null;
+}
+
+function getTrainingTimeSeconds(mode, count) {
+  if (!count) return getTotalTimeSeconds(mode);
+  const fullCounts = { twk: 30, tiu: 35, tkp: 45, all: 110 };
+  const fullMinutes = { twk: 25, tiu: 30, tkp: 40, all: 100 };
+  return Math.ceil((fullMinutes[mode] * count) / fullCounts[mode]) * 60;
+}
+
+function prepareTrainingQuestions(allQuestions, mode, count, seed) {
+  const optionLabels = ["A", "B", "C", "D", "E"];
+  const withShuffledOptions = allQuestions.map((question) => ({
+    ...question,
+    options: shuffle(question.options || [], `${seed}-${question.id}-options`).map((option, index) => ({
+      ...option,
+      id: optionLabels[index] || option.id,
+    })),
+  }));
+  const byCategory = {
+    twk: shuffle(withShuffledOptions.filter((question) => question.category === "TWK"), `${seed}-twk`),
+    tiu: shuffle(withShuffledOptions.filter((question) => question.category === "TIU"), `${seed}-tiu`),
+    tkp: shuffle(withShuffledOptions.filter((question) => question.category === "TKP"), `${seed}-tkp`),
+  };
+  if (mode !== "all") return byCategory[mode].slice(0, count || byCategory[mode].length);
+  if (!count) return shuffle([...byCategory.twk, ...byCategory.tiu, ...byCategory.tkp], `${seed}-all`);
+
+  const allocation = count === 10
+    ? { twk: 3, tiu: 3, tkp: 4 }
+    : { twk: 5, tiu: 6, tkp: 9 };
+  return shuffle([
+    ...byCategory.twk.slice(0, allocation.twk),
+    ...byCategory.tiu.slice(0, allocation.tiu),
+    ...byCategory.tkp.slice(0, allocation.tkp),
+  ], `${seed}-all-${count}`);
+}
+
 // Bagi per mode
 function buildQuestionBank(allQuestions) {
   const twk = allQuestions.filter((q) => q.category === "TWK").slice(0, 30);
@@ -82,6 +148,8 @@ export default function Simulasi() {
   const currentMode = (mode || "all").toLowerCase();
   const simulasiNum = num ? parseInt(num, 10) : null;
   const eventId = new URLSearchParams(location.search).get("weekly") || null;
+  const requestedCount = getRequestedCount(new URLSearchParams(location.search).get("count"));
+  const sessionSeed = new URLSearchParams(location.search).get("seed") || "default";
   const hasWeeklyAccess = Boolean(eventId) && window.sessionStorage.getItem("nalarasn_weekly_tryout_access") === eventId;
   const weeklyEndAt = eventId ? window.sessionStorage.getItem("nalarasn_weekly_tryout_end") : null;
   const reviewLockedUntil = weeklyEndAt && Date.now() < Date.parse(weeklyEndAt) ? weeklyEndAt : null;
@@ -97,18 +165,23 @@ export default function Simulasi() {
   const [exitDialogOpen, setExitDialogOpen] = useState(false);
   const [finishDialogOpen, setFinishDialogOpen] = useState(false);
   const allowHistoryExit = useRef(false);
-  const QUESTION_BANK = buildQuestionBank(allQuestions);
-  const QUESTION_SET = QUESTION_BANK[currentMode] || QUESTION_BANK.all;
+  const QUESTION_SET = useMemo(() => {
+    if (simulasiNum !== null) {
+      const bank = buildQuestionBank(allQuestions);
+      return bank[currentMode] || bank.all;
+    }
+    return prepareTrainingQuestions(allQuestions, currentMode, requestedCount, sessionSeed);
+  }, [allQuestions, currentMode, requestedCount, sessionSeed, simulasiNum]);
 
   // Gunakan key yang berbeda jika dari simulasi spesifik
   const storageKey = simulasiNum 
     ? `skdcore_simulasi_sim${simulasiNum}_state_v1_${currentMode}`
-    : `skdcore_simulasi_state_v1_${currentMode}`;
+    : `skdcore_latihan_state_v2_${currentMode}_${requestedCount || "full"}_${sessionSeed}`;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [timeLeft, setTimeLeft] = useState(() =>
-    getTotalTimeSeconds(currentMode)
+    getTrainingTimeSeconds(currentMode, simulasiNum === null ? requestedCount : null)
   );
 
   const currentQuestion = QUESTION_SET[currentIndex];
@@ -182,13 +255,13 @@ export default function Simulasi() {
             : 0;
           setTimeLeft(Math.max(0, parsed.timeLeft - elapsedWhileAway));
         } else {
-          setTimeLeft(getTotalTimeSeconds(currentMode));
+          setTimeLeft(getTrainingTimeSeconds(currentMode, simulasiNum === null ? requestedCount : null));
         }
       }
     } catch (err) {
       console.error("Gagal load state simulasi:", err);
     }
-  }, [storageKey, currentMode, QUESTION_SET.length]);
+  }, [storageKey, currentMode, QUESTION_SET.length, requestedCount, simulasiNum]);
 
   // Timer mundur
   useEffect(() => {
@@ -290,7 +363,7 @@ export default function Simulasi() {
   function clearState() {
     setAnswers({});
     setCurrentIndex(0);
-    setTimeLeft(getTotalTimeSeconds(currentMode));
+    setTimeLeft(getTrainingTimeSeconds(currentMode, simulasiNum === null ? requestedCount : null));
     if (typeof window !== "undefined") {
       window.localStorage.removeItem(storageKey);
     }
@@ -362,7 +435,7 @@ export default function Simulasi() {
     return <div className="grid min-h-screen place-items-center bg-gray-50 px-4 dark:bg-slate-950"><div className="max-w-md rounded-2xl border border-red-200 bg-white p-6 text-center dark:border-red-900 dark:bg-slate-900"><h1 className="font-bold">Soal gagal dimuat</h1><p className="mt-2 text-sm text-slate-500">{questionsError}</p><button onClick={() => navigate(simulasiNum ? "/tryout" : "/latihan")} className="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white">Kembali</button></div></div>;
   }
 
-  if (currentUser && currentUser.role !== "admin" && ((!eventId && attemptCount >= 3) || (eventId && attemptCount >= 1))) {
+  if (simulasiNum !== null && currentUser && currentUser.role !== "admin" && ((!eventId && attemptCount >= 3) || (eventId && attemptCount >= 1))) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-950 px-4">
         <div className="bg-white dark:bg-slate-900 dark:border-slate-800 border border-gray-200 rounded-2xl p-6 max-w-md w-full text-center">

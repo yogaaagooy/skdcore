@@ -13,10 +13,16 @@ export default function TrainingMenu() {
   const navigate = useNavigate();
   const [selected, setSelected] = useState(null);
   const [studyMode, setStudyMode] = useState("learn");
+  const [questionCount, setQuestionCount] = useState("full");
 
   function begin() {
     if (!selected) return;
-    navigate(`/simulasi/${selected.id}?type=${studyMode}`);
+    const params = new URLSearchParams({
+      type: studyMode,
+      count: questionCount,
+      seed: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+    });
+    navigate(`/simulasi/${selected.id}?${params.toString()}`);
   }
 
   return <div className="app-page min-h-screen bg-slate-50 dark:bg-slate-950"><Navbar />
@@ -29,6 +35,6 @@ export default function TrainingMenu() {
       </div>
       <section className="mt-7 rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"><h2 className="font-bold">Belajar dari kesalahan</h2><p className="mt-1 text-sm text-slate-500">Jawaban yang belum tepat otomatis disimpan agar bisa dipelajari kembali.</p><button onClick={() => navigate("/buku-kesalahan")} className="mt-4 rounded-xl border border-blue-200 px-4 py-2.5 text-sm font-semibold text-blue-700 hover:bg-blue-50 dark:border-blue-900 dark:text-blue-300 dark:hover:bg-blue-950/30">Buka buku kesalahan</button></section>
     </main>
-    {selected && <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/65 p-4 backdrop-blur-sm" onClick={() => setSelected(null)}><section className="w-full max-w-md rounded-3xl bg-white p-6 shadow-2xl dark:bg-slate-900" onClick={(event) => event.stopPropagation()}><h2 className="text-xl font-bold">{selected.label}</h2><p className="mt-1 text-sm text-slate-500">{selected.detail}</p><div className="mt-5 grid gap-2"><button onClick={() => setStudyMode("learn")} className={`rounded-xl border p-4 text-left ${studyMode === "learn" ? "border-blue-500 bg-blue-50 dark:bg-blue-950/30" : "border-slate-200 dark:border-slate-700"}`}><strong className="text-sm">Mode Belajar</strong><span className="mt-1 block text-xs text-slate-500">Lihat jawaban terbaik dan pembahasan setelah menjawab.</span></button><button onClick={() => setStudyMode("exam")} className={`rounded-xl border p-4 text-left ${studyMode === "exam" ? "border-blue-500 bg-blue-50 dark:bg-blue-950/30" : "border-slate-200 dark:border-slate-700"}`}><strong className="text-sm">Mode Ujian</strong><span className="mt-1 block text-xs text-slate-500">Timer aktif dan pembahasan tampil setelah sesi selesai.</span></button></div><div className="mt-6 grid grid-cols-2 gap-2"><button onClick={() => setSelected(null)} className="rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold dark:border-slate-700">Batal</button><button onClick={begin} className="rounded-xl bg-blue-600 px-4 py-3 text-sm font-bold text-white">Mulai latihan</button></div></section></div>}
+    {selected && <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/65 p-4 backdrop-blur-sm" onClick={() => setSelected(null)}><section className="w-full max-w-md rounded-3xl bg-white p-6 shadow-2xl dark:bg-slate-900" onClick={(event) => event.stopPropagation()}><h2 className="text-xl font-bold">{selected.label}</h2><p className="mt-1 text-sm text-slate-500">Bebas diulang · soal dan pilihan jawaban diacak.</p><div className="mt-5"><p className="text-xs font-bold uppercase tracking-wider text-slate-500">Jumlah soal</p><div className="mt-2 grid grid-cols-3 gap-2">{[{ value: "10", label: "10 soal" }, { value: "20", label: "20 soal" }, { value: "full", label: "Penuh" }].map((item) => <button key={item.value} onClick={() => setQuestionCount(item.value)} className={`rounded-xl border px-3 py-3 text-sm font-bold ${questionCount === item.value ? "border-blue-500 bg-blue-50 text-blue-700 dark:bg-blue-950/30 dark:text-blue-300" : "border-slate-200 dark:border-slate-700"}`}>{item.label}</button>)}</div></div><div className="mt-5 grid gap-2"><button onClick={() => setStudyMode("learn")} className={`rounded-xl border p-4 text-left ${studyMode === "learn" ? "border-blue-500 bg-blue-50 dark:bg-blue-950/30" : "border-slate-200 dark:border-slate-700"}`}><strong className="text-sm">Mode Belajar</strong><span className="mt-1 block text-xs text-slate-500">Lihat jawaban terbaik dan pembahasan setelah menjawab.</span></button><button onClick={() => setStudyMode("exam")} className={`rounded-xl border p-4 text-left ${studyMode === "exam" ? "border-blue-500 bg-blue-50 dark:bg-blue-950/30" : "border-slate-200 dark:border-slate-700"}`}><strong className="text-sm">Mode Ujian</strong><span className="mt-1 block text-xs text-slate-500">Timer menyesuaikan jumlah soal dan pembahasan tampil setelah selesai.</span></button></div><div className="mt-6 grid grid-cols-2 gap-2"><button onClick={() => setSelected(null)} className="rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold dark:border-slate-700">Batal</button><button onClick={begin} className="rounded-xl bg-blue-600 px-4 py-3 text-sm font-bold text-white">Mulai latihan</button></div></section></div>}
   </div>;
 }
