@@ -1,0 +1,59 @@
+[
+  {
+    "id": "TIU-FIG-CONTOH-001",
+    "category": "TIU",
+    "question": "Pilih gambar yang tepat untuk melanjutkan pola.",
+    "image": {
+      "url": "https://example.com/question.svg",
+      "alt": "Rangkaian pola bentuk geometris"
+    },
+    "options": [
+      {
+        "id": "A",
+        "text": "",
+        "image": {
+          "url": "https://example.com/option-a.svg",
+          "alt": "Pilihan A"
+        },
+        "score": 0
+      },
+      {
+        "id": "B",
+        "text": "",
+        "image": {
+          "url": "https://example.com/option-b.svg",
+          "alt": "Pilihan B"
+        },
+        "score": 5
+      },
+      {
+        "id": "C",
+        "text": "",
+        "image": {
+          "url": "https://example.com/option-c.svg",
+          "alt": "Pilihan C"
+        },
+        "score": 0
+      },
+      {
+        "id": "D",
+        "text": "",
+        "image": {
+          "url": "https://example.com/option-d.svg",
+          "alt": "Pilihan D"
+        },
+        "score": 0
+      },
+      {
+        "id": "E",
+        "text": "",
+        "image": {
+          "url": "https://example.com/option-e.svg",
+          "alt": "Pilihan E"
+        },
+        "score": 0
+      }
+    ],
+    "explanation": "Contoh pembahasan minimal tiga puluh karakter untuk keperluan validasi paket."
+  }
+]

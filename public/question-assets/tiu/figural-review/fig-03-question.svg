@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="180" viewBox="0 0 760 180" role="img" aria-label="Analogi pertukaran bentuk luar dan dalam serta perpindahan penanda">
+  <rect width="760" height="180" fill="#ffffff"/>
+  <rect x="10" y="25" width="150" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><rect x="41" y="46" width="88" height="88" rx="4" fill="none" stroke="#0f172a" stroke-width="5"/><circle cx="65" cy="90" r="20" fill="none" stroke="#2563eb" stroke-width="5"/><circle cx="133" cy="90" r="8" fill="#e8a51a"/>
+   <text x="190" y="90" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#0f172a">→</text>
+   <rect x="220" y="25" width="150" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><circle cx="295" cy="90" r="46" fill="none" stroke="#0f172a" stroke-width="5"/><rect x="303" y="73" width="34" height="34" rx="4" fill="none" stroke="#2563eb" stroke-width="5"/><circle cx="247" cy="90" r="8" fill="#e8a51a"/>
+   <text x="400" y="95" font-family="Arial" font-size="44" font-weight="700" fill="#0f172a">:</text>
+   <rect x="435" y="25" width="150" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><polygon points="510,40 553.3012701892219,115 466.69872981077805,115" fill="none" stroke="#0f172a" stroke-width="5" stroke-linejoin="round"/><polygon points="531.2132034355964,65 510,86.21320343559643 488.7867965644036,65 510,43.78679656440357" fill="none" stroke="#2563eb" stroke-width="5" stroke-linejoin="round"/><circle cx="510" cy="132" r="8" fill="#e8a51a"/>
+   <text x="615" y="90" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#0f172a">→</text><rect x="645" y="25" width="105" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><text x="697" y="92" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#2563eb">?</text>
+</svg>

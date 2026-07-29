@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import logo from "../assets/logo.png";
 import UserDropdown from "../components/UserDropdown";
+import QuestionMedia from "../components/QuestionMedia";
 import { getCurrentUser } from "../utils/auth";
 import { getQuestionBank } from "../services/questions";
 import { logout } from "../services/auth";
@@ -488,9 +489,14 @@ export default function Simulasi() {
               <span className="font-semibold text-red-500">Waktu habis, sesi akan diakhiri.</span>
             )}
           </div>
-          <p className="text-sm font-medium text-gray-900 dark:text-slate-50 mb-4">
+          <p className="mb-4 whitespace-pre-line text-sm font-medium text-gray-900 dark:text-slate-50">
             {currentQuestion.question}
           </p>
+          <QuestionMedia
+            image={currentQuestion.image || currentQuestion.imageUrl}
+            alt={`Gambar soal ${currentIndex + 1}`}
+            className="mb-5"
+          />
           {currentQuestion.figure && (
             <pre className="mb-5 overflow-x-auto rounded-xl border border-slate-200 bg-slate-50 p-4 text-center font-mono text-sm leading-6 text-slate-800 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100">
               {currentQuestion.figure}
@@ -518,7 +524,14 @@ export default function Simulasi() {
                   disabled={!isLearningMode && timeLeft <= 0}
                 >
                   <span className="font-semibold mr-2">{opt.id}.</span>
-                  {opt.text}
+                  {opt.text && <span>{opt.text}</span>}
+                  <QuestionMedia
+                    image={opt.image || opt.imageUrl}
+                    alt={`Pilihan ${opt.id} soal ${currentIndex + 1}`}
+                    compact
+                    zoomable={false}
+                    className={opt.text ? "mt-2" : "mt-1"}
+                  />
                 </button>
               );
             })}

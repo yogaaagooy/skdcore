@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="170" viewBox="0 0 220 170" role="img" aria-label="Segi lima kosong dengan empat titik">
+  <rect width="220" height="170" fill="#ffffff"/>
+  <rect x="10" y="10" width="200" height="150" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><polygon points="110,28 151.84648671698676,58.403252247502316 135.8625511008688,107.59674775249769 84.13744889913119,107.59674775249769 68.15351328301324,58.4032522475023" fill="none" stroke="#0f172a" stroke-width="5" stroke-linejoin="round"/><circle cx="83" cy="132" r="5.5" fill="#e8a51a"/><circle cx="101" cy="132" r="5.5" fill="#e8a51a"/><circle cx="119" cy="132" r="5.5" fill="#e8a51a"/><circle cx="137" cy="132" r="5.5" fill="#e8a51a"/>
+</svg>

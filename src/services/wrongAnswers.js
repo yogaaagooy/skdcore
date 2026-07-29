@@ -25,6 +25,8 @@ export function saveWrongAnswers(questions, answers) {
       id: question.id,
       category: question.category,
       question: question.question,
+      image: question.image || (question.imageUrl ? { url: question.imageUrl, alt: "Gambar soal" } : undefined),
+      figure: question.figure || "",
       options,
       selectedId: selected?.id || null,
       explanation: question.explanation || "",

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="170" viewBox="0 0 760 170" role="img" aria-label="Lima pasangan panah dan titik untuk mencari pola berbeda">
+  <rect width="760" height="170" fill="#ffffff"/>
+  <rect x="10" y="20" width="135" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><g transform="translate(77 85) rotate(0)">
+    <line x1="-25" y1="0" x2="11.25" y2="0" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+    <polyline points="2.5,-9.5 13.750000000000002,0 2.5,9.5" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g><circle cx="45" cy="85" r="8" fill="#e8a51a"/><text x="77" y="145" text-anchor="middle" font-family="Arial" font-size="18" font-weight="700">A</text><rect x="160" y="20" width="135" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><g transform="translate(227 85) rotate(90)">
+    <line x1="-25" y1="0" x2="11.25" y2="0" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+    <polyline points="2.5,-9.5 13.750000000000002,0 2.5,9.5" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g><circle cx="235" cy="45" r="8" fill="#e8a51a"/><text x="227" y="145" text-anchor="middle" font-family="Arial" font-size="18" font-weight="700">B</text><rect x="310" y="20" width="135" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><g transform="translate(377 85) rotate(180)">
+    <line x1="-25" y1="0" x2="11.25" y2="0" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+    <polyline points="2.5,-9.5 13.750000000000002,0 2.5,9.5" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g><circle cx="425" cy="85" r="8" fill="#e8a51a"/><text x="377" y="145" text-anchor="middle" font-family="Arial" font-size="18" font-weight="700">C</text><rect x="460" y="20" width="135" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><g transform="translate(527 85) rotate(270)">
+    <line x1="-25" y1="0" x2="11.25" y2="0" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+    <polyline points="2.5,-9.5 13.750000000000002,0 2.5,9.5" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g><circle cx="535" cy="45" r="8" fill="#e8a51a"/><text x="527" y="145" text-anchor="middle" font-family="Arial" font-size="18" font-weight="700">D</text><rect x="610" y="20" width="135" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><g transform="translate(677 85) rotate(0)">
+    <line x1="-25" y1="0" x2="11.25" y2="0" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+    <polyline points="2.5,-9.5 13.750000000000002,0 2.5,9.5" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g><circle cx="645" cy="85" r="8" fill="#e8a51a"/><text x="677" y="145" text-anchor="middle" font-family="Arial" font-size="18" font-weight="700">E</text>
+</svg>

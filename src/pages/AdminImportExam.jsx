@@ -78,6 +78,11 @@ export default function AdminImportExam() {
         return;
       }
 
+      if (q.options.some((o) => !String(o.text || "").trim() && !o.image && !o.imageUrl)) {
+        logArr.push(`❌ Soal #${nomor}: setiap option wajib memiliki teks atau gambar`);
+        ok = false;
+      }
+
       // TWK/TIU: cek score (harus ada satu yang score=5)
       if (q.tipe === "TWK" || q.tipe === "TIU") {
         const hasCorrect = q.options.some((o) => o.score === 5);
@@ -109,17 +114,26 @@ export default function AdminImportExam() {
       const tipe = (q.category || q.tipe || "TWK").toUpperCase();
       
       // Parse options dari object {A, B, C, D, E}
-      const options = keys.map((k) => ({
-        id: k,
-        text: q.options[k] || "",
-        score: 0
-      }));
+      const options = keys.map((k) => {
+        const value = q.options?.[k];
+        if (value && typeof value === "object") {
+          return {
+            id: k,
+            text: String(value.text || ""),
+            image: value.image || (value.imageUrl ? { url: value.imageUrl, alt: `Pilihan ${k}` } : undefined),
+            score: 0,
+          };
+        }
+        return { id: k, text: String(value || ""), score: 0 };
+      });
 
       // Output awal
       const out = {
         id: q.id,
         tipe: tipe,
         question: q.question || "",
+        image: q.image || (q.imageUrl ? { url: q.imageUrl, alt: "Gambar soal" } : undefined),
+        figure: q.figure || "",
         options: options,
         explanation: q.explanation || ""
       };

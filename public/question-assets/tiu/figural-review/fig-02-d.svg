@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="170" viewBox="0 0 220 170" role="img" aria-label="Segi enam penuh">
+  <rect width="220" height="170" fill="#ffffff"/>
+  <rect x="10" y="10" width="200" height="150" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><polygon points="110,37 151.56921938165306,61 151.56921938165306,109 110,133 68.43078061834694,109 68.43078061834694,60.99999999999999" fill="#0f172a" stroke="#0f172a" stroke-width="5" stroke-linejoin="round"/>
+</svg>

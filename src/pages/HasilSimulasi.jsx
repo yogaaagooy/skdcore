@@ -2,6 +2,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
+import QuestionMedia from "../components/QuestionMedia";
 import { getLatestAttempt } from "../services/results";
 import { reportQuestion } from "../services/questionReports";
 
@@ -303,9 +304,14 @@ export default function HasilSimulasi() {
                       </span>
                     </div>
 
-                    <p className="text-[13px] font-medium text-gray-900 dark:text-slate-50">
+                    <p className="whitespace-pre-line text-[13px] font-medium text-gray-900 dark:text-slate-50">
                       {q.question}
                     </p>
+                    <QuestionMedia
+                      image={q.image || q.imageUrl}
+                      alt={`Gambar soal ${index + 1}`}
+                      compact
+                    />
                     {q.figure && (
                       <pre className="overflow-x-auto rounded-lg border border-slate-200 bg-slate-50 p-3 text-center font-mono text-xs leading-5 text-slate-800 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100">
                         {q.figure}
@@ -343,7 +349,13 @@ export default function HasilSimulasi() {
                           >
                             <div className={`flex-1 ${textClass}`}>
                               <span className="font-semibold mr-1">{opt.id}.</span>
-                              <span>{opt.text}</span>
+                              {opt.text && <span>{opt.text}</span>}
+                              <QuestionMedia
+                                image={opt.image || opt.imageUrl}
+                                alt={`Pilihan ${opt.id} soal ${index + 1}`}
+                                compact
+                                className="mt-2"
+                              />
                             </div>
                             <div className="text-[10px] text-gray-500 dark:text-slate-400 text-right min-w-[60px]">
                               <div>Skor: {opt.score ?? 0}</div>

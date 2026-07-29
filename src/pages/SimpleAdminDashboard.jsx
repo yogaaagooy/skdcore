@@ -18,12 +18,25 @@ function normalizeQuestion(question, index) {
   let options = question.options;
   if (options && !Array.isArray(options)) options = letters.map((id) => ({ id, text: options[id] || "", score: 0 }));
   if (!Array.isArray(options) || options.length !== 5) throw new Error(`Soal ${index + 1}: pilihan jawaban harus A–E.`);
-  options = options.map((option, optionIndex) => ({ id: option.id || letters[optionIndex], text: option.text || String(option), score: Number(option.score || 0) }));
+  options = options.map((option, optionIndex) => ({
+    ...option,
+    id: option.id || letters[optionIndex],
+    text: typeof option === "string" ? option : String(option.text || ""),
+    image: option?.image || (option?.imageUrl ? { url: option.imageUrl, alt: `Pilihan ${option.id || letters[optionIndex]}` } : undefined),
+    score: Number(option.score || 0),
+  }));
   if (["TWK", "TIU"].includes(category) && question.correct) options = options.map((option) => ({ ...option, score: option.id === String(question.correct).toUpperCase() ? 5 : 0 }));
   if (category === "TKP" && question.scores) options = options.map((option) => ({ ...option, score: Number(question.scores[option.id] || option.score || 1) }));
   if (!["TWK", "TIU", "TKP"].includes(category)) throw new Error(`Soal ${index + 1}: kategori harus TWK, TIU, atau TKP.`);
   if (!question.question?.trim()) throw new Error(`Soal ${index + 1}: pertanyaan masih kosong.`);
-  return { ...question, id: question.id || Date.now() + index, category, question: question.question.trim(), options };
+  return {
+    ...question,
+    id: question.id || Date.now() + index,
+    category,
+    question: question.question.trim(),
+    image: question.image || (question.imageUrl ? { url: question.imageUrl, alt: `Gambar soal ${index + 1}` } : undefined),
+    options,
+  };
 }
 
 export default function SimpleAdminDashboard() {
