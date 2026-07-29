@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "../assets/logo.png";
+import BrandLogo from "./BrandLogo";
 import { getCurrentUser, setCurrentUser } from "../utils/auth";
 import { logout } from "../services/auth";
 
@@ -83,7 +83,7 @@ export default function Navbar() {
   return <>
     <aside className={`fixed inset-y-0 left-0 z-40 hidden border-r border-slate-200 bg-white px-3 py-4 transition-[width] duration-200 dark:border-slate-800 dark:bg-slate-900 md:flex md:flex-col ${collapsed ? "w-[5.5rem]" : "w-[15.5rem]"}`}>
       <div className={`flex h-12 items-center ${collapsed ? "justify-center" : "justify-between"}`}>
-        <Link to="/dashboard" className="rounded-xl bg-white p-1.5" aria-label="NalarASN Beranda"><img src={logo} alt="NalarASN" className={`${collapsed ? "h-8 w-10 object-cover object-left" : "h-9 w-auto max-w-[155px]"} object-contain`} /></Link>
+        <Link to="/dashboard" aria-label="NalarASN Beranda"><BrandLogo size={collapsed ? "sm" : "md"} compact={collapsed} className={collapsed ? "w-12 overflow-hidden" : ""} /></Link>
         {!collapsed && <button onClick={() => setCollapsed(true)} className="grid h-9 w-9 place-items-center rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Ciutkan menu">‹</button>}
       </div>
       {collapsed && <button onClick={() => setCollapsed(false)} className="mx-auto mt-2 grid h-8 w-10 place-items-center rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Buka menu">›</button>}
@@ -101,7 +101,7 @@ export default function Navbar() {
 
     <header ref={mobileMenuRef} className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 px-4 py-2 backdrop-blur dark:border-slate-800 dark:bg-slate-900/95 md:hidden">
       <div className="flex h-12 items-center justify-between">
-        <Link to="/dashboard" className="rounded-lg bg-white p-1"><img src={logo} alt="NalarASN" className="h-9 w-auto max-w-[145px] object-contain" /></Link>
+        <Link to="/dashboard" aria-label="NalarASN Beranda"><BrandLogo size="md" compact /></Link>
         <div className="flex items-center gap-2">
           {isAdmin && (
             <button

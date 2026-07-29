@@ -19,7 +19,7 @@ import { clearLegacyAuth, setCurrentUser } from "./utils/auth";
 import { observeAuth } from "./services/auth";
 
 function RequireAuth({ children, roles, user, loading }) {
-  if (loading) return <div className="grid min-h-screen place-items-center bg-slate-50 text-sm text-slate-500">Memuat akun...</div>;
+  if (loading) return <div className="grid min-h-screen place-items-center bg-slate-50 px-4 dark:bg-slate-950"><div className="text-center"><div className="mx-auto h-9 w-9 animate-spin rounded-full border-4 border-blue-100 border-t-blue-600 dark:border-slate-800 dark:border-t-blue-400" /><p className="mt-3 text-sm font-medium text-slate-500 dark:text-slate-400">Menyiapkan akun...</p></div></div>;
   if (!user) {
     return <Navigate to="/login" replace />;
   }

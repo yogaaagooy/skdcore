@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { getCurrentUser, setCurrentUser } from "../utils/auth";
 import { logout, updateProfile } from "../services/auth";
-import logo from "../assets/logo.png";
+import BrandLogo from "../components/BrandLogo";
 
 const HISTORY_KEY = "skdcore_simulasi_history_v1";
 
@@ -79,9 +79,7 @@ export default function Profile() {
 
       <main className="max-w-4xl mx-auto px-4 py-6 space-y-6">
         <section className="flex flex-col items-center rounded-2xl border border-gray-200 bg-white p-6 text-center dark:border-slate-800 dark:bg-slate-900 sm:flex-row sm:text-left">
-          <div className="grid h-20 w-20 shrink-0 place-items-center rounded-2xl bg-white p-3 ring-4 ring-blue-100 dark:ring-blue-950">
-            <img src={logo} alt="Logo profil NalarASN" className="w-full object-contain" />
-          </div>
+          <BrandLogo size="lg" className="h-20 shrink-0 ring-4 ring-blue-100 dark:ring-blue-950" />
           <div className="mt-4 sm:ml-5 sm:mt-0">
             <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">Profil pengguna</p>
             <h1 className="mt-1 text-xl font-bold">{user.name || "Peserta NalarASN"}</h1>

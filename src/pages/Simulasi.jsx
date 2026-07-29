@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import logo from "../assets/logo.png";
+import BrandLogo from "../components/BrandLogo";
 import UserDropdown from "../components/UserDropdown";
 import QuestionMedia from "../components/QuestionMedia";
 import { getCurrentUser } from "../utils/auth";
@@ -503,15 +503,7 @@ export default function Simulasi() {
       {/* Header */}
       <header className="bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-gray-200 dark:border-slate-800 shadow-sm dark:shadow-none">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <div>
-            <div className="flex items-center gap-2 rounded-lg bg-white p-1">
-              <img
-                src={logo}
-                alt="NalarASN"
-                className="h-10 w-auto object-contain"
-              />
-            </div>
-          </div>
+          <BrandLogo size="md" compact />
           <div className="flex items-center text-xs">
             <UserDropdown
               user={currentUser}
@@ -526,7 +518,7 @@ export default function Simulasi() {
 
       {/* Body */}
       <main className="max-w-5xl mx-auto px-4 py-6 space-y-4">
-        <section className="grid gap-px overflow-hidden border border-[#17366f]/15 bg-[#17366f]/15 dark:border-slate-700 dark:bg-slate-700 sm:grid-cols-[1.5fr_repeat(3,1fr)]">
+        <section className="grid gap-px overflow-hidden rounded-2xl border border-[#17366f]/15 bg-[#17366f]/15 shadow-sm dark:border-slate-700 dark:bg-slate-700 sm:grid-cols-[1.5fr_repeat(3,1fr)]">
           <div className="border-t-4 border-t-[#17366f] bg-white p-4 dark:bg-[#0b1935]">
             <p className="text-[11px] font-semibold uppercase tracking-wider text-[#2468d8]">Peserta</p>
             <p className="mt-1 truncate text-sm font-bold">{currentUser?.name || "Peserta NalarASN"}</p>
@@ -553,7 +545,7 @@ export default function Simulasi() {
         </section>
 
         {/* Kartu soal */}
-        <div className="border border-gray-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+        <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
           <div className="mb-5 flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3 text-xs dark:border-slate-800">
             <span className="font-semibold text-slate-700 dark:text-slate-200">
               Soal {currentIndex + 1} dari {QUESTION_SET.length} · {currentQuestion.category}
@@ -617,7 +609,7 @@ export default function Simulasi() {
               type="button"
               onClick={handlePrev}
               disabled={currentIndex === 0}
-              className="border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold hover:bg-gray-50 disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+              className="rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold hover:bg-gray-50 disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
             >
               Sebelumnya
             </button>
@@ -625,20 +617,20 @@ export default function Simulasi() {
               type="button"
               onClick={handleNext}
               disabled={currentIndex === QUESTION_SET.length - 1}
-              className="border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold hover:bg-gray-50 disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+              className="rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold hover:bg-gray-50 disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
             >
               Berikutnya
             </button>
         </div>
 
-        <div className="border border-gray-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+        <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
           <div className="flex items-center gap-3">
             <button
               type="button"
               aria-label="Kelompok nomor sebelumnya"
               onClick={() => currentBlock > 0 && setCurrentIndex((currentBlock - 1) * PAGE_SIZE)}
               disabled={currentBlock === 0}
-              className="h-9 w-9 shrink-0 border text-sm disabled:opacity-30 dark:border-slate-700"
+              className="h-9 w-9 shrink-0 rounded-lg border text-sm disabled:opacity-30 dark:border-slate-700"
             >
               ‹
             </button>
@@ -653,7 +645,7 @@ export default function Simulasi() {
                     type="button"
                     onClick={() => handleJumpTo(index)}
                     aria-label={`Soal ${index + 1}${isAnswered ? ", sudah dijawab" : ""}`}
-                    className={`h-9 border text-xs font-semibold ${
+                    className={`h-9 rounded-lg border text-xs font-semibold ${
                       isCurrent
                         ? "border-blue-600 bg-blue-600 text-white"
                         : isAnswered
@@ -671,7 +663,7 @@ export default function Simulasi() {
               aria-label="Kelompok nomor berikutnya"
               onClick={() => currentBlock < maxBlock && setCurrentIndex((currentBlock + 1) * PAGE_SIZE)}
               disabled={currentBlock === maxBlock}
-              className="h-9 w-9 shrink-0 border text-sm disabled:opacity-30 dark:border-slate-700"
+              className="h-9 w-9 shrink-0 rounded-lg border text-sm disabled:opacity-30 dark:border-slate-700"
             >
               ›
             </button>
@@ -685,7 +677,7 @@ export default function Simulasi() {
           <button
             type="button"
             onClick={() => setFinishDialogOpen(true)}
-            className="w-full bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700 sm:w-auto"
+            className="w-full rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700 sm:w-auto"
           >
             {simulasiNum ? "Selesaikan Tryout" : "Selesaikan Latihan"}
           </button>
@@ -694,7 +686,7 @@ export default function Simulasi() {
 
       {exitDialogOpen && (
         <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/60 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="exit-session-title">
-          <div className="w-full max-w-md border border-slate-200 bg-white p-6 shadow-2xl dark:border-slate-700 dark:bg-slate-900">
+          <div className="w-full max-w-md rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl dark:border-slate-700 dark:bg-slate-900">
             <h2 id="exit-session-title" className="text-lg font-bold">Keluar dari sesi?</h2>
             <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-300">
               Jawaban terakhir sudah tersimpan. {isLearningMode
@@ -702,10 +694,10 @@ export default function Simulasi() {
                 : "Timer tetap berjalan meskipun kamu meninggalkan halaman."}
             </p>
             <div className="mt-6 grid grid-cols-2 gap-3">
-              <button type="button" onClick={() => setExitDialogOpen(false)} className="border border-slate-300 px-4 py-3 text-sm font-bold hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800">
+              <button type="button" onClick={() => setExitDialogOpen(false)} className="rounded-xl border border-slate-300 px-4 py-3 text-sm font-bold hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800">
                 Lanjut mengerjakan
               </button>
-              <button type="button" onClick={leaveSession} className="bg-red-600 px-4 py-3 text-sm font-bold text-white hover:bg-red-700">
+              <button type="button" onClick={leaveSession} className="rounded-xl bg-red-600 px-4 py-3 text-sm font-bold text-white hover:bg-red-700">
                 Keluar dari sesi
               </button>
             </div>
@@ -715,11 +707,11 @@ export default function Simulasi() {
 
       {finishDialogOpen && (
         <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/60 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="finish-session-title">
-          <div className="w-full max-w-md border border-slate-200 bg-white p-6 shadow-2xl dark:border-slate-700 dark:bg-slate-900">
+          <div className="w-full max-w-md rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl dark:border-slate-700 dark:bg-slate-900">
             <h2 id="finish-session-title" className="text-lg font-bold">
               {simulasiNum ? "Selesaikan Tryout?" : "Selesaikan Latihan?"}
             </h2>
-            <div className="mt-4 grid grid-cols-2 gap-3 bg-slate-50 p-4 text-center dark:bg-slate-950">
+            <div className="mt-4 grid grid-cols-2 gap-3 rounded-2xl bg-slate-50 p-4 text-center dark:bg-slate-950">
               <div><p className="text-2xl font-extrabold text-emerald-600">{answeredCount}</p><p className="text-xs text-slate-500">Sudah dijawab</p></div>
               <div><p className={`text-2xl font-extrabold ${QUESTION_SET.length - answeredCount ? "text-amber-600" : "text-slate-700 dark:text-slate-200"}`}>{QUESTION_SET.length - answeredCount}</p><p className="text-xs text-slate-500">Belum dijawab</p></div>
             </div>
@@ -727,10 +719,10 @@ export default function Simulasi() {
               Setelah diselesaikan, jawaban tidak dapat diubah dan hasil akan langsung dihitung.
             </p>
             <div className="mt-6 grid grid-cols-2 gap-3">
-              <button type="button" onClick={() => setFinishDialogOpen(false)} className="border border-slate-300 px-4 py-3 text-sm font-bold hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800">
+              <button type="button" onClick={() => setFinishDialogOpen(false)} className="rounded-xl border border-slate-300 px-4 py-3 text-sm font-bold hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800">
                 Periksa kembali
               </button>
-              <button type="button" disabled={finishing} onClick={() => { setFinishDialogOpen(false); handleFinish(false, true); }} className="bg-blue-600 px-4 py-3 text-sm font-bold text-white hover:bg-blue-700 disabled:opacity-50">
+              <button type="button" disabled={finishing} onClick={() => { setFinishDialogOpen(false); handleFinish(false, true); }} className="rounded-xl bg-blue-600 px-4 py-3 text-sm font-bold text-white hover:bg-blue-700 disabled:opacity-50">
                 {finishing ? "Menyimpan..." : "Ya, selesaikan"}
               </button>
             </div>
