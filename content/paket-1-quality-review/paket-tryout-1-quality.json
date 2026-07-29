@@ -1,0 +1,3880 @@
+{
+  "id": "tryout-1-quality-review",
+  "title": "Tryout 1 — Paket Berkualitas",
+  "description": "Paket review NalarASN: 30 TWK, 25 TIU teks, 10 TIU figural, dan 45 TKP.",
+  "durationMinutes": 100,
+  "version": "quality-2026-07-review",
+  "status": "review",
+  "questions": [
+    {
+      "category": "TWK",
+      "question": "Sebuah kantor menerapkan pendaftaran daring untuk mengurangi antrean. Setelah dua minggu, waktu pelayanan rata-rata membaik, tetapi warga dari pulau kecil sering kehilangan jadwal karena jaringan internet tidak stabil. Anggaran belum memungkinkan pembukaan kantor baru. Penyesuaian yang paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menambah kuota harian khusus warga pulau berdasarkan surat keterangan domisili",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Menyediakan jalur pendaftaran berbantuan dengan verifikasi dan jadwal yang sama",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Mengirim petugas secara berkala untuk menghimpun seluruh berkas pendaftaran warga",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Memperpanjang masa pendaftaran bagi wilayah yang tercatat mengalami gangguan jaringan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Mempertahankan sistem sambil meminta pemerintah setempat menyediakan akses internet",
+          "score": 0
+        }
+      ],
+      "explanation": "Jalur berbantuan menghilangkan hambatan akses tanpa membedakan standar verifikasi maupun hak memperoleh jadwal. Opsi lain membantu, tetapi berisiko menciptakan perlakuan berbeda, hanya bersifat sementara, atau memindahkan tanggung jawab.",
+      "id": "TWK-001"
+    },
+    {
+      "category": "TWK",
+      "question": "Rapat warga menyetujui pembangunan lapangan serbaguna karena dapat digunakan mayoritas penduduk. Dana yang sama sebelumnya direncanakan untuk memperbaiki akses menuju pos kesehatan yang setiap hari digunakan warga lanjut usia dan penyandang disabilitas. Kedua proyek belum dapat dibiayai bersamaan. Sikap ketua rapat yang paling sesuai adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menjalankan hasil suara terbanyak karena keputusan telah diterima secara demokratis",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Mengulang pemungutan suara setelah menjelaskan manfaat ekonomi dari kedua proyek",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Memastikan akses dasar pos kesehatan terpenuhi sebelum menjadwalkan pembangunan lapangan",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Membagi dana secara seimbang agar kedua kelompok memperoleh manfaat pada tahun berjalan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menyerahkan penentuan urutan kepada tenaga teknis agar keputusan tidak dipengaruhi warga",
+          "score": 0
+        }
+      ],
+      "explanation": "Akses menuju pelayanan kesehatan adalah kebutuhan dasar, terutama bagi kelompok rentan. Keputusan mayoritas tetap dihormati dengan menjadwalkan lapangan setelah kebutuhan minimum akses terpenuhi.",
+      "id": "TWK-002"
+    },
+    {
+      "category": "TWK",
+      "question": "Mahasiswa akan menyampaikan aspirasi secara damai di depan kantor pemerintah. Pada waktu yang sama, lokasi tersebut menjadi jalur utama ambulans menuju rumah sakit. Pemerintah daerah tidak memiliki alasan keamanan untuk melarang kegiatan, tetapi perlu menjamin layanan darurat. Kebijakan yang paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memindahkan kegiatan ke lokasi lain yang tidak berdekatan dengan fasilitas kesehatan",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Membatasi jumlah peserta berdasarkan kapasitas petugas pengamanan yang tersedia",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Mengatur ruang dan jalur darurat melalui kesepakatan teknis dengan penyelenggara",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Menunda kegiatan sampai rumah sakit memiliki jalur alternatif yang dapat digunakan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Mengizinkan kegiatan tanpa pembatasan selama penyelenggara menjamin berlangsung damai",
+          "score": 0
+        }
+      ],
+      "explanation": "Pengaturan teknis melindungi kebebasan menyampaikan pendapat sekaligus menjaga jalur layanan darurat. Pembatasan tidak dibuat lebih luas daripada kebutuhan yang nyata.",
+      "id": "TWK-003"
+    },
+    {
+      "category": "TWK",
+      "question": "Seorang pejabat menerima undangan menjadi pembicara dalam seminar yang diselenggarakan perusahaan mitra instansinya. Panitia menawarkan akomodasi dan honor sesuai standar asosiasi profesi. Materi seminar berkaitan dengan keahlian pejabat tersebut, tetapi instansinya sedang mengevaluasi kontrak perusahaan. Tindakan paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menerima undangan tanpa honor agar pengetahuan tetap dapat dibagikan secara profesional",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Meminta panitia menyalurkan honor kepada kegiatan sosial yang tidak terkait dengan instansi",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Melaporkan undangan dan mengikuti keputusan instansi mengenai kehadiran serta fasilitas",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Menghadiri seminar sebagai pribadi dengan tidak membahas hubungan kontraktual perusahaan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menunda penerimaan honor sampai evaluasi kontrak perusahaan dinyatakan telah selesai",
+          "score": 0
+        }
+      ],
+      "explanation": "Karena perusahaan sedang dievaluasi, keputusan mengenai kehadiran, honor, dan fasilitas tidak layak ditentukan sendiri oleh pejabat. Pelaporan dan keputusan resmi melindungi integritas proses.",
+      "id": "TWK-004"
+    },
+    {
+      "category": "TWK",
+      "question": "Panitia festival daerah hanya menampilkan budaya kelompok terbesar karena waktu pertunjukan terbatas. Kelompok lain tetap diizinkan membuka stan, tetapi menilai pembagian tersebut membuat mereka sekadar pelengkap. Festival akan berlangsung satu minggu lagi dan susunan acara telah dipublikasikan. Penyelesaian paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menambah pertunjukan pembuka bersama yang memberi peran nyata kepada setiap kelompok",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Membagi ulang seluruh waktu pertunjukan secara sama meskipun jadwal harus diperpanjang",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Mempertahankan susunan acara dan memperluas ruang promosi bagi stan kelompok lainnya",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Meminta perwakilan kelompok memilih satu budaya yang dianggap mewakili seluruh daerah",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menjadwalkan festival khusus kelompok minoritas setelah kegiatan utama selesai dilakukan",
+          "score": 0
+        }
+      ],
+      "explanation": "Peran nyata dalam acara utama memperbaiki representasi tanpa menghapus seluruh susunan yang sudah diumumkan. Kesetaraan tidak selalu berarti pembagian durasi yang identik.",
+      "id": "TWK-005"
+    },
+    {
+      "category": "TWK",
+      "question": "Sebuah unggahan menyebut bantuan bencana hanya diberikan kepada pendukung kelompok tertentu. Data penerima belum diumumkan lengkap, sedangkan unggahan telah dibagikan ribuan kali dan mulai menimbulkan pertengkaran. Anda mengelola komunikasi lembaga penyalur. Respons awal yang paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menyampaikan data sementara beserta batasannya dan membuka saluran pemeriksaan pengaduan",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Meminta masyarakat menunggu laporan final agar informasi yang diterima tidak berubah lagi",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Membantah tuduhan berdasarkan prosedur penyaluran yang telah disetujui seluruh pihak",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Menghubungi pembuat unggahan dan memintanya menghapus informasi yang belum terbukti",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menampilkan kisah penerima dari berbagai kelompok untuk meredakan prasangka masyarakat",
+          "score": 0
+        }
+      ],
+      "explanation": "Data sementara yang diberi batasan memenuhi kebutuhan informasi mendesak, sementara saluran pemeriksaan memastikan dugaan diskriminasi dapat diuji secara terbuka.",
+      "id": "TWK-006"
+    },
+    {
+      "category": "TWK",
+      "question": "Sebuah peraturan pemerintah dinilai memperluas pembatasan yang tidak diperintahkan oleh undang-undang. Warga yang dirugikan ingin menguji kesesuaiannya dengan peraturan yang lebih tinggi. Lembaga yang berwenang memeriksa permohonan tersebut adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mahkamah Konstitusi karena pembatasan berkaitan dengan hak konstitusional warga",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Mahkamah Agung karena objeknya merupakan peraturan di bawah undang-undang",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Dewan Perwakilan Rakyat karena undang-undang menjadi dasar pembentukannya",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Komisi Yudisial karena penerapan peraturan dapat memengaruhi rasa keadilan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Ombudsman Republik Indonesia karena warga mengalami kerugian pelayanan",
+          "score": 0
+        }
+      ],
+      "explanation": "Mahkamah Agung menguji peraturan di bawah undang-undang terhadap peraturan yang lebih tinggi.",
+      "id": "TWK-007"
+    },
+    {
+      "category": "TWK",
+      "question": "Kendaraan dinas yang Anda gunakan mengalami kerusakan ketika membawa logistik kegiatan. Bengkel rekanan resmi tutup, sedangkan barang harus tiba malam itu agar pelayanan esok pagi tidak terganggu. Bengkel terdekat dapat memperbaiki kerusakan ringan, tetapi belum terdaftar sebagai penyedia. Tindakan paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membayar perbaikan pribadi lalu mengajukan penggantian disertai bukti dan kronologi",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Meminta persetujuan pejabat berwenang dan mendokumentasikan penanganan darurat sesuai aturan",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Menunggu bengkel rekanan buka sambil mencari kendaraan lain dari unit pemerintah terdekat",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Mengalihkan logistik ke kendaraan pribadi dan memperbaiki kendaraan dinas pada hari kerja",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Meminta bengkel memperbaiki tanpa pembayaran dahulu sampai proses administrasi tersedia",
+          "score": 0
+        }
+      ],
+      "explanation": "Keadaan mendesak tetap memerlukan kewenangan dan dokumentasi. Persetujuan pejabat serta bukti penanganan menjaga pelayanan tanpa mengabaikan pertanggungjawaban.",
+      "id": "TWK-008"
+    },
+    {
+      "category": "TWK",
+      "question": "Pemerintah membutuhkan sebagian tanah warga untuk saluran pengendali banjir. Kajian menunjukkan proyek bermanfaat luas, tetapi beberapa pemilik menolak karena nilai ganti kerugian belum mempertimbangkan hilangnya pendapatan usaha mereka. Proyek mendesak, namun belum berada pada kondisi bencana. Langkah paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memulai pekerjaan pada bagian yang disetujui sambil menyelesaikan keberatan pemilik lainnya",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Menetapkan nilai berdasarkan harga pasar tanah agar proses tidak tertunda kepentingan usaha",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Menilai kerugian secara layak melalui prosedur yang terbuka sebelum penguasaan dilakukan",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Menitipkan pembayaran kepada pengadilan lalu segera menggunakan seluruh bidang tanah",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menunda proyek hingga setiap pemilik menerima bentuk dan nilai penggantian yang ditawarkan",
+          "score": 0
+        }
+      ],
+      "explanation": "Kepentingan umum tidak menghapus hak atas ganti kerugian yang layak. Penilaian terbuka harus memperhitungkan kerugian yang relevan sebelum penguasaan pada keadaan nonbencana.",
+      "id": "TWK-009"
+    },
+    {
+      "category": "TWK",
+      "question": "Menjelang pemilihan kepala daerah, seorang atasan meminta pegawai menghadiri acara “silaturahmi pembangunan”. Undangan tidak memuat simbol partai, tetapi salah satu calon akan menyampaikan visi dan panitia meminta peserta mengenakan seragam dinas. Kehadiran disebut sukarela, namun daftar peserta dikumpulkan oleh atasan. Sikap paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hadir tanpa menunjukkan dukungan karena acara juga membahas program pembangunan daerah",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Hadir tanpa seragam dan tidak mengikuti sesi penyampaian visi dari calon kepala daerah",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Meminta penjelasan resmi serta menghindari kegiatan yang berpotensi melanggar netralitas",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Tidak hadir dengan alasan pribadi agar hubungan kerja dengan atasan tetap terpelihara",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Mengikuti arahan karena status sukarela membebaskan pegawai menentukan sikap politiknya",
+          "score": 0
+        }
+      ],
+      "explanation": "Indikasi kegiatan politik dan penggunaan seragam dinas menimbulkan risiko netralitas. Klarifikasi resmi serta menghindari potensi pelanggaran lebih tepat daripada sekadar mengubah cara hadir.",
+      "id": "TWK-010"
+    },
+    {
+      "category": "TWK",
+      "question": "Pemerintah daerah menyediakan mobil layanan keliling untuk lima kecamatan. Kecamatan pusat memiliki jumlah pemohon terbesar, sedangkan dua kecamatan terpencil memiliki pemohon lebih sedikit tetapi biaya perjalanan warga jauh lebih tinggi. Armada hanya dapat mendatangi tiga kecamatan setiap minggu. Pembagian layanan yang paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menentukan kunjungan berdasarkan jumlah pemohon agar manfaat diterima sebanyak mungkin warga",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Mengutamakan kecamatan terpencil dan mengarahkan warga pusat menggunakan kantor layanan tetap",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Menetapkan jadwal bergilir berdasarkan jumlah pemohon, jarak, dan ketersediaan alternatif layanan",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Memberikan jumlah kunjungan yang sama kepada setiap kecamatan tanpa membedakan kondisinya",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Meminta setiap kecamatan menyediakan kendaraan sendiri agar mobil hanya membawa petugas",
+          "score": 0
+        }
+      ],
+      "explanation": "Jadwal bergilir dengan indikator kebutuhan dan akses menyeimbangkan banyaknya penerima dengan hambatan geografis. Kesamaan hak tidak selalu berarti frekuensi yang identik.",
+      "id": "TWK-011"
+    },
+    {
+      "category": "TWK",
+      "question": "Musyawarah kelurahan membahas penggunaan lahan kosong. Kelompok pemuda mengusulkan fasilitas olahraga, pedagang mengusulkan area usaha, sedangkan warga sekitar meminta ruang terbuka karena wilayah rawan genangan. Kajian awal menunjukkan lahan dapat membantu resapan, tetapi tetap memungkinkan penggunaan terbatas. Keputusan paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menetapkan seluruh lahan sebagai ruang terbuka karena didukung pertimbangan lingkungan",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Membagi lahan sama besar untuk memenuhi tuntutan setiap kelompok secara proporsional",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Menentukan fungsi resapan utama dengan kegiatan terbatas berdasarkan kajian teknis lanjutan",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Memilih usulan yang menghasilkan pendapatan agar pemeliharaan lahan dapat dibiayai mandiri",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menunda keputusan sampai seluruh kelompok menyepakati satu fungsi yang dianggap paling adil",
+          "score": 0
+        }
+      ],
+      "explanation": "Fungsi resapan berdasarkan risiko objektif menjadi batas utama, sedangkan kegiatan lain tetap dapat diakomodasi sejauh tidak merusak fungsi tersebut.",
+      "id": "TWK-012"
+    },
+    {
+      "category": "TWK",
+      "question": "Pengelola asrama menetapkan jam tenang mulai pukul 22.00. Sejumlah penghuni meminta kelonggaran untuk kegiatan keagamaan rutin yang kadang selesai lebih malam. Penghuni lain tidak mempersoalkan kegiatannya, tetapi mengeluhkan penggunaan pengeras suara. Kebijakan yang paling mencerminkan toleransi dan penghormatan hak bersama adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengizinkan seluruh kegiatan keagamaan karena kebebasan beribadah harus dijamin pengelola",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Memindahkan kegiatan ke akhir pekan agar tidak mengganggu jadwal penghuni pada hari kerja",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Mengizinkan kegiatan dengan penyesuaian suara dan ruang yang disepakati bersama penghuni",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Mempertahankan jam tenang tanpa pengecualian agar aturan berlaku sama untuk setiap kegiatan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Meminta penghuni yang terganggu menggunakan pelindung telinga selama kegiatan berlangsung",
+          "score": 0
+        }
+      ],
+      "explanation": "Penyesuaian suara dan ruang menjaga kebebasan menjalankan kegiatan sekaligus hak penghuni lain memperoleh ketenangan.",
+      "id": "TWK-013"
+    },
+    {
+      "category": "TWK",
+      "question": "Sisa anggaran kegiatan harus dikembalikan pada akhir tahun. Seorang anggota tim mengusulkan membeli peralatan yang mungkin berguna tahun depan agar serapan anggaran tidak rendah. Peralatan tersebut masih berkaitan dengan tugas unit, tetapi tidak tercantum dalam kebutuhan kegiatan yang telah disetujui. Langkah paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membeli peralatan selama harganya wajar dan manfaatnya dapat dijelaskan dalam laporan",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Mengusulkan perubahan kebutuhan melalui mekanisme yang sah sebelum melakukan pembelian",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Memilih peralatan yang paling sering digunakan agar tidak menimbulkan persediaan berlebih",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Mengembalikan seluruh sisa anggaran tanpa menilai kemungkinan kebutuhan unit tahun depan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Membeli sebagian peralatan dan mencatatnya sebagai efisiensi pelaksanaan kegiatan berjalan",
+          "score": 0
+        }
+      ],
+      "explanation": "Keterkaitan dengan tugas tidak otomatis membenarkan belanja yang belum disetujui. Perubahan kebutuhan harus lebih dahulu melalui mekanisme yang sah.",
+      "id": "TWK-014"
+    },
+    {
+      "category": "TWK",
+      "question": "Menjelang pemilihan ketua lingkungan, beredar pesan yang menuduh salah satu kelompok pendatang memperoleh bantuan lebih banyak. Daftar penerima sebenarnya dapat diperiksa, tetapi memuat data pribadi. Jika daftar lengkap diumumkan, tuduhan mudah dibantah namun privasi warga terlanggar. Tindakan paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menampilkan rekap tanpa identitas disertai kriteria dan mekanisme pemeriksaan keberatan",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Menunjukkan daftar lengkap hanya kepada tokoh dari kelompok yang sedang berselisih",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Membantah pesan tersebut dengan menyatakan seluruh penerima telah melalui verifikasi",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Menunda klarifikasi sampai pemilihan selesai agar informasi tidak dimanfaatkan kandidat",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Meminta setiap penerima mengonfirmasi secara sukarela bahwa bantuan diberikan secara adil",
+          "score": 0
+        }
+      ],
+      "explanation": "Rekap dan kriteria memungkinkan pengawasan tanpa membuka data pribadi penerima. Saluran keberatan membuat klaim dapat diuji, bukan hanya dibantah.",
+      "id": "TWK-015"
+    },
+    {
+      "category": "TWK",
+      "question": "Seorang tokoh masyarakat meminta permohonannya dipercepat karena akan menghadiri acara pemerintah. Dokumennya lengkap, tetapi puluhan warga telah menunggu sesuai urutan. Atasan menyampaikan bahwa kehadiran tokoh tersebut penting bagi hubungan kelembagaan, meskipun tidak ada jalur prioritas untuk keperluannya. Sikap paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memproses sesuai urutan sambil menjelaskan pilihan layanan resmi yang tersedia",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Mempercepat proses karena kepentingan kelembagaan memberikan manfaat lebih luas",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Menukar urutan dengan persetujuan warga yang sedang menunggu di antrean pelayanan",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Meminta atasan memberikan disposisi agar percepatan memiliki dasar administratif",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menyelesaikan pemeriksaan awal sekarang dan menerbitkan hasil sesuai urutan antrean",
+          "score": 0
+        }
+      ],
+      "explanation": "Kepentingan relasi kelembagaan bukan dasar jalur prioritas. Informasi alternatif resmi tetap dapat diberikan tanpa mengubah urutan.",
+      "id": "TWK-016"
+    },
+    {
+      "category": "TWK",
+      "question": "Sekelompok warga menilai sebuah pasal dalam undang-undang mengurangi hak yang dijamin Undang-Undang Dasar Negara Republik Indonesia Tahun 1945. Mereka ingin menguji konstitusionalitas pasal tersebut. Permohonan diajukan kepada...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mahkamah Agung karena undang-undang menjadi dasar bagi peraturan lainnya",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Mahkamah Konstitusi karena objek pengujian adalah undang-undang terhadap UUD 1945",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Komisi Yudisial karena pasal tersebut dapat memengaruhi pelaksanaan kekuasaan kehakiman",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Dewan Perwakilan Rakyat karena lembaga tersebut ikut membentuk undang-undang",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Ombudsman Republik Indonesia karena berlakunya pasal dapat merugikan pelayanan warga",
+          "score": 0
+        }
+      ],
+      "explanation": "Mahkamah Konstitusi berwenang menguji undang-undang terhadap UUD 1945.",
+      "id": "TWK-017"
+    },
+    {
+      "category": "TWK",
+      "question": "Saudara Anda menghubungi ketika Anda bertugas dan meminta bantuan memeriksa kekurangan berkasnya sebelum mengambil nomor antrean. Pemeriksaan singkat tidak menjamin permohonannya diterima, tetapi warga lain hanya memperoleh pemeriksaan setelah dipanggil. Ia beralasan hanya meminta informasi agar tidak bolak-balik. Tindakan paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memberikan daftar persyaratan umum dan mengarahkannya mengikuti mekanisme pemeriksaan resmi",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Memeriksa berkas di luar jam pelayanan agar tidak mengurangi waktu pelayanan warga lainnya",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Meminta rekan memeriksa berkas tersebut agar Anda tidak terlibat langsung dalam proses",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Memberi penjelasan kekurangan yang terlihat tanpa mencatat atau memproses permohonannya",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Mengizinkan pemeriksaan singkat karena informasi persyaratan pada dasarnya terbuka bagi publik",
+          "score": 0
+        }
+      ],
+      "explanation": "Memberikan informasi umum tetap membantu, tetapi pemeriksaan individual harus mengikuti mekanisme yang sama agar tidak memberi keuntungan karena hubungan keluarga.",
+      "id": "TWK-018"
+    },
+    {
+      "category": "TWK",
+      "question": "Jembatan kecil penghubung dua dusun rusak. Warga bersedia menyumbang tenaga dan bahan seadanya agar segera dapat dilewati, tetapi pemeriksaan awal menunjukkan struktur utama berisiko runtuh. Pemerintah desa masih menunggu anggaran perbaikan resmi. Langkah yang paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengizinkan perbaikan sementara oleh warga dengan pengawasan aparat desa di lokasi",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Menutup bagian berbahaya, menyediakan akses sementara, dan melibatkan warga pada pekerjaan yang aman",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Membatasi penggunaan jembatan untuk pejalan kaki sambil menunggu anggaran perbaikan tersedia",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Meminta warga menandatangani pernyataan tanggung jawab sebelum memulai kegiatan gotong royong",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menggunakan hasil sumbangan untuk memperkuat struktur sambil mengurus persetujuan teknis",
+          "score": 0
+        }
+      ],
+      "explanation": "Gotong royong diarahkan pada bagian yang aman, sedangkan risiko struktur dikendalikan melalui penutupan dan akses sementara.",
+      "id": "TWK-019"
+    },
+    {
+      "category": "TWK",
+      "question": "Seorang pegawai sedang diperiksa karena dugaan penyalahgunaan kewenangan. Masyarakat menuntut identitas dan seluruh dokumen pemeriksaan dibuka. Lembaga perlu menunjukkan bahwa perkara ditangani, tetapi proses belum selesai dan sebagian dokumen memuat data saksi. Komunikasi paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengumumkan identitas terperiksa dan pokok dugaan tanpa membuka keterangan para saksi",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Menyampaikan tahapan, ruang lingkup, dan tindak lanjut pemeriksaan tanpa menyimpulkan kesalahan",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Menunda seluruh informasi sampai keputusan final agar hak setiap pihak tetap terlindungi",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Membuka ringkasan dokumen setelah menghapus nama terperiksa dan seluruh saksi yang terlibat",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Meminta terperiksa menjelaskan sendiri perkara tersebut sebagai bentuk pertanggungjawaban publik",
+          "score": 0
+        }
+      ],
+      "explanation": "Informasi proses menunjukkan akuntabilitas tanpa mendahului hasil pemeriksaan maupun membuka data saksi.",
+      "id": "TWK-020"
+    },
+    {
+      "category": "TWK",
+      "question": "Sebuah rumah sakit daerah menerapkan konfirmasi jadwal melalui pesan singkat. Pasien yang tidak membalas dalam dua jam dianggap membatalkan kunjungan. Kebijakan mengurangi jadwal kosong, tetapi beberapa pasien di wilayah tanpa sinyal kehilangan antrean meskipun telah datang tepat waktu. Perbaikan yang paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memperpanjang waktu konfirmasi bagi pasien yang mencantumkan alamat wilayah tanpa sinyal",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Menyediakan pilihan konfirmasi lain dan memeriksa kegagalan pengiriman sebelum pembatalan",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Mengembalikan seluruh sistem menjadi antrean langsung agar tidak ada pasien yang dirugikan",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Meminta fasilitas kesehatan setempat membantu membalas pesan untuk pasien di wilayahnya",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menyisihkan kuota harian khusus bagi pasien yang jadwalnya dibatalkan oleh sistem",
+          "score": 0
+        }
+      ],
+      "explanation": "Pilihan konfirmasi lain dan pemeriksaan kegagalan mencegah pembatalan otomatis yang tidak mencerminkan kehendak pasien, tanpa menghapus manfaat sistem jadwal.",
+      "id": "TWK-021"
+    },
+    {
+      "category": "TWK",
+      "question": "Warga sepakat menggunakan tanah desa untuk pasar karena dapat meningkatkan pendapatan banyak keluarga. Namun, tanah tersebut merupakan satu-satunya jalur aman menuju sekolah bagi anak-anak dari dusun kecil. Pasar tetap dapat dibangun dengan desain berbeda, tetapi kapasitas kios berkurang. Keputusan paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membangun pasar sesuai rencana dan menyediakan petugas penyeberangan pada jam sekolah",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Mempertahankan jalur aman serta menyesuaikan desain pasar berdasarkan kajian keselamatan",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Memindahkan jalur sekolah ke jalan lain karena manfaat pasar diterima lebih banyak keluarga",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Membagi penggunaan jalur berdasarkan waktu antara kegiatan pasar dan perjalanan siswa",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menunda pembangunan sampai tersedia tanah lain yang mampu menampung seluruh jumlah kios",
+          "score": 0
+        }
+      ],
+      "explanation": "Jalur aman menuju sekolah merupakan kebutuhan keselamatan. Desain yang disesuaikan tetap memungkinkan manfaat ekonomi tanpa mengorbankan hak dasar kelompok kecil.",
+      "id": "TWK-022"
+    },
+    {
+      "category": "TWK",
+      "question": "Sebuah kelompok seni akan menampilkan pertunjukan yang mengkritik kebijakan daerah. Sebagian masyarakat meminta pembatalan karena merasa isi pertunjukan tidak menghormati pejabat. Naskah tidak mengandung ajakan kekerasan atau kebencian, tetapi acara menggunakan gedung milik pemerintah. Sikap pengelola yang paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengizinkan pertunjukan dengan syarat seluruh nama pejabat dihilangkan dari materi acara",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Memindahkan acara ke gedung swasta agar pemerintah tidak dianggap mendukung kritik tersebut",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Memfasilitasi acara berdasarkan aturan penggunaan gedung yang berlaku setara bagi semua pihak",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Menunda izin sampai kelompok seni memperoleh persetujuan dari pejabat yang menjadi sasaran kritik",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Mengadakan diskusi pendamping agar masyarakat memahami bahwa pertunjukan merupakan karya seni",
+          "score": 0
+        }
+      ],
+      "explanation": "Kritik yang tidak melanggar batas hukum tidak boleh dibatasi karena sasarannya pejabat. Gedung publik digunakan berdasarkan aturan yang netral dan setara.",
+      "id": "TWK-023"
+    },
+    {
+      "category": "TWK",
+      "question": "Anda menjadi anggota panitia seleksi ketika mengetahui salah satu peserta pernah menjadi bawahan langsung Anda. Hubungan kerja berakhir baik dan Anda tidak memiliki hubungan pribadi dengannya. Penilaian menggunakan rubrik, tetapi beberapa unsur tetap membutuhkan pertimbangan panel. Langkah paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tetap menilai berdasarkan rubrik dan mengungkapkan hubungan setelah hasil seleksi ditetapkan",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Mengungkapkan hubungan kepada panitia dan mengikuti keputusan mengenai batas keterlibatan Anda",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Menilai unsur objektif saja serta menyerahkan unsur pertimbangan kepada anggota panel lainnya",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Meminta peserta menyatakan bahwa hubungan kerja sebelumnya tidak memengaruhi proses seleksi",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Mengundurkan diri dari seluruh kepanitiaan untuk menghindari persepsi keberpihakan masyarakat",
+          "score": 0
+        }
+      ],
+      "explanation": "Pengungkapan memungkinkan panitia menilai risiko secara resmi. Mengalihkan peran sendiri belum tentu cukup, sedangkan mengundurkan diri sepenuhnya belum tentu diperlukan.",
+      "id": "TWK-024"
+    },
+    {
+      "category": "TWK",
+      "question": "Panitia kegiatan sekolah membagi peserta ke dalam kelompok berdasarkan asal daerah agar mudah menampilkan budaya masing-masing. Beberapa siswa yang lahir di luar daerah orang tuanya merasa dipaksa memilih satu identitas. Waktu persiapan terbatas dan pembagian kelompok sudah berjalan. Penyesuaian paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mempertahankan kelompok asal daerah dan mengizinkan siswa bertukar kelompok bila diperlukan",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Membentuk kelompok campuran yang mengangkat tema budaya melalui pilihan dan kolaborasi siswa",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Menghapus seluruh tema daerah dan menggantinya dengan tema persatuan yang berlaku untuk semua",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Meminta siswa mengikuti daerah orang tua karena identitas budaya diwariskan melalui keluarga",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menambahkan satu kelompok khusus bagi siswa yang tidak dapat menentukan asal daerahnya",
+          "score": 0
+        }
+      ],
+      "explanation": "Pilihan dan kolaborasi mengakui identitas yang berlapis tanpa menghapus tujuan pembelajaran budaya.",
+      "id": "TWK-025"
+    },
+    {
+      "category": "TWK",
+      "question": "Waktu penyelesaian izin meningkat dua kali lipat karena sistem baru. Lembaga belum mengetahui penyebab pasti dan khawatir pengumuman gangguan akan menurunkan kepercayaan masyarakat. Pemohon tetap menerima estimasi lama pada bukti pendaftaran. Komunikasi yang paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengumumkan keterlambatan, estimasi sementara, dan kanal pengecekan sambil melakukan perbaikan",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Menunggu penyebab ditemukan agar informasi yang disampaikan kepada pemohon tidak berubah-ubah",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Menghubungi hanya pemohon yang izinnya melewati batas waktu sesuai bukti pendaftaran",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Memperbarui estimasi untuk pendaftaran baru tanpa membahas permohonan yang sedang diproses",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menyatakan terjadi peningkatan permohonan sampai hasil pemeriksaan sistem dapat dipastikan",
+          "score": 0
+        }
+      ],
+      "explanation": "Pemohon membutuhkan informasi yang jujur, estimasi realistis, dan sarana memantau permohonan ketika standar layanan tidak terpenuhi.",
+      "id": "TWK-026"
+    },
+    {
+      "category": "TWK",
+      "question": "Dalam forum perencanaan, undangan terbuka telah diumumkan, tetapi hampir seluruh peserta berasal dari pusat kota. Warga wilayah pinggiran tidak hadir karena jarak dan waktu pertemuan. Forum hendak langsung menetapkan prioritas tahunan karena jadwal penyusunan anggaran terbatas. Langkah paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menetapkan hasil forum karena kesempatan hadir telah diberikan secara terbuka kepada seluruh warga",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Menambah bobot usulan tertulis wilayah pinggiran berdasarkan jumlah penduduk yang tidak hadir",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Mengumpulkan masukan terarah dari wilayah yang tidak terwakili sebelum keputusan difinalkan",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Membagi anggaran sama rata per wilayah agar ketidakhadiran tidak menimbulkan kerugian",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menunda seluruh penyusunan anggaran sampai setiap wilayah mengirim jumlah wakil yang sama",
+          "score": 0
+        }
+      ],
+      "explanation": "Kesempatan formal belum menjamin keterwakilan nyata. Masukan terarah memperbaiki legitimasi sebelum keputusan final tanpa menghentikan seluruh proses.",
+      "id": "TWK-027"
+    },
+    {
+      "category": "TWK",
+      "question": "Bangunan pelayanan mengalami kebocoran yang mengenai instalasi listrik. Perbaikan harus segera dilakukan untuk mencegah kecelakaan, sedangkan proses pengadaan normal memerlukan waktu beberapa hari. Aturan menyediakan prosedur penanganan keadaan darurat dengan persetujuan dan bukti tertentu. Tindakan paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Melakukan perbaikan melalui penyedia terdekat lalu melengkapi dokumen setelah keadaan aman",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Menutup bangunan sampai proses pengadaan normal selesai agar tidak terjadi pelanggaran prosedur",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Menggunakan prosedur darurat sesuai kewenangan, pembatasan kebutuhan, dan dokumentasi kondisi",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Meminta pegawai memperbaiki bagian sementara karena tindakan internal tidak termasuk pengadaan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Memindahkan pelayanan dan menunggu arahan tertulis dari instansi yang memiliki bangunan",
+          "score": 0
+        }
+      ],
+      "explanation": "Keadaan mendesak ditangani melalui prosedur darurat yang memang tersedia, dibatasi pada kebutuhan keselamatan, dan tetap dapat dipertanggungjawabkan.",
+      "id": "TWK-028"
+    },
+    {
+      "category": "TWK",
+      "question": "Masyarakat meminta daftar penerima beasiswa untuk memeriksa dugaan penerima tidak tepat sasaran. Daftar memuat nama, alamat, kondisi ekonomi, serta hasil penilaian. Lembaga ingin membuka proses secara transparan tanpa merugikan penerima. Cara paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membuka seluruh nama dan nilai akhir tanpa menampilkan alamat serta kondisi ekonomi penerima",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Menyajikan kriteria, statistik, hasil audit, dan mekanisme keberatan tanpa membuka data berlebihan",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Memberikan daftar lengkap kepada perwakilan masyarakat yang menandatangani pernyataan kerahasiaan",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Menolak permintaan karena seluruh informasi penerima termasuk dalam data pribadi yang dilindungi",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Meminta penerima menyetujui publikasi sebelum beasiswa dapat dicairkan oleh lembaga",
+          "score": 0
+        }
+      ],
+      "explanation": "Transparansi proses dan audit memungkinkan pengawasan tanpa membuka informasi pribadi melebihi kebutuhan.",
+      "id": "TWK-029"
+    },
+    {
+      "category": "TWK",
+      "question": "Media sosial lembaga diminta mengunggah kunjungan kepala daerah yang juga menjadi calon petahana. Kegiatan tersebut resmi dan membahas layanan publik, tetapi tim kampanye ikut hadir serta memasang slogan pencalonan di sekitar lokasi. Dokumentasi dapat dipotong agar slogan tidak terlihat. Tindakan paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengunggah dokumentasi resmi yang telah dipotong karena kegiatan berkaitan dengan tugas pemerintahan",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Menunda unggahan sampai masa pemilihan selesai agar lembaga tidak dikaitkan dengan calon tertentu",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Memastikan konten berfokus pada layanan, bebas unsur kampanye, dan sesuai pedoman netralitas lembaga",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Mengunggah seluruh dokumentasi agar masyarakat dapat membedakan kegiatan resmi dan kegiatan kampanye",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menyerahkan materi kepada media pribadi kepala daerah agar akun lembaga tidak perlu mengunggahnya",
+          "score": 0
+        }
+      ],
+      "explanation": "Konten resmi harus memisahkan informasi layanan dari unsur kampanye dan mengikuti pedoman netralitas, bukan sekadar menyembunyikan slogan melalui potongan gambar.",
+      "id": "TWK-030"
+    },
+    {
+      "category": "TIU",
+      "question": "5, 8, 16, 20, 40, 45, 90, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "94",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "95",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "96",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "97",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "98",
+          "score": 0
+        }
+      ],
+      "explanation": "Polanya bergantian: `+3, ×2, +4, ×2, +5, ×2, +6`.",
+      "id": "TIU-TEKS-001"
+    },
+    {
+      "category": "TIU",
+      "question": "3, 5, 8, 10, 15, 20, 24, 35, 35, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "45",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "50",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "52",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "55",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "60",
+          "score": 0
+        }
+      ],
+      "explanation": "Posisi ganjil: `3, 8, 15, 24, 35` dengan selisih `5, 7, 9, 11`. Posisi genap: `5, 10, 20, 35, 55` dengan selisih `5, 10, 15, 20`.",
+      "id": "TIU-TEKS-002"
+    },
+    {
+      "category": "TIU",
+      "question": "Sebanyak 240 berkas harus diperiksa. P memeriksa 30 berkas per jam dan Q memeriksa 20 berkas per jam. Keduanya bekerja bersama selama 3 jam. Setelah itu, sepertiga dari sisa berkas ditangani P sendiri dengan kecepatan 15 berkas per jam karena memerlukan verifikasi khusus. Sisa lainnya kemudian diselesaikan Q sendiri dengan kecepatan normal. Total waktu sejak pemeriksaan dimulai sampai seluruh berkas selesai adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "7 jam",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "7 jam 30 menit",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "8 jam",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "8 jam 30 menit",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "9 jam",
+          "score": 0
+        }
+      ],
+      "explanation": "Tiga jam pertama menyelesaikan `(30+20)×3 = 150`, sehingga tersisa 90. P menangani `1/3×90 = 30` selama `30÷15 = 2` jam. Q menangani 60 selama `60÷20 = 3` jam. Total `3+2+3 = 8` jam.",
+      "id": "TIU-TEKS-003"
+    },
+    {
+      "category": "TIU",
+      "question": "Gudang memiliki 1.200 unit barang. Setelah pemeriksaan, 25% dikeluarkan karena tidak layak. Gudang kemudian menerima tambahan sebanyak 20% dari jumlah barang yang masih layak. Dari persediaan setelah penambahan, 5/9 disalurkan. Jumlah barang yang tersisa adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "440 unit",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "460 unit",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "480 unit",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "500 unit",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "520 unit",
+          "score": 0
+        }
+      ],
+      "explanation": "Barang layak `1.200×75% = 900`. Tambahan `900×20% = 180`, sehingga tersedia 1.080. Setelah 5/9 disalurkan, sisa 4/9 adalah `1.080×4/9 = 480`.",
+      "id": "TIU-TEKS-004"
+    },
+    {
+      "category": "TIU",
+      "question": "Lima presentasi A, B, C, D, dan E dijadwalkan Senin–Jumat, satu presentasi setiap hari.\n• C harus tepat sehari setelah A.\n• B dilaksanakan sebelum A.\n• E dilaksanakan setelah C.\n• D tidak dilaksanakan Senin atau Jumat.\nJadwal yang mungkin adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "B – A – C – D – E",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "D – B – A – C – E",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "B – D – A – E – C",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "A – C – B – D – E",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "B – A – D – C – E",
+          "score": 0
+        }
+      ],
+      "explanation": "B–A–C–D–E memenuhi seluruh aturan. Opsi B menempatkan D pada Senin; C dan E tidak menempatkan C tepat setelah A; D menempatkan B setelah A.",
+      "id": "TIU-TEKS-005"
+    },
+    {
+      "category": "TIU",
+      "question": "Semua auditor adalah orang yang teliti. Sebagian orang yang teliti adalah pemrogram. Tidak ada pemrogram yang ceroboh.\nSimpulan:\n1. Sebagian auditor adalah pemrogram.\n2. Tidak ada auditor yang ceroboh.\n3. Sebagian orang teliti tidak ceroboh.\nSimpulan yang pasti benar adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hanya 1",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Hanya 2",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Hanya 3",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "1 dan 3",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "2 dan 3",
+          "score": 0
+        }
+      ],
+      "explanation": "Sebagian orang teliti adalah pemrogram, sedangkan tidak ada pemrogram yang ceroboh; jadi sebagian orang teliti pasti tidak ceroboh. Tidak ada dasar bahwa auditor termasuk kelompok pemrogram atau pasti tidak ceroboh.",
+      "id": "TIU-TEKS-006"
+    },
+    {
+      "category": "TIU",
+      "question": "Jika arsip telah didigitalkan, pencarian dokumen berlangsung cepat. Jika pencarian berlangsung cepat dan metadata akurat, jumlah keluhan menurun. Diketahui metadata akurat, tetapi jumlah keluhan tidak menurun. Kesimpulan yang tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Arsip telah didigitalkan, tetapi pencarian tidak berlangsung cepat",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Arsip belum didigitalkan dan pencarian tidak berlangsung cepat",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Metadata tidak cukup untuk menentukan kondisi pencarian dokumen",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Pencarian berlangsung cepat, tetapi arsip belum seluruhnya didigitalkan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Keluhan tidak berkaitan dengan digitalisasi maupun akurasi metadata",
+          "score": 0
+        }
+      ],
+      "explanation": "Dengan metadata akurat, keluhan yang tidak menurun menunjukkan pencarian tidak cepat. Karena digitalisasi mengakibatkan pencarian cepat, pencarian yang tidak cepat juga menunjukkan arsip belum didigitalkan.",
+      "id": "TIU-TEKS-007"
+    },
+    {
+      "category": "TIU",
+      "question": "Dua belas pegawai direncanakan menyelesaikan suatu pekerjaan dalam 18 hari dengan produktivitas yang sama. Setelah bekerja 6 hari, tiga pegawai dipindahkan dan tidak diganti. Jika produktivitas setiap pegawai tetap, pekerjaan akan selesai dalam...",
+      "options": [
+        {
+          "id": "A",
+          "text": "20 hari sejak pekerjaan dimulai",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "21 hari sejak pekerjaan dimulai",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "22 hari sejak pekerjaan dimulai",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "23 hari sejak pekerjaan dimulai",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "24 hari sejak pekerjaan dimulai",
+          "score": 0
+        }
+      ],
+      "explanation": "Total pekerjaan `12×18 = 216` hari-orang. Enam hari pertama menyelesaikan `12×6 = 72`, tersisa 144. Sembilan pegawai membutuhkan `144÷9 = 16` hari, sehingga total `6+16 = 22` hari.",
+      "id": "TIU-TEKS-008"
+    },
+    {
+      "category": "TIU",
+      "question": "Rata-rata nilai delapan peserta adalah 76. Peserta dengan nilai 92 keluar dari kelompok. Dua peserta baru dengan nilai 80 dan 84 bergabung. Rata-rata nilai sembilan peserta sekarang adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "75 1/3",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "75 4/9",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "75 5/9",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "75 2/3",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "76",
+          "score": 0
+        }
+      ],
+      "explanation": "Total awal `8×76 = 608`. Total baru `608−92+80+84 = 680` untuk sembilan peserta. Rata-rata `680÷9 = 75 5/9`.",
+      "id": "TIU-TEKS-009"
+    },
+    {
+      "category": "TIU",
+      "question": "3, 7, 16, 32, 57, 93, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "135",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "138",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "140",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "142",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "144",
+          "score": 0
+        }
+      ],
+      "explanation": "Selisihnya berturut-turut `4, 9, 16, 25, 36`, yaitu `2², 3², 4², 5², 6²`. Berikutnya ditambah `7² = 49`, sehingga `93+49 = 142`.",
+      "id": "TIU-TEKS-010"
+    },
+    {
+      "category": "TIU",
+      "question": "4, 6, 18, 21, 63, 67, 201, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "204",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "205",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "206",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "207",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "208",
+          "score": 0
+        }
+      ],
+      "explanation": "Polanya bergantian: `+2, ×3, +3, ×3, +4, ×3, +5`.",
+      "id": "TIU-TEKS-011"
+    },
+    {
+      "category": "TIU",
+      "question": "4, 3, 10, 9, 18, 21, 28, 39, 40, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "57",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "60",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "63",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "66",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "69",
+          "score": 0
+        }
+      ],
+      "explanation": "Posisi ganjil: `4, 10, 18, 28, 40` dengan selisih `6, 8, 10, 12`. Posisi genap: `3, 9, 21, 39, 63` dengan selisih `6, 12, 18, 24`.",
+      "id": "TIU-TEKS-012"
+    },
+    {
+      "category": "TIU",
+      "question": "Sebanyak 360 dokumen harus diverifikasi. Tim A memeriksa 24 dokumen per jam dan Tim B memeriksa 36 dokumen per jam. Mereka bekerja bersama selama 4 jam. Dari sisa dokumen, 25% memerlukan verifikasi khusus oleh Tim A dengan kecepatan 15 dokumen per jam. Setelah itu, seluruh sisa lainnya diselesaikan Tim B dengan kecepatan 30 dokumen per jam. Total waktu yang diperlukan adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 jam",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "8 jam 30 menit",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "9 jam",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "9 jam 30 menit",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "10 jam",
+          "score": 0
+        }
+      ],
+      "explanation": "Empat jam pertama menyelesaikan `(24+36)×4 = 240`, tersisa 120. Tim A menangani 25% atau 30 dokumen selama `30÷15 = 2` jam. Tim B menangani 90 dokumen selama `90÷30 = 3` jam. Total `4+2+3 = 9` jam.",
+      "id": "TIU-TEKS-013"
+    },
+    {
+      "category": "TIU",
+      "question": "Sebuah pusat distribusi menerima 1.500 paket. Sebanyak 12% tidak lolos pemeriksaan. Pusat tersebut kemudian menerima tambahan paket sebanyak 25% dari jumlah yang lolos. Setelah itu, 2/5 dari seluruh paket yang tersedia dikirim. Paket yang masih tersisa berjumlah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "930",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "960",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "990",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "1.020",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "1.050",
+          "score": 0
+        }
+      ],
+      "explanation": "Paket lolos `1.500×88% = 1.320`. Tambahan `1.320×25% = 330`, sehingga tersedia 1.650. Sisa setelah 2/5 dikirim adalah `1.650×3/5 = 990`.",
+      "id": "TIU-TEKS-014"
+    },
+    {
+      "category": "TIU",
+      "question": "Jika laporan lengkap, pemeriksaan dapat dimulai. Jika pemeriksaan dapat dimulai dan petugas tersedia, hasil diterbitkan tepat waktu. Diketahui petugas tersedia, tetapi hasil tidak diterbitkan tepat waktu. Kesimpulan yang tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Laporan lengkap, tetapi pemeriksaan belum dapat dimulai",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Laporan tidak lengkap dan pemeriksaan tidak dapat dimulai",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Petugas tidak benar-benar tersedia ketika pemeriksaan dilakukan",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Pemeriksaan dapat dimulai meskipun laporan belum dinyatakan lengkap",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Ketepatan waktu tidak dapat dikaitkan dengan kelengkapan laporan",
+          "score": 0
+        }
+      ],
+      "explanation": "Dengan petugas tersedia, hasil yang tidak tepat waktu menunjukkan pemeriksaan tidak dapat dimulai. Karena laporan lengkap menyebabkan pemeriksaan dapat dimulai, pemeriksaan yang tidak dapat dimulai menunjukkan laporan tidak lengkap.",
+      "id": "TIU-TEKS-015"
+    },
+    {
+      "category": "TIU",
+      "question": "Lima belas pekerja dapat menyelesaikan pekerjaan dalam 24 hari dengan produktivitas sama. Setelah bekerja 8 hari, lima pekerja dipindahkan. Empat hari kemudian, dua pekerja tambahan bergabung. Jika produktivitas setiap pekerja tetap, pekerjaan selesai dalam...",
+      "options": [
+        {
+          "id": "A",
+          "text": "29 hari sejak pekerjaan dimulai",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "30 hari sejak pekerjaan dimulai",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "31 hari sejak pekerjaan dimulai",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "32 hari sejak pekerjaan dimulai",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "33 hari sejak pekerjaan dimulai",
+          "score": 0
+        }
+      ],
+      "explanation": "Total pekerjaan `15×24 = 360` hari-orang. Delapan hari pertama menghasilkan 120, lalu empat hari oleh 10 pekerja menghasilkan 40; tersisa 200. Dua belas pekerja memerlukan `200÷12 = 16⅔` hari. Total `8+4+16⅔ = 28⅔` hari, sehingga pekerjaan selesai pada hari ke-29.",
+      "id": "TIU-TEKS-016"
+    },
+    {
+      "category": "TIU",
+      "question": "Rata-rata nilai 12 peserta adalah 74. Setelah nilai tertinggi dan terendah dikeluarkan, rata-rata 10 peserta menjadi 75. Jika nilai tertinggi adalah 96, nilai terendah adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "40",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "42",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "44",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "46",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "48",
+          "score": 0
+        }
+      ],
+      "explanation": "Total 12 peserta `12×74 = 888`. Total 10 peserta `10×75 = 750`, sehingga jumlah nilai tertinggi dan terendah 138. Nilai terendah `138−96 = 42`.",
+      "id": "TIU-TEKS-017"
+    },
+    {
+      "category": "TIU",
+      "question": "2, 5, 13, 28, 52, 87, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "125",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "131",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "135",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "137",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "139",
+          "score": 0
+        }
+      ],
+      "explanation": "Selisihnya `3, 8, 15, 24, 35`, yaitu `2²−1, 3²−1, 4²−1, 5²−1, 6²−1`. Selanjutnya ditambah `7²−1 = 48`, sehingga `87+48 = 135`.",
+      "id": "TIU-TEKS-018"
+    },
+    {
+      "category": "TIU",
+      "question": "7, 10, 30, 34, 102, 107, 321, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "325",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "326",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "327",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "328",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "329",
+          "score": 0
+        }
+      ],
+      "explanation": "Polanya bergantian: `+3, ×3, +4, ×3, +5, ×3, +6`.",
+      "id": "TIU-TEKS-019"
+    },
+    {
+      "category": "TIU",
+      "question": "5, 4, 12, 12, 21, 24, 32, 40, 45, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "56",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "58",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "60",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "62",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "64",
+          "score": 0
+        }
+      ],
+      "explanation": "Posisi ganjil: `5, 12, 21, 32, 45` dengan selisih `7, 9, 11, 13`. Posisi genap: `4, 12, 24, 40, 60` dengan selisih `8, 12, 16, 20`.",
+      "id": "TIU-TEKS-020"
+    },
+    {
+      "category": "TIU",
+      "question": "Sebanyak 420 berkas harus diperiksa. Petugas A mampu memeriksa 28 berkas per jam dan petugas B 42 berkas per jam. Mereka bekerja bersama selama 4 jam. Sebanyak 30% dari sisa berkas memerlukan pemeriksaan khusus oleh A dengan kecepatan 14 berkas per jam. Setelah itu, seluruh berkas lainnya diselesaikan B dengan kecepatan 28 berkas per jam. Total waktu penyelesaian adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 jam 30 menit",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "10 jam",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "10 jam 30 menit",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "11 jam",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "11 jam 30 menit",
+          "score": 0
+        }
+      ],
+      "explanation": "Empat jam pertama menyelesaikan `(28+42)×4 = 280`, tersisa 140. Pemeriksaan khusus sebanyak `30%×140 = 42` memerlukan `42÷14 = 3` jam. Sisa 98 memerlukan `98÷28 = 3,5` jam. Total `4+3+3,5 = 10,5` jam.",
+      "id": "TIU-TEKS-021"
+    },
+    {
+      "category": "TIU",
+      "question": "Sebuah gudang memiliki 2.000 barang. Pemeriksaan mengeluarkan 15% barang yang rusak. Gudang lalu menerima tambahan sebanyak 30% dari jumlah barang yang masih baik. Setelah itu, 7/13 dari persediaan yang tersedia disalurkan. Jumlah barang yang tersisa adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "960",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "990",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "1.020",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "1.050",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "1.080",
+          "score": 0
+        }
+      ],
+      "explanation": "Barang baik `2.000×85% = 1.700`. Tambahan `1.700×30% = 510`, total 2.210. Sisa setelah 7/13 disalurkan adalah `2.210×6/13 = 1.020`.",
+      "id": "TIU-TEKS-022"
+    },
+    {
+      "category": "TIU",
+      "question": "Delapan belas pekerja dapat menyelesaikan pekerjaan dalam 20 hari. Setelah bekerja 5 hari, enam pekerja dipindahkan. Sepuluh hari kemudian, tiga pekerja tambahan bergabung. Jika produktivitas setiap pekerja sama, pekerjaan selesai dalam...",
+      "options": [
+        {
+          "id": "A",
+          "text": "23 hari sejak pekerjaan dimulai",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "24 hari sejak pekerjaan dimulai",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "25 hari sejak pekerjaan dimulai",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "26 hari sejak pekerjaan dimulai",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "27 hari sejak pekerjaan dimulai",
+          "score": 0
+        }
+      ],
+      "explanation": "Total pekerjaan `18×20 = 360` hari-orang. Lima hari pertama menghasilkan 90, sepuluh hari berikutnya oleh 12 pekerja menghasilkan 120, tersisa 150. Setelah tiga pekerja bergabung, 15 pekerja memerlukan 10 hari. Total `5+10+10 = 25` hari.",
+      "id": "TIU-TEKS-023"
+    },
+    {
+      "category": "TIU",
+      "question": "Rata-rata nilai 15 peserta adalah 72. Setelah nilai tertinggi dan terendah dikeluarkan, rata-rata 13 peserta menjadi 73. Jika nilai tertinggi adalah 96, nilai terendah adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "33",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "35",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "37",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "39",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "41",
+          "score": 0
+        }
+      ],
+      "explanation": "Total awal `15×72 = 1.080`. Total 13 peserta `13×73 = 949`, sehingga nilai tertinggi dan terendah berjumlah 131. Nilai terendah `131−96 = 35`.",
+      "id": "TIU-TEKS-024"
+    },
+    {
+      "category": "TIU",
+      "question": "4, 10, 22, 42, 72, 114, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "164",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "166",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "168",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "170",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "172",
+          "score": 0
+        }
+      ],
+      "explanation": "Selisihnya `6, 12, 20, 30, 42`, yaitu `2×3, 3×4, 4×5, 5×6, 6×7`. Berikutnya `7×8 = 56`, sehingga `114+56 = 170`.",
+      "id": "TIU-TEKS-025"
+    },
+    {
+      "id": "TIU-FIG-001",
+      "category": "TIU",
+      "question": "Gambar yang tepat untuk melanjutkan deret adalah...",
+      "image": {
+        "url": "/question-assets/tiu/figural-review/fig-01-question.svg",
+        "alt": "Tiga panel berisi panah yang berubah arah dan titik yang bertambah"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-01-a.svg",
+            "alt": "Pilihan A"
+          },
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-01-b.svg",
+            "alt": "Pilihan B"
+          },
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-01-c.svg",
+            "alt": "Pilihan C"
+          },
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-01-d.svg",
+            "alt": "Pilihan D"
+          },
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-01-e.svg",
+            "alt": "Pilihan E"
+          },
+          "score": 0
+        }
+      ],
+      "explanation": "Arah panah berputar 90 derajat searah jarum jam: kanan, bawah, kiri, lalu atas. Jumlah titik bertambah satu, sehingga gambar berikutnya adalah panah ke atas dengan empat titik (B)."
+    },
+    {
+      "id": "TIU-FIG-002",
+      "category": "TIU",
+      "question": "Gambar yang tepat untuk melanjutkan deret adalah...",
+      "image": {
+        "url": "/question-assets/tiu/figural-review/fig-02-question.svg",
+        "alt": "Deret poligon dengan jumlah sisi meningkat dan warna isi bergantian"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-02-a.svg",
+            "alt": "Pilihan A"
+          },
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-02-b.svg",
+            "alt": "Pilihan B"
+          },
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-02-c.svg",
+            "alt": "Pilihan C"
+          },
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-02-d.svg",
+            "alt": "Pilihan D"
+          },
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-02-e.svg",
+            "alt": "Pilihan E"
+          },
+          "score": 0
+        }
+      ],
+      "explanation": "Jumlah sisi bertambah dari tiga, empat, lima, menjadi enam. Isi bangun bergantian kosong, penuh, kosong, sehingga berikutnya segi enam penuh (D)."
+    },
+    {
+      "id": "TIU-FIG-003",
+      "category": "TIU",
+      "question": "Terapkan hubungan pada pasangan pertama untuk melengkapi pasangan kedua.",
+      "image": {
+        "url": "/question-assets/tiu/figural-review/fig-03-question.svg",
+        "alt": "Analogi dua pasangan bentuk luar, bentuk dalam, dan penanda posisi"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-03-a.svg",
+            "alt": "Pilihan A"
+          },
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-03-b.svg",
+            "alt": "Pilihan B"
+          },
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-03-c.svg",
+            "alt": "Pilihan C"
+          },
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-03-d.svg",
+            "alt": "Pilihan D"
+          },
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-03-e.svg",
+            "alt": "Pilihan E"
+          },
+          "score": 0
+        }
+      ],
+      "explanation": "Bentuk luar dan bentuk dalam bertukar tempat. Posisi bentuk kecil dan penanda juga berpindah ke sisi yang berlawanan. Penerapan aturan tersebut menghasilkan pilihan C."
+    },
+    {
+      "id": "TIU-FIG-004",
+      "category": "TIU",
+      "question": "Gambar yang tepat untuk mengisi bagian kosong pada matriks adalah...",
+      "image": {
+        "url": "/question-assets/tiu/figural-review/fig-04-question.svg",
+        "alt": "Matriks dua baris dengan jumlah simbol pada kolom ketiga"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-04-a.svg",
+            "alt": "Pilihan A"
+          },
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-04-b.svg",
+            "alt": "Pilihan B"
+          },
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-04-c.svg",
+            "alt": "Pilihan C"
+          },
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-04-d.svg",
+            "alt": "Pilihan D"
+          },
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-04-e.svg",
+            "alt": "Pilihan E"
+          },
+          "score": 0
+        }
+      ],
+      "explanation": "Pada setiap baris, kolom ketiga memuat jumlah simbol dari kolom pertama dan kedua: satu ditambah dua menjadi tiga. Baris kedua harus berisi tiga segitiga penuh (A)."
+    },
+    {
+      "id": "TIU-FIG-005",
+      "category": "TIU",
+      "question": "Panel manakah yang memiliki hubungan panah dan titik berbeda dari empat panel lainnya?",
+      "image": {
+        "url": "/question-assets/tiu/figural-review/fig-05-question.svg",
+        "alt": "Lima panel berlabel A sampai E dengan panah dan titik"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "Panel A",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-05-a.svg",
+            "alt": "Panel A"
+          },
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Panel B",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-05-b.svg",
+            "alt": "Panel B"
+          },
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Panel C",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-05-c.svg",
+            "alt": "Panel C"
+          },
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Panel D",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-05-d.svg",
+            "alt": "Panel D"
+          },
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Panel E",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-05-e.svg",
+            "alt": "Panel E"
+          },
+          "score": 0
+        }
+      ],
+      "explanation": "Pada empat panel, titik berada di sisi yang berlawanan dengan arah panah. Pada panel D, panah dan titik sama-sama mengarah atau berada di sisi atas, sehingga D berbeda."
+    },
+    {
+      "id": "TIU-FIG-006",
+      "category": "TIU",
+      "question": "Gambar yang tepat untuk melanjutkan deret adalah...",
+      "image": {
+        "url": "/question-assets/tiu/figural-review/fig-06-question.svg",
+        "alt": "Deret panah, titik sudut, dan warna yang berubah bersamaan"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-06-a.svg",
+            "alt": "Pilihan A"
+          },
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-06-b.svg",
+            "alt": "Pilihan B"
+          },
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-06-c.svg",
+            "alt": "Pilihan C"
+          },
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-06-d.svg",
+            "alt": "Pilihan D"
+          },
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-06-e.svg",
+            "alt": "Pilihan E"
+          },
+          "score": 0
+        }
+      ],
+      "explanation": "Panah berputar 90 derajat searah jarum jam, titik berpindah sudut searah jarum jam, dan warna bergantian biru-hitam. Berikutnya panah kiri hitam dengan titik kuning di kiri bawah (A)."
+    },
+    {
+      "id": "TIU-FIG-007",
+      "category": "TIU",
+      "question": "Gambar yang tepat untuk melengkapi matriks adalah...",
+      "image": {
+        "url": "/question-assets/tiu/figural-review/fig-07-question.svg",
+        "alt": "Matriks tiga kali tiga yang menggabungkan jenis bentuk pada baris dan kolom"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-07-a.svg",
+            "alt": "Pilihan A"
+          },
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-07-b.svg",
+            "alt": "Pilihan B"
+          },
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-07-c.svg",
+            "alt": "Pilihan C"
+          },
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-07-d.svg",
+            "alt": "Pilihan D"
+          },
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-07-e.svg",
+            "alt": "Pilihan E"
+          },
+          "score": 0
+        }
+      ],
+      "explanation": "Sel ketiga pada setiap baris merupakan gabungan dua sel sebelumnya. Baris terakhir harus menggabungkan lingkaran-persegi dengan segitiga-belah ketupat, sehingga memuat keempat bentuk (A)."
+    },
+    {
+      "id": "TIU-FIG-008",
+      "category": "TIU",
+      "question": "Terapkan hubungan pada pasangan pertama untuk melengkapi pasangan kedua.",
+      "image": {
+        "url": "/question-assets/tiu/figural-review/fig-08-question.svg",
+        "alt": "Analogi panah dengan perubahan arah, warna, dan jumlah titik"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-08-a.svg",
+            "alt": "Pilihan A"
+          },
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-08-b.svg",
+            "alt": "Pilihan B"
+          },
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-08-c.svg",
+            "alt": "Pilihan C"
+          },
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-08-d.svg",
+            "alt": "Pilihan D"
+          },
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-08-e.svg",
+            "alt": "Pilihan E"
+          },
+          "score": 0
+        }
+      ],
+      "explanation": "Perubahannya adalah rotasi 90 derajat searah jarum jam, pergantian warna, dan penambahan satu titik. Panah kiri hitam dengan dua titik berubah menjadi panah atas biru dengan tiga titik (A)."
+    },
+    {
+      "id": "TIU-FIG-009",
+      "category": "TIU",
+      "question": "Gambar yang tepat untuk melanjutkan deret adalah...",
+      "image": {
+        "url": "/question-assets/tiu/figural-review/fig-09-question.svg",
+        "alt": "Deret poligon dengan sisi berkurang, titik bertambah, dan isi bergantian"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-09-a.svg",
+            "alt": "Pilihan A"
+          },
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-09-b.svg",
+            "alt": "Pilihan B"
+          },
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-09-c.svg",
+            "alt": "Pilihan C"
+          },
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-09-d.svg",
+            "alt": "Pilihan D"
+          },
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-09-e.svg",
+            "alt": "Pilihan E"
+          },
+          "score": 0
+        }
+      ],
+      "explanation": "Jumlah sisi berkurang satu, jumlah titik bertambah satu, dan isi bergantian penuh-kosong. Setelah persegi penuh dengan tiga titik, berikutnya segitiga kosong dengan empat titik (A)."
+    },
+    {
+      "id": "TIU-FIG-010",
+      "category": "TIU",
+      "question": "Gambar yang tepat untuk melanjutkan perpindahan kedua bentuk adalah...",
+      "image": {
+        "url": "/question-assets/tiu/figural-review/fig-10-question.svg",
+        "alt": "Deret posisi lingkaran dan persegi yang berpindah pada empat sudut"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-10-a.svg",
+            "alt": "Pilihan A"
+          },
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-10-b.svg",
+            "alt": "Pilihan B"
+          },
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-10-c.svg",
+            "alt": "Pilihan C"
+          },
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-10-d.svg",
+            "alt": "Pilihan D"
+          },
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "",
+          "image": {
+            "url": "/question-assets/tiu/figural-review/fig-10-e.svg",
+            "alt": "Pilihan E"
+          },
+          "score": 0
+        }
+      ],
+      "explanation": "Lingkaran bergerak satu sudut searah jarum jam, sedangkan persegi bergerak satu sudut berlawanan arah jarum jam. Posisi berikutnya adalah lingkaran kiri bawah dan persegi kanan atas (A)."
+    },
+    {
+      "category": "TKP",
+      "question": "Seorang warga menerima pemberitahuan bahwa permohonannya ditolak karena dokumen tidak lengkap. Ketika diperiksa, dokumen tersebut sebenarnya sudah diunggah, tetapi tidak terbaca akibat gangguan sistem. Batas pengajuan keberatan berakhir hari itu. Rekan Anda menyarankan warga mengajukan permohonan baru agar lebih mudah, sedangkan permohonan baru membuat warga kehilangan jadwal keberangkatan penting. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membantu warga membuat permohonan baru dan mencantumkan keterangan bahwa pernah terjadi gangguan",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Mencatat bukti unggahan, menghubungi unit berwenang, dan meminta penanganan keberatan sebelum tenggat",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Memberikan surat keterangan gangguan agar warga dapat menjelaskan masalah kepada pihak terkait",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Meminta warga menunggu hasil pemeriksaan sistem sebelum menentukan langkah berikutnya",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Meneruskan warga kepada petugas pengaduan karena penolakan tidak diproses di meja Anda",
+          "score": 1
+        }
+      ],
+      "explanation": "B menangani bukti, kewenangan, dan tenggat sekaligus. C membantu dampak eksternal tetapi belum memulihkan proses. E sekadar memindahkan pemohon.",
+      "id": "TKP-001"
+    },
+    {
+      "category": "TKP",
+      "question": "Tim harus menyelesaikan laporan lintas bagian dalam dua hari. Salah satu anggota belum mengirim data karena juga menangani pelayanan yang sedang padat. Anggota lain mulai kesal dan ingin mencantumkan namanya sebagai penyebab keterlambatan. Anda mengetahui sebagian format permintaan data memang kurang jelas, tetapi bila menunggu rapat koordinasi laporan akan terlambat. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membantu merapikan format, menyepakati data minimum, dan membagi dukungan agar laporan tetap selesai",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Meminta anggota tersebut mengutamakan laporan karena tenggatnya telah diketahui sejak awal",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Mengambil alih seluruh pengolahan datanya lalu membahas pembagian beban setelah laporan dikirim",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Melaporkan hambatan kepada ketua tim dan menunggu keputusan mengenai penyesuaian tenggat",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Mengirim pengingat tertulis kepada seluruh anggota tanpa menyebut pihak yang belum mengirim data",
+          "score": 3
+        }
+      ],
+      "explanation": "A mengatasi kebutuhan mendesak sekaligus memperbaiki format dan pembagian beban. C menyelamatkan tenggat tetapi tidak membangun kerja sama yang sehat.",
+      "id": "TKP-002"
+    },
+    {
+      "category": "TKP",
+      "question": "Prosedur baru mulai berlaku hari ini, tetapi petunjuk resminya menggunakan istilah teknis yang belum dipahami sebagian petugas. Antrean sudah terbentuk dan dua petugas menggunakan penafsiran berbeda. Atasan sedang mengikuti rapat di luar kantor. Jika pelayanan dihentikan, banyak pemohon harus kembali dari daerah yang jauh. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memilih penafsiran yang paling sederhana dan meminta seluruh petugas menggunakannya sementara",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Membatasi pelayanan pada bagian yang pasti, mencatat kasus meragukan, dan meminta konfirmasi resmi",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Tetap memakai prosedur lama sampai atasan memberikan penjelasan yang dapat dipahami bersama",
+          "score": 2
+        },
+        {
+          "id": "D",
+          "text": "Membagi pemohon berdasarkan penafsiran masing-masing petugas agar antrean tetap bergerak",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Menjelaskan kepada pemohon bahwa hasil layanan mungkin perlu diperbaiki setelah ada arahan",
+          "score": 4
+        }
+      ],
+      "explanation": "B menjaga layanan pada bagian yang pasti serta mengendalikan risiko kasus meragukan. E transparan, tetapi tetap berisiko menghasilkan layanan yang perlu diperbaiki.",
+      "id": "TKP-003"
+    },
+    {
+      "category": "TKP",
+      "question": "Dua rekan yang sedang berselisih pribadi mulai saling menahan informasi pekerjaan. Akibatnya, data yang Anda perlukan untuk laporan tidak konsisten. Keduanya tetap menyelesaikan tugas masing-masing dan menolak dianggap mengganggu tim. Tenggat laporan tiga hari lagi, sedangkan ketua tim sedang dinas luar. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memeriksa sendiri semua data lalu menyerahkan bukti ketidaksesuaian kepada ketua tim setelah kembali",
+          "score": 4
+        },
+        {
+          "id": "B",
+          "text": "Mempertemukan keduanya untuk menyepakati data kerja dan batas komunikasi profesional yang diperlukan",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Meminta data melalui pesan tertulis agar setiap jawaban dapat dijadikan bukti jika laporan bermasalah",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Memilih data dari rekan yang selama ini paling dapat dipercaya untuk mengejar penyelesaian laporan",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Menunggu ketua tim kembali karena konflik personal berada di luar kewenangan anggota tim lainnya",
+          "score": 1
+        }
+      ],
+      "explanation": "B memisahkan persoalan pribadi dari kewajiban kerja dan menghasilkan kesepakatan operasional. A mengamankan laporan, tetapi tidak menghentikan hambatan kolaborasi.",
+      "id": "TKP-004"
+    },
+    {
+      "category": "TKP",
+      "question": "Untuk mengejar tenggat, seorang rekan memasukkan dokumen internal ke layanan kecerdasan buatan publik agar cepat diringkas. Dokumen tidak berlabel rahasia, tetapi memuat nama, nomor identitas, dan riwayat pengaduan warga. Ringkasan sudah digunakan dalam draf laporan dan rekan meminta Anda tidak memperbesar masalah karena hasilnya sangat membantu. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menghapus identitas dari ringkasan dan melanjutkan penggunaan karena dokumen tidak berlabel rahasia",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Menghentikan penggunaan, melaporkan insiden melalui jalur yang tepat, dan mengganti draf dengan proses aman",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Meminta rekan menghapus percakapan dari layanan tersebut lalu memberi pengingat secara pribadi",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Menyimpan draf untuk tenggat kali ini dan mengusulkan pedoman penggunaan teknologi setelah laporan selesai",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Memeriksa apakah informasi dapat ditemukan publik sebelum menentukan perlu tidaknya pelaporan",
+          "score": 2
+        }
+      ],
+      "explanation": "B menangani potensi kebocoran, eskalasi, dan penggantian proses secara lengkap. Menghapus percakapan saja tidak memastikan risiko data telah tertangani.",
+      "id": "TKP-005"
+    },
+    {
+      "category": "TKP",
+      "question": "Seorang pemohon dengan hambatan pendengaran datang tanpa pendamping. Sistem antrean memanggil melalui suara dan layar, tetapi layar sedang rusak. Ruang pelayanan ramai sehingga komunikasi tertulis berlangsung lambat. Petugas lain menyarankan pemohon datang kembali bersama keluarga agar tidak terjadi salah pengertian. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menyediakan komunikasi tertulis dan penanda antrean alternatif sambil memastikan tahapan dipahami",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Meminta petugas keamanan memberi tahu pemohon secara langsung ketika nomor antreannya dipanggil",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Mendahulukan pemohon agar proses komunikasi yang lebih lama tidak menghambat antrean lainnya",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Menawarkan jadwal khusus pada hari berikutnya ketika kondisi ruang pelayanan lebih tenang",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Menghubungi nomor keluarga yang dicantumkan agar dapat membantu menerjemahkan kebutuhan pemohon",
+          "score": 1
+        }
+      ],
+      "explanation": "A menyediakan akomodasi yang langsung, mandiri, dan tidak memaksa pemohon membawa pendamping. B membantu pemanggilan, tetapi belum menjamin seluruh komunikasi layanan.",
+      "id": "TKP-006"
+    },
+    {
+      "category": "TKP",
+      "question": "Atasan meminta Anda mengubah tanggal penyelesaian beberapa pekerjaan agar indikator bulanan terlihat tercapai. Pekerjaan tersebut memang selesai, tetapi dua hari setelah periode pelaporan. Atasan beralasan keterlambatan terjadi karena sistem pusat dan tidak adil bila kinerja unit berkurang. Data sistem menyimpan waktu perubahan dan laporan akan digunakan untuk evaluasi nasional. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengikuti arahan sambil menambahkan catatan internal mengenai penyebab keterlambatan pekerjaan",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Mempertahankan tanggal aktual dan menyertakan penjelasan gangguan sistem sebagai konteks laporan",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Mengubah tanggal hanya untuk pekerjaan yang terbukti terdampak langsung oleh gangguan sistem pusat",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Meminta atasan mengirim arahan tertulis sebelum melakukan perubahan pada data pelaporan tersebut",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Menunda pengiriman laporan sampai unit pusat menyetujui pengecualian terhadap indikator kinerja",
+          "score": 3
+        }
+      ],
+      "explanation": "B mempertahankan data aktual dan menjelaskan penyebab secara sah. D melindungi pegawai, tetapi instruksi tertulis tidak menjadikan perubahan data yang tidak akurat dapat dibenarkan.",
+      "id": "TKP-007"
+    },
+    {
+      "category": "TKP",
+      "question": "Program sosialisasi harus menjangkau enam desa, tetapi kendaraan dinas hanya tersedia untuk tiga kunjungan. Pertemuan daring tidak efektif di dua desa yang koneksinya lemah. Anggaran tambahan belum pasti, sementara materi perlu diterima sebelum aturan baru berlaku. Anda diminta menyusun solusi awal. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memprioritaskan desa dengan peserta terbanyak dan mengirim materi tertulis kepada desa lainnya",
+          "score": 4
+        },
+        {
+          "id": "B",
+          "text": "Mengelompokkan lokasi, bekerja sama dengan penghubung desa, dan memakai kombinasi kunjungan serta pendampingan",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Mengusulkan penundaan sosialisasi sampai kendaraan atau anggaran tambahan dapat dipastikan",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Meminta setiap desa mengirim perwakilan ke kantor agar penyampaian materi berlangsung seragam",
+          "score": 3
+        },
+        {
+          "id": "E",
+          "text": "Menjadwalkan tiga desa terlebih dahulu lalu mengevaluasi kebutuhan desa lainnya setelah aturan berlaku",
+          "score": 2
+        }
+      ],
+      "explanation": "B menggabungkan sumber daya, penghubung lokal, dan metode berbeda sesuai kondisi desa. A cukup realistis, tetapi berpotensi mengurangi mutu bagi desa tertentu.",
+      "id": "TKP-008"
+    },
+    {
+      "category": "TKP",
+      "question": "Dalam rapat, usulan Anda ditolak oleh pegawai senior tanpa pembahasan rinci. Setelah rapat, dua anggota mengatakan usulan tersebut sebenarnya dapat menghemat waktu, tetapi mereka enggan menyampaikan pendapat karena senior itu mudah tersinggung. Keputusan belum dijalankan dan Anda memiliki data pendukung yang belum sempat ditampilkan. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengirim data kepada pimpinan rapat dan meminta kesempatan evaluasi tanpa menyerang keputusan sebelumnya",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Menjalankan keputusan rapat sambil menyimpan hasil analisis untuk perbaikan pada kegiatan berikutnya",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Meminta dua anggota mendukung usulan dalam rapat lanjutan agar penilaian tidak terlihat bersifat pribadi",
+          "score": 2
+        },
+        {
+          "id": "D",
+          "text": "Menemui pegawai senior secara pribadi dan memintanya menjelaskan alasan penolakan terhadap usulan",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Membandingkan hasil kedua pendekatan setelah keputusan berjalan agar manfaat usulan dapat dibuktikan",
+          "score": 1
+        }
+      ],
+      "explanation": "A membawa data ke forum pengambil keputusan dan membuka evaluasi secara profesional. D baik untuk memahami alasan, tetapi keputusan tetap perlu dinilai melalui mekanisme tim.",
+      "id": "TKP-009"
+    },
+    {
+      "category": "TKP",
+      "question": "Saat pelayanan ramai, seorang pengunjung tiba-tiba jatuh dan tidak merespons. Petugas keamanan sedang berada di lantai lain, sedangkan beberapa warga mulai berkerumun dan merekam. Anda pernah mengikuti pelatihan pertolongan pertama dasar, tetapi harus meninggalkan loket yang menyimpan dokumen pemohon. Rekan di loket sebelah sedang melayani transaksi. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Meminta warga memberi ruang, mengamankan loket, memanggil bantuan medis, dan melakukan pertolongan sesuai kemampuan",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Meminta rekan menjaga pengunjung tersebut sementara Anda menghubungi petugas keamanan dan fasilitas kesehatan",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Menghubungi bantuan medis terlebih dahulu lalu menunggu petugas terlatih agar tidak melakukan tindakan yang keliru",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Mengarahkan warga yang merekam untuk mencari petugas keamanan sementara Anda tetap menjaga dokumen pelayanan",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Memindahkan pengunjung ke tempat yang lebih sepi agar pelayanan dan pertolongan dapat dilakukan tanpa kerumunan",
+          "score": 2
+        }
+      ],
+      "explanation": "A mengamankan dokumen, memanggil bantuan, mengendalikan lokasi, dan memberi pertolongan sesuai kompetensi. B cukup baik, tetapi menyerahkan respons awal kepada rekan yang belum tentu terlatih.",
+      "id": "TKP-010"
+    },
+    {
+      "category": "TKP",
+      "question": "Menjelang loket tutup, seorang warga meminta didahulukan karena harus membawa anaknya berobat. Ia tidak memiliki bukti janji dokter, tetapi anak terlihat lemas. Lima warga lain sudah menunggu cukup lama dan mulai keberatan. Proses warga tersebut membutuhkan sekitar sepuluh menit, sedangkan semua antrean masih mungkin selesai jika pelayanan berjalan tanpa gangguan. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Meminta persetujuan warga yang menunggu sebelum mengubah urutan antrean pelayanan",
+          "score": 4
+        },
+        {
+          "id": "B",
+          "text": "Memeriksa kondisi secara singkat, menjelaskan kepada antrean, dan memberi prioritas bila memang mendesak",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Mempertahankan urutan karena seluruh warga masih dapat dilayani sebelum loket ditutup",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Mengarahkan warga ke layanan kesehatan dahulu dan menawarkan jadwal pelayanan berikutnya",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Meminta rekan membuka pelayanan tambahan khusus untuk warga tersebut agar antrean tidak berubah",
+          "score": 1
+        }
+      ],
+      "explanation": "B memeriksa urgensi, menjelaskan keputusan, dan memberi akomodasi yang proporsional. A partisipatif, tetapi keputusan pelayanan tidak seharusnya bergantung pada persetujuan antrean.",
+      "id": "TKP-011"
+    },
+    {
+      "category": "TKP",
+      "question": "Anda menemukan perhitungan rekan senior dalam draf anggaran tidak sesuai dengan data pendukung. Draf akan dibahas satu jam lagi. Rekan tersebut dikenal teliti dan sedang menangani banyak pekerjaan. Anggota lain menyarankan Anda memperbaikinya diam-diam agar rapat berjalan lancar, tetapi perubahan dapat memengaruhi komponen anggaran lain. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengoreksi angka pada draf dan memberi tahu rekan senior setelah rapat selesai",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Menunjukkan temuan beserta data kepada rekan senior dan memeriksa dampaknya bersama",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Menyampaikan temuan langsung dalam rapat agar koreksi dapat diputuskan seluruh anggota",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Meminta anggota lain memastikan perhitungan sebelum Anda membicarakannya dengan rekan senior",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Menambahkan catatan pada draf tanpa mengubah angka agar pembahasan tidak tertunda",
+          "score": 1
+        }
+      ],
+      "explanation": "B mengoreksi secara profesional sekaligus memeriksa dampak turunannya. C transparan, tetapi membawa kesalahan ke forum sebelum memberi kesempatan verifikasi.",
+      "id": "TKP-012"
+    },
+    {
+      "category": "TKP",
+      "question": "Atasan meminta Anda memimpin kegiatan yang belum pernah Anda tangani karena penanggung jawab utama sakit. Pedoman tersedia, tetapi beberapa keputusan lapangan memerlukan pengalaman. Kegiatan dimulai besok dan tidak dapat ditunda. Dua rekan berpengalaman bersedia membantu, namun mereka juga memiliki tugas pelayanan rutin. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menerima tugas, mempelajari pedoman, membagi peran, dan menetapkan jalur konsultasi untuk keputusan penting",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Meminta salah satu rekan berpengalaman menjadi pemimpin karena risiko kegiatan cukup besar",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Menjalankan kegiatan sesuai pedoman dan melaporkan keputusan yang meragukan setelah kegiatan selesai",
+          "score": 2
+        },
+        {
+          "id": "D",
+          "text": "Meminta atasan mengurangi ruang lingkup kegiatan agar seluruh bagian dapat Anda kendalikan sendiri",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Menerima tugas dengan syarat kedua rekan dibebaskan sepenuhnya dari pelayanan rutin",
+          "score": 4
+        }
+      ],
+      "explanation": "A menggabungkan pembelajaran, pembagian peran, dan pengendalian keputusan berisiko. E aman tetapi terlalu bergantung pada pembebasan penuh rekan.",
+      "id": "TKP-013"
+    },
+    {
+      "category": "TKP",
+      "question": "Mitra kegiatan meminta daftar nama dan nomor telepon peserta agar dapat mengirim sertifikat. Perjanjian kerja sama hanya menyebut penyediaan sertifikat, bukan penyerahan data. Tenggat penerbitan besok, dan mitra mengatakan sistemnya tidak dapat membuat sertifikat tanpa mengunggah daftar tersebut. Peserta belum diberi informasi mengenai penggunaan data oleh mitra. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengirim nama tanpa nomor telepon karena data tersebut sudah cukup untuk dicantumkan pada sertifikat",
+          "score": 4
+        },
+        {
+          "id": "B",
+          "text": "Meminta dasar pemrosesan dan menggunakan cara penyerahan paling terbatas setelah kewenangan dipastikan",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Mengirim data karena penerbitan sertifikat merupakan bagian dari layanan yang telah disepakati",
+          "score": 2
+        },
+        {
+          "id": "D",
+          "text": "Meminta peserta memberikan persetujuan melalui grup agar seluruh data dapat segera diserahkan",
+          "score": 3
+        },
+        {
+          "id": "E",
+          "text": "Membuat sertifikat secara internal agar tidak ada data yang perlu diberikan kepada pihak mitra",
+          "score": 1
+        }
+      ],
+      "explanation": "B memastikan dasar, kewenangan, dan minimisasi data. A membatasi data, tetapi tetap menyerahkan tanpa memastikan dasar pemrosesan.",
+      "id": "TKP-014"
+    },
+    {
+      "category": "TKP",
+      "question": "Seorang pengguna mengunggah keluhan bahwa petugas bersikap kasar. Video yang disertakan hanya menampilkan bagian akhir percakapan dan sudah menyebar luas. Petugas merasa difitnah serta ingin lembaga segera mengunggah rekaman CCTV lengkap. Rekaman tersebut juga memperlihatkan pengguna lain dan percakapan yang mengandung data pribadi. Anda bertugas membantu respons lembaga. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menyampaikan bahwa keluhan sedang diperiksa dan menyediakan jalur pengaduan serta pembaruan hasil",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Mengunggah bagian rekaman yang mendukung petugas setelah menyamarkan wajah pengguna lainnya",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Meminta pengunggah menghapus video sampai pemeriksaan internal lembaga dinyatakan selesai",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Membela petugas berdasarkan laporan saksi sambil menyatakan video tidak menunjukkan kejadian utuh",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Tidak menanggapi media sosial dan hanya menyelesaikan perkara melalui mekanisme pengaduan resmi",
+          "score": 1
+        }
+      ],
+      "explanation": "A menjaga proses pemeriksaan, hak semua pihak, dan komunikasi publik. D memberi konteks, tetapi membela sebelum pemeriksaan selesai.",
+      "id": "TKP-015"
+    },
+    {
+      "category": "TKP",
+      "question": "Dua jam sebelum pelatihan dimulai, narasumber utama memberi kabar tidak dapat hadir. Peserta telah datang dari beberapa daerah dan materi narasumber belum dibagikan. Seorang anggota tim memiliki pemahaman dasar, sementara narasumber menawarkan hadir daring selama tiga puluh menit. Koneksi di lokasi kadang tidak stabil. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menjadwalkan ulang pelatihan agar peserta tetap mendapatkan materi dari narasumber yang kompeten",
+          "score": 1
+        },
+        {
+          "id": "B",
+          "text": "Menggabungkan sesi daring singkat, fasilitasi anggota tim, dan tindak lanjut materi setelah kegiatan",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Meminta anggota tim menggantikan seluruh sesi berdasarkan bahan pelatihan tahun sebelumnya",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Menjalankan kegiatan tanpa materi utama dan mengirim rekaman narasumber kepada peserta kemudian",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Mengubah pelatihan menjadi diskusi peserta agar perjalanan mereka tetap menghasilkan manfaat",
+          "score": 4
+        }
+      ],
+      "explanation": "B mempertahankan manfaat kegiatan melalui kombinasi metode dan tindak lanjut. E adaptif, tetapi tidak memastikan materi utama tersampaikan.",
+      "id": "TKP-016"
+    },
+    {
+      "category": "TKP",
+      "question": "Setelah urusannya selesai, seorang warga mengirim bingkisan makanan ke ruang kerja sebagai ucapan terima kasih. Nilainya tidak besar dan dapat dinikmati seluruh tim. Warga sudah pulang serta tidak mencantumkan nomor yang dapat dihubungi. Rekan menganggap menolak makanan akan mubazir dan dapat menyinggung niat baik warga. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membagikan makanan kepada seluruh tim dan melaporkan penerimaannya setelah kegiatan pelayanan selesai",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Menyimpan bingkisan sebagai barang temuan sampai identitas pemberi dapat diketahui dengan pasti",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Mengikuti prosedur pelaporan atau penanganan gratifikasi tanpa menilai sendiri dari nominalnya",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Menyerahkan makanan kepada kegiatan sosial dan mencatat keputusan tersebut dalam laporan unit",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Membiarkan atasan menentukan penggunaan bingkisan karena tanggung jawab berada pada pimpinan",
+          "score": 1
+        }
+      ],
+      "explanation": "C mengikuti prosedur tanpa menilai sendiri berdasarkan nominal atau bentuk hadiah. D berniat baik, tetapi pengalihan tidak menggantikan prosedur.",
+      "id": "TKP-017"
+    },
+    {
+      "category": "TKP",
+      "question": "Pegawai baru sering terlambat menyelesaikan tugas karena masih mempelajari sistem. Hasil kerjanya akurat, tetapi dua anggota tim mulai mengambil alih pekerjaannya agar target harian tercapai. Akibatnya, pegawai baru semakin jarang berlatih dan terlihat tidak percaya diri. Dalam satu minggu akan ada lonjakan pekerjaan. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menyusun latihan terarah dan pemeriksaan bertahap sambil tetap memberinya bagian tugas nyata",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Memindahkan sementara pegawai baru ke tugas yang lebih sederhana sampai lonjakan pekerjaan selesai",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Meminta anggota senior terus mengambil alih pekerjaan sambil menjelaskan proses kepada pegawai baru",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Menetapkan target yang sama agar pegawai baru terdorong menyesuaikan diri lebih cepat",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Mengusulkan pelatihan formal dan menghentikan pemberian tugas sampai pelatihan tersedia",
+          "score": 1
+        }
+      ],
+      "explanation": "A meningkatkan kemampuan tanpa mengeluarkan pegawai dari pekerjaan nyata. C menjaga target, tetapi risiko ketergantungan tetap tinggi.",
+      "id": "TKP-018"
+    },
+    {
+      "category": "TKP",
+      "question": "Anda sedang menyelesaikan laporan yang harus dikirim pukul 15.00 ketika unit lain meminta data untuk menjawab pemeriksaan mendadak pukul 14.00. Keduanya penting. Data pemeriksaan dapat disiapkan rekan Anda, tetapi ia belum memahami lokasi seluruh dokumen. Laporan Anda sudah 80% selesai dan pengirimannya memerlukan persetujuan atasan. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menyelesaikan data pemeriksaan lebih dahulu karena tenggatnya datang lebih cepat",
+          "score": 4
+        },
+        {
+          "id": "B",
+          "text": "Membagi langkah dengan rekan, menunjukkan lokasi data, dan mengamankan persetujuan laporan sejak awal",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Meminta unit lain memperpanjang tenggat karena permintaan mereka datang secara mendadak",
+          "score": 2
+        },
+        {
+          "id": "D",
+          "text": "Menyerahkan laporan kepada rekan untuk diselesaikan sementara Anda menyiapkan data pemeriksaan",
+          "score": 3
+        },
+        {
+          "id": "E",
+          "text": "Meminta atasan menentukan satu pekerjaan yang harus diprioritaskan dan menghentikan pekerjaan lainnya",
+          "score": 1
+        }
+      ],
+      "explanation": "B memungkinkan dua tenggat ditangani paralel dan mempercepat titik ketergantungan pada persetujuan atasan.",
+      "id": "TKP-019"
+    },
+    {
+      "category": "TKP",
+      "question": "Tim lapangan harus menyelesaikan pendataan hari itu, tetapi hujan deras membuat akses menuju lokasi terakhir licin dan mulai tergenang. Koordinator di kantor meminta tim tetap mencoba karena jadwal berikutnya penuh. Warga setempat mengatakan jalur masih dapat dilewati kendaraan tertentu, sedangkan kendaraan tim bukan tipe tersebut. Data lokasi terakhir dapat dikumpulkan esok pagi, tetapi memerlukan perubahan jadwal unit lain. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Melanjutkan perjalanan perlahan dengan bantuan warga yang memahami kondisi jalur menuju lokasi",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Menghentikan perjalanan, mendokumentasikan kondisi, dan mengatur ulang pendataan melalui koordinasi resmi",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Menunggu hujan reda di lokasi terdekat lalu mencoba kembali sebelum hari benar-benar gelap",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Meminta warga membawa dokumen ke titik yang aman agar pendataan tetap diselesaikan hari itu",
+          "score": 3
+        },
+        {
+          "id": "E",
+          "text": "Mengikuti arahan koordinator karena keputusan risiko berada pada penanggung jawab kegiatan",
+          "score": 1
+        }
+      ],
+      "explanation": "B mengutamakan keselamatan, bukti keadaan, dan penjadwalan resmi. D dapat menjadi alternatif bila aman, tetapi memindahkan beban kepada warga.",
+      "id": "TKP-020"
+    },
+    {
+      "category": "TKP",
+      "question": "Sistem pembayaran layanan berhenti berfungsi satu jam sebelum kantor tutup. Lima pemohon telah menyelesaikan pemeriksaan dan harus membayar hari itu agar jadwal berikutnya tidak hangus. Pembayaran tunai tidak diperbolehkan. Unit teknis belum memberi perkiraan pemulihan, sedangkan salah satu pemohon datang dari luar provinsi. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mencatat status setiap pemohon, meminta arahan kanal resmi alternatif, dan memastikan hak jadwal mereka terlindungi",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Meminta pemohon menunggu sampai kantor tutup karena sistem masih mungkin pulih sewaktu-waktu",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Memberikan surat keterangan gangguan dan meminta semua pemohon kembali pada hari kerja berikutnya",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Menyarankan pembayaran melalui rekening petugas lalu menyetorkannya ketika sistem kembali normal",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Mendahulukan pemohon luar provinsi untuk mencoba ulang pembayaran pada perangkat lain",
+          "score": 2
+        }
+      ],
+      "explanation": "A mengendalikan kasus, mencari jalur berwenang, dan melindungi jadwal seluruh pemohon. C membantu, tetapi hanya memindahkan penyelesaian ke hari berikutnya.",
+      "id": "TKP-021"
+    },
+    {
+      "category": "TKP",
+      "question": "Seorang anggota tim baru mengaku sehari sebelum tenggat bahwa sebagian datanya belum selesai. Ia takut menyampaikan lebih awal karena pada rapat sebelumnya pernah dikritik keras. Jika tugasnya dibagi sekarang, pekerjaan anggota lain akan bertambah. Ketua tim sedang menghadiri kegiatan luar dan sulit dihubungi. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membagi bagian paling mendesak, menyusun target bersama, dan membahas pola pelaporan kendala setelah tenggat",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Meminta anggota baru menyelesaikan sendiri sebagai latihan bertanggung jawab terhadap komitmennya",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Mengambil alih seluruh pekerjaannya agar kualitas laporan dapat dipastikan sebelum dikirim",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Menunggu ketua tim menentukan pembagian tugas karena perubahan beban memerlukan persetujuannya",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Meminta setiap anggota secara sukarela memilih bagian yang ingin dibantu tanpa mengubah target awal",
+          "score": 3
+        }
+      ],
+      "explanation": "A menyelamatkan tenggat sekaligus menangani penyebab anggota takut melapor. C efektif untuk hasil, tetapi mengurangi kesempatan belajar dan pembagian tanggung jawab.",
+      "id": "TKP-022"
+    },
+    {
+      "category": "TKP",
+      "question": "Atasan mengirim pesan singkat agar Anda “menyesuaikan” angka laporan sebelum rapat. Data sumber menunjukkan hasil lebih rendah daripada target, tetapi ada indikator lain yang memang belum diperbarui. Atasan sedang dalam perjalanan dan tidak menjawab telepon. Laporan harus dikirim dalam tiga puluh menit. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memperbarui hanya angka yang memiliki bukti, mencatat sumbernya, dan mengirim dengan penjelasan keterbatasan data",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Menyesuaikan angka mendekati target karena atasan pasti telah mempertimbangkan data yang belum masuk",
+          "score": 1
+        },
+        {
+          "id": "C",
+          "text": "Menunda pengiriman sampai atasan menjelaskan maksud penyesuaian agar tidak terjadi kesalahan pelaporan",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Mengirim versi lama tanpa perubahan karena data sumber merupakan satu-satunya dasar yang tersedia",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Meminta rekan menafsirkan pesan atasan dan mengikuti keputusan yang disepakati bersama",
+          "score": 2
+        }
+      ],
+      "explanation": "A hanya memperbarui data yang terbukti serta transparan mengenai keterbatasannya. D mempertahankan akurasi, tetapi mengabaikan indikator yang memang dapat diperbarui.",
+      "id": "TKP-023"
+    },
+    {
+      "category": "TKP",
+      "question": "Untuk mempercepat pelayanan, beberapa petugas menggunakan satu akun sistem karena pembuatan akun baru memerlukan waktu. Praktik tersebut sudah berlangsung lama dan membantu ketika pegawai berganti jadwal. Hari ini ditemukan perubahan data tanpa dapat diketahui siapa pelakunya. Penghentian akun bersama akan memperlambat pelayanan sampai akun individual dibuat. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengganti kata sandi akun bersama dan membatasi penggunaannya kepada petugas pada jadwal hari itu",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Melaporkan insiden, menghentikan penggunaan yang tidak terlacak, dan meminta solusi akses sementara yang sah",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Memeriksa jadwal petugas lalu menentukan siapa yang paling mungkin melakukan perubahan data",
+          "score": 2
+        },
+        {
+          "id": "D",
+          "text": "Mempertahankan akun untuk pelayanan sambil membuat catatan manual setiap kali petugas menggunakannya",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Menunggu akun individual selesai karena perubahan data masih dapat dikoreksi tanpa dampak besar",
+          "score": 1
+        }
+      ],
+      "explanation": "B menghentikan risiko keterlacakan dan meminta mekanisme sementara yang sah. D membantu kelangsungan layanan, tetapi catatan manual belum mengatasi kelemahan otorisasi.",
+      "id": "TKP-024"
+    },
+    {
+      "category": "TKP",
+      "question": "Lembaga mengunggah jadwal pelayanan yang salah sehingga puluhan warga datang pada hari libur. Unggahan telah diperbaiki tanpa penjelasan, tetapi tangkapan layar versi lama beredar. Seorang atasan khawatir permintaan maaf akan dianggap mengakui kelalaian dan menyarankan menyebutnya sebagai perubahan jadwal. Anda membantu menyiapkan respons. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menjelaskan koreksi, meminta maaf atas informasi yang salah, dan menyediakan penyelesaian bagi warga terdampak",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Menyatakan jadwal telah diperbarui serta meminta warga selalu memeriksa kanal resmi sebelum datang",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Menyebut terjadi perubahan jadwal mendadak agar warga memahami bahwa kondisi tidak dapat diperkirakan",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Menghapus seluruh komentar mengenai jadwal lama supaya informasi terbaru tidak tertutup keluhan",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Menghubungi warga yang mengeluh secara pribadi tanpa membuat pernyataan terbuka mengenai kesalahan",
+          "score": 4
+        }
+      ],
+      "explanation": "A mengakui kesalahan, mengoreksi informasi, dan menangani dampaknya. E membantu sebagian warga, tetapi tidak memperbaiki informasi publik yang sudah menyebar.",
+      "id": "TKP-025"
+    },
+    {
+      "category": "TKP",
+      "question": "Rekan yang biasanya teliti mulai melakukan kesalahan kecil setelah keluarganya mengalami masalah kesehatan. Ia meminta agar kondisinya tidak disampaikan kepada tim. Beban kerjanya melibatkan data penting dan kesalahan berikutnya dapat berdampak pada banyak pengguna. Ia tetap ingin bekerja normal karena membutuhkan penghasilan tambahan dari kegiatan tersebut. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menawarkan dukungan, menyepakati pemeriksaan tambahan, dan mendorongnya memakai bantuan resmi yang tersedia",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Mengambil alih tugas penting tanpa menjelaskan alasannya kepada tim agar privasinya tetap terjaga",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Menyampaikan kondisinya kepada atasan karena keselamatan data lebih penting daripada permintaan pribadi",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Membiarkannya bekerja normal dan membantu hanya jika ia kembali melakukan kesalahan",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Meminta ia beristirahat dari kegiatan tambahan sampai masalah keluarganya dinyatakan selesai",
+          "score": 1
+        }
+      ],
+      "explanation": "A menjaga privasi, keselamatan pekerjaan, dan akses dukungan. C dapat diperlukan bila risiko tidak terkendali, tetapi sebaiknya tidak menjadi langkah pertama tanpa melibatkan rekan.",
+      "id": "TKP-026"
+    },
+    {
+      "category": "TKP",
+      "question": "Seorang warga berbicara keras karena permohonannya belum selesai melewati estimasi. Pemeriksaan menunjukkan berkas masih menunggu verifikasi dari instansi lain. Warga mulai merekam dan menuntut nama petugas yang bertanggung jawab. Antrean lain terganggu, tetapi keluhannya memiliki dasar karena tidak pernah menerima pembaruan. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengajak warga ke area yang lebih tenang, menjelaskan status, dan menyepakati tindak lanjut yang dapat dipantau",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Memberikan nama unit verifikator dan meminta warga menyampaikan keluhan langsung kepada instansi tersebut",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Meminta warga berhenti merekam terlebih dahulu agar informasi permohonannya tidak terdengar pengguna lain",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Menjelaskan bahwa keterlambatan bukan tanggung jawab unit Anda karena proses berada di instansi lain",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Memanggil petugas keamanan karena nada bicara warga telah mengganggu ketertiban ruang pelayanan",
+          "score": 1
+        }
+      ],
+      "explanation": "A meredakan situasi, menjaga privasi, mengakui dasar keluhan, dan memberi tindak lanjut. C penting untuk privasi, tetapi belum menyelesaikan masalah utama.",
+      "id": "TKP-027"
+    },
+    {
+      "category": "TKP",
+      "question": "Tim Anda membuat formulir digital yang mempercepat pengolahan data. Dalam uji coba, sebagian pengguna kesulitan memahami istilah dan sering mengisi kolom yang salah. Peluncuran dijadwalkan minggu depan dan pimpinan telah mengumumkan target efisiensi. Menunda peluncuran akan memengaruhi target, tetapi kesalahan input dapat menambah pekerjaan koreksi. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menyederhanakan bagian kritis, menguji cepat kepada pengguna, dan meluncurkan bertahap dengan bantuan",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Meluncurkan sesuai jadwal lalu memperbaiki istilah berdasarkan keluhan yang masuk setelah penggunaan",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Menunda seluruh peluncuran sampai formulir dapat digunakan tanpa bantuan oleh setiap kelompok pengguna",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Menyediakan petunjuk tertulis lengkap tanpa mengubah formulir agar jadwal target tetap tercapai",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Membatasi peluncuran kepada pengguna yang sudah terbiasa dengan layanan digital selama bulan pertama",
+          "score": 1
+        }
+      ],
+      "explanation": "A memperbaiki titik kritis berdasarkan uji pengguna dan mengendalikan risiko melalui peluncuran bertahap. C aman, tetapi menuntut kondisi sempurna yang tidak selalu realistis.",
+      "id": "TKP-028"
+    },
+    {
+      "category": "TKP",
+      "question": "Tim menyelesaikan kegiatan lapangan, tetapi beberapa foto dokumentasi hilang karena perangkat rusak. Daftar hadir dan laporan saksi tersedia, sedangkan ketentuan meminta foto sebagai salah satu bukti. Anggota mengusulkan memakai foto kegiatan serupa dari hari sebelumnya karena lokasi dan pesertanya hampir sama. Laporan harus dikirim hari itu. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menggunakan foto sebelumnya dengan keterangan bahwa gambar hanya menggambarkan lokasi kegiatan",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Melaporkan bukti yang tersedia, menjelaskan kehilangan, dan meminta mekanisme pengganti yang sah",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Mengulang sebagian adegan bersama peserta yang masih berada di lokasi agar dokumentasi lengkap",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Menunda laporan sampai perangkat dipulihkan meskipun belum diketahui apakah foto dapat diselamatkan",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Mengirim laporan tanpa foto karena daftar hadir dan saksi sudah cukup membuktikan kegiatan",
+          "score": 3
+        }
+      ],
+      "explanation": "B jujur mengenai bukti yang hilang dan mencari pengganti yang diakui. D menjaga integritas, tetapi belum tentu proporsional bila mekanisme bukti pengganti tersedia.",
+      "id": "TKP-029"
+    },
+    {
+      "category": "TKP",
+      "question": "Dalam sebuah acara, kapasitas ruangan mulai terlampaui karena peserta yang tidak terdaftar ikut masuk. Panitia khawatir penutupan pintu menimbulkan keributan dan merusak citra kegiatan. Jalur keluar masih terbuka, tetapi petugas gedung mengingatkan bahwa jumlah orang mendekati batas aman. Acara utama akan dimulai lima menit lagi. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menghentikan penambahan peserta, menghitung ulang kapasitas, dan menyediakan ruang alternatif bila tersedia",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Membiarkan peserta berdiri dekat pintu agar mudah keluar jika terjadi keadaan darurat",
+          "score": 1
+        },
+        {
+          "id": "C",
+          "text": "Meminta peserta tidak terdaftar keluar setelah acara utama dimulai supaya situasi tetap tenang",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Melanjutkan acara sambil menambah petugas pada jalur keluar untuk mengantisipasi keadaan darurat",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Menyerahkan keputusan kepada petugas gedung karena keselamatan bangunan merupakan kewenangannya",
+          "score": 4
+        }
+      ],
+      "explanation": "A segera mencegah penambahan risiko dan mencari solusi kapasitas. E melibatkan pihak berwenang, tetapi panitia tetap harus mengambil tindakan awal yang aman.",
+      "id": "TKP-030"
+    },
+    {
+      "category": "TKP",
+      "question": "Instansi mulai mewajibkan pengajuan melalui aplikasi untuk mempercepat proses. Pada hari pertama, seorang warga lanjut usia datang dari desa yang jauh tanpa telepon pintar. Ia membawa seluruh dokumen, tetapi petugas pendamping digital sedang mengikuti rapat dan antrean umum cukup panjang. Rekan Anda menyarankan warga meminta bantuan keluarganya lalu kembali besok. Warga mengatakan tinggal sendiri dan biaya perjalanan cukup besar. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membantu menginput pada perangkat layanan setelah menjelaskan proses dan memastikan persetujuan warga",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Meminta warga menunggu petugas pendamping selesai rapat agar pembagian tugas tetap sesuai ketentuan",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Memberikan panduan cetak dan nomor bantuan yang dapat dihubungi warga setelah kembali ke desanya",
+          "score": 2
+        },
+        {
+          "id": "D",
+          "text": "Meminta rekan di antrean umum membantu setelah seluruh pemohon yang memiliki jadwal selesai dilayani",
+          "score": 3
+        },
+        {
+          "id": "E",
+          "text": "Mengizinkan pengajuan manual sebagai pengecualian tanpa memasukkan data ke aplikasi pada hari itu",
+          "score": 1
+        }
+      ],
+      "explanation": "A memberi bantuan langsung melalui sarana resmi, menjaga persetujuan warga, dan memastikan data tetap masuk ke sistem. B aman tetapi membuat warga menunggu tanpa kepastian.",
+      "id": "TKP-031"
+    },
+    {
+      "category": "TKP",
+      "question": "Tim diminta menyusun ringkasan ratusan tanggapan masyarakat dalam waktu singkat. Seorang anggota mengusulkan menggunakan layanan kecerdasan buatan yang telah disediakan instansi, tetapi belum ada pedoman untuk menjadikan hasilnya sebagai dasar keputusan. Data sudah disamarkan, walaupun beberapa tanggapan menggunakan istilah daerah yang berpotensi salah ditafsirkan sistem. Pimpinan menginginkan hasil sore itu. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menggunakan hasil sistem sebagai ringkasan final karena data sudah disamarkan dan aplikasinya disediakan instansi",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Memakai sistem untuk pengelompokan awal, memeriksa sampel dan istilah rawan, lalu menyatakan batas hasilnya",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Meringkas seluruh tanggapan secara manual agar tidak ada pendapat warga yang dipengaruhi kesalahan teknologi",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Menggunakan sistem hanya untuk tanggapan berbahasa baku dan mengabaikan tanggapan yang tidak dapat dibaca akurat",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Meminta pimpinan menunda tenggat sampai pedoman penggunaan hasil kecerdasan buatan diterbitkan",
+          "score": 2
+        }
+      ],
+      "explanation": "B memanfaatkan efisiensi teknologi sambil mengendalikan bias bahasa dan menjelaskan keterbatasan hasil. C sangat aman tetapi tidak proporsional terhadap waktu dan data yang telah disamarkan.",
+      "id": "TKP-032"
+    },
+    {
+      "category": "TKP",
+      "question": "Laporan yang disusun tim Anda telah dikirim kepada pimpinan dan digunakan dalam rapat. Setelah rapat, diketahui satu tabel menggunakan data bulan yang salah. Kesalahan terjadi karena dua anggota mengira anggota lainnya telah melakukan pemeriksaan akhir. Dampaknya belum besar, tetapi bila tidak dikoreksi tabel tersebut akan kembali digunakan dalam laporan lanjutan. Ketua tim sedang cuti dan anggota mulai saling menyalahkan. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengoreksi file sumber, memberi tahu pengguna laporan, dan mengajak tim memperbaiki titik pemeriksaan",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Menunggu ketua tim kembali karena hanya ketua yang berwenang menyatakan adanya kesalahan laporan",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Meminta dua anggota yang terlibat menyepakati siapa yang bertanggung jawab sebelum koreksi diumumkan",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Mengirim versi baru tanpa menjelaskan kesalahan agar pengguna segera memakai data yang benar",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Mencatat kesalahan untuk evaluasi internal karena dampaknya belum memengaruhi keputusan rapat",
+          "score": 1
+        }
+      ],
+      "explanation": "A segera mencegah penggunaan ulang data salah, transparan kepada pengguna, dan memperbaiki kelemahan pemeriksaan tim. D cepat, tetapi tidak menjelaskan mengapa versi berubah.",
+      "id": "TKP-033"
+    },
+    {
+      "category": "TKP",
+      "question": "Seorang staf pejabat meminta Anda mempercepat sebuah permohonan. Berkasnya lengkap, tetapi masih menunggu pemeriksaan sesuai antrean. Staf tersebut mengatakan pejabat tidak meminta pelanggaran, hanya berharap proses selesai sebelum kunjungan kerja. Jika diproses sekarang, permohonan warga lain yang lebih dahulu masuk akan tertunda. Atasan Anda tidak berada di tempat. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memproses pemeriksaan awal sekarang dan menempatkan hasil akhirnya kembali sesuai urutan antrean",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Menjelaskan standar waktu dan memproses sesuai antrean sambil memberi kanal resmi untuk memantau status",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Meminta staf mengirim surat resmi agar percepatan dapat dipertimbangkan oleh pejabat yang berwenang",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Menukar urutan dengan permohonan yang prosesnya lebih sederhana agar waktu layanan keseluruhan tidak bertambah",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Menunggu atasan kembali sebelum memberi jawaban karena permintaan melibatkan hubungan kelembagaan",
+          "score": 1
+        }
+      ],
+      "explanation": "B mempertahankan kesetaraan antrean dan tetap memberikan informasi resmi. C lebih baik daripada percepatan informal, tetapi surat tidak otomatis menjadi dasar prioritas.",
+      "id": "TKP-034"
+    },
+    {
+      "category": "TKP",
+      "question": "Saat antrean padat, alarm kebakaran berbunyi sebentar lalu berhenti. Tidak terlihat asap dan petugas gedung belum memberi instruksi. Sebagian pengunjung ingin tetap menunggu karena sudah lama mengantre, sedangkan seorang rekan menduga alarm hanya mengalami gangguan seperti minggu sebelumnya. Jalur keluar tersedia, tetapi dokumen pelayanan sedang terbuka di beberapa meja. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menunggu konfirmasi petugas gedung sambil meminta pengunjung tetap tenang di tempatnya masing-masing",
+          "score": 4
+        },
+        {
+          "id": "B",
+          "text": "Menghentikan layanan, mengamankan dokumen seperlunya, dan mengarahkan evakuasi sesuai prosedur",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Memeriksa sumber alarm bersama rekan sebelum memutuskan apakah pengunjung perlu meninggalkan ruangan",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Mengevakuasi pengunjung yang bersedia dan membiarkan lainnya menunggu sampai ada kepastian",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Memindahkan dokumen penting ke tempat aman terlebih dahulu sebelum mengarahkan pengunjung keluar",
+          "score": 1
+        }
+      ],
+      "explanation": "B mengutamakan keselamatan jiwa sambil mengamankan dokumen sejauh tidak menghambat evakuasi. A menjaga ketenangan tetapi terlalu lama menunggu kepastian, sedangkan E salah menempatkan dokumen di atas keselamatan.",
+      "id": "TKP-035"
+    },
+    {
+      "category": "TKP",
+      "question": "Dalam pertemuan dengan warga, seorang anggota tim menggunakan candaan yang dianggap biasa di lingkungannya. Beberapa peserta dari kelompok lain terlihat tidak nyaman, tetapi tidak menyampaikan keberatan. Setelah acara, anggota tersebut merasa pertemuan berjalan akrab dan ingin menggunakan pendekatan yang sama pada kegiatan berikutnya. Anda mendengar dua warga membicarakan candaan itu secara negatif. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menyampaikan pengamatan secara pribadi, mendengarkan maksudnya, dan menyusun pendekatan yang lebih inklusif",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Meminta maaf kepada warga atas nama tim tanpa membicarakannya lebih dahulu dengan anggota tersebut",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Menjelaskan pada kegiatan berikutnya bahwa setiap budaya memiliki cara bercanda yang berbeda",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Tidak membahasnya karena tidak ada warga yang menyampaikan keberatan melalui saluran resmi",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Meminta koordinator mengganti anggota tersebut pada pertemuan dengan kelompok yang berbeda",
+          "score": 1
+        }
+      ],
+      "explanation": "A menangani masalah tanpa mempermalukan anggota, menggali maksud, dan mencegah pengulangan melalui pendekatan inklusif. B responsif kepada warga, tetapi belum melibatkan anggota dalam perbaikan.",
+      "id": "TKP-036"
+    },
+    {
+      "category": "TKP",
+      "question": "Seorang pengguna melapor menerima pemberitahuan perubahan data yang tidak pernah ia lakukan. Pada saat yang sama, sistem menunjukkan akunnya masih aktif pada beberapa perangkat. Pengguna meminta Anda segera mengembalikan data, tetapi Anda tidak memiliki kewenangan mengubahnya tanpa pemeriksaan. Antrean pengaduan lain menunggu dan unit keamanan belum menjawab telepon. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membantu mengganti kata sandi, mencatat bukti, membatasi sesi jika tersedia, dan meneruskan insiden melalui kanal darurat",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Mengembalikan data berdasarkan keterangan pengguna lalu meminta unit keamanan memeriksa setelahnya",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Meminta pengguna menunggu unit keamanan karena setiap tindakan dapat menghilangkan bukti insiden",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Menyarankan pengguna membuat akun baru agar layanan tetap dapat digunakan sambil menunggu pemeriksaan",
+          "score": 3
+        },
+        {
+          "id": "E",
+          "text": "Menutup akun sementara tanpa mencatat sesi dan perubahan karena perlindungan pengguna menjadi prioritas",
+          "score": 1
+        }
+      ],
+      "explanation": "A mengurangi risiko yang sedang berlangsung, menjaga bukti, dan menggunakan eskalasi resmi. C menjaga bukti tetapi membiarkan akun tetap berisiko.",
+      "id": "TKP-037"
+    },
+    {
+      "category": "TKP",
+      "question": "Menjelang publikasi, data unit Anda menunjukkan 1.240 penerima layanan, sedangkan unit pelaporan mencatat 1.186. Kedua angka berasal dari sistem resmi, tetapi menggunakan waktu penarikan dan definisi status yang berbeda. Pimpinan meminta satu angka dalam tiga puluh menit. Jika memakai angka terbesar, capaian target terlihat terpenuhi. Jika menunggu rekonsiliasi lengkap, publikasi terlambat. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memakai angka unit Anda karena bersumber dari transaksi pelayanan yang lebih rinci",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Menggunakan angka yang lebih rendah sebagai pilihan paling aman sambil menyelesaikan rekonsiliasi",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Menyamakan definisi dan batas waktu data, lalu melaporkan angka sementara beserta keterbatasannya",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Menampilkan rata-rata kedua angka agar tidak mengutamakan salah satu sistem resmi",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Menunda publikasi karena perbedaan data resmi tidak boleh dijelaskan dengan angka sementara",
+          "score": 2
+        }
+      ],
+      "explanation": "C menyelesaikan sumber perbedaan pada definisi dan waktu data serta transparan bila hasil masih sementara. B konservatif, tetapi angka rendah belum tentu lebih benar.",
+      "id": "TKP-038"
+    },
+    {
+      "category": "TKP",
+      "question": "Seorang anggota berkinerja tinggi terus menerima tugas tambahan karena selalu menyelesaikannya tepat waktu. Belakangan ia sering bekerja sampai malam, tampak kelelahan, dan melakukan kesalahan kecil. Ia menolak pengurangan tugas karena khawatir dianggap tidak mampu. Tim sedang menghadapi tenggat besar, sedangkan anggota lain belum menguasai pekerjaannya. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membahas beban dan risiko secara pribadi, membagi tugas bertahap, serta menyiapkan dukungan kepada anggota lain",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Membiarkannya menentukan kapasitas sendiri karena ia paling memahami kondisi dan tanggung jawabnya",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Mengambil sebagian tugas tanpa menjelaskan alasannya agar ia dapat beristirahat tanpa merasa dinilai",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Meminta atasan mengeluarkannya sementara dari tugas penting sampai kondisi kerjanya kembali stabil",
+          "score": 3
+        },
+        {
+          "id": "E",
+          "text": "Mempertahankan pembagian sampai tenggat selesai lalu mengusulkan cuti sebagai bentuk pemulihan",
+          "score": 1
+        }
+      ],
+      "explanation": "A melindungi kesehatan dan mutu kerja sekaligus meningkatkan kemampuan tim lain. C membantu cepat, tetapi tindakan tanpa pembicaraan dapat mengurangi rasa percaya.",
+      "id": "TKP-039"
+    },
+    {
+      "category": "TKP",
+      "question": "Anda menemukan cara otomatis untuk memeriksa kelengkapan formulir yang dapat menghemat waktu. Uji kecil menunjukkan hasil baik, tetapi sistem sesekali menandai dokumen buram sebagai tidak lengkap. Pimpinan tertarik menggunakannya segera karena antrean meningkat. Penggunaan penuh dapat mempercepat layanan, namun kesalahan penolakan akan merugikan pemohon. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menggunakan sistem untuk seluruh permohonan dengan pemeriksaan manual hanya bagi pengguna yang mengajukan keberatan",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Menjalankan uji terbatas sebagai alat bantu, mengukur kesalahan, dan mempertahankan keputusan pada petugas",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Menunda penggunaan sampai sistem mampu memberikan hasil yang benar untuk seluruh jenis dokumen",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Menggunakan sistem hanya pada dokumen digital yang memenuhi standar kualitas unggahan tertentu",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Membandingkan hasil sistem dan petugas selama satu hari lalu memilih metode yang menghasilkan lebih banyak layanan",
+          "score": 1
+        }
+      ],
+      "explanation": "B menguji manfaat dan risiko tanpa menyerahkan keputusan kepada sistem. D membatasi risiko pada input, tetapi belum mengukur kesalahan keputusan secara menyeluruh.",
+      "id": "TKP-040"
+    },
+    {
+      "category": "TKP",
+      "question": "Anda melihat rekan senior melewati satu tahap verifikasi untuk mempercepat layanan. Ia mengatakan dokumen telah diperiksa berkali-kali pada proses sebelumnya dan pengulangan hanya membuang waktu. Pemohon memang memenuhi persyaratan, tetapi sistem mencatat tahap tersebut seolah telah dilakukan. Rekan itu dikenal membantu banyak pegawai dan meminta Anda tidak mempermasalahkan satu kasus. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membicarakan temuan dengan rekan, memastikan catatan diperbaiki, dan melaporkan melalui jalur sesuai tingkat risikonya",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Mengingatkan rekan secara pribadi dan menganggap kasus selesai karena hasil layanan tetap benar",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Mengulangi verifikasi diam-diam agar prosedur terpenuhi tanpa menimbulkan masalah bagi rekan",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Langsung menyampaikan identitas rekan kepada seluruh tim agar praktik serupa tidak dianggap wajar",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Mencatat kejadian dan menunggu apakah pelanggaran yang sama terjadi kembali sebelum mengambil tindakan",
+          "score": 2
+        }
+      ],
+      "explanation": "A memulihkan catatan, memberi ruang klarifikasi, dan tetap menggunakan jalur pertanggungjawaban yang proporsional. C memperbaiki hasil tetapi menyembunyikan pelanggaran pencatatan.",
+      "id": "TKP-041"
+    },
+    {
+      "category": "TKP",
+      "question": "Dua unit pelayanan harus berbagi satu ruang yang aksesibel bagi pengguna kursi roda. Unit Anda memiliki jumlah pemohon lebih banyak, sedangkan unit lain hanya menerima beberapa pemohon disabilitas setiap hari. Pimpinan meminta pembagian jadwal yang efisien. Jika ruang selalu diberikan kepada unit lain, banyak pemohon unit Anda harus menunggu; jika digunakan bergantian secara kaku, pengguna berkebutuhan akses dapat kehilangan layanan. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memberikan ruang kepada unit dengan jumlah pemohon terbanyak dan menyediakan bantuan fisik pada ruangan lain",
+          "score": 1
+        },
+        {
+          "id": "B",
+          "text": "Menetapkan jadwal dasar disertai mekanisme prioritas ruang berdasarkan kebutuhan akses pengguna yang hadir",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Membagi waktu sama rata agar kedua unit memiliki kesempatan penggunaan yang dapat diprediksi",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Mengkhususkan ruang untuk seluruh pengguna disabilitas dan memindahkan petugas sesuai jenis layanannya",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Meminta pengguna memberi tahu kebutuhan sehari sebelumnya agar ruangan dapat dijadwalkan tanpa perubahan",
+          "score": 2
+        }
+      ],
+      "explanation": "B menggabungkan kepastian jadwal dengan penyesuaian berdasarkan kebutuhan nyata. D sangat inklusif, tetapi perpindahan petugas untuk setiap layanan dapat sulit dijalankan.",
+      "id": "TKP-042"
+    },
+    {
+      "category": "TKP",
+      "question": "Beredar pesan bahwa biaya layanan resmi akan naik mulai besok. Akibatnya, warga datang berbondong-bondong dan antrean menjadi tidak terkendali. Kenaikan tersebut tidak benar, tetapi sumber pesan belum diketahui. Petugas ingin segera menulis “hoaks” pada media sosial, sementara beberapa warga menunjukkan tangkapan layar yang menyerupai pengumuman resmi lembaga. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengeluarkan klarifikasi dengan informasi biaya resmi, ciri kanal sah, dan cara melaporkan pesan mencurigakan",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Menyatakan pesan tersebut hoaks lalu meminta warga yang sudah datang kembali pada hari lain",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Menelusuri sumber dan menunda klarifikasi sampai dapat dijelaskan siapa yang membuat pengumuman",
+          "score": 2
+        },
+        {
+          "id": "D",
+          "text": "Melayani seluruh warga yang telah datang agar dampak pesan tidak menimbulkan kerugian tambahan",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Menutup sementara antrean baru dan meminta aparat menyelidiki pemalsuan pengumuman lembaga",
+          "score": 1
+        }
+      ],
+      "explanation": "A mengoreksi informasi, mengarahkan warga pada sumber resmi, dan membantu pelaporan. D menangani dampak hari itu tetapi dapat memperkuat kepanikan serta mengganggu layanan.",
+      "id": "TKP-043"
+    },
+    {
+      "category": "TKP",
+      "question": "Tim dari tiga wilayah menyusun satu laporan. Wilayah barat sering terlambat mengikuti rapat daring karena perbedaan jadwal lapangan, sedangkan wilayah lain mulai mengambil keputusan tanpa mereka. Dokumen bersama juga memiliki beberapa versi karena koneksi tidak stabil. Tenggat tinggal dua hari dan mengulang seluruh pembahasan akan menghabiskan waktu. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menetapkan satu dokumen utama, mencatat keputusan, dan memberi batas waktu tanggapan asinkron untuk bagian penting",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Meminta wilayah barat mengikuti seluruh jadwal pusat karena tenggat membutuhkan disiplin yang sama",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Menyerahkan bagian wilayah barat kepada tim lain lalu meminta mereka mengonfirmasi hasil akhirnya",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Menjadwalkan ulang semua rapat pada waktu yang dapat diikuti lengkap meskipun pengerjaan menjadi lebih singkat",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Membiarkan setiap wilayah menyelesaikan versinya lalu menggabungkan dokumen menjelang pengiriman",
+          "score": 1
+        }
+      ],
+      "explanation": "A membangun satu sumber kebenaran dan partisipasi asinkron tanpa mengulang semua rapat. C menyelamatkan tenggat, tetapi mengurangi kepemilikan wilayah terhadap isi laporan.",
+      "id": "TKP-044"
+    },
+    {
+      "category": "TKP",
+      "question": "Dalam beberapa rapat, seorang anggota senior sering memotong penjelasan pegawai baru dan menyebut pertanyaannya “terlalu dasar”. Pegawai baru kemudian berhenti menyampaikan pendapat, meskipun ia memiliki data lapangan yang tidak dimiliki anggota lain. Anggota senior beralasan rapat harus efisien dan tidak pernah menggunakan kata-kata kasar. Ketua rapat belum menyadari perubahan tersebut. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memberi ruang pegawai baru menyampaikan data, lalu membahas pola komunikasi dan aturan rapat secara konstruktif",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Menyarankan pegawai baru mempersiapkan pertanyaan lebih rinci agar anggota senior tidak mudah memotongnya",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Menegur anggota senior langsung di depan rapat agar semua orang mengetahui perilaku tersebut tidak dapat diterima",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Menyampaikan masalah kepada ketua secara pribadi dan menunggu ketua memperbaiki rapat berikutnya",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Meminta pegawai baru mengirim datanya secara tertulis agar rapat tetap efisien tanpa memicu perdebatan",
+          "score": 1
+        }
+      ],
+      "explanation": "A memulihkan partisipasi saat itu juga dan memperbaiki pola komunikasi secara konstruktif. D menggunakan jalur ketua, tetapi menunda kesempatan menyelamatkan data penting dalam rapat berjalan.",
+      "id": "TKP-045"
+    }
+  ]
+}

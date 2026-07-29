@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="170" viewBox="0 0 620 170" role="img" aria-label="Deret panah berputar dengan jumlah titik bertambah">
+  <rect width="620" height="170" fill="#ffffff"/>
+  <rect x="10" y="20" width="150" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><g transform="translate(85 78) rotate(0)">
+    <line x1="-30" y1="0" x2="13.5" y2="0" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+    <polyline points="3,-11.4 16.5,0 3,11.4" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g><circle cx="85" cy="125" r="5.5" fill="#e8a51a"/>
+   <rect x="180" y="20" width="150" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><g transform="translate(255 78) rotate(90)">
+    <line x1="-30" y1="0" x2="13.5" y2="0" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+    <polyline points="3,-11.4 16.5,0 3,11.4" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g><circle cx="246" cy="125" r="5.5" fill="#e8a51a"/><circle cx="264" cy="125" r="5.5" fill="#e8a51a"/>
+   <rect x="350" y="20" width="150" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><g transform="translate(425 78) rotate(180)">
+    <line x1="-30" y1="0" x2="13.5" y2="0" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+    <polyline points="3,-11.4 16.5,0 3,11.4" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g><circle cx="407" cy="125" r="5.5" fill="#e8a51a"/><circle cx="425" cy="125" r="5.5" fill="#e8a51a"/><circle cx="443" cy="125" r="5.5" fill="#e8a51a"/>
+   <text x="520" y="85" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#0f172a">→</text><rect x="545" y="20" width="65" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><text x="578" y="87" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#2563eb">?</text>
+</svg>

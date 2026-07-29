@@ -1063,7 +1063,7 @@ export default function AdminDashboard() {
                     <br/>
                     • Semua/TWK/TIU/TKP: Disimpan ke Bank Soal Utama (dipakai semua simulasi)
                     <br/>
-                    • Simulasi 1-10: Disimpan ke penyimpanan khusus simulasi tersebut
+                    • Tryout 1-10: Disimpan ke penyimpanan khusus tryout tersebut
                   </p>
                 </div>
 

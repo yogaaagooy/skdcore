@@ -73,6 +73,16 @@ export default function UserDropdown({ user, onLogout }) {
             </button>
 
             <button
+              className="w-full text-left px-3 py-2 hover:bg-slate-50 dark:hover:bg-slate-800"
+              onClick={() => {
+                setOpen(false);
+                navigate("/kritik-saran");
+              }}
+            >
+              Kritik & Saran
+            </button>
+
+            <button
               className="w-full text-left px-3 py-2 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800"
               onClick={() => setOpen(false)}
             >

@@ -1,197 +1,77 @@
 import { Link } from "react-router-dom";
 import ThemeToggle from "./components/ThemeToggle";
-import logo from "./assets/logo.png";
+import BrandLogo from "./components/BrandLogo";
+
+const features = [
+  ["01", "Latihan per bidang", "Fokus pada TWK, TIU, atau TKP dengan pilihan mode belajar dan mode ujian."],
+  ["02", "Buku kesalahan", "Soal yang belum tepat dikumpulkan agar dapat dipelajari kembali tanpa mencari dari awal."],
+  ["03", "Hasil yang terbaca", "Lihat nilai setiap bidang, jawaban, dan pembahasan untuk menentukan latihan berikutnya."],
+  ["04", "Tryout & peringkat", "Ukur kemampuan melalui paket tryout dan bandingkan hasil pada sesi yang sama."],
+];
+
+const faqs = [
+  ["Apakah NalarASN aplikasi resmi pemerintah?", "Bukan. NalarASN adalah sarana belajar mandiri yang independen dan tidak berafiliasi dengan BKN maupun instansi pemerintah."],
+  ["Apakah soal sama dengan ujian resmi?", "Tidak. Soal disusun sebagai bahan latihan berdasarkan kompetensi yang relevan, bukan salinan atau bocoran soal resmi."],
+  ["Apa perbedaan Mode Belajar dan Mode Ujian?", "Mode Belajar menampilkan jawaban terbaik dan pembahasan setelah menjawab. Mode Ujian menggunakan timer dan pembahasan ditampilkan setelah sesi selesai."],
+  ["Berapa jumlah soal dalam satu tryout?", "Paket tryout lengkap berisi 110 soal: 30 TWK, 35 TIU, dan 45 TKP dengan waktu 100 menit."],
+  ["Apakah tersedia latihan gratis?", "Ya. Latihan dasar, Tryout 1, dan agenda Tryout Nasional tertentu tersedia gratis sesuai jadwal serta ketentuan yang ditampilkan."],
+  ["Bagaimana jika menemukan kesalahan soal?", "Gunakan fitur laporan soal pada halaman pembahasan. Tim pengelola dapat meninjau pertanyaan, pilihan jawaban, dan pembahasannya."],
+  ["Bagaimana menyampaikan kritik atau saran?", "Setelah login, buka menu profil lalu pilih Kritik & Saran. Kamu dapat memantau status dan melihat balasan admin."],
+  ["Apakah nilai menjamin kelulusan?", "Tidak. Nilai, passing grade, dan peringkat di NalarASN hanya alat evaluasi belajar dan bukan hasil seleksi resmi."],
+];
 
 export default function LandingPageSKDCore() {
-  return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 dark:bg-slate-950 dark:text-slate-50">
-      {/* Navbar */}
-      <header className="border-b border-gray-200 bg-white/80 backdrop-blur dark:bg-slate-900/80 dark:border-slate-800">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <Link to="/" className="flex items-center" aria-label="NalarASN Beranda">
-            <img
-              src={logo}
-              alt="NalarASN"
-              className="h-10 w-auto max-w-[145px] object-contain"
-            />
-          </Link>
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <a href="#features" className="hover:text-blue-600 dark:hover:text-blue-400">
-              Fitur
-            </a>
-            <a href="#how-it-works" className="hover:text-blue-600 dark:hover:text-blue-400">
-              Cara Kerja
-            </a>
-            <a href="#for-who" className="hover:text-blue-600 dark:hover:text-blue-400">
-              Untuk Siapa
-            </a>
-            <a href="#faq" className="hover:text-blue-600 dark:hover:text-blue-400">
-              FAQ
-            </a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <ThemeToggle />
-            <Link
-              to="/login"
-              className="text-sm font-medium px-4 py-2 rounded-full border border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-slate-800"
-            >
-              Login
-            </Link>
+  return <div className="min-h-screen bg-[#f7f9fc] text-slate-900 dark:bg-[#07152f] dark:text-slate-50">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur dark:border-white/10 dark:bg-[#0b2a5b]/95">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+        <Link to="/"><BrandLogo size="md" compact /></Link>
+        <nav className="hidden items-center gap-7 text-sm font-semibold text-slate-600 dark:text-slate-200 md:flex">
+          <a href="#fitur" className="hover:text-[#2468d8]">Fitur</a>
+          <a href="#alur" className="hover:text-[#2468d8]">Cara belajar</a>
+          <a href="#tryout" className="hover:text-[#2468d8]">Tryout Gratis</a>
+          <a href="#faq" className="hover:text-[#2468d8]">FAQ</a>
+        </nav>
+        <div className="flex items-center gap-2"><ThemeToggle/><Link to="/login" className="rounded-xl border border-[#2468d8]/30 px-4 py-2.5 text-sm font-semibold text-[#2468d8] hover:bg-blue-50 dark:text-blue-200 dark:hover:bg-white/10">Masuk</Link><Link to="/register" className="hidden rounded-xl bg-[#2468d8] px-4 py-2.5 text-sm font-bold text-white hover:bg-blue-700 sm:block">Daftar gratis</Link></div>
+      </div>
+    </header>
+
+    <main>
+      <section className="relative overflow-hidden border-b border-slate-200 bg-white dark:border-white/10 dark:bg-[#07152f]">
+        <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#0b2a5b_0_33%,#2468d8_33%_66%,#e5a21a_66%)]" />
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 md:grid-cols-[1.1fr_.9fr] md:py-24">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#2468d8]">Latihan SKD berbasis pemahaman</p>
+            <h1 className="mt-5 max-w-2xl text-4xl font-black leading-[1.12] md:text-6xl">Latihan bukan untuk menghafal jawaban.</h1>
+            <p className="mt-5 max-w-xl text-lg font-semibold text-[#0b2a5b] dark:text-blue-100">Bangun cara berpikir, evaluasi kesalahan, lalu berlatih kembali dengan arah yang jelas.</p>
+            <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">NalarASN membantu calon peserta SKD belajar mandiri melalui latihan per bidang, tryout, pembahasan, buku kesalahan, dan catatan perkembangan.</p>
+            <div className="mt-8 flex flex-wrap gap-3"><Link to="/register" className="rounded-xl bg-[#2468d8] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-600/15 hover:bg-blue-700">Mulai belajar gratis</Link><a href="#fitur" className="rounded-xl border border-slate-300 bg-white px-6 py-3 text-sm font-bold text-[#0b2a5b] hover:border-blue-400 hover:bg-blue-50 dark:border-white/20 dark:bg-transparent dark:text-white dark:hover:bg-white/10">Pelajari fiturnya</a></div>
+            <p className="mt-5 text-xs text-slate-500">Independen · Bukan layanan resmi pemerintah · Tidak menjanjikan kelulusan</p>
+          </div>
+
+          <div className="overflow-hidden rounded-3xl border border-[#0b2a5b]/15 bg-[#f8fafc] shadow-xl shadow-[#0b2a5b]/10 dark:border-white/10 dark:bg-[#0b2a5b]">
+            <div className="flex items-center justify-between border-b border-slate-200 bg-[#0b2a5b] px-5 py-4 text-white dark:border-white/10"><div><p className="text-[10px] font-bold uppercase tracking-wider text-blue-200">Simulasi lengkap</p><h2 className="mt-1 text-lg font-bold">Tryout SKD</h2></div><span className="bg-[#e5a21a] px-3 py-1 text-xs font-black text-[#0b2a5b]">100 MENIT</span></div>
+            <div className="grid grid-cols-3 gap-px bg-slate-200 dark:bg-white/10">
+              {[["TWK","30","Wawasan Kebangsaan"],["TIU","35","Intelegensia Umum"],["TKP","45","Karakteristik Pribadi"]].map(([label,total,name])=><div key={label} className="bg-white p-4 dark:bg-[#102f63]"><span className="text-xs font-bold text-[#2468d8]">{label}</span><strong className="mt-2 block text-3xl text-[#0b2a5b] dark:text-white">{total}</strong><small className="mt-1 block leading-4 text-slate-500 dark:text-slate-300">{name}</small></div>)}
+            </div>
+            <div className="p-5"><div className="flex items-center justify-between text-sm"><span className="font-semibold">Total soal</span><strong className="text-xl text-[#0b2a5b] dark:text-white">110</strong></div><div className="mt-4 h-2 overflow-hidden bg-slate-200 dark:bg-white/10"><div className="h-full w-full bg-[linear-gradient(90deg,#0b2a5b_0_27%,#2468d8_27%_59%,#e5a21a_59%)]" /></div><p className="mt-4 text-xs leading-5 text-slate-500 dark:text-slate-300">Gunakan hasil untuk melihat bidang yang perlu diperkuat, bukan sekadar mengejar angka.</p></div>
           </div>
         </div>
-      </header>
+      </section>
 
-      <main className="max-w-6xl mx-auto px-4">
-        {/* Hero */}
-        <section className="py-12 md:py-20 flex flex-col md:flex-row items-center gap-10">
-          <div className="flex-1">
-            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
-              Siap SKD, Bukan Cuma Coba-Coba.
-            </h1>
-            <p className="text-gray-600 dark:text-slate-300 mb-6 max-w-xl">
-              Latihan TWK, TIU, dan TKP dengan pola mirip CAT. Ada timer, passing grade,
-              dan analisis nilai biar kamu tahu posisi kamu sekarang.
-            </p>
-            <div className="flex flex-wrap items-center gap-3">
-              <Link
-                to="/simulasi"
-                className="px-6 py-3 rounded-full bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700"
-              >
-                Mulai Simulasi Gratis
-              </Link>
-              <a
-                href="#features"
-                className="px-6 py-3 rounded-full border border-gray-300 text-sm font-semibold text-gray-800 hover:bg-gray-100 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-slate-800"
-              >
-                Lihat Fitur NalarASN
-              </a>
-            </div>
-            <p className="mt-3 text-xs text-gray-500 dark:text-slate-400">
-              Tidak resmi dari pemerintah. Dirancang sebagai latihan mandiri untuk bantu kamu siap tes SKD.
-            </p>
-          </div>
+      <section id="fitur" className="mx-auto max-w-6xl px-4 py-16">
+        <p className="text-xs font-bold uppercase tracking-wider text-[#2468d8]">Fitur utama</p><h2 className="mt-2 max-w-xl text-3xl font-bold text-[#0b2a5b] dark:text-white">Satu alur belajar yang saling terhubung</h2>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{features.map(([number,title,description], index)=><article key={title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#0b2a5b]"><span className={`text-sm font-black ${index === 3 ? "text-[#e5a21a]" : "text-[#2468d8]"}`}>{number}</span><h3 className="mt-8 text-lg font-bold">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-300">{description}</p></article>)}</div>
+      </section>
 
-          <div className="flex-1">
-            {/* Card simulasi mini */}
-            <div className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl shadow-sm border border-gray-200 p-6">
-              <div className="flex justify-between mb-4 text-xs font-medium text-gray-500 dark:text-slate-400">
-                <span>Simulasi SKD – Mode CAT</span>
-                <span>Timer: 100:00</span>
-              </div>
-              <div className="space-y-3 text-sm">
-                <div>
-                  <div className="flex justify-between">
-                    <span>TWK</span>
-                    <span className="font-semibold text-blue-600 dark:text-blue-400">65 / 80</span>
-                  </div>
-                  <div className="w-full bg-gray-100 dark:bg-slate-800 rounded-full h-2">
-                    <div className="h-2 rounded-full bg-blue-500" style={{ width: "80%" }} />
-                  </div>
-                </div>
+      <section id="alur" className="border-y border-slate-200 bg-white py-16 dark:border-white/10 dark:bg-[#0b2a5b]"><div className="mx-auto max-w-6xl px-4"><p className="text-xs font-bold uppercase tracking-wider text-[#e5a21a]">Cara belajar</p><h2 className="mt-2 text-3xl font-bold">Mulai, evaluasi, ulangi</h2><div className="mt-8 grid gap-8 md:grid-cols-3">{[["1","Pilih tujuan","Gunakan Mode Belajar untuk memahami soal atau Mode Ujian untuk melatih waktu."],["2","Periksa hasil","Baca pembahasan dan simpan soal yang belum dikuasai ke dalam pola belajar kamu."],["3","Perbaiki kelemahan","Ulangi bidang yang lemah, lalu ukur kembali melalui tryout berikutnya."]].map(([number,title,body])=><article key={number} className="border-l-4 border-[#2468d8] pl-5"><span className="text-xs font-black text-[#e5a21a]">LANGKAH {number}</span><h3 className="mt-2 text-xl font-bold">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-300">{body}</p></article>)}</div></div></section>
 
-                <div>
-                  <div className="flex justify-between">
-                    <span>TIU</span>
-                    <span className="font-semibold text-blue-600 dark:text-blue-400">80 / 80</span>
-                  </div>
-                  <div className="w-full bg-gray-100 dark:bg-slate-800 rounded-full h-2">
-                    <div className="h-2 rounded-full bg-blue-500" style={{ width: "100%" }} />
-                  </div>
-                </div>
+      <section id="tryout" className="mx-auto max-w-6xl px-4 py-16"><div className="grid overflow-hidden rounded-3xl border border-[#0b2a5b]/15 bg-[#0b2a5b] text-white shadow-xl shadow-[#0b2a5b]/10 md:grid-cols-[1fr_auto]"><div className="p-7 sm:p-10"><p className="text-xs font-bold uppercase tracking-wider text-[#e5a21a]">Agenda mingguan</p><h2 className="mt-2 text-3xl font-bold">Tryout Nasional Gratis</h2><p className="mt-3 max-w-2xl text-sm leading-7 text-blue-100">Sesi bersama untuk berlatih secara terukur dan membandingkan hasil secara sehat. Jadwal, kode akses, serta ketentuan ditampilkan langsung di aplikasi.</p><ul className="mt-5 grid gap-2 text-sm text-blue-50 sm:grid-cols-3"><li>✓ Satu kesempatan</li><li>✓ Peringkat per sesi</li><li>✓ Pembahasan setelah agenda</li></ul></div><div className="grid min-w-56 place-items-center bg-[#e5a21a] p-8 text-center text-[#0b2a5b]"><strong className="text-5xl">0</strong><span className="mt-1 text-xs font-black uppercase tracking-wider">Biaya peserta</span><Link to="/register" className="mt-5 rounded-xl border-2 border-[#0b2a5b] px-4 py-2 text-xs font-black hover:bg-white/40">Buat akun</Link></div></div></section>
 
-                <div>
-                  <div className="flex justify-between">
-                    <span>TKP</span>
-                    <span className="font-semibold text-blue-600 dark:text-blue-400">155 / 166</span>
-                  </div>
-                  <div className="w-full bg-gray-100 dark:bg-slate-800 rounded-full h-2">
-                    <div className="h-2 rounded-full bg-blue-500" style={{ width: "93%" }} />
-                  </div>
-                </div>
-              </div>
+      <section id="faq" className="border-t border-slate-200 bg-white py-16 dark:border-white/10 dark:bg-[#07152f]"><div className="mx-auto grid max-w-6xl gap-8 px-4 md:grid-cols-[.7fr_1.3fr]"><div><p className="text-xs font-bold uppercase tracking-wider text-[#2468d8]">FAQ</p><h2 className="mt-2 text-3xl font-bold text-[#0b2a5b] dark:text-white">Sebelum mulai belajar</h2><p className="mt-3 text-sm leading-6 text-slate-500">Informasi penting tentang materi, hasil, akses, dan kedudukan NalarASN.</p></div><div className="divide-y divide-slate-200 border-y border-slate-200 dark:divide-white/10 dark:border-white/10">{faqs.map(([question,answer])=><details key={question} className="group py-5"><summary className="cursor-pointer list-none font-bold text-[#0b2a5b] dark:text-white">{question}<span className="float-right ml-4 text-xl text-[#e5a21a] group-open:rotate-45">+</span></summary><p className="mt-3 max-w-2xl text-sm leading-6 text-slate-500 dark:text-slate-300">{answer}</p></details>)}</div></div></section>
 
-              <div className="mt-5 p-3 rounded-xl bg-blue-50 dark:bg-slate-800 border border-blue-100 dark:border-slate-700 text-xs text-blue-900 dark:text-blue-200">
-                <p className="font-semibold">Analisis singkat</p>
-                <p>
-                  Nilai kamu sudah melewati passing grade di semua bidang. Pertahankan ritme
-                  latihan dan fokus perkuat TWK.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+      <section className="bg-[#2468d8] py-12 text-white"><div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-5 px-4 sm:flex-row sm:items-center"><div><h2 className="text-2xl font-bold">Siap memulai latihan?</h2><p className="mt-1 text-sm text-blue-100">Buat akun gratis dan mulai dari bidang yang paling ingin kamu perkuat.</p></div><Link to="/register" className="rounded-xl bg-white px-6 py-3 text-sm font-black text-[#0b2a5b] hover:bg-blue-50">Daftar sekarang</Link></div></section>
+    </main>
 
-        {/* Kenapa NalarASN */}
-        <section id="features" className="py-10">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Kenapa pakai NalarASN?
-          </h2>
-          <p className="text-gray-600 dark:text-slate-300 mb-6 max-w-2xl">
-            Dirancang untuk pejuang CPNS yang mau latihan serius, bukan cuma lewat-lewat.
-          </p>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-5">
-              <h3 className="font-semibold mb-2">Simulasi mirip ujian asli</h3>
-              <p className="text-sm text-gray-600 dark:text-slate-300">
-                Tampilan bersih, ada timer, jumlah soal, dan sistem nilai yang ngikutin pola SKD.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-5">
-              <h3 className="font-semibold mb-2">Analisis nilai otomatis</h3>
-              <p className="text-sm text-gray-600 dark:text-slate-300">
-                Langsung lihat nilai per bidang, status lolos/tidak, dan bagian mana yang perlu diperbaiki.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-5">
-              <h3 className="font-semibold mb-2">Pantau progress dari waktu ke waktu</h3>
-              <p className="text-sm text-gray-600 dark:text-slate-300">
-                Rekam semua simulasi kamu dan lihat grafik perkembangan nilai.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Fitur Utama */}
-        <section className="py-10">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Fitur latihan TWK, TIU, dan TKP.
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-5">
-              <span className="text-xs font-semibold text-blue-600">TWK</span>
-              <h3 className="font-semibold mb-2">Tes Wawasan Kebangsaan</h3>
-              <p className="text-sm text-gray-600 dark:text-slate-300">
-                Soal-soal tentang Pancasila, UUD 1945, NKRI, dan kebangsaan dengan pembahasan yang gampang dipahami.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-5">
-              <span className="text-xs font-semibold text-blue-600">TIU</span>
-              <h3 className="font-semibold mb-2">Tes Intelegensi Umum</h3>
-              <p className="text-sm text-gray-600 dark:text-slate-300">
-                Logika, numerik, dan verbal untuk ngasah kemampuan berpikir cepat dan tepat.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-5">
-              <span className="text-xs font-semibold text-blue-600">TKP</span>
-              <h3 className="font-semibold mb-2">Tes Karakteristik Pribadi</h3>
-              <p className="text-sm text-gray-600 dark:text-slate-300">
-                Studi kasus situasional biar kamu kebiasa dengan pola soal penilaian karakter.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Cara Kerja, Untuk Siapa, FAQ sama seperti versi sebelumnya (boleh tetap) */}
-        {/* ...kalau mau gue bisa tulisin ulang, tapi inti UI & dark mode-nya udah keliatan */}
-      </main>
-
-      {/* Footer */}
-      <footer className="border-t border-gray-200 dark:border-slate-800 mt-10">
-        <div className="max-w-6xl mx-auto px-4 py-6 text-xs text-gray-500 dark:text-slate-400 flex flex-col md:flex-row items-center justify-between gap-2">
-          <span>© {new Date().getFullYear()} NalarASN. Latihan cerdas, langkah nyata menuju ASN.</span>
-          <span>Not affiliated with any government institution.</span>
-        </div>
-      </footer>
-    </div>
-  );
+    <footer className="border-t border-slate-200 bg-white dark:border-white/10 dark:bg-[#07152f]"><div className="mx-auto grid max-w-6xl gap-6 px-4 py-8 text-sm sm:grid-cols-[1fr_auto]"><div><BrandLogo size="sm" compact /><p className="mt-2 max-w-md text-xs leading-5 text-slate-500">Platform latihan mandiri. Soal, nilai, dan peringkat bukan hasil resmi serta tidak menjamin kelulusan.</p></div><div className="flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-slate-600 dark:text-slate-300"><Link to="/panduan">Panduan</Link><Link to="/privasi">Privasi</Link><Link to="/ketentuan">Ketentuan</Link><Link to="/login">Kritik & Saran</Link></div><p className="text-xs text-slate-500 sm:col-span-2">© {new Date().getFullYear()} NalarASN. Dikembangkan sebagai sarana belajar mandiri.</p></div></footer>
+  </div>;
 }

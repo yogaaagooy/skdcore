@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { getCurrentUser, setCurrentUser } from "../utils/auth";
 import { logout, updateProfile } from "../services/auth";
-import logo from "../assets/logo.png";
+import BrandLogo from "../components/BrandLogo";
 
 const HISTORY_KEY = "skdcore_simulasi_history_v1";
 
@@ -74,14 +74,12 @@ export default function Profile() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-slate-950 dark:text-slate-50">
+    <div className="app-page min-h-screen bg-gray-50 dark:bg-slate-950 dark:text-slate-50">
       <Navbar />
 
       <main className="max-w-4xl mx-auto px-4 py-6 space-y-6">
         <section className="flex flex-col items-center rounded-2xl border border-gray-200 bg-white p-6 text-center dark:border-slate-800 dark:bg-slate-900 sm:flex-row sm:text-left">
-          <div className="grid h-20 w-20 shrink-0 place-items-center rounded-2xl bg-blue-50 p-3 ring-4 ring-blue-100 dark:bg-slate-800 dark:ring-blue-950">
-            <img src={logo} alt="Logo profil NalarASN" className="w-full object-contain" />
-          </div>
+          <BrandLogo size="lg" className="h-20 shrink-0 ring-4 ring-blue-100 dark:ring-blue-950" />
           <div className="mt-4 sm:ml-5 sm:mt-0">
             <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">Profil pengguna</p>
             <h1 className="mt-1 text-xl font-bold">{user.name || "Peserta NalarASN"}</h1>
@@ -89,7 +87,7 @@ export default function Profile() {
           </div>
         </section>
         <section className={`rounded-2xl border p-5 ${premiumActive ? "border-emerald-200 bg-emerald-50 dark:border-emerald-900 dark:bg-emerald-950/20" : "border-gray-200 bg-white dark:border-slate-800 dark:bg-slate-900"}`}>
-          <div className="flex flex-wrap items-center justify-between gap-3"><div><p className={`text-xs font-bold uppercase tracking-wider ${premiumActive ? "text-emerald-700 dark:text-emerald-300" : "text-gray-500"}`}>Status berlangganan</p><h2 className="mt-1 text-xl font-bold">{user.role === "admin" ? "Akses Administrator" : premiumActive ? "NalarASN Premium" : "Paket Gratis"}</h2><p className="mt-1 text-sm text-gray-500 dark:text-slate-400">{user.role === "admin" ? "Semua paket terbuka untuk pengelolaan aplikasi." : premiumActive ? `Aktif sampai ${premiumUntil.toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}` : premiumUntil ? "Masa premium telah berakhir." : "Paket 1 dapat digunakan tanpa berlangganan."}</p></div><span className={`rounded-full px-3 py-1 text-xs font-bold ${premiumActive ? "bg-emerald-600 text-white" : "bg-gray-100 text-gray-600 dark:bg-slate-800 dark:text-slate-300"}`}>{premiumActive ? "Aktif" : "Gratis"}</span></div>
+          <div className="flex flex-wrap items-center justify-between gap-3"><div><p className={`text-xs font-bold uppercase tracking-wider ${premiumActive ? "text-emerald-700 dark:text-emerald-300" : "text-gray-500"}`}>Status berlangganan</p><h2 className="mt-1 text-xl font-bold">{user.role === "admin" ? "Akses Administrator" : premiumActive ? "NalarASN Premium" : "Akses Gratis"}</h2><p className="mt-1 text-sm text-gray-500 dark:text-slate-400">{user.role === "admin" ? "Semua tryout terbuka untuk pengelolaan aplikasi." : premiumActive ? `Aktif sampai ${premiumUntil.toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}` : premiumUntil ? "Masa premium telah berakhir." : "Latihan dasar dan Tryout 1 dapat digunakan tanpa berlangganan."}</p></div><span className={`rounded-full px-3 py-1 text-xs font-bold ${premiumActive ? "bg-emerald-600 text-white" : "bg-gray-100 text-gray-600 dark:bg-slate-800 dark:text-slate-300"}`}>{premiumActive ? "Aktif" : "Gratis"}</span></div>
         </section>
         <section className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-5">
           <h2 className="text-xl font-bold mb-3">Data akun</h2>
@@ -118,12 +116,14 @@ export default function Profile() {
                 className="w-full border border-gray-200 dark:border-slate-800 rounded-lg px-3 py-2 text-sm bg-gray-50 dark:bg-slate-800/80 text-gray-500 dark:text-slate-400"
               />
             </div>
-            <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-slate-400">
-              <span>Role: </span>
-              <span className="px-2 py-0.5 rounded-full border border-gray-300 dark:border-slate-700">
-                {user.role}
-              </span>
-            </div>
+            {user.role === "admin" && (
+              <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-slate-400">
+                <span>Role:</span>
+                <span className="rounded-full border border-gray-300 px-2 py-0.5 dark:border-slate-700">
+                  Admin
+                </span>
+              </div>
+            )}
             <button
               type="submit"
               className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700"
@@ -136,12 +136,12 @@ export default function Profile() {
         <section className="bg-white dark:bg-slate-900 dark:border-slate-800 rounded-2xl border border-gray-200 p-5">
           <h2 className="text-sm font-semibold mb-2">Statistik latihan kamu</h2>
           <p className="text-xs text-gray-600 dark:text-slate-300 mb-3">
-            Data ini hanya berdasarkan simulasi yang tersimpan di perangkat ini.
+            Data ini hanya berdasarkan latihan yang tersimpan di perangkat ini.
           </p>
           <div className="flex flex-wrap gap-6 text-sm">
             <div>
               <p className="text-xs text-gray-500 dark:text-slate-400 mb-1">
-                Total simulasi dikerjakan
+                Total sesi dikerjakan
               </p>
               <p className="text-2xl font-bold">{historyCount}</p>
             </div>
@@ -158,6 +158,12 @@ export default function Profile() {
           </div>
         </section>
 
+        <button
+          onClick={() => navigate("/kritik-saran")}
+          className="mr-2 px-4 py-2 rounded-lg border border-blue-200 text-sm font-semibold text-blue-600 hover:bg-blue-50 dark:border-blue-900 dark:hover:bg-blue-950/30"
+        >
+          Kritik & Saran
+        </button>
         <button
           onClick={() => navigate("/dashboard")}
           className="px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-700 text-sm hover:bg-gray-50 dark:hover:bg-slate-800"

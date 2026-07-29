@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import BrandLogo from "../components/BrandLogo";
 import { getCurrentUser, setCurrentUser } from "../utils/auth";
 import { createUser } from "../services/auth";
 
@@ -8,6 +8,7 @@ export default function Register() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -19,12 +20,13 @@ export default function Register() {
 
     try {
       setLoading(true);
+      setError("");
       const user = await createUser({ name, email, password, instansi });
       setCurrentUser(user);
       navigate("/dashboard");
     } catch (err) {
       const messages = { "auth/email-already-in-use": "Email sudah terdaftar.", "auth/weak-password": "Password minimal 6 karakter." };
-      alert(messages[err.code] || err.message || "Gagal daftar.");
+      setError(messages[err.code] || err.message || "Gagal daftar.");
     } finally {
       setLoading(false);
     }
@@ -39,7 +41,7 @@ export default function Register() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-950 px-4">
       <div className="w-full max-w-md bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-gray-200 dark:border-slate-800 p-6">
         <div className="flex flex-col items-center mb-6">
-          <Link to="/" aria-label="Kembali ke halaman utama"><img src={logo} alt="NalarASN" className="h-12 w-auto max-w-[210px] mb-3 object-contain" /></Link>
+          <Link to="/" aria-label="Kembali ke halaman utama" className="mb-3"><BrandLogo size="lg" /></Link>
           <p className="text-sm text-gray-600 dark:text-slate-300 text-center">
             Buat akun baru untuk mulai latihan SKD.
           </p>
@@ -91,6 +93,7 @@ export default function Register() {
             <input name="instansi" type="text" required className="w-full border border-gray-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Contoh: Kementerian Imigrasi dan Pemasyarakatan" />
           </div>
 
+          {error && <p role="alert" className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-700 dark:border-red-900 dark:bg-red-950/30 dark:text-red-300">{error}</p>}
           <button
             type="submit"
             disabled={loading}

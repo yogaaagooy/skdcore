@@ -1,3 +1,5 @@
+import { getImageData, isAllowedImageUrl } from "../components/QuestionMedia";
+
 const EXPECTED_COUNTS = { TWK: 30, TIU: 35, TKP: 45 };
 
 function normalizedText(value) {
@@ -17,10 +19,22 @@ export function validateQuestionPackage(questions, target = "main") {
     if (ids.has(String(question.id))) errors.push(`${label}: ID duplikat (${question.id}).`);
     ids.add(String(question.id));
     const text = normalizedText(question.question);
-    if (texts.has(text)) errors.push(`${label}: pertanyaan duplikat.`);
-    texts.add(text);
+    const imageIdentity = getImageData(question.image || question.imageUrl)?.url || normalizedText(question.figure);
+    const contentIdentity = `${text}|${imageIdentity}`;
+    if (texts.has(contentIdentity)) errors.push(`${label}: pertanyaan dan media duplikat.`);
+    texts.add(contentIdentity);
     if (!question.explanation || normalizedText(question.explanation).length < 30) errors.push(`${label}: pembahasan wajib dan minimal 30 karakter.`);
-    if (!Array.isArray(question.options) || question.options.some((option) => !normalizedText(option.text))) errors.push(`${label}: semua pilihan A–E wajib berisi teks.`);
+    const questionImage = question.image || question.imageUrl;
+    if (questionImage && !isAllowedImageUrl(questionImage)) errors.push(`${label}: URL gambar pertanyaan tidak valid. Gunakan HTTPS, path /public, atau data image.`);
+    if (questionImage && typeof questionImage === "object" && !normalizedText(questionImage.alt)) warnings.push(`${label}: gambar pertanyaan sebaiknya memiliki teks alternatif.`);
+    if (!Array.isArray(question.options) || question.options.some((option) => !normalizedText(option.text) && !getImageData(option.image || option.imageUrl))) {
+      errors.push(`${label}: setiap pilihan A–E wajib memiliki teks atau gambar.`);
+    }
+    (question.options || []).forEach((option) => {
+      const optionImage = option.image || option.imageUrl;
+      if (optionImage && !isAllowedImageUrl(optionImage)) errors.push(`${label} opsi ${option.id}: URL gambar tidak valid.`);
+      if (optionImage && typeof optionImage === "object" && !normalizedText(optionImage.alt)) warnings.push(`${label} opsi ${option.id}: gambar sebaiknya memiliki teks alternatif.`);
+    });
 
     const scores = (question.options || []).map((option) => Number(option.score));
     if (["TWK", "TIU"].includes(question.category)) {

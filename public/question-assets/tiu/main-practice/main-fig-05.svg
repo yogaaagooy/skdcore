@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260" role="img" aria-label="Gabungan jumlah garis">
+  <rect width="900" height="260" rx="20" fill="#f8fafc"/>
+  <g stroke="#0f172a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(70 45)"><path d="M20 20 V150 M70 20 V150 M0 85 H90"/><text x="115" y="95" fill="#2563eb" stroke="none" font-size="40">+</text><path d="M180 20 V150 M230 20 V150 M280 20 V150 M160 85 H300"/><text x="330" y="95" fill="#2563eb" stroke="none" font-size="40">→</text><text x="410" y="105" fill="#2563eb" stroke="none" font-size="68">?</text></g></g>
+</svg>

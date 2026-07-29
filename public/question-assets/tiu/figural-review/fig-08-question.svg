@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="180" viewBox="0 0 760 180" role="img" aria-label="Analogi rotasi arah, pergantian warna, dan pertambahan titik">
+  <rect width="760" height="180" fill="#ffffff"/>
+  <rect x="10" y="25" width="150" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><g transform="translate(85 72) rotate(270)">
+    <line x1="-30" y1="0" x2="13.5" y2="0" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+    <polyline points="3,-11.4 16.5,0 3,11.4" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g><circle cx="85" cy="125" r="5.5" fill="#e8a51a"/>
+   <text x="190" y="90" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#0f172a">→</text>
+   <rect x="220" y="25" width="150" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><g transform="translate(295 72) rotate(0)">
+    <line x1="-30" y1="0" x2="13.5" y2="0" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+    <polyline points="3,-11.4 16.5,0 3,11.4" fill="none" stroke="#0f172a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g><circle cx="286" cy="125" r="5.5" fill="#e8a51a"/><circle cx="304" cy="125" r="5.5" fill="#e8a51a"/>
+   <text x="400" y="95" font-family="Arial" font-size="44" font-weight="700" fill="#0f172a">:</text>
+   <rect x="435" y="25" width="150" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><g transform="translate(510 72) rotate(180)">
+    <line x1="-30" y1="0" x2="13.5" y2="0" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+    <polyline points="3,-11.4 16.5,0 3,11.4" fill="none" stroke="#0f172a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g><circle cx="501" cy="125" r="5.5" fill="#e8a51a"/><circle cx="519" cy="125" r="5.5" fill="#e8a51a"/>
+   <text x="615" y="90" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#0f172a">→</text><rect x="645" y="25" width="105" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><text x="697" y="92" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#2563eb">?</text>
+</svg>

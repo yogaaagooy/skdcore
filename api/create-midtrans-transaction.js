@@ -20,6 +20,11 @@ module.exports = async function handler(request, response) {
     const firebaseUser = await verifyUser(request);
     if (!firebaseUser) return send(response, 401, { message: "Sesi login tidak valid. Silakan login ulang." });
 
+    const premiumSettings = await adminDb().collection("settings").doc("premium").get();
+    if (!premiumSettings.exists || premiumSettings.data()?.enabled !== true) {
+      return send(response, 503, { message: "Paket premium sedang dinonaktifkan oleh administrator." });
+    }
+
     const packageNumber = Number(request.body?.packageNumber);
     if (!Number.isInteger(packageNumber) || packageNumber < 2 || packageNumber > 10) {
       return send(response, 400, { message: "Paket premium tidak valid." });

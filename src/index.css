@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-gray-50 text-gray-900 antialiased dark:bg-slate-950 dark:text-slate-50;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(36, 104, 216, 0.35);
+  outline-offset: 2px;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 767px) {
+  .app-page {
+    padding-bottom: calc(4.75rem + env(safe-area-inset-bottom));
+  }
+}
+
+@media (min-width: 768px) {
+  .app-page {
+    padding-left: var(--app-sidebar-width, 15.5rem);
+    transition: padding-left 200ms ease;
+  }
 }

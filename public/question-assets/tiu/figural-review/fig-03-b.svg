@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="170" viewBox="0 0 220 170" role="img" aria-label="Segitiga luar, belah ketupat bawah, penanda atas">
+  <rect width="220" height="170" fill="#ffffff"/>
+  <rect x="10" y="10" width="200" height="150" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><polygon points="110,33 155.03332099679082,111 64.96667900320918,111" fill="none" stroke="#0f172a" stroke-width="5" stroke-linejoin="round"/><polygon points="136.8700576850888,105 110,131.8700576850888 83.1299423149112,105 110,78.1299423149112" fill="none" stroke="#2563eb" stroke-width="5" stroke-linejoin="round"/><circle cx="110" cy="35" r="8" fill="#e8a51a"/>
+</svg>

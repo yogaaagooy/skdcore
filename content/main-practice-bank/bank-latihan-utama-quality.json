@@ -1,0 +1,4114 @@
+{
+  "id": "bank-latihan-utama-quality",
+  "title": "Bank Latihan Utama NalarASN",
+  "description": "Bank latihan terpisah dari Tryout 1: 30 TWK, 35 TIU termasuk 10 figural, dan 45 TKP.",
+  "durationMinutes": 100,
+  "version": "practice-quality-2026-07-v1",
+  "status": "review",
+  "questions": [
+    {
+      "id": "LAT-TWK-001",
+      "category": "TWK",
+      "question": "Pemerintah daerah akan menertibkan permukiman di sempadan sungai untuk mencegah banjir. Sebagian warga telah tinggal di sana puluhan tahun dan tidak memahami pilihan relokasi. Kebijakan yang paling mencerminkan kemanusiaan yang adil dan beradab adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menjelaskan risiko, mendata kondisi warga, menyediakan mekanisme keberatan dan pilihan penanganan yang layak sebelum penertiban",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Memberikan ganti rugi yang sama kepada semua warga tanpa memeriksa status dan kebutuhannya",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Menyerahkan seluruh proses kepada aparat agar keputusan teknis tidak dipengaruhi masyarakat",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Menunda penertiban tanpa batas agar tidak menimbulkan protes",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Melaksanakan penertiban segera karena keselamatan publik selalu menghapus hak individual",
+          "score": 0
+        }
+      ],
+      "explanation": "Keselamatan publik tetap dapat dijaga tanpa mengabaikan martabat, kepastian prosedur, partisipasi, dan kondisi faktual warga. Kesetaraan tidak selalu berarti perlakuan identik.",
+      "source": "bank-latihan-utama",
+      "competency": "Pancasila",
+      "difficulty": "sulit",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-002",
+      "category": "TWK",
+      "question": "Dalam musyawarah desa, 80% peserta menyetujui penggunaan seluruh dana untuk jalan di wilayah mayoritas. Dusun terpencil membutuhkan akses air bersih yang mendesak. Ketua musyawarah sebaiknya...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membatalkan rapat dan menyerahkan keputusan kepada kepala desa",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Membuka kembali pembahasan dengan data kebutuhan agar keputusan mayoritas tetap memperhatikan keadilan bagi seluruh warga",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Membagi dana sama rata tanpa melihat biaya dan tingkat kebutuhan",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Mengesahkan hasil karena keputusan mayoritas merupakan bentuk kedaulatan rakyat",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Meminta dusun terpencil menerima keputusan demi persatuan",
+          "score": 0
+        }
+      ],
+      "explanation": "Musyawarah bukan sekadar menghitung suara. Hikmat kebijaksanaan menuntut alasan, data, kepentingan bersama, dan perlindungan kelompok yang kurang terwakili.",
+      "source": "bank-latihan-utama",
+      "competency": "Pancasila",
+      "difficulty": "sulit",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-003",
+      "category": "TWK",
+      "question": "Sebuah instansi menyediakan layanan digital sebagai satu-satunya kanal. Kebijakan itu mempercepat proses, tetapi warga lansia dan penyandang disabilitas tertentu kesulitan mengaksesnya. Perbaikan yang paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengecualikan kelompok tersebut dari persyaratan pelayanan",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Mengembalikan seluruh layanan menjadi manual",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Mempertahankan kanal digital dan menyediakan bantuan serta alternatif akses yang setara bagi kelompok yang membutuhkan",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Memberi pelatihan sekali lalu menutup layanan bantuan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Mewajibkan keluarga mewakili warga yang kesulitan",
+          "score": 0
+        }
+      ],
+      "explanation": "Transformasi digital dapat dipertahankan, tetapi negara perlu memberi kemudahan dan perlakuan khusus agar kesempatan serta manfaatnya setara.",
+      "source": "bank-latihan-utama",
+      "competency": "keadilan sosial",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-004",
+      "category": "TWK",
+      "question": "Seorang pegawai menemukan pejabat meminta laporan capaian dinaikkan agar unit memperoleh penghargaan. Data yang sebenarnya tetap menunjukkan peningkatan, hanya belum mencapai target. Tindakan paling berintegritas adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mencantumkan angka target dengan catatan kecil bahwa data belum final",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Mengirim data asli secara anonim kepada media",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Mengikuti permintaan karena tujuannya menjaga reputasi instansi",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Menolak perubahan data, menyampaikan capaian faktual, dan menawarkan penjelasan serta rencana perbaikan",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Menunda laporan sampai target tercapai",
+          "score": 0
+        }
+      ],
+      "explanation": "Integritas mengharuskan laporan sesuai bukti. Penolakan disertai penjelasan dan solusi menjaga akuntabilitas tanpa mengabaikan jalur kedinasan.",
+      "source": "bank-latihan-utama",
+      "competency": "integritas",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-005",
+      "category": "TWK",
+      "question": "Ketika menyusun pengadaan, anggota panitia menyadari salah satu calon penyedia dimiliki saudaranya. Ia tidak ikut menilai harga, tetapi masih memiliki akses dokumen peserta lain. Langkah yang tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Meminta saudaranya mengundurkan diri tanpa melapor kepada panitia",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Tetap bekerja selama penyedia tersebut tidak menang",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Tetap bekerja karena tidak ikut menilai harga",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Cukup berjanji tidak membocorkan dokumen",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Mengungkapkan konflik kepentingan dan menarik diri dari proses sesuai mekanisme",
+          "score": 5
+        }
+      ],
+      "explanation": "Konflik kepentingan mencakup risiko maupun persepsi ketidaknetralan. Pengungkapan dan pengalihan peran melindungi proses serta semua pihak.",
+      "source": "bank-latihan-utama",
+      "competency": "integritas",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-006",
+      "category": "TWK",
+      "question": "Beredar video pendek yang seolah menunjukkan suatu kelompok merusak simbol negara. Video belum terverifikasi dan mulai memicu ajakan kekerasan. Sikap bela negara yang paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tidak menyebarkan, memeriksa konteks melalui sumber tepercaya, dan melaporkan ajakan kekerasan melalui kanal resmi",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Menghapus video dari perangkat dan mengabaikan percakapan",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Menyebut semua anggota kelompok tersebut bertanggung jawab",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Menyebarkan video dengan pesan agar masyarakat waspada",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Membalas ajakan tersebut dengan ancaman yang lebih keras",
+          "score": 0
+        }
+      ],
+      "explanation": "Bela negara tidak identik dengan reaksi emosional. Verifikasi, pencegahan eskalasi, dan pelaporan sah menjaga persatuan serta keamanan.",
+      "source": "bank-latihan-utama",
+      "competency": "bela negara",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-007",
+      "category": "TWK",
+      "question": "Saat bencana besar, seorang ASN tidak ditugaskan ke lokasi. Ia memiliki keahlian mengelola data dan melihat banyak daftar kebutuhan berbeda beredar. Kontribusi paling efektif adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menunggu perintah karena bantuan bencana hanya tugas petugas lapangan",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Membantu posko resmi memverifikasi dan menyatukan data kebutuhan sesuai keahliannya",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Menyebarkan seluruh daftar agar masyarakat memilih sendiri",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Datang sendiri ke lokasi agar dapat membantu langsung",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menggalang barang sebanyak mungkin tanpa berkoordinasi",
+          "score": 0
+        }
+      ],
+      "explanation": "Bela negara dilakukan sesuai kemampuan melalui kontribusi yang terkoordinasi. Pengelolaan data yang valid mengurangi bantuan salah sasaran.",
+      "source": "bank-latihan-utama",
+      "competency": "bela negara",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-008",
+      "category": "TWK",
+      "question": "Pemerintah daerah ingin membuat hubungan kerja sama langsung dengan negara lain dan menyatakan kesepakatan tersebut tidak perlu diketahui pemerintah pusat karena hanya berdampak lokal. Penilaian yang tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Benar karena otonomi memberi kedaulatan kepada daerah",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Benar selama tidak menggunakan APBN",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Tidak tepat karena kewenangan daerah tetap dijalankan dalam NKRI dan urusan luar negeri merupakan kewenangan pusat",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Tidak tepat hanya jika negara mitra tidak memiliki hubungan diplomatik",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Benar jika disetujui DPRD dengan suara bulat",
+          "score": 0
+        }
+      ],
+      "explanation": "Otonomi bukan kedaulatan terpisah. Daerah mengatur urusannya dalam kerangka NKRI, sedangkan politik luar negeri merupakan urusan pemerintahan absolut pusat.",
+      "source": "bank-latihan-utama",
+      "competency": "NKRI",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-009",
+      "category": "TWK",
+      "question": "Sebuah organisasi mengusulkan Indonesia diubah menjadi konfederasi agar setiap wilayah dapat keluar sewaktu-waktu. Alasan konstitusional paling kuat untuk menolak usul tersebut adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Seluruh negara kepulauan wajib berbentuk kesatuan",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Otonomi daerah sudah menghapus seluruh persoalan pusat-daerah",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Konfederasi selalu gagal secara ekonomi",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Bentuk NKRI ditegaskan konstitusi dan tidak dapat dijadikan objek perubahan",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Pemerintah pusat memiliki pegawai lebih banyak",
+          "score": 0
+        }
+      ],
+      "explanation": "UUD 1945 secara eksplisit menegaskan Indonesia sebagai negara kesatuan dan bentuk NKRI tidak dapat diubah.",
+      "source": "bank-latihan-utama",
+      "competency": "NKRI",
+      "difficulty": "mudah",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-010",
+      "category": "TWK",
+      "question": "Warga mengkritik kebijakan di media sosial dengan data yang dapat diperiksa, tetapi menggunakan foto pribadi anak pejabat yang tidak terkait kebijakan. Penilaian yang paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Foto boleh dipakai karena keluarga pejabat merupakan figur publik",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Kritik hanya boleh disampaikan melalui surat resmi",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Hak berpendapat selalu lebih tinggi daripada hak privasi",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Seluruh kritik menjadi terlarang karena menyebut pejabat",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Kritik dilindungi, tetapi penyebaran data pribadi pihak yang tidak terkait harus dihentikan",
+          "score": 5
+        }
+      ],
+      "explanation": "Kebebasan berpendapat dilindungi, tetapi pelaksanaannya wajib menghormati hak orang lain. Substansi kritik dapat dipertahankan tanpa mengekspos pihak yang tidak relevan.",
+      "source": "bank-latihan-utama",
+      "competency": "konstitusi dan HAM",
+      "difficulty": "sulit",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-011",
+      "category": "TWK",
+      "question": "Undang-undang baru diduga bertentangan dengan UUD 1945 dan merugikan hak konstitusional pemohon. Lembaga yang berwenang menguji undang-undang tersebut adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mahkamah Konstitusi",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Komisi Yudisial",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Dewan Perwakilan Daerah",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Badan Pemeriksa Keuangan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Mahkamah Agung",
+          "score": 0
+        }
+      ],
+      "explanation": "Mahkamah Konstitusi menguji undang-undang terhadap UUD, sedangkan Mahkamah Agung menguji peraturan di bawah undang-undang terhadap undang-undang.",
+      "source": "bank-latihan-utama",
+      "competency": "pilar negara",
+      "difficulty": "mudah",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-012",
+      "category": "TWK",
+      "question": "Sebuah peraturan gubernur diduga bertentangan dengan undang-undang. Upaya pengujian peraturan perundang-undangan tersebut diajukan kepada...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Kementerian Dalam Negeri sebagai pengadilan tingkat pertama",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Mahkamah Agung",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Mahkamah Konstitusi",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "MPR",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Komisi Yudisial",
+          "score": 0
+        }
+      ],
+      "explanation": "Mahkamah Agung berwenang menguji peraturan di bawah undang-undang terhadap undang-undang.",
+      "source": "bank-latihan-utama",
+      "competency": "pilar negara",
+      "difficulty": "mudah",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-013",
+      "category": "TWK",
+      "question": "Dalam keadaan mendesak, kementerian menerbitkan peraturan yang membatasi hak warga, padahal undang-undang tidak memberikan kewenangan tersebut. Prinsip negara hukum yang paling relevan adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Peraturan pejabat otomatis setara dengan undang-undang",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Hak warga hanya berlaku ketika tidak ada program pemerintah",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Setiap tindakan pemerintah harus memiliki dasar kewenangan dan mengikuti hukum",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Kepentingan pemerintah selalu menjadi sumber hukum tertinggi",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Keadaan mendesak menghapus seluruh prosedur",
+          "score": 0
+        }
+      ],
+      "explanation": "Asas legalitas menuntut kewenangan, prosedur, dan substansi tindakan pemerintahan bersumber pada hukum; pembatasan hak tidak dapat dibuat semata-mata karena alasan praktis.",
+      "source": "bank-latihan-utama",
+      "competency": "negara hukum",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-014",
+      "category": "TWK",
+      "question": "Setelah pemilu, sekelompok pendukung menolak semua pelayanan publik kepada warga yang berbeda pilihan politik. Sikap yang paling sesuai dengan nasionalisme Pancasila adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Meminta warga menyembunyikan pilihan politiknya",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Mendahulukan kelompok pemenang sebagai penghargaan demokrasi",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Memisahkan pelayanan agar konflik tidak terjadi",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Melayani setiap warga secara setara dan menempatkan persatuan di atas afiliasi politik",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Menghentikan layanan sampai ketegangan selesai",
+          "score": 0
+        }
+      ],
+      "explanation": "Kompetisi politik tidak menghapus kesetaraan kewargaan. Nasionalisme Pancasila memelihara persatuan tanpa meniadakan perbedaan yang sah.",
+      "source": "bank-latihan-utama",
+      "competency": "nasionalisme",
+      "difficulty": "mudah",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-015",
+      "category": "TWK",
+      "question": "Sebuah tim internasional menawarkan teknologi yang dapat memperbaiki pelayanan Indonesia. Sebagian anggota menolaknya hanya karena berasal dari luar negeri. Sikap nasionalisme yang tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menggunakannya secara rahasia agar tidak dianggap bergantung",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Menunda sampai negara lain lebih dahulu menggunakannya",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Menolak semua teknologi asing untuk menjaga jati diri",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Menerima seluruh teknologi asing tanpa penilaian",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menilai manfaat, keamanan, kemandirian, dan kesesuaiannya dengan kepentingan nasional sebelum mengadopsi",
+          "score": 5
+        }
+      ],
+      "explanation": "Nasionalisme bukan sikap tertutup. Pengetahuan dari luar dapat dimanfaatkan secara kritis untuk kepentingan nasional dan kemandirian bangsa.",
+      "source": "bank-latihan-utama",
+      "competency": "nasionalisme",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-016",
+      "category": "TWK",
+      "question": "Di wilayah perbatasan, warga lebih mudah memperoleh produk dan siaran negara tetangga. Program yang paling strategis untuk memperkuat nasionalisme adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memperkuat layanan dasar, konektivitas, ekonomi lokal, dan literasi kebangsaan secara bersamaan",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Mengadakan upacara setiap hari tanpa memperbaiki layanan",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Memindahkan warga menjauh dari perbatasan",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Membatasi komunikasi warga dengan keluarga lintas batas",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Melarang seluruh produk dan siaran asing",
+          "score": 0
+        }
+      ],
+      "explanation": "Kehadiran negara yang nyata melalui pelayanan, kesejahteraan, konektivitas, dan pemahaman kebangsaan lebih berkelanjutan daripada larangan simbolis.",
+      "source": "bank-latihan-utama",
+      "competency": "nasionalisme",
+      "difficulty": "sulit",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-017",
+      "category": "TWK",
+      "question": "Dalam proyek nasional, anggota tim berasal dari beragam daerah dan menggunakan cara komunikasi berbeda. Pemimpin ingin mempercepat kerja tanpa menghilangkan keragaman. Langkah terbaik adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membagi kelompok berdasarkan daerah asal",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Menyepakati standar kerja dan bahasa komunikasi bersama sambil menghormati ekspresi budaya yang tidak mengganggu tujuan",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Menghindari pembahasan perbedaan agar tidak memicu konflik",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Memberi tugas penting hanya kepada kelompok terbesar",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Mewajibkan seluruh anggota mengikuti budaya pemimpin",
+          "score": 0
+        }
+      ],
+      "explanation": "Bhinneka Tunggal Ika menyatukan perbedaan melalui tujuan dan aturan bersama, bukan menyeragamkan identitas.",
+      "source": "bank-latihan-utama",
+      "competency": "Bhinneka Tunggal Ika",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-018",
+      "category": "TWK",
+      "question": "Pengelola fasilitas publik hanya menyediakan kesempatan ibadah bagi pemeluk agama mayoritas dengan alasan keterbatasan ruang. Solusi paling konstitusional adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Melarang seluruh kegiatan ibadah di fasilitas tersebut",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Mempertahankan kebijakan karena jumlah pengguna berbeda",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Mengatur penggunaan ruang atau waktu secara wajar agar setiap pemeluk agama memperoleh kesempatan tanpa diskriminasi",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Meminta kelompok minoritas mencari tempat di luar kawasan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menyerahkan keputusan kepada pemungutan suara pengguna",
+          "score": 0
+        }
+      ],
+      "explanation": "Jaminan beragama tidak ditentukan oleh jumlah penganut. Keterbatasan dapat diatasi dengan pengaturan yang wajar dan setara.",
+      "source": "bank-latihan-utama",
+      "competency": "toleransi",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-019",
+      "category": "TWK",
+      "question": "Tradisi lokal akan dijadikan bagian dari acara resmi daerah, tetapi salah satu tahapnya merendahkan kelompok tertentu. Sikap yang tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Meminta kelompok yang direndahkan menyesuaikan diri",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Melaksanakan seluruh tradisi karena budaya tidak boleh diubah",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Menghapus semua unsur tradisi dari acara resmi",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Berdialog dengan pemangku adat untuk mempertahankan nilai budaya sambil mengubah bagian yang melanggar martabat dan kesetaraan",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Menyelenggarakannya secara tertutup agar tidak dipersoalkan",
+          "score": 0
+        }
+      ],
+      "explanation": "Penghormatan budaya berjalan bersama penghormatan HAM. Dialog memungkinkan pelestarian nilai tanpa mempertahankan praktik diskriminatif.",
+      "source": "bank-latihan-utama",
+      "competency": "sosial budaya",
+      "difficulty": "sulit",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-020",
+      "category": "TWK",
+      "question": "Masyarakat hukum adat mengelola wilayah yang direncanakan untuk proyek publik. Tindakan pemerintah yang paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membayar tokoh tertentu tanpa berkonsultasi dengan masyarakat",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Menunda proyek sampai masyarakat meninggalkan wilayah sendiri",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Mengambil wilayah karena seluruh tanah otomatis milik pemerintah",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Mengakui klaim tanpa verifikasi dan menyerahkan seluruh keputusan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Memverifikasi keberadaan hak adat, melibatkan masyarakat secara bermakna, serta mengikuti prosedur hukum dan kepentingan publik",
+          "score": 5
+        }
+      ],
+      "explanation": "Konstitusi mengakui masyarakat adat beserta hak tradisionalnya sepanjang syaratnya terpenuhi. Pengakuan harus diterapkan melalui verifikasi, partisipasi, dan proses hukum.",
+      "source": "bank-latihan-utama",
+      "competency": "konstitusi dan keberagaman",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-021",
+      "category": "TWK",
+      "question": "Kalimat yang paling efektif untuk surat dinas adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sehubungan dengan rapat pada Senin, kami mohon kehadiran Saudara.",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Mengenai daripada pelaksanaan rapat hari Senin, bersama ini kami memohon untuk hadir.",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Dengan ini kami memberitahukan bahwasanya rapat tersebut akan dilaksanakan pada hari Senin untuk dapat dihadiri.",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Sehubungan dengan adanya kegiatan rapat yang akan dilaksanakan pada hari Senin, maka dengan ini dimohon kehadirannya.",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Berkenaan akan dilaksanakannya rapat pada hari Senin, dimohon agar supaya Saudara dapat hadir.",
+          "score": 0
+        }
+      ],
+      "explanation": "Kalimat C hemat, jelas, logis, dan tidak memakai pasangan kata mubazir seperti 'agar supaya', 'mengenai daripada', atau 'sehubungan ... maka'.",
+      "source": "bank-latihan-utama",
+      "competency": "Bahasa Indonesia",
+      "difficulty": "mudah",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-022",
+      "category": "TWK",
+      "question": "Perbaikan paling tepat untuk kalimat 'Para peserta-peserta diminta untuk agar mengumpulkan formulir daripada panitia' adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Para peserta agar diminta mengumpulkan formulir kepada panitia.",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Para peserta diminta mengumpulkan formulir kepada panitia.",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Peserta-peserta diminta agar supaya mengumpulkan formulir ke panitia.",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Para peserta diminta untuk mengumpulkan formulir daripada panitia.",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Peserta diminta mengumpulkan formulir oleh panitia.",
+          "score": 0
+        }
+      ],
+      "explanation": "Kata 'para' sudah menyatakan jamak, 'untuk agar' mubazir, dan tujuan penyerahan dinyatakan dengan 'kepada', bukan 'daripada'.",
+      "source": "bank-latihan-utama",
+      "competency": "Bahasa Indonesia",
+      "difficulty": "mudah",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-023",
+      "category": "TWK",
+      "question": "Paragraf berikut memiliki gagasan: (1) Layanan digital mempercepat pengajuan. (2) Tidak semua warga memiliki perangkat memadai. (3) Karena itu, kanal bantuan tetap diperlukan. Simpulan yang paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Layanan digital harus dihentikan sampai semua warga memiliki perangkat.",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Kecepatan layanan lebih penting daripada akses warga.",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Digitalisasi perlu disertai dukungan akses agar efisiensi tidak menimbulkan eksklusi.",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Kanal bantuan membuktikan layanan digital gagal.",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Warga tanpa perangkat sebaiknya diwakili pihak lain.",
+          "score": 0
+        }
+      ],
+      "explanation": "Simpulan C merangkum hubungan ketiga kalimat: manfaat digitalisasi tetap dipertahankan, tetapi hambatan akses perlu ditangani.",
+      "source": "bank-latihan-utama",
+      "competency": "Bahasa Indonesia",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-024",
+      "category": "TWK",
+      "question": "Penggunaan kata baku terdapat pada kalimat...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Koordinasi itu sekedar memastikan aktifitas berjalan.",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Dokumen tersebut memiliki kwalitas yang baik.",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Tim melakukan analisa terhadap resiko operasional.",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Izin praktik diterbitkan setelah seluruh persyaratan diverifikasi.",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Petugas merubah jadual sesuai arahan.",
+          "score": 0
+        }
+      ],
+      "explanation": "Bentuk baku ialah izin, praktik, persyaratan, dan diverifikasi. Bentuk baku lainnya: analisis, risiko, mengubah, jadwal, sekadar, aktivitas, kualitas.",
+      "source": "bank-latihan-utama",
+      "competency": "Bahasa Indonesia",
+      "difficulty": "mudah",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-025",
+      "category": "TWK",
+      "question": "Dalam rapat kabinet, presiden meminta kebijakan segera dijalankan. Namun kebijakan membutuhkan persetujuan DPR menurut undang-undang. Sikap konstitusional adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Meminta lembaga yudikatif memberi persetujuan politik",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Mengubah undang-undang melalui instruksi presiden",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Menjalankan terlebih dahulu karena presiden memegang kekuasaan pemerintahan",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Mengabaikan DPR jika kebijakan dianggap bermanfaat",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Mengikuti mekanisme persetujuan yang dipersyaratkan sambil menyiapkan langkah administratif yang belum menimbulkan akibat hukum",
+          "score": 5
+        }
+      ],
+      "explanation": "Efektivitas pemerintahan harus berjalan dalam pembagian kewenangan dan prosedur hukum. Persiapan dapat dilakukan selama belum melampaui kewenangan.",
+      "source": "bank-latihan-utama",
+      "competency": "pilar negara",
+      "difficulty": "sulit",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-026",
+      "category": "TWK",
+      "question": "DPR dan pemerintah telah menyetujui rancangan undang-undang bersama, tetapi presiden tidak menandatanganinya dalam waktu yang ditentukan konstitusi. Akibat hukumnya adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Rancangan tetap sah menjadi undang-undang dan wajib diundangkan setelah tiga puluh hari",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Mahkamah Konstitusi harus menandatanganinya",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "DPR dapat langsung mengubah UUD",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Rancangan batal secara otomatis",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Rancangan harus dimulai dari awal",
+          "score": 0
+        }
+      ],
+      "explanation": "Rancangan yang telah disetujui bersama tetap sah menjadi undang-undang dan wajib diundangkan apabila tidak ditandatangani presiden dalam tiga puluh hari.",
+      "source": "bank-latihan-utama",
+      "competency": "pilar negara",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-027",
+      "category": "TWK",
+      "question": "Petugas pemilu melihat tokoh masyarakat meminta warga memotret surat suara sebagai bukti pilihan. Tindakan yang paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membiarkan karena warga menyerahkan bukti secara sukarela",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Menghentikan praktik tersebut dan menjaga kebebasan serta kerahasiaan pilihan sesuai aturan",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Mengumpulkan foto untuk dokumentasi panitia",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Membolehkan jika tokoh tersebut tidak memberi uang",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Meminta warga hanya menunjukkan foto setelah meninggalkan TPS",
+          "score": 0
+        }
+      ],
+      "explanation": "Permintaan bukti pilihan membuka ruang tekanan dan bertentangan dengan asas bebas serta rahasia.",
+      "source": "bank-latihan-utama",
+      "competency": "demokrasi",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-028",
+      "category": "TWK",
+      "question": "Saat menyusun anggaran terbatas, tersedia pilihan: memperbaiki dua sekolah rusak berat atau membangun aula baru yang dapat meningkatkan citra daerah. Keputusan yang paling sesuai tujuan negara adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membangun aula karena manfaatnya terlihat oleh lebih banyak orang",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Membagi anggaran sama rata meski kedua sekolah tetap tidak aman",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Memprioritaskan perbaikan sekolah berdasarkan keselamatan dan akses pendidikan, disertai pertanggungjawaban terbuka",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Menunda keduanya agar tidak menimbulkan perdebatan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Memilih program yang paling cepat selesai",
+          "score": 0
+        }
+      ],
+      "explanation": "Keselamatan dan pencerdasan kehidupan bangsa merupakan kebutuhan mendasar. Prioritas berbasis kebutuhan dan akuntabilitas mencerminkan keadilan sosial.",
+      "source": "bank-latihan-utama",
+      "competency": "tujuan negara",
+      "difficulty": "sedang",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-029",
+      "category": "TWK",
+      "question": "Sebuah perusahaan menawarkan bantuan besar kepada sekolah negeri dengan syarat hanya anak pegawainya yang boleh memakai laboratorium baru. Respons paling tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menyerahkan keputusan sepenuhnya kepada perusahaan sebagai pemberi dana",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Menerima karena anggaran pemerintah terbatas",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Menolak seluruh kerja sama dengan swasta",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Merundingkan bantuan tanpa syarat diskriminatif sehingga fasilitas tetap melayani kepentingan pendidikan secara adil",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Menerima dan menyediakan jadwal khusus bagi siswa lain bila tersisa",
+          "score": 0
+        }
+      ],
+      "explanation": "Kerja sama dapat diterima, tetapi pengelolaan fasilitas publik tidak boleh tunduk pada syarat yang menghilangkan akses setara.",
+      "source": "bank-latihan-utama",
+      "competency": "keadilan sosial",
+      "difficulty": "sulit",
+      "version": 2
+    },
+    {
+      "id": "LAT-TWK-030",
+      "category": "TWK",
+      "question": "Seorang ASN aktif dalam komunitas yang sah. Menjelang pemilu, pengurus komunitas memintanya menggunakan data penerima layanan untuk menyebarkan ajakan memilih calon tertentu. Tindakan yang tepat adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Meminta komunitas menghapus nama ASN dari pesan",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Mengirim ajakan di luar jam kerja agar tidak terkait jabatan",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Memberikan data karena digunakan untuk pendidikan politik",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Menggunakan hanya nomor telepon yang sudah dikenal",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Menolak penggunaan data dan menjaga netralitas serta kerahasiaan informasi layanan",
+          "score": 5
+        }
+      ],
+      "explanation": "Data layanan hanya boleh digunakan sesuai tujuan dan kewenangan. ASN juga wajib menjaga netralitas; penggunaan di luar jam kerja tidak menghapus pelanggaran.",
+      "source": "bank-latihan-utama",
+      "competency": "integritas dan netralitas",
+      "difficulty": "sulit",
+      "version": 2
+    },
+    {
+      "category": "TIU",
+      "question": "Perhatikan perubahan jumlah kotak berwarna pada setiap pola. Jika aturan pertumbuhan tetap sama, jumlah kotak berwarna pada pola keempat adalah...",
+      "image": {
+        "url": "/question-assets/tiu/main-practice/main-fig-01.svg",
+        "alt": "Diagram soal figural latihan 1"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "6",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "7",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "8",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "9",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "10",
+          "score": 0
+        }
+      ],
+      "explanation": "Jumlah kotak berwarna membentuk bilangan ganjil berurutan: 1, 3, 5, sehingga pola keempat memiliki 7 kotak berwarna.",
+      "competency": "figural",
+      "difficulty": "sedang",
+      "id": "LAT-TIU-001",
+      "source": "bank-latihan-utama"
+    },
+    {
+      "category": "TIU",
+      "question": "Arah panah berubah dengan besar putaran yang sama pada setiap tahap. Arah panah berikutnya adalah...",
+      "image": {
+        "url": "/question-assets/tiu/main-practice/main-fig-02.svg",
+        "alt": "Diagram soal figural latihan 2"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "Utara",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Timur laut",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Tenggara",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Barat daya",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Barat laut",
+          "score": 5
+        }
+      ],
+      "explanation": "Panah berputar 90° searah jarum jam: timur laut, tenggara, barat daya, lalu barat laut.",
+      "competency": "spasial",
+      "difficulty": "sedang",
+      "id": "LAT-TIU-002",
+      "source": "bank-latihan-utama"
+    },
+    {
+      "category": "TIU",
+      "question": "Sebuah titik bergerak pada petak sesuai urutan panah di bawah. Jika dimulai dari titik O, posisi akhirnya berada di sebelah...",
+      "image": {
+        "url": "/question-assets/tiu/main-practice/main-fig-03.svg",
+        "alt": "Diagram soal figural latihan 3"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "Utara",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Timur",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Selatan",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Barat",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Kembali ke titik O",
+          "score": 0
+        }
+      ],
+      "explanation": "Gerakan utara dan selatan saling menghapus. Dua langkah ke timur dikurangi satu langkah ke barat menyisakan satu langkah ke timur.",
+      "competency": "spasial",
+      "difficulty": "sedang",
+      "id": "LAT-TIU-003",
+      "source": "bank-latihan-utama"
+    },
+    {
+      "category": "TIU",
+      "question": "Setiap tahap menambah satu sisi pada bangun luar dan satu titik di bagian dalam. Gambar yang tepat untuk tahap berikutnya adalah...",
+      "image": {
+        "url": "/question-assets/tiu/main-practice/main-fig-04.svg",
+        "alt": "Diagram soal figural latihan 4"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "Segi lima dengan empat titik",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Segi enam dengan tiga titik",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Segi enam dengan empat titik",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Segi tujuh dengan empat titik",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Segi tujuh dengan lima titik",
+          "score": 0
+        }
+      ],
+      "explanation": "Urutannya adalah segitiga–1 titik, segi empat–2 titik, segi lima–3 titik. Berikutnya segi enam–4 titik.",
+      "competency": "figural",
+      "difficulty": "sedang",
+      "id": "LAT-TIU-004",
+      "source": "bank-latihan-utama"
+    },
+    {
+      "category": "TIU",
+      "question": "Pada setiap baris, gambar ketiga merupakan gabungan jumlah garis tegak pada dua gambar sebelumnya, sedangkan garis mendatarnya tetap satu. Gambar ketiga pada baris terakhir memiliki...",
+      "image": {
+        "url": "/question-assets/tiu/main-practice/main-fig-05.svg",
+        "alt": "Diagram soal figural latihan 5"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "Tiga garis tegak dan satu mendatar",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Empat garis tegak dan satu mendatar",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Lima garis tegak dan satu mendatar",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Lima garis tegak dan dua mendatar",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Enam garis tegak dan satu mendatar",
+          "score": 0
+        }
+      ],
+      "explanation": "Baris terakhir memuat dua dan tiga garis tegak. Keduanya dijumlahkan menjadi lima garis tegak, sementara satu garis mendatar dipertahankan.",
+      "competency": "figural",
+      "difficulty": "sulit",
+      "id": "LAT-TIU-005",
+      "source": "bank-latihan-utama"
+    },
+    {
+      "category": "TIU",
+      "question": "Sebuah kertas persegi dilipat dua kali mengikuti arah panah, kemudian dilubangi pada posisi bertanda hitam. Ketika dibuka seluruhnya, jumlah lubang yang terbentuk adalah...",
+      "image": {
+        "url": "/question-assets/tiu/main-practice/main-fig-06.svg",
+        "alt": "Diagram soal figural latihan 6"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "2",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "3",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "4",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "6",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "8",
+          "score": 0
+        }
+      ],
+      "explanation": "Setiap lipatan menggandakan salinan lubang. Dua kali lipatan menghasilkan 2 × 2 = 4 lubang yang simetris.",
+      "competency": "spasial",
+      "difficulty": "sulit",
+      "id": "LAT-TIU-006",
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-007",
+      "category": "TIU",
+      "question": "Lima dokumen P, Q, R, S, dan T diperiksa berurutan. P sebelum R. Q tepat setelah S. T bukan urutan pertama atau terakhir. Jika R urutan terakhir, susunan yang mungkin adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "S–P–T–R–Q",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "P–S–Q–T–R",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "S–Q–T–R–P",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "P–T–Q–S–R",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "T–P–S–Q–R",
+          "score": 0
+        }
+      ],
+      "explanation": "Susunan A memenuhi semua syarat: P sebelum R, Q tepat setelah S, T bukan pertama/terakhir, dan R terakhir.",
+      "competency": "penalaran analitis",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-008",
+      "category": "TIU",
+      "question": "Enam pegawai duduk berderet. D di kiri E. A tidak bersebelahan dengan B. C berada tepat di antara A dan F. Susunan yang mungkin adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "E–D–A–C–F–B",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "D–A–C–F–B–E",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "A–C–F–D–E–B",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "B–A–C–F–D–E",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "D–E–A–C–F–B",
+          "score": 0
+        }
+      ],
+      "explanation": "Pada D, D di kiri E, A tidak bersebelahan dengan B, dan C tepat di antara A dan F dalam pola A–C–F.",
+      "competency": "penalaran analitis",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-009",
+      "category": "TIU",
+      "question": "Sebuah unit menyelesaikan 3/8 pekerjaan pada Senin dan 30% dari sisa pekerjaan pada Selasa. Bagian pekerjaan yang belum selesai adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "19/40",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "21/40",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "23/40",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "7/16",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "17/40",
+          "score": 0
+        }
+      ],
+      "explanation": "Setelah Senin tersisa 5/8. Selasa menyelesaikan 30% × 5/8 = 3/16. Total selesai 3/8 + 3/16 = 9/16, sehingga tersisa 7/16.",
+      "competency": "pecahan",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-010",
+      "category": "TIU",
+      "question": "Harga sebuah perangkat setelah diskon 20% kemudian dikenai pajak 11% menjadi Rp4.440.000. Harga sebelum diskon adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Rp5.250.000",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Rp5.550.000",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Rp4.500.000",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Rp4.750.000",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Rp5.000.000",
+          "score": 5
+        }
+      ],
+      "explanation": "Jika harga awal x, harga akhir = x × 0,80 × 1,11 = 0,888x. Maka x = 4.440.000/0,888 = 5.000.000.",
+      "competency": "aritmetika sosial",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-011",
+      "category": "TIU",
+      "question": "Rata-rata nilai 8 peserta adalah 76. Setelah nilai tertinggi dan terendah dikeluarkan, rata-rata 6 peserta menjadi 77. Jika nilai tertinggi 94, nilai terendah adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "52",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "54",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "56",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "58",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "60",
+          "score": 0
+        }
+      ],
+      "explanation": "Jumlah delapan nilai 608; jumlah enam nilai 462. Jumlah tertinggi dan terendah 146. Nilai terendah = 146 − 94 = 52.",
+      "competency": "statistika",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-012",
+      "category": "TIU",
+      "question": "Perbandingan pegawai tetap dan kontrak adalah 7:3. Setelah 6 pegawai kontrak bergabung, perbandingannya menjadi 7:4. Jumlah pegawai semula adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "54",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "60",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "66",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "72",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "48",
+          "score": 0
+        }
+      ],
+      "explanation": "Misalkan tetap 7x dan kontrak 3x. 7x/(3x+6)=7/4, sehingga 4x=3x+6 dan x=6. Jumlah awal 10x=60.",
+      "competency": "perbandingan",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-013",
+      "category": "TIU",
+      "question": "Sebuah pekerjaan diselesaikan A dalam 12 hari dan B dalam 18 hari. Mereka bekerja bersama 4 hari, lalu A berhenti. Waktu tambahan yang dibutuhkan B adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 hari",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "7 hari",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "8 hari",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "9 hari",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "10 hari",
+          "score": 0
+        }
+      ],
+      "explanation": "Laju bersama 1/12+1/18=5/36. Empat hari menyelesaikan 5/9, tersisa 4/9. B membutuhkan (4/9)/(1/18)=8 hari.",
+      "competency": "kecepatan kerja",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-014",
+      "category": "TIU",
+      "question": "Mobil menempuh 120 km dengan kecepatan 60 km/jam, berhenti 30 menit, lalu menempuh 90 km dengan kecepatan 45 km/jam. Kecepatan rata-rata seluruh perjalanan termasuk berhenti adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "52,5 km/jam",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "42 km/jam",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "45 km/jam",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "46,7 km/jam",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "50 km/jam",
+          "score": 0
+        }
+      ],
+      "explanation": "Jarak 210 km. Waktu 2+0,5+2=4,5 jam. Kecepatan rata-rata 210/4,5=46,7 km/jam.",
+      "competency": "jarak waktu",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-015",
+      "category": "TIU",
+      "question": "Umur Ayah 4 tahun lalu tiga kali umur Bima. Delapan tahun lagi umur Ayah dua kali umur Bima. Umur Bima sekarang adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "18 tahun",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "20 tahun",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "12 tahun",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "14 tahun",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "16 tahun",
+          "score": 5
+        }
+      ],
+      "explanation": "A−4=3(B−4) dan A+8=2(B+8). Dari persamaan diperoleh B=16 dan A=40.",
+      "competency": "aljabar",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-016",
+      "category": "TIU",
+      "question": "Deret berikut adalah 4, 7, 13, 25, 49, ... Angka berikutnya ialah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "97",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "99",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "73",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "81",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "89",
+          "score": 0
+        }
+      ],
+      "explanation": "Setiap suku diperoleh dari suku sebelumnya ×2−1: 4→7→13→25→49, sehingga berikutnya 97.",
+      "competency": "deret angka",
+      "difficulty": "mudah",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-017",
+      "category": "TIU",
+      "question": "Deret 3, 5, 10, 12, 24, 26, ... Angka berikutnya adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "50",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "52",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "28",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "39",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "48",
+          "score": 0
+        }
+      ],
+      "explanation": "Pola bergantian +2 lalu ×2: 3+2=5, ×2=10, +2=12, ×2=24, +2=26, lalu ×2=52.",
+      "competency": "deret angka",
+      "difficulty": "mudah",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-018",
+      "category": "TIU",
+      "question": "Deret 2, 6, 15, 31, 56, ... Angka berikutnya adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "86",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "90",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "92",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "96",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "82",
+          "score": 0
+        }
+      ],
+      "explanation": "Selisihnya 4, 9, 16, 25 yaitu kuadrat 2²,3²,4²,5². Selisih berikutnya 6²=36, sehingga 56+36=92.",
+      "competency": "deret angka",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-019",
+      "category": "TIU",
+      "question": "Jika 2a + b = 17 dan a − 2b = −4, nilai 3a − b adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "7",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "9",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "11",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "13",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "15",
+          "score": 0
+        }
+      ],
+      "explanation": "Dari persamaan diperoleh a=6 dan b=5, sehingga 3a−b=18−5=13.",
+      "competency": "aljabar",
+      "difficulty": "mudah",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-020",
+      "category": "TIU",
+      "question": "Sebuah persegi panjang memiliki keliling 70 cm. Panjangnya 5 cm lebih dari dua kali lebarnya. Luasnya adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "275 cm²",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "300 cm²",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "200 cm²",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "225 cm²",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "250 cm²",
+          "score": 5
+        }
+      ],
+      "explanation": "2(p+l)=70 sehingga p+l=35. Dengan p=2l+5 diperoleh l=10 dan p=25. Luas=250 cm².",
+      "competency": "geometri",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-021",
+      "category": "TIU",
+      "question": "Dari 120 peserta, 72 menyukai kelas numerik, 54 menyukai kelas verbal, dan 18 tidak menyukai keduanya. Jumlah peserta yang menyukai keduanya adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "24",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "26",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "18",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "20",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "22",
+          "score": 0
+        }
+      ],
+      "explanation": "Yang menyukai minimal satu kelas 120−18=102. Irisan =72+54−102=24.",
+      "competency": "himpunan",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-022",
+      "category": "TIU",
+      "question": "Satu angka dipilih acak dari 1 sampai 30. Peluang angka tersebut habis dibagi 3 atau 5 adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "2/5",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "7/15",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "1/2",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "8/15",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "3/5",
+          "score": 0
+        }
+      ],
+      "explanation": "Kelipatan 3 ada 10, kelipatan 5 ada 6, irisan kelipatan 15 ada 2. Total 14 dari 30, yaitu 7/15.",
+      "competency": "peluang",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-023",
+      "category": "TIU",
+      "question": "Tabel penyelesaian berkas: Senin 48 dari 60, Selasa 63 dari 70, Rabu 72 dari 90. Hari dengan persentase penyelesaian tertinggi adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ketiganya sama",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Senin",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Selasa",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Rabu",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Senin dan Rabu",
+          "score": 0
+        }
+      ],
+      "explanation": "Persentase: Senin 80%, Selasa 90%, Rabu 80%. Tertinggi Selasa.",
+      "competency": "interpretasi data",
+      "difficulty": "mudah",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-024",
+      "category": "TIU",
+      "question": "Indeks beban layanan pada Januari 120. Februari turun 15%, lalu Maret naik 25% dari Februari. Indeks pada Maret adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "135",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "120",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "125",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "127,5",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "130",
+          "score": 0
+        }
+      ],
+      "explanation": "Februari 120×0,85=102. Maret 102×1,25=127,5.",
+      "competency": "interpretasi data",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-025",
+      "category": "TIU",
+      "question": "Sebuah kode terdiri dari satu huruf A, B, atau C diikuti dua angka berbeda dari 1, 2, 3, 4. Banyak kode yang dapat dibentuk adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "48",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "18",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "24",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "30",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "36",
+          "score": 5
+        }
+      ],
+      "explanation": "Pilihan huruf 3. Angka pertama 4 dan angka kedua 3 karena harus berbeda. Total 3×4×3=36.",
+      "competency": "kombinatorika",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-026",
+      "category": "TIU",
+      "question": "Pernyataan: 'Kebijakan dianggap efektif hanya jika waktu layanan berkurang dan kepuasan tidak menurun.' Kondisi yang cukup untuk menyatakan kebijakan tidak efektif adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Waktu layanan tetap",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Biaya layanan turun",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Jumlah pengguna bertambah",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Waktu layanan berkurang",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Kepuasan meningkat",
+          "score": 0
+        }
+      ],
+      "explanation": "Efektif mensyaratkan waktu berkurang dan kepuasan tidak turun. Jika waktu tetap, salah satu syarat pasti tidak terpenuhi.",
+      "competency": "logika verbal",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-027",
+      "category": "TIU",
+      "question": "Empat tim—Merah, Biru, Hijau, Kuning—presentasi satu per satu. Hijau setelah Biru. Merah sebelum Kuning. Biru bukan pertama. Tim yang pasti tidak mungkin tampil pertama adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hijau saja",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Biru dan Hijau",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Hijau dan Kuning",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Merah saja",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Biru saja",
+          "score": 0
+        }
+      ],
+      "explanation": "Biru dinyatakan bukan pertama. Hijau harus setelah Biru sehingga juga tidak mungkin pertama.",
+      "competency": "penalaran analitis",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-028",
+      "category": "TIU",
+      "question": "Tiga rapat X, Y, Z dijadwalkan Senin–Rabu, satu per hari. X tidak Senin. Y dilaksanakan sebelum X. Jika Z bukan Rabu, jadwal yang benar adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "X-Senin, Y-Selasa, Z-Rabu",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Y-Senin, X-Selasa, Z-Rabu",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Y-Senin, Z-Selasa, X-Rabu",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Z-Senin, X-Selasa, Y-Rabu",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Z-Senin, Y-Rabu, X-Selasa",
+          "score": 0
+        }
+      ],
+      "explanation": "Karena Z bukan Rabu dan Y harus sebelum X, satu-satunya susunan yang memenuhi adalah Y Senin, Z Selasa, X Rabu.",
+      "competency": "penalaran analitis",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-029",
+      "category": "TIU",
+      "question": "Dalam suatu sandi, DATA ditulis 4-1-20-1 sesuai urutan alfabet. Jika setiap angka kemudian ditambah posisi hurufnya dalam kata, KERJA ditulis...",
+      "options": [
+        {
+          "id": "A",
+          "text": "11-5-18-10-1",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "12-6-20-13-6",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "11-7-21-14-6",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "12-7-21-14-6",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "12-7-21-14-5",
+          "score": 0
+        }
+      ],
+      "explanation": "Nilai alfabet KERJA adalah 11,5,18,10,1. Tambahkan posisi 1–5 sehingga menjadi 12,7,21,14,6.",
+      "competency": "kode simbolik",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-030",
+      "category": "TIU",
+      "question": "Perhatikan pertumbuhan susunan titik. Jika pola yang sama berlanjut, banyak titik pada pola ke-6 adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "50",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "35",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "40",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "42",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "48",
+          "score": 5
+        }
+      ],
+      "explanation": "Jumlah titik mengikuti n(n+2): 1×3=3, 2×4=8, 3×5=15, dan 4×6=24. Pola 6=6×8=48.",
+      "competency": "figural",
+      "difficulty": "sedang",
+      "version": 2,
+      "image": {
+        "url": "/question-assets/tiu/main-practice/main-fig-07.svg",
+        "alt": "Diagram soal figural latihan 7"
+      },
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-031",
+      "category": "TIU",
+      "question": "Kubus bertanda ★ pada sisi atas digulingkan dua kali ke kanan, lalu satu kali ke depan. Di sisi manakah tanda ★ berada?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Depan",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Atas",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Bawah",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Kiri",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Kanan",
+          "score": 0
+        }
+      ],
+      "explanation": "Dua gulingan ke kanan memindahkan sisi awal atas ke bawah. Saat kubus digulingkan ke depan, sisi bawah berpindah ke depan.",
+      "competency": "spasial",
+      "difficulty": "sulit",
+      "version": 2,
+      "image": {
+        "url": "/question-assets/tiu/main-practice/main-fig-08.svg",
+        "alt": "Diagram soal figural latihan 8"
+      },
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-032",
+      "category": "TIU",
+      "question": "Perhatikan arah awal panah. Panah diputar 135° searah jarum jam, kemudian 90° berlawanan arah jarum jam. Arah akhirnya adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Utara",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Timur laut",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Timur",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "Tenggara",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Barat laut",
+          "score": 0
+        }
+      ],
+      "explanation": "Rotasi bersih adalah 45° searah jarum jam dari utara, sehingga arah akhir timur laut.",
+      "competency": "spasial",
+      "difficulty": "mudah",
+      "version": 2,
+      "image": {
+        "url": "/question-assets/tiu/main-practice/main-fig-09.svg",
+        "alt": "Diagram soal figural latihan 9"
+      },
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-033",
+      "category": "TIU",
+      "question": "Pada setiap baris, jumlah sisi bangun ketiga diperoleh dari jumlah sisi dua bangun pertama dikurangi 2. Bangun yang tepat untuk mengisi tanda tanya adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Segi lima",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Segi enam",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Segi tujuh",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Segi delapan",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "Segi sembilan",
+          "score": 0
+        }
+      ],
+      "explanation": "Segitiga memiliki 3 sisi dan segi enam memiliki 6 sisi. 3+6−2=7, sehingga jawabannya segi tujuh.",
+      "competency": "figural",
+      "difficulty": "sedang",
+      "version": 2,
+      "image": {
+        "url": "/question-assets/tiu/main-practice/main-fig-10.svg",
+        "alt": "Diagram soal figural latihan 10"
+      },
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-034",
+      "category": "TIU",
+      "question": "Suatu proyek dinilai dari ketepatan waktu 40%, kualitas 35%, dan efisiensi 25%. Nilainya berturut-turut 80, 90, dan 70. Nilai akhir proyek adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "82,0",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "80,0",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "80,5",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "81,0",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "81,5",
+          "score": 0
+        }
+      ],
+      "explanation": "Nilai tertimbang =0,40×80 +0,35×90 +0,25×70 =32+31,5+17,5=81.",
+      "competency": "numerik terapan",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TIU-035",
+      "category": "TIU",
+      "question": "Sebuah unit harus memilih satu dari dua program. Program A memberi manfaat 90 dengan risiko 30; program B memberi manfaat 78 dengan risiko 12. Jika skor prioritas = manfaat − 1,5×risiko, keputusan berdasarkan skor adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "B, karena skornya 66",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Keduanya sama-sama 60",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "A, karena skornya 60",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "A, karena skornya 45",
+          "score": 0
+        },
+        {
+          "id": "E",
+          "text": "B, karena skornya 60",
+          "score": 5
+        }
+      ],
+      "explanation": "Skor A=90−45=45. Skor B=78−18=60. Jadi program B dipilih dengan skor 60.",
+      "competency": "numerik terapan",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-001",
+      "category": "TKP",
+      "question": "Menjelang loket tutup, seorang warga lansia datang dari jauh dengan berkas kurang satu salinan. Antrean masih ada dan aturan tidak membolehkan berkas tidak lengkap. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menjelaskan kekurangan, membantu mencari fasilitas salin terdekat, dan memastikan ia memahami batas waktu serta jalur penyelesaian",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Menerima berkasnya dahulu dan meminta salinan dikirim setelah layanan selesai",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Meminta warga lain mengalah agar Anda dapat mengurus kebutuhannya",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Memberi daftar kekurangan dan nomor layanan informasi untuk kunjungan berikutnya",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Menolak dan memintanya datang kembali agar perlakuan terhadap semua warga sama",
+          "score": 2
+        }
+      ],
+      "explanation": "Skor tertinggi menjaga aturan sekaligus aktif mencari jalan penyelesaian. Memberi informasi saja baik, tetapi belum mengurangi hambatan warga.",
+      "competency": "pelayanan publik",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-002",
+      "category": "TKP",
+      "question": "Sistem layanan berhenti dan belum ada kepastian waktu pulih. Warga mulai marah karena petugas sebelumnya hanya menyuruh menunggu. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memberikan perkiraan waktu berdasarkan pengalaman meskipun belum dikonfirmasi",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Menjelaskan gangguan, meminta maaf, memberi pembaruan berkala, serta menawarkan kanal alternatif yang memang tersedia",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Mencatat nomor warga dan berjanji menghubungi ketika sistem pulih",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Meminta keamanan menenangkan warga agar petugas dapat bekerja",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Menjelaskan bahwa gangguan bukan kesalahan unit Anda",
+          "score": 1
+        }
+      ],
+      "explanation": "Respons terbaik memadukan empati, informasi jujur, pembaruan, dan alternatif tanpa membuat janji yang belum pasti.",
+      "competency": "pelayanan publik",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-003",
+      "category": "TKP",
+      "question": "Survei menunjukkan pemohon memahami persyaratan, tetapi sering gagal pada satu tahap formulir daring. Perbaikan yang Anda pilih adalah...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menambah petugas untuk mengisikan formulir bagi seluruh pemohon",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Membuat video panduan tanpa mengubah formulir",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Menganalisis titik kegagalan, menyederhanakan bagian tersebut, lalu menguji perubahan kepada pengguna",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Meminta pemohon membaca panduan lebih teliti",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Menambahkan pesan kesalahan yang lebih jelas",
+          "score": 2
+        }
+      ],
+      "explanation": "Perbaikan berbasis data dan uji pengguna menangani akar masalah; panduan membantu, tetapi tidak menggantikan desain yang mudah digunakan.",
+      "competency": "pelayanan publik",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-004",
+      "category": "TKP",
+      "question": "Seorang pemohon berkebutuhan khusus meminta pendamping masuk ke area yang biasanya terbatas. Kebutuhan pendamping masuk akal, tetapi prosedur keamanan tetap berlaku. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Melayani pemohon di luar area terbatas bila seluruh proses memungkinkan",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Menolak karena pengecualian akan dianggap tidak adil",
+          "score": 1
+        },
+        {
+          "id": "C",
+          "text": "Mengizinkan tanpa pemeriksaan agar pelayanan inklusif",
+          "score": 2
+        },
+        {
+          "id": "D",
+          "text": "Memeriksa kebutuhan dan menerapkan akomodasi yang layak dengan prosedur keamanan yang sesuai",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Meminta persetujuan pimpinan meskipun mekanisme akomodasi sudah tersedia",
+          "score": 4
+        }
+      ],
+      "explanation": "Inklusivitas dan keamanan dapat berjalan bersama melalui akomodasi yang terukur, bukan penolakan atau pengecualian tanpa kontrol.",
+      "competency": "pelayanan publik",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-005",
+      "category": "TKP",
+      "question": "Seorang warga menyampaikan keluhan dengan bahasa kasar, tetapi substansinya menunjukkan kemungkinan kesalahan petugas. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menerima keluhan lalu menyerahkannya kepada atasan tanpa telaah",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Mengingatkan batas komunikasi dengan tegas, kemudian mencatat keluhan",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Membela petugas karena warga belum menyertakan bukti",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Menghentikan percakapan sampai warga meminta maaf",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Tetap tenang, memisahkan cara penyampaian dari substansi, memeriksa fakta, dan menjelaskan tindak lanjut",
+          "score": 5
+        }
+      ],
+      "explanation": "Profesionalisme menuntut pengendalian diri dan pemeriksaan objektif; batas komunikasi tetap dapat disampaikan tanpa mengabaikan masalah.",
+      "competency": "pelayanan publik",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-006",
+      "category": "TKP",
+      "question": "Unit lain terlambat menyerahkan data yang menentukan laporan tim Anda. Mereka sedang menangani pekerjaan darurat. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menghubungi penanggung jawab, menyepakati data minimum dan waktu realistis, menawarkan bantuan, lalu melaporkan risiko bila tetap mengancam tenggat",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Memakai data periode sebelumnya tanpa penjelasan",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Menyesuaikan laporan dan mencantumkan data masih sementara",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Langsung melaporkan keterlambatan kepada pimpinan tertinggi",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Menunggu agar tidak menambah tekanan unit tersebut",
+          "score": 1
+        }
+      ],
+      "explanation": "Koordinasi langsung, negosiasi kebutuhan minimum, bantuan, dan eskalasi proporsional menjaga hubungan serta target.",
+      "competency": "jejaring kerja",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-007",
+      "category": "TKP",
+      "question": "Dalam rapat lintas unit, dua pihak mempertahankan solusi masing-masing. Keduanya memiliki data yang kuat, tetapi waktu keputusan terbatas. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memilih usulan unit yang paling berpengalaman",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Mengusulkan kriteria keputusan bersama, membandingkan kedua opsi, dan bila perlu menguji unsur paling kritis secara terbatas",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Menggabungkan kedua usulan agar semua pihak puas",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Menyerahkan keputusan kepada pejabat tertinggi tanpa ringkasan",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Merangkum kelebihan dan risiko kedua usulan untuk diputuskan pimpinan",
+          "score": 4
+        }
+      ],
+      "explanation": "Kriteria bersama dan uji kritis mengubah perdebatan posisi menjadi penilaian objektif; ringkasan saja masih menyerahkan konflik tanpa proses bersama.",
+      "competency": "jejaring kerja",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-008",
+      "category": "TKP",
+      "question": "Anggota baru melakukan kesalahan karena petunjuk tim tersebar di banyak percakapan. Seorang senior ingin langsung memberi teguran tertulis. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mendukung teguran agar anggota baru lebih teliti",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Memperbaiki hasilnya diam-diam agar hubungan tetap baik",
+          "score": 1
+        },
+        {
+          "id": "C",
+          "text": "Membahas kesalahan secara konstruktif, menyatukan petunjuk kerja, dan memastikan tanggung jawab perbaikan dipahami",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Meminta senior menunda teguran sampai masa orientasi selesai",
+          "score": 3
+        },
+        {
+          "id": "E",
+          "text": "Mendampingi anggota memperbaiki kesalahan dan memberi catatan panduan",
+          "score": 4
+        }
+      ],
+      "explanation": "Kesalahan individu ditangani sambil memperbaiki penyebab sistemik. Pendampingan baik, tetapi dokumentasi bersama mencegah pengulangan oleh seluruh tim.",
+      "competency": "jejaring kerja",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-009",
+      "category": "TKP",
+      "question": "Rekan mengambil kredit atas ide yang Anda kembangkan bersama. Ide itu berhasil dan tim sedang merayakannya. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengusulkan evaluasi tim yang mencatat kontribusi setiap anggota",
+          "score": 4
+        },
+        {
+          "id": "B",
+          "text": "Mengoreksinya di depan semua orang saat itu juga",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Membiarkannya demi suasana tim",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Berbicara langsung secara tenang, menyepakati pembagian kontribusi yang akurat, dan memperbaiki dokumentasi hasil kerja",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Menyampaikan kontribusi Anda kepada atasan tanpa berbicara dengannya",
+          "score": 3
+        }
+      ],
+      "explanation": "Dialog langsung dan dokumentasi yang adil menyelesaikan masalah tanpa memperbesar konflik. Evaluasi tim berguna, tetapi isu personal tetap perlu dibahas.",
+      "competency": "jejaring kerja",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-010",
+      "category": "TKP",
+      "question": "Tim Anda mendapat tugas tambahan, sedangkan satu anggota sedang mengalami masalah keluarga. Target tidak dapat ditunda. Anda sebagai koordinator...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengambil alih tugasnya sendiri",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Memberi tugas yang lebih fleksibel dan meminta anggota lain membantu sementara",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Membebaskannya dari semua tugas dan membagi beban kepada anggota lain",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Meminta ia tetap bekerja sama seperti yang lain demi keadilan",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Mendiskusikan kapasitasnya, menyusun ulang prioritas dan pembagian kerja secara transparan, serta mengevaluasi beban tim",
+          "score": 5
+        }
+      ],
+      "explanation": "Solusi terbaik mempertimbangkan kondisi individu, target, kapasitas seluruh tim, dan transparansi agar bantuan tidak menciptakan masalah baru.",
+      "competency": "jejaring kerja",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-011",
+      "category": "TKP",
+      "question": "Dalam pelayanan, warga menggunakan bahasa daerah yang tidak Anda pahami dan mulai gugup. Rekan yang dapat menerjemahkan sedang sibuk. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menggunakan bahasa sederhana, alat bantu yang aman, dan mengonfirmasi ulang pemahaman sambil menunggu bantuan bila informasi bersifat kritis",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Meminta warga lain dalam antrean menerjemahkan seluruh data",
+          "score": 1
+        },
+        {
+          "id": "C",
+          "text": "Menggunakan aplikasi terjemahan untuk menyelesaikan seluruh proses",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Mencari petugas lain dan menjelaskan kepada warga alasan menunggu",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Meminta warga kembali saat penerjemah tersedia",
+          "score": 2
+        }
+      ],
+      "explanation": "Berbagai alat dapat digunakan, tetapi informasi penting harus dikonfirmasi dan privasi dijaga. Menunggu petugas kompeten baik jika risikonya tinggi.",
+      "competency": "sosial budaya",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-012",
+      "category": "TKP",
+      "question": "Jadwal kegiatan penting bertepatan dengan hari besar keagamaan sebagian anggota. Mengubah jadwal menambah biaya, sedangkan kehadiran fisik tidak wajib untuk semua tugas. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membatalkan kegiatan agar tidak ada pihak dirugikan",
+          "score": 1
+        },
+        {
+          "id": "B",
+          "text": "Memetakan tugas yang wajib hadir, menyediakan alternatif partisipasi, dan menyepakati pembagian kerja yang tetap mencapai target",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Meminta anggota terkait mencari pengganti sendiri",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Menawarkan partisipasi daring kepada anggota yang berhalangan",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Mempertahankan jadwal karena sudah disepakati mayoritas",
+          "score": 2
+        }
+      ],
+      "explanation": "Akomodasi terbaik disusun berdasarkan kebutuhan tugas dan dialog, bukan membebankan solusi hanya kepada pihak yang terdampak.",
+      "competency": "sosial budaya",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-013",
+      "category": "TKP",
+      "question": "Rekan membuat candaan stereotip. Orang yang menjadi sasaran ikut tertawa, tetapi setelah rapat mengaku tidak nyaman. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tidak bertindak karena yang bersangkutan tadi tertawa",
+          "score": 1
+        },
+        {
+          "id": "B",
+          "text": "Menegur pembuat candaan di grup agar semua orang belajar",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Mendukung rekan yang terdampak, membahas perilaku tersebut secara tepat dengan pelaku, dan mendorong norma tim yang inklusif",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Menyarankan rekan mengabaikannya agar tidak memperbesar masalah",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Berbicara pribadi dengan pembuat candaan dan meminta tidak mengulanginya",
+          "score": 4
+        }
+      ],
+      "explanation": "Dukungan kepada pihak terdampak, koreksi perilaku, dan pencegahan sistemik lebih lengkap daripada teguran personal saja.",
+      "competency": "sosial budaya",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-014",
+      "category": "TKP",
+      "question": "Anda ditempatkan di daerah dengan kebiasaan pelayanan berbeda. Sebagian kebiasaan efektif, tetapi satu praktik bertentangan dengan aturan tertulis. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Berkonsultasi dengan atasan lokal sebelum mengikuti praktik yang belum jelas",
+          "score": 4
+        },
+        {
+          "id": "B",
+          "text": "Mengikuti seluruh kebiasaan agar cepat diterima",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Langsung melarang praktik tersebut tanpa berdialog",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Mempelajari konteks, mempertahankan praktik yang bermanfaat, dan mengubah bagian yang melanggar melalui komunikasi serta dasar aturan",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Tetap memakai cara dari kantor lama",
+          "score": 1
+        }
+      ],
+      "explanation": "Adaptasi tidak berarti mengikuti pelanggaran. Pendekatan berbasis konteks, aturan, dan dialog memberi perubahan yang lebih diterima.",
+      "competency": "sosial budaya",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-015",
+      "category": "TKP",
+      "question": "Panitia ingin memilih peserta pelatihan hanya dari kelompok yang dianggap mudah beradaptasi. Data kinerja tidak menunjukkan perbedaan antar kelompok. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membuka pendaftaran bagi semua tanpa seleksi",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Meminta panitia menguji asumsi dengan data sebelum menetapkan kriteria",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Mengikuti usul agar pelatihan berjalan lancar",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Mengganti kriteria dengan rekomendasi atasan",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Mengusulkan kriteria kompetensi dan kebutuhan pengembangan yang terukur serta berlaku setara",
+          "score": 5
+        }
+      ],
+      "explanation": "Kriteria objektif yang relevan langsung mencegah diskriminasi; pengujian asumsi baik, tetapi rancangan seleksi tetap harus diperbaiki.",
+      "competency": "sosial budaya",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-016",
+      "category": "TKP",
+      "question": "Anda menerima tautan dari akun pimpinan yang meminta login ulang ke sistem. Pesan menggunakan gaya bahasa pimpinan, tetapi alamat situs sedikit berbeda. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tidak membuka tautan, memverifikasi melalui kanal resmi, dan melaporkan dugaan phishing kepada pengelola keamanan",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Menghapus pesan tanpa melakukan apa pun",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Mengambil tangkapan layar lalu meminta konfirmasi pimpinan",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Membuka tautan melalui perangkat pribadi agar komputer kantor aman",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Menanyakan di grup apakah orang lain menerima pesan yang sama",
+          "score": 3
+        }
+      ],
+      "explanation": "Verifikasi kanal terpisah dan pelaporan melindungi pengguna lain; tangkapan layar membantu, tetapi unit keamanan juga perlu mengetahui ancaman.",
+      "competency": "teknologi informasi",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-017",
+      "category": "TKP",
+      "question": "Untuk mempercepat pekerjaan, rekan meminta Anda mengirim file berisi data pribadi melalui akun penyimpanan pribadinya. Kanal resmi sedang lambat. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menghapus nama lalu mengirimnya",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Menolak kanal pribadi dan mencari mekanisme resmi yang disetujui atau meminta penyesuaian tenggat",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Mengirim hanya bagian yang menurut Anda tidak sensitif",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Berkonsultasi dengan pengelola data mengenai kanal alternatif resmi",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Mengirim setelah file diberi kata sandi",
+          "score": 3
+        }
+      ],
+      "explanation": "Kebutuhan cepat tidak membenarkan pemindahan data ke kanal tanpa kendali. Konsultasi tepat, sedangkan opsi terbaik sekaligus menjaga proses dan tenggat.",
+      "competency": "teknologi informasi",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-018",
+      "category": "TKP",
+      "question": "Unit Anda akan memakai AI publik untuk merangkum aduan warga. Dokumen memuat identitas dan rincian kasus. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengunggah dokumen karena layanan AI menyatakan aman",
+          "score": 1
+        },
+        {
+          "id": "B",
+          "text": "Menghapus nama warga lalu langsung mengunggah",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Memeriksa kebijakan dan klasifikasi data, memilih sarana yang disetujui, serta meminimalkan atau menganonimkan data",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Meminta persetujuan warga satu per satu",
+          "score": 3
+        },
+        {
+          "id": "E",
+          "text": "Menguji AI memakai data sintetis sambil meminta penilaian pengelola keamanan",
+          "score": 4
+        }
+      ],
+      "explanation": "Persetujuan platform, minimisasi, dan anonimisasi harus dipenuhi bersama. Uji data sintetis merupakan langkah persiapan yang baik.",
+      "competency": "teknologi informasi",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-019",
+      "category": "TKP",
+      "question": "Aplikasi baru menurunkan waktu proses, tetapi petugas sering membuat kesalahan input. Pimpinan ingin langsung mewajibkan aplikasi ke semua unit. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengusulkan uji lanjutan pada unit dengan risiko tinggi",
+          "score": 4
+        },
+        {
+          "id": "B",
+          "text": "Mendukung karena kecepatan merupakan indikator utama",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Menolak aplikasi dan kembali ke proses lama",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Menyampaikan data manfaat dan kesalahan, memperbaiki antarmuka/pelatihan, lalu memperluas penggunaan bertahap dengan pemantauan",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Menambah pemeriksa pada setiap transaksi",
+          "score": 3
+        }
+      ],
+      "explanation": "Penerapan bertahap berbasis data mempertahankan manfaat sambil menangani kualitas dan risiko; penambahan pemeriksa saja menambah beban.",
+      "competency": "teknologi informasi",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-020",
+      "category": "TKP",
+      "question": "Anda menemukan akun mantan pegawai masih dapat mengakses folder bersama. Belum ada bukti akses tidak sah. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menghubungi mantan pegawai agar tidak membuka folder",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Melaporkan kepada administrator untuk menonaktifkan akun",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Menghapus akun sendiri segera",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Membiarkannya sampai ada bukti penyalahgunaan",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Membatasi akses melalui mekanisme berwenang, melaporkan temuan, dan meminta pemeriksaan log serta proses pencabutan akun",
+          "score": 5
+        }
+      ],
+      "explanation": "Penonaktifan perlu disertai pemeriksaan dampak dan perbaikan proses agar celah serupa tidak berulang.",
+      "competency": "teknologi informasi",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-021",
+      "category": "TKP",
+      "question": "Dua tugas sama-sama mendesak. Tugas A berdampak langsung pada keselamatan, sedangkan tugas B diminta lebih dahulu oleh pejabat senior. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengerjakan A, menjelaskan prioritas berbasis risiko, dan mengatur tindak lanjut B",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Mengerjakan keduanya bergantian",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Meminta pejabat memilih tanpa memberi analisis",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Menyampaikan konflik prioritas dan usulan jadwal kepada kedua penanggung jawab",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Mengerjakan B untuk menjaga hubungan kerja",
+          "score": 2
+        }
+      ],
+      "explanation": "Keselamatan menjadi prioritas objektif. Komunikasi dan rencana tindak lanjut menjaga akuntabilitas kepada pihak lain.",
+      "competency": "profesionalisme",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-022",
+      "category": "TKP",
+      "question": "Atasan memberi instruksi lisan yang dapat ditafsirkan melanggar aturan, tetapi ia sedang sulit dihubungi dan tenggat dekat. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menolak seluruh tugas sampai ada instruksi tertulis",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Mencatat instruksi, memeriksa aturan, berkonsultasi melalui jalur yang tepat, dan hanya menjalankan bagian yang jelas sah",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Meminta rekan menjadi saksi lalu melaksanakan",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Menunda bagian berisiko sambil meminta klarifikasi tertulis",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Melaksanakan karena tanggung jawab berada pada atasan",
+          "score": 1
+        }
+      ],
+      "explanation": "Pilihan terbaik aktif mencari dasar dan nasihat resmi sambil tetap menjalankan bagian yang sah; bukan sekadar menunda.",
+      "competency": "profesionalisme",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-023",
+      "category": "TKP",
+      "question": "Hasil kerja Anda dikritik di depan tim. Sebagian kritik benar, tetapi satu tuduhan tidak didukung data. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membantah seluruh kritik agar tuduhan keliru tidak dianggap benar",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Menerima semuanya agar terlihat terbuka",
+          "score": 1
+        },
+        {
+          "id": "C",
+          "text": "Menanggapi dengan tenang, mengakui bagian yang valid, meminta dasar tuduhan, dan menyepakati perbaikan berdasarkan fakta",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Diam lalu menjelaskan kepada atasan setelah rapat",
+          "score": 3
+        },
+        {
+          "id": "E",
+          "text": "Mencatat kritik dan meminta sesi khusus untuk membahas bukti",
+          "score": 4
+        }
+      ],
+      "explanation": "Keterbukaan tidak berarti menerima klaim tanpa bukti. Respons terbaik memilah, mengklarifikasi, dan berorientasi perbaikan.",
+      "competency": "profesionalisme",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-024",
+      "category": "TKP",
+      "question": "Anda diminta mengerjakan tugas baru yang belum dikuasai. Tidak ada pelatihan formal dan hasil dibutuhkan dalam tiga hari. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mencari mentor singkat dan menyusun rencana kerja harian",
+          "score": 4
+        },
+        {
+          "id": "B",
+          "text": "Menolak karena risiko kesalahan tinggi",
+          "score": 1
+        },
+        {
+          "id": "C",
+          "text": "Menerima dan belajar sambil mencoba tanpa mengganggu orang lain",
+          "score": 2
+        },
+        {
+          "id": "D",
+          "text": "Memetakan keluaran, mencari contoh tepercaya, meminta arahan pada titik kritis, dan membuat pemeriksaan mutu sebelum menyerahkan",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Meminta rekan mengerjakan bagian tersulit",
+          "score": 3
+        }
+      ],
+      "explanation": "Belajar terarah, konsultasi pada risiko utama, dan kontrol mutu menjaga kecepatan sekaligus kualitas.",
+      "competency": "profesionalisme",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-025",
+      "category": "TKP",
+      "question": "Prosedur lama memerlukan tiga persetujuan. Data menunjukkan persetujuan kedua hampir selalu mengulang pemeriksaan pertama. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Meminta petugas kedua memeriksa lebih cepat",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Membuat rancangan proses baru untuk dibahas dengan pemilik risiko",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Menghapus persetujuan kedua agar proses cepat",
+          "score": 2
+        },
+        {
+          "id": "D",
+          "text": "Mempertahankan prosedur karena sudah berjalan lama",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Menganalisis tujuan kontrol, risiko, dan data kesalahan lalu mengusulkan uji penyederhanaan dengan pengawasan",
+          "score": 5
+        }
+      ],
+      "explanation": "Inovasi harus menjaga tujuan kontrol. Analisis dan uji terbatas memberi bukti sebelum perubahan permanen.",
+      "competency": "profesionalisme",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-026",
+      "category": "TKP",
+      "question": "Di grup kerja beredar artikel yang mengaitkan kegagalan layanan dengan agama tertentu. Sumbernya tidak jelas dan rekan mulai saling menyalahkan. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menghentikan penyebaran, mengarahkan diskusi pada fakta layanan, menyimpan bukti, dan melapor bila ada unsur kebencian",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Meminta pengirim menghapus artikel secara pribadi",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Mengalihkan pembicaraan ke pekerjaan lain",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Keluar dari grup agar tidak terlibat",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Membalas dengan artikel yang menyerang kelompok lain",
+          "score": 1
+        }
+      ],
+      "explanation": "Pencegahan terbaik menangani informasi, dampak kerja, bukti, dan jalur resmi tanpa memperbesar kebencian.",
+      "competency": "anti-radikalisme",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-027",
+      "category": "TKP",
+      "question": "Seorang kenalan mengundang Anda ke forum tertutup yang menyatakan kekerasan sah untuk mengganti dasar negara. Ia meminta Anda hadir agar dapat memahami argumen mereka. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hadir sebagai pengamat tanpa berkomentar",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Menolak, menjaga bukti ajakan, dan melaporkan melalui jalur yang berwenang",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Mengabaikan undangan dan memblokir pengirim",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Menyebarkan identitas pengundang di media sosial",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Menolak dan berkonsultasi dengan atasan atau unit terkait",
+          "score": 4
+        }
+      ],
+      "explanation": "Ajakan kekerasan perlu ditolak dan ditangani melalui mekanisme resmi. Penghakiman publik dapat mengganggu penanganan dan menimbulkan risiko.",
+      "competency": "anti-radikalisme",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-028",
+      "category": "TKP",
+      "question": "Rekan menyampaikan pandangan politik yang berbeda secara damai dan tidak mengganggu tugas. Anggota lain meminta ia dikeluarkan dari tim karena dianggap tidak loyal. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mendukung agar konflik tidak meluas",
+          "score": 1
+        },
+        {
+          "id": "B",
+          "text": "Meminta rekan tersebut tidak menyampaikan pendapat apa pun",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Menjaga penilaian berdasarkan kinerja dan perilaku, menghormati pandangan yang sah, serta mengembalikan diskusi pada tugas",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Memindahkannya ke tim lain",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Mengingatkan semua pihak tentang batas diskusi dan netralitas kerja",
+          "score": 4
+        }
+      ],
+      "explanation": "Perbedaan sah bukan indikator ketidakloyalan. Tim harus menilai perilaku kerja dan menjaga ruang profesional.",
+      "competency": "anti-radikalisme",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-029",
+      "category": "TKP",
+      "question": "Materi provokatif ditemukan pada komputer bersama. Riwayat pengguna tidak lengkap sehingga pelakunya belum diketahui. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menyebarkan tangkapan layar agar rekan waspada",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Menghapus materi dan memperingatkan semua pegawai",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Menuduh pengguna terakhir agar segera ada efek jera",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Menjaga bukti, membatasi risiko perangkat, dan melapor kepada pihak berwenang untuk pemeriksaan",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Memutus jaringan perangkat lalu menunggu petugas TI",
+          "score": 4
+        }
+      ],
+      "explanation": "Bukti dan perangkat perlu diamankan tanpa menyebarkan konten atau menuduh pihak yang belum terbukti.",
+      "competency": "anti-radikalisme",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-030",
+      "category": "TKP",
+      "question": "Untuk mencegah paparan ekstremisme, pimpinan mengusulkan pemeriksaan percakapan pribadi seluruh pegawai tanpa dasar khusus. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membatasi pemeriksaan hanya kepada pegawai baru",
+          "score": 3
+        },
+        {
+          "id": "B",
+          "text": "Meminta kajian hukum sebelum menerapkan pemantauan",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Mendukung karena keamanan lebih penting daripada privasi",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Menolak semua program pencegahan",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Mengusulkan literasi, kanal pelaporan aman, penilaian risiko, dan tindakan terukur sesuai kewenangan serta perlindungan hak",
+          "score": 5
+        }
+      ],
+      "explanation": "Pencegahan harus efektif, sah, berbasis risiko, dan proporsional. Kajian hukum penting, tetapi perlu disertai alternatif pencegahan.",
+      "competency": "anti-radikalisme",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-031",
+      "category": "TKP",
+      "question": "Pemohon mengirim bingkisan setelah layanannya selesai. Nilainya tampak kecil dan tidak ada permintaan khusus. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menolak atau menangani sesuai aturan gratifikasi, mendokumentasikan bila diperlukan, dan menjelaskan kebijakan dengan sopan",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Mengembalikan tanpa penjelasan",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Berkonsultasi dengan unit pengendalian gratifikasi sebelum menentukan penanganan",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Menerima karena tidak memengaruhi keputusan",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Membagi bingkisan kepada tim agar tidak menjadi keuntungan pribadi",
+          "score": 2
+        }
+      ],
+      "explanation": "Nilai kecil tidak otomatis menghapus konflik. Kepatuhan, dokumentasi, dan edukasi menjaga kepercayaan.",
+      "competency": "integritas",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-032",
+      "category": "TKP",
+      "question": "Anda dapat membuka data pegawai melalui akun kerja, tetapi data tersebut tidak berkaitan dengan tugas Anda. Rekan meminta Anda mengecek satu informasi untuk kepentingan pribadi. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Meminta rekan membuat permintaan tertulis kepada Anda",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Menolak mengakses dan mengarahkan rekan ke mekanisme resmi yang berwenang",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Menanyakan kepada atasan apakah Anda boleh membantu",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Menjelaskan bahwa akses harus berdasarkan kebutuhan tugas dan menunjukkan kanal resmi",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Mengecek tanpa mengunduh agar tidak meninggalkan data",
+          "score": 1
+        }
+      ],
+      "explanation": "Kemampuan teknis mengakses bukan kewenangan. Opsi terbaik menolak sekaligus mengarahkan solusi yang sah.",
+      "competency": "integritas",
+      "difficulty": "mudah",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-033",
+      "category": "TKP",
+      "question": "Rekan meminta Anda mengubah waktu hadir karena keterlambatannya disebabkan mengantar keluarga sakit. Sistem menyediakan mekanisme koreksi dengan bukti. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengubahnya karena alasannya manusiawi",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Menolak tanpa menjelaskan proses lain",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Mencatat sesuai fakta dan mengarahkan rekan menggunakan mekanisme koreksi resmi dengan bukti",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Membiarkan rekan memakai akun Anda untuk mengoreksi",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Berkonsultasi dengan pengelola absensi tanpa mengubah data",
+          "score": 4
+        }
+      ],
+      "explanation": "Empati diwujudkan melalui mekanisme sah, bukan mengubah fakta. Konsultasi baik, tetapi pegawai juga perlu diarahkan menyelesaikan proses.",
+      "competency": "integritas",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-034",
+      "category": "TKP",
+      "question": "Kesalahan formula membuat capaian unit terlihat lebih tinggi. Anda menemukannya sehari sebelum laporan dipublikasikan dan koreksi dapat menunda publikasi. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengirim koreksi dan penjelasan kepada penanggung jawab laporan",
+          "score": 4
+        },
+        {
+          "id": "B",
+          "text": "Membiarkan karena kesalahan tidak disengaja",
+          "score": 1
+        },
+        {
+          "id": "C",
+          "text": "Memperbaiki angka tanpa memberitahu pihak lain",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Menghentikan publikasi, melaporkan dampak, memperbaiki data, dan menelusuri kontrol agar kesalahan tidak berulang",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Menerbitkan dengan catatan data dapat berubah",
+          "score": 2
+        }
+      ],
+      "explanation": "Akurasi lebih penting daripada tenggat semu. Tindakan terbaik mencakup koreksi, transparansi, dan perbaikan kontrol.",
+      "competency": "integritas",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-035",
+      "category": "TKP",
+      "question": "Saudara Anda bekerja pada perusahaan yang mengikuti seleksi penyedia. Anda tidak menilai penawaran, tetapi menyusun kriteria teknis. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengundurkan diri tanpa menjelaskan alasannya",
+          "score": 4
+        },
+        {
+          "id": "B",
+          "text": "Meminta saudara merahasiakan hubungan kalian",
+          "score": 1
+        },
+        {
+          "id": "C",
+          "text": "Tetap bekerja karena tidak mengambil keputusan akhir",
+          "score": 2
+        },
+        {
+          "id": "D",
+          "text": "Memastikan kriteria tidak menyebut produk perusahaan tersebut",
+          "score": 3
+        },
+        {
+          "id": "E",
+          "text": "Mengungkapkan hubungan, meminta penilaian konflik, dan mengikuti keputusan pengalihan peran",
+          "score": 5
+        }
+      ],
+      "explanation": "Konflik dapat muncul sejak penyusunan kriteria. Pengungkapan dan penilaian resmi melindungi proses tanpa mengambil keputusan sepihak.",
+      "competency": "integritas",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-036",
+      "category": "TKP",
+      "question": "Tim hampir mencapai target, tetapi dua keluaran belum memiliki bukti memadai. Pimpinan meminta semuanya dicatat selesai agar anggaran berikutnya tidak berkurang. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Melaporkan capaian yang terbukti, menjelaskan status dua keluaran, dan menyusun rencana penyelesaian",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Menolak menandatangani tanpa menawarkan perbaikan",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Menyampaikan risiko dan meminta status sementara dicatat secara resmi",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Mengikuti karena pekerjaan sebenarnya hampir selesai",
+          "score": 1
+        },
+        {
+          "id": "E",
+          "text": "Mencatat selesai dengan keterangan bukti menyusul",
+          "score": 2
+        }
+      ],
+      "explanation": "Pelaporan faktual disertai rencana memperbaiki keluaran menjaga integritas dan membantu pengambilan keputusan.",
+      "competency": "integritas",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-037",
+      "category": "TKP",
+      "question": "Warga memberi usul yang bagus, tetapi pelaksanaannya berada di luar kewenangan unit Anda. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menolak karena bukan kewenangan unit",
+          "score": 1
+        },
+        {
+          "id": "B",
+          "text": "Mencatat dan menilai usul, meneruskan ke unit berwenang, serta memberi informasi tindak lanjut kepada warga",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Memberikan alamat unit lain agar warga mengulang sendiri",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Meneruskan usul melalui jalur internal",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Menerima usul agar warga merasa dihargai",
+          "score": 2
+        }
+      ],
+      "explanation": "Pelayanan tidak berhenti pada penerusan; warga juga memerlukan kepastian bahwa masukannya ditangani.",
+      "competency": "pelayanan publik",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-038",
+      "category": "TKP",
+      "question": "Antrean bertambah karena satu loket rusak. Petugas loket lain juga sibuk, sedangkan teknisi baru tiba satu jam lagi. Anda sebagai koordinator...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menutup pendaftaran baru sampai teknisi datang",
+          "score": 1
+        },
+        {
+          "id": "B",
+          "text": "Meminta warga menunggu tanpa estimasi",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Mengatur ulang fungsi loket sesuai kewenangan, memberi informasi antrean, menyediakan bantuan sementara, dan mengoordinasikan perbaikan",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Membuka loket darurat meskipun petugas belum memiliki akses",
+          "score": 3
+        },
+        {
+          "id": "E",
+          "text": "Mengalihkan jenis layanan yang sederhana dan memberi estimasi",
+          "score": 4
+        }
+      ],
+      "explanation": "Pengaturan ulang, informasi, alternatif aman, dan perbaikan menangani layanan secara menyeluruh tanpa melanggar akses.",
+      "competency": "pelayanan publik",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-039",
+      "category": "TKP",
+      "question": "Anda menyadari penjelasan persyaratan di situs berbeda dengan pengumuman terbaru. Beberapa pemohon sudah mengandalkan informasi lama. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memasang pemberitahuan sementara dan mengeskalasi koreksi resmi",
+          "score": 4
+        },
+        {
+          "id": "B",
+          "text": "Mengubah situs dan tidak membahas pemohon sebelumnya",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Menunggu persetujuan rapat berikutnya",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Mengoreksi informasi segera melalui kewenangan yang ada, mengumumkan perubahan, dan memberi solusi adil bagi pemohon terdampak",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Memberi tahu petugas front office secara pribadi",
+          "score": 2
+        }
+      ],
+      "explanation": "Koreksi harus cepat, transparan, konsisten di semua kanal, dan memperhatikan pihak yang telanjur mengandalkan informasi salah.",
+      "competency": "pelayanan publik",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-040",
+      "category": "TKP",
+      "question": "Pimpinan memuji hasil proyek Anda, padahal sebagian besar pekerjaan dilakukan anggota tim yang tidak hadir. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menolak seluruh pujian",
+          "score": 1
+        },
+        {
+          "id": "B",
+          "text": "Menyampaikan nama anggota utama saat merespons pujian",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Menerima pujian lalu berterima kasih kepada tim secara pribadi",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Diam karena pimpinan seharusnya mengetahui pembagian tugas",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Mengakui kontribusi anggota secara terbuka dan memastikan dokumentasi hasil mencantumkan peran mereka",
+          "score": 5
+        }
+      ],
+      "explanation": "Pengakuan terbuka dan dokumentasi memberi kredit yang adil secara langsung maupun berkelanjutan.",
+      "competency": "jejaring kerja",
+      "difficulty": "mudah",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-041",
+      "category": "TKP",
+      "question": "Dua anggota tim berkonflik dan mulai menghambat pekerjaan. Keduanya meminta Anda membenarkan versinya. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mendengar kedua pihak, memisahkan fakta dari asumsi, menyepakati perilaku dan tugas ke depan, lalu memantau pelaksanaannya",
+          "score": 5
+        },
+        {
+          "id": "B",
+          "text": "Memindahkan salah satu anggota",
+          "score": 3
+        },
+        {
+          "id": "C",
+          "text": "Memfasilitasi pertemuan dengan aturan dialog dan tujuan kerja yang jelas",
+          "score": 4
+        },
+        {
+          "id": "D",
+          "text": "Memilih pihak yang catatan kerjanya lebih baik",
+          "score": 2
+        },
+        {
+          "id": "E",
+          "text": "Meminta mereka menyelesaikan sendiri",
+          "score": 1
+        }
+      ],
+      "explanation": "Penyelesaian lengkap mencakup fakta, kesepakatan operasional, dan pemantauan; fasilitasi saja belum menjamin tindak lanjut.",
+      "competency": "jejaring kerja",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-042",
+      "category": "TKP",
+      "question": "Anda harus menyampaikan keputusan tidak populer yang dibuat secara sah. Beberapa anggota tim menolak sebelum membaca alasannya. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menunda penyampaian sampai suasana tenang",
+          "score": 1
+        },
+        {
+          "id": "B",
+          "text": "Menjelaskan dasar, dampak, dan ruang masukan; mendengar risiko pelaksanaan; lalu memastikan keputusan sah dijalankan",
+          "score": 5
+        },
+        {
+          "id": "C",
+          "text": "Membagikan dokumen keputusan dan meminta pertanyaan tertulis",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Mengadakan sesi penjelasan dan menampung kendala teknis",
+          "score": 4
+        },
+        {
+          "id": "E",
+          "text": "Memerintahkan mereka melaksanakan tanpa diskusi",
+          "score": 2
+        }
+      ],
+      "explanation": "Komunikasi terbaik menggabungkan transparansi, partisipasi pada pelaksanaan, dan kepastian menjalankan keputusan yang sah.",
+      "competency": "profesionalisme",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-043",
+      "category": "TKP",
+      "question": "Kesalahan Anda menyebabkan rekan harus bekerja tambahan. Kesalahan sudah diperbaiki dan tidak diketahui atasan. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Diam karena masalah telah selesai",
+          "score": 1
+        },
+        {
+          "id": "B",
+          "text": "Berterima kasih kepada rekan tanpa menjelaskan",
+          "score": 2
+        },
+        {
+          "id": "C",
+          "text": "Mengakui kesalahan kepada pihak terkait, membantu memulihkan dampak, dan memperbaiki cara kerja agar tidak berulang",
+          "score": 5
+        },
+        {
+          "id": "D",
+          "text": "Memberi tahu atasan dan menyerahkan tindak lanjut",
+          "score": 3
+        },
+        {
+          "id": "E",
+          "text": "Meminta maaf kepada rekan serta mendokumentasikan perbaikannya",
+          "score": 4
+        }
+      ],
+      "explanation": "Akuntabilitas mencakup pengakuan, pemulihan dampak, dan pencegahan, bukan hanya pelaporan.",
+      "competency": "integritas",
+      "difficulty": "sedang",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-044",
+      "category": "TKP",
+      "question": "Anda melihat pegawai berprestasi mulai kelelahan karena selalu diberi tugas tambahan. Ia belum mengeluh dan target tim tercapai. Anda sebagai koordinator...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mendistribusikan sebagian tugas dan memantau kondisinya",
+          "score": 4
+        },
+        {
+          "id": "B",
+          "text": "Membiarkan karena ia mampu mengelola bebannya",
+          "score": 1
+        },
+        {
+          "id": "C",
+          "text": "Mengurangi tugasnya tanpa berdiskusi",
+          "score": 3
+        },
+        {
+          "id": "D",
+          "text": "Membahas kapasitas dan aspirasi, memeriksa distribusi beban, lalu menata ulang pekerjaan serta pengembangan anggota lain",
+          "score": 5
+        },
+        {
+          "id": "E",
+          "text": "Meminta ia memberi tahu jika sudah tidak sanggup",
+          "score": 2
+        }
+      ],
+      "explanation": "Pencegahan kelelahan harus dialogis dan sistemik: beban diseimbangkan sekaligus kapasitas tim lain dikembangkan.",
+      "competency": "profesionalisme",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    },
+    {
+      "id": "LAT-TKP-045",
+      "category": "TKP",
+      "question": "Setelah proyek selesai, data menunjukkan target tercapai tetapi keluhan pengguna meningkat. Tim ingin menutup evaluasi karena indikator utama sudah hijau. Anda...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengadakan rapat untuk mendengar pendapat tim",
+          "score": 2
+        },
+        {
+          "id": "B",
+          "text": "Menganalisis pola keluhan dan mengusulkan tindakan korektif",
+          "score": 4
+        },
+        {
+          "id": "C",
+          "text": "Menyetujui karena target resmi telah tercapai",
+          "score": 1
+        },
+        {
+          "id": "D",
+          "text": "Mencatat keluhan sebagai isu untuk proyek berikutnya",
+          "score": 3
+        },
+        {
+          "id": "E",
+          "text": "Menggabungkan data target dan pengalaman pengguna, mencari penyebab, serta menetapkan perbaikan dengan penanggung jawab dan tenggat",
+          "score": 5
+        }
+      ],
+      "explanation": "Keberhasilan tidak dinilai dari satu indikator. Evaluasi terbaik menghubungkan bukti, penyebab, tindakan, pemilik, dan tenggat.",
+      "competency": "profesionalisme",
+      "difficulty": "sulit",
+      "version": 2,
+      "source": "bank-latihan-utama"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import BrandLogo from "../components/BrandLogo";
 import { getCurrentUser, setCurrentUser } from "../utils/auth";
 import { signIn } from "../services/auth";
 
@@ -8,6 +8,7 @@ export default function Login() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   // Kalau sudah login, langsung lempar ke dashboard sekali via useEffect
   useEffect(() => {
@@ -29,6 +30,7 @@ export default function Login() {
 
     try {
       setLoading(true);
+      setError("");
       const user = await signIn(email, password);
       setCurrentUser(user);
 
@@ -38,7 +40,7 @@ export default function Login() {
         navigate("/dashboard", { replace: true });
       }
     } catch (err) {
-      alert(err.code === "auth/invalid-credential" ? "Email atau password salah." : (err.message || "Login gagal."));
+      setError(err.code === "auth/invalid-credential" ? "Email atau password salah." : (err.message || "Login gagal."));
     } finally {
       setLoading(false);
     }
@@ -48,7 +50,7 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-950 px-4">
       <div className="w-full max-w-md bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-gray-200 dark:border-slate-800 p-6">
         <div className="flex flex-col items-center mb-6">
-          <Link to="/" aria-label="Kembali ke halaman utama"><img src={logo} alt="NalarASN" className="h-12 w-auto max-w-[210px] mb-3 object-contain" /></Link>
+          <Link to="/" aria-label="Kembali ke halaman utama" className="mb-3"><BrandLogo size="lg" /></Link>
           <p className="text-sm text-gray-600 dark:text-slate-300 text-center">
             Masuk untuk melanjutkan latihan SKD kamu.
           </p>
@@ -81,6 +83,7 @@ export default function Login() {
             /><button type="button" onClick={() => setShowPassword((value) => !value)} className="absolute inset-y-0 right-0 px-3 text-lg text-gray-500 hover:text-blue-600" aria-label={showPassword ? "Sembunyikan password" : "Tampilkan password"}>{showPassword ? "◉" : "◎"}</button></div>
           </div>
 
+          {error && <p role="alert" className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-700 dark:border-red-900 dark:bg-red-950/30 dark:text-red-300">{error}</p>}
           <button
             type="submit"
             disabled={loading}

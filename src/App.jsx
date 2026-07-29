@@ -11,11 +11,15 @@ import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
 import SimpleAdminDashboard from "./pages/SimpleAdminDashboard";
 import SimulationMenu from "./pages/SimulationMenu";
+import TrainingMenu from "./pages/TrainingMenu";
+import WrongAnswers from "./pages/WrongAnswers";
+import PublicInfo from "./pages/PublicInfo";
+import Feedback from "./pages/Feedback";
 import { clearLegacyAuth, setCurrentUser } from "./utils/auth";
 import { observeAuth } from "./services/auth";
 
 function RequireAuth({ children, roles, user, loading }) {
-  if (loading) return <div className="grid min-h-screen place-items-center bg-slate-50 text-sm text-slate-500">Memuat akun...</div>;
+  if (loading) return <div className="grid min-h-screen place-items-center bg-slate-50 px-4 dark:bg-slate-950"><div className="text-center"><div className="mx-auto h-9 w-9 animate-spin rounded-full border-4 border-blue-100 border-t-blue-600 dark:border-slate-800 dark:border-t-blue-400" /><p className="mt-3 text-sm font-medium text-slate-500 dark:text-slate-400">Menyiapkan akun...</p></div></div>;
   if (!user) {
     return <Navigate to="/login" replace />;
   }
@@ -46,6 +50,9 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/panduan" element={<PublicInfo page="panduan" />} />
+      <Route path="/privasi" element={<PublicInfo page="privasi" />} />
+      <Route path="/ketentuan" element={<PublicInfo page="ketentuan" />} />
 
       <Route
         path="/dashboard"
@@ -62,6 +69,13 @@ function App() {
       />
 
       <Route
+        path="/kritik-saran"
+        element={
+          guard(<Feedback />, ["user", "admin"])
+        }
+      />
+
+      <Route
         path="/admin"
         element={
           guard(<SimpleAdminDashboard />, ["admin"])
@@ -69,9 +83,22 @@ function App() {
       />
 
       <Route
-        path="/simulasi"
+        path="/latihan"
+        element={
+          guard(<TrainingMenu />, ["user", "admin"])
+        }
+      />
+      <Route
+        path="/tryout"
         element={
           guard(<SimulationMenu />, ["user", "admin"])
+        }
+      />
+      <Route path="/simulasi" element={<Navigate to="/tryout" replace />} />
+      <Route
+        path="/buku-kesalahan"
+        element={
+          guard(<WrongAnswers />, ["user", "admin"])
         }
       />
       <Route
@@ -100,6 +127,7 @@ function App() {
           guard(<Leaderboard />, ["user", "admin"])
         }
       />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

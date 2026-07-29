@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="170" viewBox="0 0 220 170" role="img" aria-label="Panah kiri hitam dan titik kuning kiri atas">
+  <rect width="220" height="170" fill="#ffffff"/>
+  <rect x="10" y="10" width="200" height="150" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><g transform="translate(110 82) rotate(180)">
+    <line x1="-32" y1="0" x2="14.4" y2="0" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+    <polyline points="3.2,-12.16 17.6,0 3.2,12.16" fill="none" stroke="#0f172a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g><circle cx="50" cy="45" r="8" fill="#e8a51a"/>
+</svg>

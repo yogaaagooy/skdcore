@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="170" viewBox="0 0 220 170" role="img" aria-label="Gabungan lingkaran, persegi, dan belah ketupat">
+  <rect width="220" height="170" fill="#ffffff"/>
+  <rect x="10" y="10" width="200" height="150" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/><circle cx="89" cy="64" r="16" fill="none" stroke="#2563eb" stroke-width="4"/><rect x="116" y="49" width="30" height="30" rx="4" fill="none" stroke="#0f172a" stroke-width="4"/><polygon points="110.21320343559643,106 89,127.21320343559643 67.78679656440357,106 89,84.78679656440357" fill="none" stroke="#16a34a" stroke-width="4" stroke-linejoin="round"/>
+</svg>

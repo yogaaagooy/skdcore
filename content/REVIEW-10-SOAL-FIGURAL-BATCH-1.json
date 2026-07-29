@@ -1,0 +1,172 @@
+[
+  {
+    "id": "TIU-FIG-001",
+    "category": "TIU",
+    "question": "Gambar yang tepat untuk melanjutkan deret adalah...",
+    "image": {
+      "url": "/question-assets/tiu/figural-review/fig-01-question.svg",
+      "alt": "Tiga panel berisi panah yang berubah arah dan titik yang bertambah"
+    },
+    "options": [
+      { "id": "A", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-01-a.svg", "alt": "Pilihan A" }, "score": 0 },
+      { "id": "B", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-01-b.svg", "alt": "Pilihan B" }, "score": 5 },
+      { "id": "C", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-01-c.svg", "alt": "Pilihan C" }, "score": 0 },
+      { "id": "D", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-01-d.svg", "alt": "Pilihan D" }, "score": 0 },
+      { "id": "E", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-01-e.svg", "alt": "Pilihan E" }, "score": 0 }
+    ],
+    "explanation": "Arah panah berputar 90 derajat searah jarum jam: kanan, bawah, kiri, lalu atas. Jumlah titik bertambah satu, sehingga gambar berikutnya adalah panah ke atas dengan empat titik (B)."
+  },
+  {
+    "id": "TIU-FIG-002",
+    "category": "TIU",
+    "question": "Gambar yang tepat untuk melanjutkan deret adalah...",
+    "image": {
+      "url": "/question-assets/tiu/figural-review/fig-02-question.svg",
+      "alt": "Deret poligon dengan jumlah sisi meningkat dan warna isi bergantian"
+    },
+    "options": [
+      { "id": "A", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-02-a.svg", "alt": "Pilihan A" }, "score": 0 },
+      { "id": "B", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-02-b.svg", "alt": "Pilihan B" }, "score": 0 },
+      { "id": "C", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-02-c.svg", "alt": "Pilihan C" }, "score": 0 },
+      { "id": "D", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-02-d.svg", "alt": "Pilihan D" }, "score": 5 },
+      { "id": "E", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-02-e.svg", "alt": "Pilihan E" }, "score": 0 }
+    ],
+    "explanation": "Jumlah sisi bertambah dari tiga, empat, lima, menjadi enam. Isi bangun bergantian kosong, penuh, kosong, sehingga berikutnya segi enam penuh (D)."
+  },
+  {
+    "id": "TIU-FIG-003",
+    "category": "TIU",
+    "question": "Terapkan hubungan pada pasangan pertama untuk melengkapi pasangan kedua.",
+    "image": {
+      "url": "/question-assets/tiu/figural-review/fig-03-question.svg",
+      "alt": "Analogi dua pasangan bentuk luar, bentuk dalam, dan penanda posisi"
+    },
+    "options": [
+      { "id": "A", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-03-a.svg", "alt": "Pilihan A" }, "score": 0 },
+      { "id": "B", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-03-b.svg", "alt": "Pilihan B" }, "score": 0 },
+      { "id": "C", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-03-c.svg", "alt": "Pilihan C" }, "score": 5 },
+      { "id": "D", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-03-d.svg", "alt": "Pilihan D" }, "score": 0 },
+      { "id": "E", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-03-e.svg", "alt": "Pilihan E" }, "score": 0 }
+    ],
+    "explanation": "Bentuk luar dan bentuk dalam bertukar tempat. Posisi bentuk kecil dan penanda juga berpindah ke sisi yang berlawanan. Penerapan aturan tersebut menghasilkan pilihan C."
+  },
+  {
+    "id": "TIU-FIG-004",
+    "category": "TIU",
+    "question": "Gambar yang tepat untuk mengisi bagian kosong pada matriks adalah...",
+    "image": {
+      "url": "/question-assets/tiu/figural-review/fig-04-question.svg",
+      "alt": "Matriks dua baris dengan jumlah simbol pada kolom ketiga"
+    },
+    "options": [
+      { "id": "A", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-04-a.svg", "alt": "Pilihan A" }, "score": 5 },
+      { "id": "B", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-04-b.svg", "alt": "Pilihan B" }, "score": 0 },
+      { "id": "C", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-04-c.svg", "alt": "Pilihan C" }, "score": 0 },
+      { "id": "D", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-04-d.svg", "alt": "Pilihan D" }, "score": 0 },
+      { "id": "E", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-04-e.svg", "alt": "Pilihan E" }, "score": 0 }
+    ],
+    "explanation": "Pada setiap baris, kolom ketiga memuat jumlah simbol dari kolom pertama dan kedua: satu ditambah dua menjadi tiga. Baris kedua harus berisi tiga segitiga penuh (A)."
+  },
+  {
+    "id": "TIU-FIG-005",
+    "category": "TIU",
+    "question": "Panel manakah yang memiliki hubungan panah dan titik berbeda dari empat panel lainnya?",
+    "image": {
+      "url": "/question-assets/tiu/figural-review/fig-05-question.svg",
+      "alt": "Lima panel berlabel A sampai E dengan panah dan titik"
+    },
+    "options": [
+      { "id": "A", "text": "Panel A", "image": { "url": "/question-assets/tiu/figural-review/fig-05-a.svg", "alt": "Panel A" }, "score": 0 },
+      { "id": "B", "text": "Panel B", "image": { "url": "/question-assets/tiu/figural-review/fig-05-b.svg", "alt": "Panel B" }, "score": 0 },
+      { "id": "C", "text": "Panel C", "image": { "url": "/question-assets/tiu/figural-review/fig-05-c.svg", "alt": "Panel C" }, "score": 0 },
+      { "id": "D", "text": "Panel D", "image": { "url": "/question-assets/tiu/figural-review/fig-05-d.svg", "alt": "Panel D" }, "score": 5 },
+      { "id": "E", "text": "Panel E", "image": { "url": "/question-assets/tiu/figural-review/fig-05-e.svg", "alt": "Panel E" }, "score": 0 }
+    ],
+    "explanation": "Pada empat panel, titik berada di sisi yang berlawanan dengan arah panah. Pada panel D, panah dan titik sama-sama mengarah atau berada di sisi atas, sehingga D berbeda."
+  },
+  {
+    "id": "TIU-FIG-006",
+    "category": "TIU",
+    "question": "Gambar yang tepat untuk melanjutkan deret adalah...",
+    "image": {
+      "url": "/question-assets/tiu/figural-review/fig-06-question.svg",
+      "alt": "Deret panah, titik sudut, dan warna yang berubah bersamaan"
+    },
+    "options": [
+      { "id": "A", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-06-a.svg", "alt": "Pilihan A" }, "score": 5 },
+      { "id": "B", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-06-b.svg", "alt": "Pilihan B" }, "score": 0 },
+      { "id": "C", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-06-c.svg", "alt": "Pilihan C" }, "score": 0 },
+      { "id": "D", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-06-d.svg", "alt": "Pilihan D" }, "score": 0 },
+      { "id": "E", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-06-e.svg", "alt": "Pilihan E" }, "score": 0 }
+    ],
+    "explanation": "Panah berputar 90 derajat searah jarum jam, titik berpindah sudut searah jarum jam, dan warna bergantian biru-hitam. Berikutnya panah kiri hitam dengan titik kuning di kiri bawah (A)."
+  },
+  {
+    "id": "TIU-FIG-007",
+    "category": "TIU",
+    "question": "Gambar yang tepat untuk melengkapi matriks adalah...",
+    "image": {
+      "url": "/question-assets/tiu/figural-review/fig-07-question.svg",
+      "alt": "Matriks tiga kali tiga yang menggabungkan jenis bentuk pada baris dan kolom"
+    },
+    "options": [
+      { "id": "A", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-07-a.svg", "alt": "Pilihan A" }, "score": 5 },
+      { "id": "B", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-07-b.svg", "alt": "Pilihan B" }, "score": 0 },
+      { "id": "C", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-07-c.svg", "alt": "Pilihan C" }, "score": 0 },
+      { "id": "D", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-07-d.svg", "alt": "Pilihan D" }, "score": 0 },
+      { "id": "E", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-07-e.svg", "alt": "Pilihan E" }, "score": 0 }
+    ],
+    "explanation": "Sel ketiga pada setiap baris merupakan gabungan dua sel sebelumnya. Baris terakhir harus menggabungkan lingkaran-persegi dengan segitiga-belah ketupat, sehingga memuat keempat bentuk (A)."
+  },
+  {
+    "id": "TIU-FIG-008",
+    "category": "TIU",
+    "question": "Terapkan hubungan pada pasangan pertama untuk melengkapi pasangan kedua.",
+    "image": {
+      "url": "/question-assets/tiu/figural-review/fig-08-question.svg",
+      "alt": "Analogi panah dengan perubahan arah, warna, dan jumlah titik"
+    },
+    "options": [
+      { "id": "A", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-08-a.svg", "alt": "Pilihan A" }, "score": 5 },
+      { "id": "B", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-08-b.svg", "alt": "Pilihan B" }, "score": 0 },
+      { "id": "C", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-08-c.svg", "alt": "Pilihan C" }, "score": 0 },
+      { "id": "D", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-08-d.svg", "alt": "Pilihan D" }, "score": 0 },
+      { "id": "E", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-08-e.svg", "alt": "Pilihan E" }, "score": 0 }
+    ],
+    "explanation": "Perubahannya adalah rotasi 90 derajat searah jarum jam, pergantian warna, dan penambahan satu titik. Panah kiri hitam dengan dua titik berubah menjadi panah atas biru dengan tiga titik (A)."
+  },
+  {
+    "id": "TIU-FIG-009",
+    "category": "TIU",
+    "question": "Gambar yang tepat untuk melanjutkan deret adalah...",
+    "image": {
+      "url": "/question-assets/tiu/figural-review/fig-09-question.svg",
+      "alt": "Deret poligon dengan sisi berkurang, titik bertambah, dan isi bergantian"
+    },
+    "options": [
+      { "id": "A", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-09-a.svg", "alt": "Pilihan A" }, "score": 5 },
+      { "id": "B", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-09-b.svg", "alt": "Pilihan B" }, "score": 0 },
+      { "id": "C", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-09-c.svg", "alt": "Pilihan C" }, "score": 0 },
+      { "id": "D", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-09-d.svg", "alt": "Pilihan D" }, "score": 0 },
+      { "id": "E", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-09-e.svg", "alt": "Pilihan E" }, "score": 0 }
+    ],
+    "explanation": "Jumlah sisi berkurang satu, jumlah titik bertambah satu, dan isi bergantian penuh-kosong. Setelah persegi penuh dengan tiga titik, berikutnya segitiga kosong dengan empat titik (A)."
+  },
+  {
+    "id": "TIU-FIG-010",
+    "category": "TIU",
+    "question": "Gambar yang tepat untuk melanjutkan perpindahan kedua bentuk adalah...",
+    "image": {
+      "url": "/question-assets/tiu/figural-review/fig-10-question.svg",
+      "alt": "Deret posisi lingkaran dan persegi yang berpindah pada empat sudut"
+    },
+    "options": [
+      { "id": "A", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-10-a.svg", "alt": "Pilihan A" }, "score": 5 },
+      { "id": "B", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-10-b.svg", "alt": "Pilihan B" }, "score": 0 },
+      { "id": "C", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-10-c.svg", "alt": "Pilihan C" }, "score": 0 },
+      { "id": "D", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-10-d.svg", "alt": "Pilihan D" }, "score": 0 },
+      { "id": "E", "text": "", "image": { "url": "/question-assets/tiu/figural-review/fig-10-e.svg", "alt": "Pilihan E" }, "score": 0 }
+    ],
+    "explanation": "Lingkaran bergerak satu sudut searah jarum jam, sedangkan persegi bergerak satu sudut berlawanan arah jarum jam. Posisi berikutnya adalah lingkaran kiri bawah dan persegi kanan atas (A)."
+  }
+]
